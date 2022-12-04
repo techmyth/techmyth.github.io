@@ -3,24 +3,8 @@ languageCode: en-us
 title: TechMyth
 theme: "PaperMod"
 publishDir: "docs"
-params:
-  env: production
-menu:
-  main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
-      weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
 socialIcons:
   - name: "kofi"
-    url: "https://kofi.com"
+    url: "https://ko-fi.com/F1F8DEV80"
   - name: "twitter"
-    url: "https://twitter.com"
+    url: "https://twitter.com/jcolonfzenpr"
