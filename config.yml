@@ -1,0 +1,5 @@
+baseURL: http://techmyth.github.io/
+languageCode: en-us
+title: TechMyth
+theme: "PaperMod"
+publishDir: "docs"
