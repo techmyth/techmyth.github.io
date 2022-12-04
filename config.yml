@@ -3,7 +3,10 @@ languageCode: en-us
 title: TechMyth
 theme: "PaperMod"
 publishDir: "docs"
-socialIcons:
+params:
+  defaultTheme: dark 
+  disableThemeToggle: true
+  socialIcons:
   - name: "kofi"
     url: "https://ko-fi.com/F1F8DEV80"
   - name: "twitter"
