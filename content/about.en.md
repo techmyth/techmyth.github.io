@@ -9,3 +9,6 @@ When I'm not writing, I enjoy running, researching lost civilizations, analyzing
 
 The purpose of this blog is to document and share my thoughts and experiences with the technology I encounter on a daily basis. The views expressed on this site are my own and do not reflect those of my employer or their customers.
 
+[Resume](https://rxresu.me/jcolonf/jonathan-colon-)
+
+[IT Certifications](https://www.credly.com/users/jonathan-colon-feliciano/badges)
