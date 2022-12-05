@@ -24,4 +24,4 @@ menu:
     params:
       class: highlight-menu-item
     url: /about/
-    weight: 2
+    weight: 3
