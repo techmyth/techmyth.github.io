@@ -24,9 +24,3 @@ menu:
       class: highlight-menu-item
     url: /about
     weight: 2
-  - identifier: test
-    name: Test
-    params:
-      class: highlight-menu-item
-    url: /Test
-    weight: 3
