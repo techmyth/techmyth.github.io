@@ -28,5 +28,5 @@ menu:
     name: Test
     params:
       class: highlight-menu-item
-    url: /Test/
+    url: /Test
     weight: 3
