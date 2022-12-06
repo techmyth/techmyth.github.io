@@ -3,11 +3,44 @@ languageCode: en-us
 title: TechMyth
 theme: "PaperMod"
 
+DefaultContentLanguage: "en"
+
+
 languages:
   es:
+    languageName: Spanish
+    menu:
+      main:
+      - identifier: blog
+        name: Blog
+        params:
+          class: highlight-menu-item
+        url: /
+        weight: 1
+      - identifier: about
+        name: Sobre Mí
+        params:
+          class: highlight-menu-item
+        url: /about
+        weight: 2
     title: TechMyth
     weight: 2
   en:
+    languageName: English
+    menu:
+      main:
+      - identifier: blog
+        name: Blog
+        params:
+          class: highlight-menu-item
+        url: /
+        weight: 1
+      - identifier: about
+        name: About
+        params:
+          class: highlight-menu-item
+        url: /about
+        weight: 2
     title: TechMyth
     weight: 1
 
@@ -19,17 +52,3 @@ params:
     url: "https://ko-fi.com/F1F8DEV80"
   - name: "twitter"
     url: "https://twitter.com/jcolonfzenpr"
-menu:
-  main:
-  - identifier: blog
-    name: Blog
-    params:
-      class: highlight-menu-item
-    url: /
-    weight: 1
-  - identifier: about
-    name: About
-    params:
-      class: highlight-menu-item
-    url: /about
-    weight: 2
