@@ -69,4 +69,6 @@ In the following image you can see the tasks performed by vCenter to remove the 
 
 **Hasta luego!!!**
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
+
 ![Text](/img/hasta-luego-5937ba.webp#center)
