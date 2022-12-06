@@ -85,3 +85,5 @@ The Key Management Interoperability Protocol (KMIP) enables communication betwee
 ### Summary
 
 We have now added and configure the KMS server which gives us some extra security possibilities for our infrastructure or cryptographically-enabled applications.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)

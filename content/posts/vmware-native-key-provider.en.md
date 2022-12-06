@@ -46,3 +46,5 @@ Change the default "VM Storage Policy" to [VM Encryption Policy].
 Now the VM is encrypted with the Native Key Provider. **Really Awesome Feature**.
 
 ![Text](/img/2021-03-10_21-35-1024x470.webp#center)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
