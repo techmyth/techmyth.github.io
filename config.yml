@@ -7,6 +7,11 @@ DefaultContentLanguage: "en"
 
 googleAnalytics: G-H243NQ4V8N
 
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+
 languages:
   es:
     languageName: Spanish
