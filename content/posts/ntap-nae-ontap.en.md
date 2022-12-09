@@ -8,7 +8,7 @@ tags:
   - "Encryption"
 ---
 
-Previously in a [post](http://192.168.7.40/2021/05/16/netapp-volume-encryption-setup-external-key-manager/) I explained how to set up an encrypted volume using an encryption key manager (KMS) specifically from the company [HyTrust](https://www.hytrust.com/products/keycontrol/). In this specific case each volume is encrypted individually using independent keys. A disadvantage of this method is that it affects the possibility of increasing the efficiency levels of data reduction such as compression, compaction and de-duplication (cross-volume-dedupe).
+Previously in a [post]({{< ref "/posts/ntap-nve-external-key-manager.en.md" >}} "NetApp Volume Encryption Setup with External Key Manager") I explained how to set up an encrypted volume using an encryption key manager (KMS) specifically from the company [HyTrust](https://www.hytrust.com/products/keycontrol/). In this specific case each volume is encrypted individually using independent keys. A disadvantage of this method is that it affects the possibility of increasing the efficiency levels of data reduction such as compression, compaction and de-duplication (cross-volume-dedupe).
 
 ![Text](/img/NVE-vs-NAE.webp#center)
 
@@ -43,7 +43,7 @@ X-XX-XXXXXXXXXXXXXXXXXXXXXXXXX VE      OnPrem-HQ-02 Volume Encryption License li
 OnPrem-HQ::> 
 ```
 
-##### Note: I previously done the external KMS setup in Ontap. [Link](http://192.168.7.40/2021/05/16/netapp-volume-encryption-setup-external-key-manager/)
+##### Note: I previously done the external KMS setup in Ontap. [Link]({{< ref "/posts/ntap-nve-external-key-manager.en.md" >}} "NetApp Volume Encryption Setup with External Key Manager")
 
 **Step 2:** Validate the available “Spare” discs.
 
