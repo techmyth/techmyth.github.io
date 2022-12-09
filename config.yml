@@ -4,8 +4,6 @@ copyright: "2022 Jonathan Colon All rights reserved"
 title: TechMyth
 theme: "PaperMod"
 
-disqusShortname: "disqus_P5I5u1axaV"
-
 author:
   name: Jonathan Colon
 
@@ -60,13 +58,14 @@ params:
   defaultTheme: dark
   disableThemeToggle: true
   ShowFullTextinRSS: true
+  comments: true
   socialIcons:
   - name: "kofi"
     url: "https://ko-fi.com/F1F8DEV80"
   - name: "twitter"
     url: "https://twitter.com/jcolonfzenpr"
   - name: "rss"
-  url: "https://techmyth.github.io/index.xml"
+    url: "https://techmyth.github.io/index.xml"
 
 outputs:
   home:

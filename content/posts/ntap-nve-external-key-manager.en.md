@@ -210,5 +210,3 @@ In the last step we must enter the administration portal of the **“HyTrust Key
 In this tutorial I show you how to configure the KMS service within Ontap that allows us to create encrypted volumes. This simple solution allows us to increase or improve the security posture in our organization.
 
 ### Hasta Luego Amigos!
-
-{{ template "_internal/disqus.html" . }}
