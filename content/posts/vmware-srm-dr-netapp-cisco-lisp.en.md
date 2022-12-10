@@ -1,6 +1,7 @@
 ---
 title: "VMware SRM 8.3 Disaster Recovery with NetApp Array base replication and Cisco LISP VM mobility"
 date: 2021-02-15T11:28:12-04:00
+author: 'Jonathan Colon Feliciano'
 draft: false
 tags:
   - "VMware"

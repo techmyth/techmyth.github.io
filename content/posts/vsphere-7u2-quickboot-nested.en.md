@@ -1,6 +1,7 @@
 ---
 title: "HomeLab - vSphere 7 update 2 QuickBoot with Nested ESXi"
 date: 2021-04-07T08:39:31-04:00
+author: 'Jonathan Colon Feliciano'
 draft: false
 tags:
   - "VMware"

@@ -1,6 +1,7 @@
 ---
 title: "VEEAM Scale-Out Backup Repository with Minio"
 date: 2021-05-15T08:50:31-04:00
+author: 'Jonathan Colon Feliciano'
 draft: false
 tags:
   - "NetApp"

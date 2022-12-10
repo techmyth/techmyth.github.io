@@ -1,6 +1,7 @@
 ---
 title: "HomeLab – Cómo habilitar VMware TPS para lograr una mayor consolidación de las máquinas virtuales"
 date: 2021-04-26T08:39:31-04:00
+author: 'Jonathan Colon Feliciano'
 draft: false
 tags:
   - "VMware"

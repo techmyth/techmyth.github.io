@@ -1,6 +1,7 @@
 ---
 title: "NetApp Aggregate Encryption (NAE) in ONTAP"
 date: 2021-05-20T08:39:31-04:00
+author: 'Jonathan Colon Feliciano'
 draft: false
 tags:
   - "NetApp"

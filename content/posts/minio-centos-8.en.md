@@ -1,6 +1,7 @@
 ---
 title: "Installing Minio on Centos Linux 8"
 date: 2021-05-14T08:39:31-04:00
+author: 'Jonathan Colon Feliciano'
 draft: false
 tags:
   - "Veeam"

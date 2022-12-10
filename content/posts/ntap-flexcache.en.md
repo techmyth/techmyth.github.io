@@ -1,6 +1,7 @@
 ---
 title: "Using Flexcache volumes to accelerate Windows shares data access"
 date: 2021-05-27T08:39:31-04:00
+author: 'Jonathan Colon Feliciano'
 draft: false
 tags:
   - "NetApp"

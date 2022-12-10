@@ -1,6 +1,7 @@
 ---
 title: "HomeLab - QuickBoot en vSphere 7 update 2 con ESXi Virtual"
 date: 2021-04-07T08:39:31-04:00
+author: 'Jonathan Colon Feliciano'
 draft: false
 tags:
   - "VMware"
