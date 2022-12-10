@@ -145,4 +145,6 @@ foreach ($lun in $luntable) {
 
 ![Text](/img/2021-03-06_19-30-1024x300.webp#center)
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
+
 ### Hasta Luego Amigos!
