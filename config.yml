@@ -21,44 +21,92 @@ languages:
     languageName: Spanish
     menu:
       main:
-      - identifier: blog
-        name: Blog
+      - identifier: home
+        name: Home
         params:
           class: highlight-menu-item
         url: /
         weight: 1
+      - identifier: posts
+        name: Publicaciones
+        params:
+          class: highlight-menu-item
+        url: /posts
+        weight: 2
+      - identifier: projects
+        name: Proyectos
+        params:
+          class: highlight-menu-item
+        url: /projects
+        weight: 3
       - identifier: about
-        name: Sobre Mí
+        name: Sobre mí
         params:
           class: highlight-menu-item
         url: /about
-        weight: 2
+        weight: 4
+      - identifier: github
+        name: github
+        pre: <i class='fa fa-heart'></i>
+        params:
+          class: highlight-menu-item
+        url: https://github.com/rebelinux
+        weight: 5
     title: TechMyth
     weight: 2
   en:
     languageName: English
     menu:
       main:
-      - identifier: blog
-        name: Blog
+      - identifier: home
+        name: Home
         params:
           class: highlight-menu-item
         url: /
         weight: 1
+      - identifier: posts
+        name: Posts
+        params:
+          class: highlight-menu-item
+        url: /posts
+        weight: 2
+      - identifier: projects
+        name: Projects
+        params:
+          class: highlight-menu-item
+        url: /projects
+        weight: 3
       - identifier: about
-        name: About
+        name: About me
+        pre: <i class='fa fa-heart'></i>
         params:
           class: highlight-menu-item
         url: /about
-        weight: 2
+        weight: 4
+      - identifier: github
+        name: github
+        pre: <i class='fa fa-heart'></i>
+        params:
+          class: highlight-menu-item
+        url: https://github.com/rebelinux
+        weight: 5
     title: TechMyth
     weight: 1
 
 params:
-  defaultTheme: dark
-  disableThemeToggle: true
+  env: production
+  description: "System Engineer in pyjama"
+  author: Jon Colon
+  defaultTheme: auto
+  disableThemeToggle: false
   ShowFullTextinRSS: true
-  comments: true
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  disableSpecial1stPost: false
   socialIcons:
   - name: "kofi"
     url: "https://ko-fi.com/F1F8DEV80"
@@ -66,9 +114,16 @@ params:
     url: "https://twitter.com/jcolonfzenpr"
   - name: "rss"
     url: "https://techmyth.github.io/index.xml"
+  label:
+    text: "TechMyth"
+    icon: /img/home_logo.webp
+    iconHeight: 35
+  editPost:
+    URL: "https://github.com/techmyth/techmyth.github.io/tree/main/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
 
 outputs:
   home:
       - HTML
       - RSS
-      - JSON

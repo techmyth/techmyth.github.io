@@ -92,7 +92,7 @@ PS /home/blabla/vCheck> ./vCheck.ps1 -config
 
 En esta área les presento el proceso de configuración de vCheck.
 
-#### Ejemplo del proceso de configuración
+{{< collapse summary="Configuration process example" >}}
 
 ```text
 PS /home/blabla/vCheck> ./vCheck.ps1 -config
@@ -315,6 +315,8 @@ Please specify server credential
 User: administrator@vsphere.local
 Password for user administrator@vsphere.local: ********
 ```
+
+{{< /collapse >}}
 
 Después de establecer la configuración inicial podemos comenzar a ejecutar el «script» principal de la herramienta utilizando el comando **vCheck.ps1 -Outputpath**. La opción **«Outputpath»** nos permite establecer dónde se guardará el reporte. Al ejecutar el comando nos pedirá las credenciales de acceso a vCenter. En mi caso utilicé la cuenta de administrador pero se recomienda utilizar una cuenta con privilegios de sólo lectura **«read-only»**.
 

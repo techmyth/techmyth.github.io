@@ -92,7 +92,7 @@ PS /home/blabla/vCheck> ./vCheck.ps1 -config
 
 In this area I demonstrate the vCheck configuration process.
 
-#### Configuration process example
+{{< collapse summary="Configuration process example" >}}
 
 ```text
 PS /home/blabla/vCheck> ./vCheck.ps1 -config
@@ -315,6 +315,8 @@ Please specify server credential
 User: administrator@vsphere.local
 Password for user administrator@vsphere.local: ********
 ```
+
+{{< /collapse >}}
 
 After setting up the initial configuration we can start running the main script of the tool using the **vCheck.ps1 -Outputpath** command. The **“Outputpath”** option allows us to set where the report will be saved. When you run the command it will ask you for the vCenter login credentials. In my case I used the default administrator account but it is recommended to use an account with read-only privileges.
 
