@@ -3,12 +3,55 @@ title: "Sobre mí"
 draft: false
 ---
 
-Soy extrovertido, dedicado y de mente abierta. Me comunico bien y me adapto a los cambios con facilidad. Creo que una persona debe trabajar para desarrollar sus habilidades profesionales y aprender cosas nuevas todo el tiempo. Tengo más de 20 años de experiencia en el sector. Tengo un profundo conocimiento en Sistemas de Respaldo Digital, Dispositivos de Almacenamiento Digital, Virtualización, Redes y experiencia en Cloud Computing con los principales proveedores. Actualmente, estoy buscando nuevas oportunidades profesionales que mi actual puesto de trabajo no puede ofrecer.
+Soy consultor informático y trabajo para Zen PR Solutions. Mi interés principal es la implementación y gestión de infraestructuras, desarrollo de software con enfoque en automatización, devops y redes. También estoy involucrado en la seguridad y los aspectos de contribución de código abierto de los proyectos y productos que co-mantengo.
 
-Cuando no estoy escribiendo o practicando, disfruto correr, investigar civilizaciones perdidas, analizar constelaciones y dar largos paseos en coche por la carretera costera del Caribe. Para obtener información actualizada, escucha mi podcast, TechnoMythSpeaks. Para contratarme como freelance, envíeme un correo electrónico a jcolonf@zenprsolutions.com.
+Mi nick en internet suele ser `rebelinux`, that's re-vel-linus.
 
-El propósito de este blog es documentar y compartir mis pensamientos y experiencias con la tecnología que encuentro a diario. Las opiniones expresadas en este sitio son mías y no reflejan las de mi empleador o sus clientes.
+Vivo y trabajo en [Puerto Rico](https://en.wikipedia.org/wiki/Puerto_Rico) 🇵🇷🌴🌊.
 
-[Resume](https://rxresu.me/jcolonf/jonathan-colon-)
+### Reconocimientos
 
-[IT Certifications](https://www.credly.com/users/jonathan-colon-feliciano/badges)
+* vExpert 2020-2021, [VMware](https://vexpert.vmware.com/directory/6271)
+* Vanguard 2022, VEEAM
+
+### Experiencia
+
+* 2019: consultor en tecnologías de la información, Zen PR Solutions
+* 2010: administrador de servidores/sistemas, Universidad Ana G. Mendez
+* 2008: especialista en apoyo informático, Universidad Ana G. Mendez
+* 2003: técnico informático, Universidad Inter Americana de Puerto Rico
+
+### Educación formal
+
+* 2020: Grado de maestría en ciencias de computadoras con especialización en redes y seguridad de sistemas, Universidad Inter Americana de Puerto Rico
+* 2004: Grado de bachillerato en instalación y reparación de sistemas computadorizados, Universidad Inter Americana de Puerto Rico
+
+### Certificaciones profesionales
+
+* Microsoft Certified Solution Expert
+* Microsoft Certified: Azure Administrator Associate
+* VMware Certified Advanced Professional: Data Center Virtualization Design
+* VMware Certified Professional: Desktop and Mobility
+* VMware Certified Professional: Network Virtualization
+* Veeam Certified Engineer v9
+* NetApp Certified Data Administrator, ONTAP
+* NetApp Certified Implementation Engineer - SAN Specialist, ONTAP
+* NetApp Certified Implementation Engineer - Data Protection Specialist
+* NetApp Certified Storage Installation Engineer, ONTAP
+* CompTIA Network+
+
+### Cursos tomados
+
+* Data ONTAP SAN Implementation (SANIMP)
+* FortiGate Security & Infrastructure 6.2
+* MAINTAINING IBM DS/DCS STORAGE SUBSYSTEMS
+* NetApp Portfolio: Exploring SAN Architectures and Configurations (SANARCH)
+* ONTAP 9.3 Cluster Administration (ONTAP9ADM)
+* ONTAP 9.3 Data Protection Administration (DATAPROT9)
+* VMware vSphere: Install, Configure, Manage
+* VMware vSphere: Optimize and Scale Version 6.7
+* Veeam Certified Engineer (VMCE) V9.5
+
+### Experiencia como voluntario
+
+* 2020: promotor y colaborador del proyecto, [AsBuiltReport](https://www.asbuiltreport.com/about/acknowledgements/)

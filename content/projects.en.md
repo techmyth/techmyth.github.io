@@ -5,7 +5,7 @@ draft: false
 
 A few of my “popular” works. The unpopular ones can be found on my [github](https://github.com/rebelinux).
 
-{{< inTextImg url="/img/verified_recoverability.webp" height=30 >}} 
+{{< inTextImg url="/img/verified_recoverability.webp" height=30 >}}
 **[Veeam Diagrammer](https://github.com/rebelinux/Veeam.Diagrammer)** is a powershell module to automatically generate Veeam Backup & Replication resource topology diagrams by just typing a PowerShell cmdlet and passing the name of the Veeam Backup Server.
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}

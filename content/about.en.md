@@ -1,14 +1,59 @@
 ---
-title: "About"
+title: "About me"
 draft: false
 ---
 
-I am outgoing, dedicated, and open-minded. I get across to people and adjust to changes with ease. I believe that a person should work on developing their professional skills and learning new things all the time. I have more than 20 years of industry experience. i have deep understanding on Backup, Storage, Virtualization, Networks and Cloud Computing experience with the cloud providers leaders. Currently, I am looking for new career opportunities my current job position cannot provide.
+I am a it consultant who works for Zen PR Solutions. My primary interest is in infrastructure
+implementation and management, software development with focus on automation, devops and networking.
+I am also involved in security and open source contribition aspects of the projects and products I co-maintain.
 
-When I'm not writing, I enjoy running, researching lost civilizations, analyzing constellations, and taking long drives along the Caribbean coastal highway. For up-to-date information, listen to my podcast, TechnoMythSpeaks. To hire me as a freelancer, email me at jcolonf@zenprsolutions.com.
+My internet nick is typically `rebelinux`, that's re-vel-linus.
 
-The purpose of this blog is to document and share my thoughts and experiences with the technology I encounter on a daily basis. The views expressed on this site are my own and do not reflect those of my employer or their customers.
+I live and work in [Puerto Rico](https://en.wikipedia.org/wiki/Puerto_Rico) 🇵🇷🌴🌊.
 
-[Resume](https://rxresu.me/jcolonf/jonathan-colon-)
+### Awards
 
-[IT Certifications](https://www.credly.com/users/jonathan-colon-feliciano/badges)
+* vExpert 2020-2021, [VMware](https://vexpert.vmware.com/directory/6271)
+* Vanguard 2022, VEEAM
+
+### Experience
+
+* 2019: information technology consultant, Zen PR Solutions
+* 2010: server/systems administrator, Ana G. Mendez University
+* 2008: information technology support specialist, Ana G. Mendez University
+* 2003: information technology technician, Inter American University of Puerto Rico
+
+### Formal education
+
+* 2020: Master Degree Computer science with Specialization in Network and Security Systems, Computer Science, Inter American University of Puerto Rico
+* 2004: Bachelor’s Degree Computer system Installation and Repair, Computer Science, Inter American University of Puerto Rico
+
+### Professional certificates
+
+* Microsoft Certified Solution Expert
+* Microsoft Certified: Azure Administrator Associate
+* VMware Certified Advanced Professional: Data Center Virtualization Design
+* VMware Certified Professional: Desktop and Mobility
+* VMware Certified Professional: Network Virtualization
+* Veeam Certified Engineer v9
+* NetApp Certified Data Administrator, ONTAP
+* NetApp Certified Implementation Engineer - SAN Specialist, ONTAP
+* NetApp Certified Implementation Engineer - Data Protection Specialist
+* NetApp Certified Storage Installation Engineer, ONTAP
+* CompTIA Network+
+
+### Trainings taken
+
+* Data ONTAP SAN Implementation (SANIMP)
+* FortiGate Security & Infrastructure 6.2
+* MAINTAINING IBM DS/DCS STORAGE SUBSYSTEMS
+* NetApp Portfolio: Exploring SAN Architectures and Configurations (SANARCH)
+* ONTAP 9.3 Cluster Administration (ONTAP9ADM)
+* ONTAP 9.3 Data Protection Administration (DATAPROT9)
+* VMware vSphere: Install, Configure, Manage
+* VMware vSphere: Optimize and Scale Version 6.7
+* Veeam Certified Engineer (VMCE) V9.5
+
+### Volunteer experience
+
+* 2020: project advocate & contributor, [AsBuiltReport](https://www.asbuiltreport.com/about/acknowledgements/)
