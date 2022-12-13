@@ -5,7 +5,7 @@ draft: false
 
 I am a it consultant who works for Zen PR Solutions. My primary interest is in infrastructure
 implementation and management, software development with focus on automation, devops and networking.
-I am also involved in security and open source contribition aspects of the projects and products I co-maintain.
+I am also involved in security and open source contribution aspects of the projects and products I co-maintain.
 
 My internet nick is typically `rebelinux`, that's re-vel-linus.
 
@@ -14,7 +14,7 @@ I live and work in [Puerto Rico](https://en.wikipedia.org/wiki/Puerto_Rico) 🇵
 ### Awards
 
 * vExpert 2020-2021, [VMware](https://vexpert.vmware.com/directory/6271)
-* Vanguard 2022, VEEAM
+* Vanguard 2022, [VEEAM](https://www.veeam.com/vanguard.html)
 
 ### Experience
 
