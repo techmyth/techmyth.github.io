@@ -25,8 +25,8 @@ I live and work in [Puerto Rico](https://en.wikipedia.org/wiki/Puerto_Rico) 🇵
 
 ### Formal education
 
-* 2020: Master Degree Computer science with Specialization in Network and Security Systems, Computer Science, Inter American University of Puerto Rico
-* 2004: Bachelor’s Degree Computer system Installation and Repair, Computer Science, Inter American University of Puerto Rico
+* 2020: Master Degree in Computer science with Specialization in Network and Security Systems, Inter American University of Puerto Rico
+* 2004: Bachelor’s Degree in Computer System Installation and Repair, Inter American University of Puerto Rico
 
 ### Professional certifications
 
