@@ -4,6 +4,9 @@ copyright: "2022 Jonathan Colon All rights reserved"
 title: TechMyth
 theme: "PaperMod"
 
+enableRobotsTXT: true
+
+
 author:
   name: Jonathan Colon
 
