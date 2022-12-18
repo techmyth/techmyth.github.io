@@ -42,7 +42,7 @@ For ESXi 7.0 or newer versions, you can check the **hardware** compatibility her
 - Quick Boot on Fujitsu
 - Quick Boot on Lenovo
 
-In this lab I will test QuickBoot using Nested Virtualization. It is important to clarify that this is a test/dev scenario. To use this technology in production environments it is needed to activate the QuickBoot option from **VMware Update Manager** or the renamed **Lifecycle Manager**. If you are interested I leave a video here 
+In this lab I will test QuickBoot using Nested Virtualization. It is important to clarify that this is a test/dev scenario. To use this technology in production environments it is needed to activate the QuickBoot option from **VMware Update Manager** or the renamed **Lifecycle Manager**. If you are interested I leave a video here.
 
 [Updates Installation with vSphere ESXi QuickBoot](https://youtu.be/FTwglwgDWAE)
 
@@ -107,6 +107,5 @@ VMware vSphere Normal Boot:
 
 VMware vSphere QuickBoot:
 {{< youtube RGEA2pUSaus >}}
-
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
