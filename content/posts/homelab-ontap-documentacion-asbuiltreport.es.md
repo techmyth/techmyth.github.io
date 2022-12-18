@@ -1,5 +1,5 @@
 ---
-title: 'HomeLab: Automated NetApp Ontap Documentation with AsBuiltReport'
+title: 'HomeLab: Documentación automatizada utilizando AsBuiltReport'
 date: '2021-09-27T15:05:57-04:00'
 tags:
     - NetApp
