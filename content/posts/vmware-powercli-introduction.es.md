@@ -1,5 +1,5 @@
 ---
-title: 'PowerShell &#8211; Introducción básica de VMware PowerCLI'
+title: 'PowerShell: Introducción básica de VMware PowerCLI'
 date: '2021-11-04T21:54:15-04:00'
 tags:
     - VMware
