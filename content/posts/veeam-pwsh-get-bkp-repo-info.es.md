@@ -1,5 +1,5 @@
 ---
-title: 'Veeam – Obtener información de los repositorios utilizando Powershell'
+title: 'Veeam: Obtener información de los repositorios utilizando Powershell'
 date: '2021-08-15T19:41:00-04:00'
 tags:
     - VEEAM

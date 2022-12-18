@@ -1,5 +1,5 @@
 ---
-title: 'Veeam – Módulo de Powershell Introducción'
+title: 'Veeam: Módulo de Powershell Introducción'
 date: '2021-06-19T14:11:00-04:00'
 author: 'Jonathan Colon Feliciano'
 tags:

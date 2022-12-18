@@ -1,5 +1,5 @@
 ---
-title: 'Veeam – Powershell get Backup Repository Information'
+title: 'Veeam: Powershell get Backup Repository Information'
 date: '2021-08-15T19:39:00-04:00'
 tags:
     - VEEAM

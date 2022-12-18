@@ -1,5 +1,5 @@
 ---
-title: 'Veeam – Powershell get Backup Proxies Information'
+title: 'Veeam: Powershell get Backup Proxies Information'
 date: '2021-07-10T13:35:00-04:00'
 tags:
   - VEEAM
