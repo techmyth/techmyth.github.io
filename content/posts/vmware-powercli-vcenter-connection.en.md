@@ -1,5 +1,5 @@
 ---
-title: 'PowerShell – VMware PowerCLI initial vCenter Connection'
+title: 'PowerShell: VMware PowerCLI initial vCenter Connection'
 date: '2021-11-10T06:20:00-04:00'
 tags:
     - VMware

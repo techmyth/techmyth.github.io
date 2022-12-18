@@ -1,5 +1,5 @@
 ---
-title: 'PowerShell – VMware PowerCLI get Datastore Information'
+title: 'PowerShell: VMware PowerCLI get Datastore Information'
 date: '2021-12-18T15:54:00-04:00'
 tags:
     - VMware
