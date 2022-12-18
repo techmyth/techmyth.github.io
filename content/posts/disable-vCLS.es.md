@@ -1,5 +1,5 @@
 ---
-title: "HomeLab - Cómo desabilitar vSphere Cluster Services (vCLS)"
+title: "HomeLab: Cómo desabilitar vSphere Cluster Services (vCLS)"
 author: 'Jonathan Colon Feliciano'
 date: 2020-12-18T08:39:31-04:00
 draft: false

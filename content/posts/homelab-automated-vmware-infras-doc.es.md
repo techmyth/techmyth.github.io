@@ -1,5 +1,5 @@
 ---
-title: 'HomeLab – Documentación Automatizada de Infraestructuras basadas en VMware'
+title: 'HomeLab: Documentación Automatizada de Infraestructuras basadas en VMware'
 date: '2021-06-06T16:17:25-04:00'
 author: 'Jonathan Colon Feliciano'
 tags:

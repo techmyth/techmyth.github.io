@@ -1,5 +1,5 @@
 ---
-title: 'HomeLab – Diagrama de la Infraestructura Virtual con vDiagram'
+title: 'HomeLab: Diagrama de la Infraestructura Virtual con vDiagram'
 date: '2021-08-27T07:11:00-04:00'
 tags:
     - VMware
