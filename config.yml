@@ -34,13 +34,6 @@ languages:
           class: highlight-menu-item
         url: /
         weight: 1
-      # - identifier: posts
-      #   name: Publicaciones
-      #   pre: <svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" fill="currentColor" class="bi bi-clipboard-pulse" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Zm6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128L9.979 5.356Z"/></svg>
-      #   params:
-      #     class: highlight-menu-item
-      #   url: /posts
-      #   weight: 2
       - identifier: projects
         name: Proyectos
         pre: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M23 12l-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414L23 12zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414L3.828 12z"></path></svg>
@@ -55,12 +48,13 @@ languages:
           class: highlight-menu-item
         url: /about
         weight: 4
-      # - identifier: search
-      #   name: Busqueda
-      #   params:
-      #     class: highlight-menu-item
-      #   url: search
-      #   weight: 5
+      - identifier: search
+        name:
+        pre: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+        params:
+          class: highlight-menu-item
+        url: /search
+        weight: 5
     title: TechMyth
     weight: 2
   en:
@@ -77,13 +71,6 @@ languages:
           class: highlight-menu-item
         url: /
         weight: 1
-      # - identifier: posts
-      #   name: Posts
-      #   pre: <svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" fill="currentColor" class="bi bi-clipboard-pulse" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Zm6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128L9.979 5.356Z"/></svg>
-      #   params:
-      #     class: highlight-menu-item
-      #   url: /posts
-      #   weight: 2
       - identifier: projects
         name: Projects
         pre: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M23 12l-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414L23 12zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414L3.828 12z"></path></svg>
@@ -98,12 +85,13 @@ languages:
           class: highlight-menu-item
         url: /about
         weight: 4
-      # - identifier: search
-      #   name: Search
-      #   params:
-      #     class: highlight-menu-item
-      #   url: /search
-      #   weight: 5
+      - identifier: search
+        name:
+        pre: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+        params:
+          class: highlight-menu-item
+        url: /search
+        weight: 5
     title: TechMyth
     weight: 1
 
