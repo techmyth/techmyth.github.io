@@ -24,7 +24,7 @@ languages:
     languageName: Spanish
     homeInfoParams:
       Title: "Bienvenido al blog de Jonathan Colón 👋"
-      Content: "Investigador en Ciberseguridad, Desarrollador y experto en Infraestructura con intereses en Automatización, DevOps, Redes, Sistemas basados en Multi-OS, Python, Golang, Powershell y apasionado por la contribución Open Source; amante de la Línea de Comandos, FOSS."
+      Content: "Investigador en Ciberseguridad, Desarrollador y experto en Infraestructura con intereses en Automatización, DevOps, Redes, Sistemas basados en Multi-OS, Python, Golang, Powershell y apasionado por la contribución Open Source; amante de la Línea de Comandos, FOSS. Mojo: Un mal dia en la playa es mejor que cualquier buen dia en el trabajo!"
     menu:
       main:
       - identifier: home
@@ -61,7 +61,7 @@ languages:
     languageName: English
     homeInfoParams:
       Title: "Welcome to Jonathan Colón's blog 👋"
-      Content: "Cyber-Security Researcher, Developer and Infrastructure expert having interests in Automation, DevOps, Networking, Multi-OS based Systems, Python, Golang, Powershell and passionate for Open Source contribution; loves Command Line, FOSS."
+      Content: "Cyber-Security Researcher, Developer and Infrastructure expert having interests in Automation, DevOps, Networking, Multi-OS based Systems, Python, Golang, Powershell and passionate for Open Source contribution; loves Command Line, FOSS. Mojo: A bad day at the beach is better than any good day at work!"
     menu:
       main:
       - identifier: home
@@ -97,7 +97,7 @@ languages:
 
 params:
   env: production
-  description: "System Engineer in pyjama"
+  description: "IT enthusiast in pyjama"
   author: Jon Colon
   defaultTheme: auto
   disableThemeToggle: false
