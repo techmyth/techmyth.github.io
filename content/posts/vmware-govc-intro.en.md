@@ -3,6 +3,7 @@ title: 'Govc: vSphere CLI built on top of govmomi, an introduction'
 date: '2022-08-12T10:50:00-04:00'
 tags:
     - vSphere
+    - VMware
     - Golang
 ---
 

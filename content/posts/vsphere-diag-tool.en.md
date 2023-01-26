@@ -3,6 +3,7 @@ title: 'HowTo: vSphere Diagnostic Tool'
 date: '2022-06-02T10:50:00-04:00'
 tags:
     - vSphere
+    - VMware
 ---
 
 
