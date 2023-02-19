@@ -14,7 +14,7 @@ I live and work in [Puerto Rico](https://en.wikipedia.org/wiki/Puerto_Rico) 🇵
 ### Awards
 
 * vExpert 2020-2023, [VMware](https://vexpert.vmware.com/directory/6271)
-* Vanguard 2022, [VEEAM](https://www.veeam.com/vanguard.html)
+* Vanguard 2022-2023, [VEEAM](https://www.veeam.com/vanguard.html)
 
 ### Experience
 
