@@ -15,9 +15,7 @@ DefaultContentLanguage: "en"
 googleAnalytics: G-H243NQ4V8N
 
 sitemap:
-  changefreq: weeklypr
   filename: sitemap.xml
-  priority: 0.5
 
 languages:
   es:
