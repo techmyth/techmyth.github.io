@@ -125,7 +125,7 @@ Ahora es necesario descargar el archivo ejecutable de la aplicación que podemos
 
 ![Text](/img/2023/auditing-ad-ntds-db/ntdsaudit_download.webp#center)
 
-En mi caso copie el archivo **NtdsAudit.exe** en la misma carpeta donde esta los archivos de la base de datos ntds.dit (ntds_export):
+En mi caso copie el archivo **NtdsAudit.exe** en la misma carpeta donde están los archivos de la base de datos ntds.dit (ntds_export):
 
 ```cmd
 c:\ntds_export>dir
