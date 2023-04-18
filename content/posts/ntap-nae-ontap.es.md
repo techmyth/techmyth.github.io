@@ -9,7 +9,7 @@ tags:
   - "Encryption"
 ---
 
-Previament en un [post]({{< ref "/posts/ntap-nve-external-key-manager.es.md" >}} "NetApp Volume Encryption Setup with External Key Manager") expliqué como configurar un volumen encriptado utilizando un administrador de llaves de encriptación (KMS) especificamente de la compañía [HyTrust](https://www.hytrust.com/products/keycontrol/). En este caso específico cada volumen es encriptado individualmente utilizado llaves independientes. Una desventaja de este método es que afecta la posibilidad de aumentar los niveles de eficiencia de reducción de datos como lo son; de-duplicación, compresión y compactación (cross-volume-dedupe).
+Previamente en un [post]({{< ref "/posts/ntap-nve-external-key-manager.es.md" >}} "NetApp Volume Encryption Setup with External Key Manager") expliqué como configurar un volumen encriptado utilizando un administrador de llaves de encriptación (KMS) específicamente de la compañía [HyTrust](https://www.hytrust.com/products/keycontrol/). En este caso específico cada volumen es encriptado individualmente utilizado llaves independientes. Una desventaja de este método es que afecta la posibilidad de aumentar los niveles de eficiencia de reducción de datos como lo son; de-duplicación, compresión y compactación (cross-volume-dedupe).
 
 ![Text](/img/NVE-vs-NAE.webp#center)
 
