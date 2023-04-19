@@ -1,5 +1,5 @@
 ---
-title: "VMware: Cómo crear imágenes de Linux para VDI en Horizon 8 2303"
+title: "VMware: How to Create Linux Images for VDI for Horizon 8 2303"
 author: 'Jonathan Colon Feliciano'
 date: 2023-04-11T08:39:31-04:00
 draft: false
@@ -14,15 +14,12 @@ tags:
 
 <!---[Parte 1]({{< ref "/posts/horizon-ubuntu-vdi-parte1.es.md" >}} "Cómo utilizar Ubuntu Linux 22.04 como VDI en Horizon 8 2303")-->
 
-En esta ocasión estaré hablando sobre como utilizar **HashiCorp** `packer` para crear una imagen VM master que podemos utilizar como platilla a ser utilizada para publicar un Pool en VMware Horizon. Aunque existen muchos HowTo de como crear automáticamente una plantilla con packer todos los que he visto están orientados a Windows 10/11 y no asi para Linux. Es por esta razón, que me di a la tarea de crear este artículo.
-
+This time I will be talking about how to use **HashiCorp** `packer` to create a VM master image that we can use as a template to be used to publish a Pool in VMware Horizon. Although there are many HowTo's on how to automatically create a template with packer, all the ones I have seen are oriented to Windows 10/11 and not for Linux. It is for this reason, that I gave myself the task of creating this post.
 Es importante mencionar que VMware ofrece varios ejemplos de como crear una plantilla para los distinto sistemas operativos que se pueden automatizar aquí les dejo el enlace:
 
 <https://github.com/hashicorp/packer-plugin-vsphere>
 
-Para este artículo utilizaré Ubuntu Linux 22.04 como ejemplo pero también es posible automatizar cualquier version de Linux soportada por VMware Horizon para escritorios en Linux.
-
-Sistemas operativos Linux compatibles con Horizon Agent:
+This article uses Ubuntu Linux 22.04 as an example but it is also possible to automate any Linux version supported by VMware Horizon for Linux desktops.
 
 | Linux Distribution    |      Architecture      |
 |----------|:-------------:|
@@ -34,15 +31,15 @@ Sistemas operativos Linux compatibles con Horizon Agent:
 | SUSE Linux Enterprise Desktop (SLED) 15 SP3 and 15 SP4 |    x64   |
 | SUSE Linux Enterprise Server (SLES) 15 SP3 and 15 SP4 |    x64   |
 
-Para comenzar, he creado una plantilla de packer para Ubuntu 22.04 que voy a utilizar para este ejemplo. Pueden acceder este código desde Github en el siguiente enlace:
+To start, I have created a packer template for Ubuntu 22.04 that I am going to use for this demonstration. You can access this code from Github at the following link:
 
 <https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso>
 
-El primer paso es clonar el repositorio de Github localmente. En mi caso estoy utilizando Linux en mi computadora principal pero también puede utilizarse Windows 10/11 para este ejemplo.
+The first step would be to clone the Github repository locally. In my case I am using Linux on my main computer but Windows 10/11 can also be used for this example.
 
-Para esto utilizaremos el comando `git clone "https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso"`
+To do this we will use the command `git clone "https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso"`
 
-#### Paso 1: Clonar repositorio packer-ubuntu-vsphere-horizon-iso
+#### Step 1: Clone packer-ubuntu-vsphere-horizon-iso repository
 
 ```bash
 [rebelinux@PC ~]$ git clone "https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso"
@@ -59,9 +56,9 @@ build-2204.sh   http   setup      variables.auto.pkrvars.hcl.sample
 [rebelinux@PC ~]$
 ```
 
-Luego que tengamos el repositorio en nuestro directorio local es necesario ajustar las variable únicas de nuestro ambiente de VMware vSphere.
+After having the repository in our local directory it is necessary to set the variables unique to our VMware vSphere environment.
 
-#### Paso 2: Renombrar el archivo de variables
+#### Step 2: Rename the variables file
 
 ```bash
 [rebelinux@PC ~]$ cd "packer-ubuntu-vsphere-horizon-iso/"
@@ -69,9 +66,9 @@ Luego que tengamos el repositorio en nuestro directorio local es necesario ajust
 [rebelinux@PC ~]$ 
 ```
 
-#### Paso 3: Modificar las variables
+#### Step 3: Modify variables
 
-Esta sección del archivo define las variables del ambiente de vSphere:
+This section of the file defines the vSphere environment variables:
 
 ```bash
 # Name or IP of you vCenter Server
@@ -102,7 +99,7 @@ vsphere_datastore       = "SSD-VM-HIGH-CAPACITY-PERF-KN"
 vsphere_vm_name         = "hz-tpl-ubuntu"
 ```
 
-Esta porción del archivo define los parámetros básico de la VM como las credenciales y los script de modificación:
+This portion of the file defines basic VM parameters such as credentials and modification scripts:
 
 ```bash
 # final clean up script
@@ -130,7 +127,7 @@ iso_path = ["[HDD-VM-ISO-LOW-PERF] /ISO/Linux/ubuntu-22.04-live-server-amd64.iso
 
 Esta porción del archivo define los parámetros del Ambiente de dominio para adjuntar la VM a Active Directory:
 
-##### Nota: Para que funcione SSO es requisito añadir la VM a un directorio de dominio.
+##### Note: For SSO to work, it is required to add the VM to a domain directory
 
 ```bash
 # NTP Server
@@ -147,7 +144,7 @@ join_password = "**********"
 join_username = "Administrator"
 ```
 
-Para finalizar esta parte del archivo define el nombre del paquete de instalación del Agente de Horizon:
+To finish this part of the file define the name of the Horizon Agent installation package:
 
 ```bash
 # Horizon Agent install files
@@ -159,9 +156,9 @@ horizon_agent_file = "VMware-horizonagent-linux-x86_64-2303-8.9.0-21434177.tar.g
 // horizon_agent_path = "/ISO/VMWARE/Horizon/"
 ```
 
-#### Paso 4: Copiar el archivo del agente de Horizon (Default)
+#### Step 4: Copy Horizon agent file locally
 
-En este paso es necesario copiar el archivo de instalación del agente de Horizon a la carpeta `files`.
+In this step it is mandatory to copy the Horizon Agent installation file to the `files` folder.
 
 ```bash
 ├── build-2204.ps1
@@ -185,9 +182,9 @@ En este paso es necesario copiar el archivo de instalación del agente de Horizo
 └── variables.auto.pkrvars.hcl.sample
 ```
 
-#### Paso 5: Inicializar packer
+#### Step 5: Initialize packer
 
-Luego es necesario inicializar `packer init .` desde la consola de comandos y validar la configuración `packer validate .`
+Then it is required to initialize packer from the command line and validate the configuration.
 
 ```bash
 [rebelinux@rebelpc]$ packer init .
@@ -197,9 +194,9 @@ Installed plugin github.com/hashicorp/vsphere v1.1.2 in ".config/packer/plugins/
 [rebelinux@rebelpc]$ 
 ```
 
-#### Paso 6: Crear una plantilla de máquina virtual
+#### Step 6: Create virtual machine template
 
-Por último, para comenzar a generar la plantilla para la VM de Ubuntu es necesario ejecutar el comando `packer build .` En el caso de esta plantilla de `packer` se creo el archivo `build-2204.sh` para hacer el proceso mas simple de ejecutar.
+Finally, to start generating the template for the Ubuntu VM it is necessary to execute the `packer build .` command. In the case of this `packer` template the `build-2204.sh` file was created to make the process more simple to execute.
 
 ```bash
 [rebelinux@rebelpc]$ ./build-2204.sh 
@@ -323,31 +320,31 @@ Build 'vsphere-iso.ubuntu' finished after 22 minutes 14 seconds.
 [rebelinux@rebelpc]$
 ```
 
-#### Ejemplo: VM creada en vCenter
+#### Example: VM created in vCenter
 
 ![Text](/img/2023/horizon-ubuntu-vdi-2404/packer_vm_info.webp#center)
 
-#### Ejemplo: Proceso de Instalación de Ubuntu automatizado
+#### Example: Automated Ubuntu Installation Process
 
 ![Text](/img/2023/horizon-ubuntu-vdi-2404/packer_ubuntu.webp#center)
 
-#### Ejemplo: Imagen de la VM ya creada
+#### Example: VM image finalized
 
 ![Text](/img/2023/horizon-ubuntu-vdi-2404/packer_vm_status.webp#center)
 
-Ahora pasaremos a probar la imagen de la VM de Ubuntu Linux 22.04 utilizando un Pool de VMware Horizon ya creado para este propósito.
+Now let's move on to test the Ubuntu Linux 22.04 VM image using a VMware Horizon Pool already created for this purpose.
 
 ![Text](/img/2023/horizon-ubuntu-vdi-2404/horizon-packer-ubuntu-image.webp#center)
 
-#### Ejemplo: Pool con la VM ya creada
+#### Example: VMware Horizon Linux Pool
 
 ![Text](/img/2023/horizon-ubuntu-vdi-2404/horizon-vm-ic-status.webp#center)
 
-#### Video de VMware Horizon Client
+#### Video: Ubuntu Image Test
 
 {{< youtube fzCuAddi-BM >}}
 
-En la segunda parte de esta serie de artículos estaré explicando como modificar esta plantilla de `packer` y como editar los scripts que configuran a imagen.
+In the second part of this series of articles I will be explaining how to modify this `packer` template and how to edit the scripts that configure the image.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
 
