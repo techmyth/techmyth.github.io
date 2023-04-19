@@ -14,9 +14,9 @@ tags:
 
 <!---[Parte 1]({{< ref "/posts/horizon-ubuntu-vdi-parte1.es.md" >}} "Cómo utilizar Ubuntu Linux 22.04 como VDI en Horizon 8 2303")-->
 
-En esta ocasión estaré hablando sobre como utilizar **HashiCorp** `packer` para crear una imagen VM master que podemos utilizar como platilla a ser utilizada para publicar un Pool en VMware Horizon. Aunque existen muchos HowTo de como crear automáticamente una plantilla con packer todos los que he visto están orientados a Windows 10/11 y no asi para Linux. Es por esta razón, que me di a la tarea de crear este artículo.
+En esta ocasión estaré hablando sobre como utilizar **HashiCorp** `packer` para crear una imagen VM master que podemos utilizar como platilla a ser utilizada para publicar un Pool en VMware Horizon. Aunque existen muchos HowTo de como crear automáticamente una plantilla con `packer` todos los que he visto están orientados a Windows 10/11 y no asi para Linux. Es por esta razón, que me di a la tarea de crear este artículo.
 
-Es importante mencionar que VMware ofrece varios ejemplos de como crear una plantilla para los distinto sistemas operativos que se pueden automatizar aquí les dejo el enlace:
+Es importante mencionar que VMware ofrece varios ejemplos de como crear una plantilla para los distinto sistemas operativos que se pueden automatizar con `packer`. Les dejo aquí el enlace:
 
 <https://github.com/hashicorp/packer-plugin-vsphere>
 
@@ -34,7 +34,7 @@ Sistemas operativos Linux compatibles con Horizon Agent:
 | SUSE Linux Enterprise Desktop (SLED) 15 SP3 and 15 SP4 |    x64   |
 | SUSE Linux Enterprise Server (SLES) 15 SP3 and 15 SP4 |    x64   |
 
-Para comenzar, he creado una plantilla de packer para Ubuntu 22.04 que voy a utilizar para este ejemplo. Pueden acceder este código desde Github en el siguiente enlace:
+Para comenzar, he creado una plantilla de `packer` para Ubuntu 22.04 que voy a utilizar para este ejemplo. Pueden acceder este código desde Github en el siguiente enlace:
 
 <https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso>
 
@@ -130,7 +130,7 @@ iso_path = ["[HDD-VM-ISO-LOW-PERF] /ISO/Linux/ubuntu-22.04-live-server-amd64.iso
 
 Esta porción del archivo define los parámetros del Ambiente de dominio para adjuntar la VM a Active Directory:
 
-##### Nota: Para que funcione SSO es requisito añadir la VM a un directorio de dominio.
+##### Nota: Para que funcione SSO es requisito añadir la VM a un dominio de Active Directory
 
 ```bash
 # NTP Server
