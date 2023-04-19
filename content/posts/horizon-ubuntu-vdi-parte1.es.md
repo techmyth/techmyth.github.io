@@ -14,7 +14,7 @@ tags:
 
 <!---[Parte 1]({{< ref "/posts/horizon-ubuntu-vdi-parte1.es.md" >}} "Cómo utilizar Ubuntu Linux 22.04 como VDI en Horizon 8 2303")-->
 
-En esta ocasión estaré hablando sobre como utilizar **HashiCorp** `packer` para crear una imagen VM master que podemos utilizar como platilla a ser utilizada para publicar un Pool en VMware Horizon. Aunque existen muchos HowTo de como crear automáticamente una plantilla con `packer` todos los que he visto están orientados a Windows 10/11 y no asi para Linux. Es por esta razón, que me di a la tarea de crear este artículo.
+En esta ocasión estaré hablando sobre como utilizar **HashiCorp** `packer` para crear una imagen VM master que podemos utilizar como platilla. Una ventaja de este proceso es que esta imagen puede ser utilizada para publicar un Pool en VMware Horizon. Aunque existen varios `HowTo` de como crear automáticamente una plantilla con `packer` todos los artículos que he visto están orientados a Windows 10/11 y no asi para Linux. Es por esta razón, que me di a la tarea de crear este artículo.
 
 Es importante mencionar que VMware ofrece varios ejemplos de como crear una plantilla para los distinto sistemas operativos que se pueden automatizar con `packer`. Les dejo aquí el enlace:
 
@@ -40,7 +40,7 @@ Para comenzar, he creado una plantilla de `packer` para Ubuntu 22.04 que voy a u
 
 El primer paso es clonar el repositorio de Github localmente. En mi caso estoy utilizando Linux en mi computadora principal pero también puede utilizarse Windows 10/11 para este ejemplo.
 
-Para esto utilizaremos el comando `git clone "https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso"`
+Para clonar el repositorio utilizaremos el comando `git clone "https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso"`
 
 #### Paso 1: Clonar repositorio packer-ubuntu-vsphere-horizon-iso
 
@@ -53,13 +53,18 @@ remote: Compressing objects: 100% (67/67), done.
 remote: Total 93 (delta 51), reused 63 (delta 24), pack-reused 0
 Receiving objects: 100% (93/93), 287.93 KiB | 1009.00 KiB/s, done.
 Resolving deltas: 100% (51/51), done.
+```
+
+#### Ejemplo: Contenido de la plantilla de packer
+
+```bash
 [rebelinux@PC ~]$ ls "packer-ubuntu-vsphere-horizon-iso"
 build-2204.ps1  files  README.md  ubuntu.pkr.hcl
 build-2204.sh   http   setup      variables.auto.pkrvars.hcl.sample
 [rebelinux@PC ~]$
 ```
 
-Luego que tengamos el repositorio en nuestro directorio local es necesario ajustar las variable únicas de nuestro ambiente de VMware vSphere.
+Luego que tengamos el repositorio en nuestro directorio local es necesario modificar las variable pertinentes de nuestro ambiente de VMware vSphere.
 
 #### Paso 2: Renombrar el archivo de variables
 
@@ -102,7 +107,7 @@ vsphere_datastore       = "SSD-VM-HIGH-CAPACITY-PERF-KN"
 vsphere_vm_name         = "hz-tpl-ubuntu"
 ```
 
-Esta porción del archivo define los parámetros básico de la VM como las credenciales y los script de modificación:
+Esta porción del archivo define los parámetros básico de la VM como lo son las credenciales y los script que modifican la imagen:
 
 ```bash
 # final clean up script
@@ -128,7 +133,7 @@ build_password_encrypted = "$6$rounds=4096$Y0SjrsU5WHubYJvb$0BJhswGEAokE2OqlRFTg
 iso_path = ["[HDD-VM-ISO-LOW-PERF] /ISO/Linux/ubuntu-22.04-live-server-amd64.iso"]
 ```
 
-Esta porción del archivo define los parámetros del Ambiente de dominio para adjuntar la VM a Active Directory:
+Esta porción del archivo define los parámetros del ambiente de dominio para añadir la VM a Active Directory:
 
 ##### Nota: Para que funcione SSO es requisito añadir la VM a un dominio de Active Directory
 
@@ -147,7 +152,7 @@ join_password = "**********"
 join_username = "Administrator"
 ```
 
-Para finalizar esta parte del archivo define el nombre del paquete de instalación del Agente de Horizon:
+Para finalizar esta parte del archivo define el nombre del paquete de instalación del agente de VMware Horizon:
 
 ```bash
 # Horizon Agent install files
@@ -159,7 +164,7 @@ horizon_agent_file = "VMware-horizonagent-linux-x86_64-2303-8.9.0-21434177.tar.g
 // horizon_agent_path = "/ISO/VMWARE/Horizon/"
 ```
 
-#### Paso 4: Copiar el archivo del agente de Horizon (Default)
+#### Paso 4: Copiar el archivo del agente de Horizon
 
 En este paso es necesario copiar el archivo de instalación del agente de Horizon a la carpeta `files`.
 
@@ -187,7 +192,7 @@ En este paso es necesario copiar el archivo de instalación del agente de Horizo
 
 #### Paso 5: Inicializar packer
 
-Luego es necesario inicializar `packer init .` desde la consola de comandos y validar la configuración `packer validate .`
+Luego es necesario inicializar `packer init .` desde la consola de comandos y validar la configuración con el comando `packer validate .`
 
 ```bash
 [rebelinux@rebelpc]$ packer init .
@@ -347,7 +352,7 @@ Ahora pasaremos a probar la imagen de la VM de Ubuntu Linux 22.04 utilizando un 
 
 {{< youtube fzCuAddi-BM >}}
 
-En la segunda parte de esta serie de artículos estaré explicando como modificar esta plantilla de `packer` y como editar los scripts que configuran a imagen.
+En la segunda parte de esta serie de artículos estaré explicando como modificar la plantilla de `packer` y como editar los scripts que configuran la imagen.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
 

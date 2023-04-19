@@ -51,11 +51,16 @@ remote: Compressing objects: 100% (67/67), done.
 remote: Total 93 (delta 51), reused 63 (delta 24), pack-reused 0
 Receiving objects: 100% (93/93), 287.93 KiB | 1009.00 KiB/s, done.
 Resolving deltas: 100% (51/51), done.
+[rebelinux@PC ~]$
+```
+
+#### Example: Packer folder content
+
+```bash
 [rebelinux@PC ~]$ ls "packer-ubuntu-vsphere-horizon-iso"
 build-2204.ps1  files  README.md  ubuntu.pkr.hcl
 build-2204.sh   http   setup      variables.auto.pkrvars.hcl.sample
 [rebelinux@PC ~]$
-```
 
 After having the repository in our local directory it is necessary to set the variables unique to our VMware vSphere environment.
 
