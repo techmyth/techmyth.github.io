@@ -5,8 +5,17 @@ draft: false
 
 A few of my “popular” works. The unpopular ones can be found on my [github](https://github.com/rebelinux).
 
+{{< inTextImg url="/img/packer.webp" height=30 >}}
+**[Packer Ubuntu vSphere Horizon](https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso)** is a repo to builds automatically Ubuntu VM templates (Ubuntu 22.04) for VMware vSphere and Horizon environment using Hashicorp's Packer.
+
+{{< inTextImg url="/img/packer.webp" height=30 >}}
+**[Packer Rhel vSphere Horizon](https://github.com/rebelinux/packer-rhel-vsphere-horizon-iso)** is a repo to builds automatically Rhel VM templates (Rhel 9.1) for VMware vSphere and Horizon environment using Hashicorp's Packer.
+
 {{< inTextImg url="/img/verified_recoverability.webp" height=30 >}}
 **[Veeam Diagrammer](https://github.com/rebelinux/Veeam.Diagrammer)** is a powershell module to automatically generate Veeam Backup & Replication resource topology diagrams by just typing a PowerShell cmdlet and passing the name of the Veeam Backup Server.
+
+{{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
+**[AsBuiltReport.Veeam.VB365](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VB365)** is a powerShell module used to generate an as built report on the configuration of Veeam Backup for Microsoft 365 Infrastructure. Veeam VB365 As Built Report works in conjunction with [AsBuiltReport.Core](https://github.com/AsBuiltReport/AsBuiltReport.Core).
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.Veeam.VBR](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR)** is a powerShell module used to generate an as built report on the configuration of VEEAM Backup & Replication Infrastructure. Veeam VBR As Built Report works in conjunction with [AsBuiltReport.Core](https://github.com/AsBuiltReport/AsBuiltReport.Core).
