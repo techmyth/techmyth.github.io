@@ -1,5 +1,5 @@
 ---
-title: "VMware: How to create Linux VDI Images for for Horizon 8 2303"
+title: "VMware: How to create a Linux VDI Images for Horizon 8 2303"
 author: 'Jonathan Colon Feliciano'
 date: 2023-04-11T08:39:31-04:00
 draft: false
