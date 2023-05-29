@@ -15,6 +15,9 @@ Algunas de mis obras "populares". Las no populares se pueden encontrar en mi [gi
 **[Veeam Diagrammer](https://github.com/rebelinux/Veeam.Diagrammer)** es un módulo de powershell para generar automáticamente diagramas de topología de recursos de Veeam Backup & Replication con sólo escribir un cmdlet de PowerShell y pasar el nombre del Veeam Backup Server.
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
+**[AsBuiltReport.Microsoft.DHCP](https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.DHCP)** es un módulo de PowerShell que se utiliza para generar un informe sobre la configuración de la infraestructura de Microsoft DHCP.
+
+{{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.Veeam.VB365](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VB365)** es un módulo de powerShell utilizado para generar un informe as-built sobre la configuración de Veeam Backup para Microsoft 365. Veeam VB365 funciona conjuntamente con [AsBuiltReport.Core](https://github.com/AsBuiltReport/AsBuiltReport.Core).
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
