@@ -7,7 +7,7 @@ Soy consultor informático y trabajo para Zen PR Solutions. Mi interés principa
 
 Mi nick en internet suele ser `rebelinux`, that's re-vel-linus.
 
-Vivo y trabajo en [Puerto Rico](https://en.wikipedia.org/wiki/Puerto_Rico) 🇵🇷🌴🌞🌊.
+Vivo y trabajo en [Puerto Rico](https://www.discoverpuertorico.com/es) 🇵🇷🌴🌞🌊.
 
 ### Reconocimientos
 
