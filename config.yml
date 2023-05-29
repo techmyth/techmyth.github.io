@@ -110,6 +110,8 @@ params:
   socialIcons:
   - name: "email"
     url: "mailto:jcolonf@zenprsolutions.com"
+  - name: "pgpkey"
+    url: "https://keys.openpgp.org/search?q=jcolonf%40zenprsolutions.com"
   - name: "kofi"
     url: "https://ko-fi.com/F1F8DEV80"
   - name: "twitter"
