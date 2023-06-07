@@ -23,9 +23,8 @@ Ahora bien, para comenzar necesitamos cumplir con los siguientes requisitos:
 
 - Plataforma de Windows (Los módulos de Veeam solo corren en Windows)
 - PowerShell v5.1+
-- El módulo de AsBuiltReport.Core &gt;= 1.1.0
-- El módulo de Veeam.Backup.PowerShell &gt;= 1.0
-- El módulo de SQLServer &gt;+ 21.1
+- El módulo de AsBuiltReport.Core >= 1.1.0
+- El módulo de Veeam.Backup.PowerShell >= 1.0
 
 Este reporte utiliza la versión de PowerShell 5.+, para validar la versión podemos utilizar la variable **“$PSVersionTable**” desde la consola de PowerShell:
 
@@ -66,7 +65,7 @@ PS C:\Users\jocolon>
 
 Si el comando no produce algún resultado quiere decir que el módulos no están instalados. Ahora bien para instalar los módulos de **Veeam.Backup.PowerShell** es importante mencionar que estos están disponible en el servidor de Backup de Veeam o en cualquier dispositivo donde la consola de manejo esté instalada. Referencia:
 
-> The remote machine from which you run Veeam PowerShell commands must have the Veeam Backup &amp; Replication Console installed. After you install the Veeam Backup &amp; Replication Console, Veeam PowerShell module will be installed by default
+> The remote machine from which you run Veeam PowerShell commands must have the Veeam Backup & Replication Console installed. After you install the Veeam Backup & Replication Console, Veeam PowerShell module will be installed by default
 >
 > [Veeam PowerShell Reference ](https://helpcenter.veeam.com/docs/backup/powershell/)
 
@@ -75,128 +74,46 @@ Para instalar el reporte ****AsBuiltReport.Veeam.VBR****  desde **PowerShell Gal
 ```text
 PS C:\Users\jocolon> Install-Module -Name AsBuiltReport.Veeam.VBR  
                                                                                                                         
-Installing package 'AsBuiltReport.Veeam.VBR' [Installing dependent package 'SqlServer']  
-  Installing package 'SqlServer' [Downloaded 16.73 MB out of 23.76 MB.]
+Installing package 'AsBuiltReport.Veeam.VBR' 
+[Downloaded 16.73 MB out of 23.76 MB.]
 
 PS C:\Users\jocolon> 
 ```
 
-Para confirmar si se han instalado todas las dependencias puede utilizar el cmdlet **“Get-Module”**.
+Para confirmar si se han instalado todas las dependencias puede utilizar el cmdlet **“Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','AsBuiltReport.Veeam.VBR','AsBuiltReport.Core')”**.
 
 ```text
-PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','SQLServer','AsBuiltReport.Veeam.VBR','AsBuiltReport.Core')     
-                                                                                                                        
+PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','AsBuiltReport.Veeam.VBR','AsBuiltReport.Core')
+
 
     Directory: C:\Users\jocolon\Documents\WindowsPowerShell\Modules
-
-ModuleType   Version    Name
-----------   -------    ----
-    Script   1.1.0      AsBuiltReport.Core
-    Script   0.3.0      AsBuiltReport.Veeam.VBR
-    Script   21.1.18256 SqlServer
-    Manifest 1.0        Veeam.Backup.PowerShell  
-
-PS C:\Users\jocolon> 
-```
-
-Si por alguna razón no puedes instalar el informe a través de la **“PowerShell Gallery”** te dejo aquí el método de instalación manual.
-
-#### **Instalación manual desde Github**
-
-Una vez instalamos los prerrequisito podemos continuar con la instalación del módulo principal **“**AsBuiltReport.**Veeam.VBR**“. Ya que este reporte todavía no ha sido liberado públicamente en **“PowerShell Gallery”**  realizaré manualmente la instalación. El primer paso es descargar el código desde el portal de Github [aquí](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/archive/refs/heads/dev.zip).
-
-![Text](/img/SRM_Download.webp#center)
-
-Podemos descargar los archivos utilizando la consola de Powershell:
-
-```text
-PS C:\Users\jocolon> $Source = "https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/archive/refs/heads/dev.zip"
-
-PS C:\Users\jocolon> $Destination = '.\AsBuiltReport.Veeam.VBR.zip'
-
-PS C:\Users\jocolon> Invoke-WebRequest -Uri $Source -OutFile $Destination
-
- Writing web request
-    Writing request stream... (Number of bytes written: 51202)
-
-PS C:\Users\jocolon> ls AsBuiltReport.Veeam.VBR.zip
-
-    Directory: C:\Users\jocolon
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
--a----             1/7/2022 1:58 PM         86404 AsBuiltReport.Veeam.VBR.zip
-
-PS C:\Users\jocolon>
-```
-
-Una vez descargamos el código necesitamos descomprimir el archivo, podemos utilizar el comando “**Expand-Archive**” en la consola de PowerShell.
-
-```text
-PS C:\Users\jocolon> Expand-Archive -Path ./AsBuiltReport.Veeam.VBR.zip -DestinationPath .
-
-PS C:\Users\jocolon> Rename-Item -Path .\AsBuiltReport.Veeam.VBR-dev -NewName .\AsBuiltReport.Veeam.VBR
-
-PS C:\Users\jocolon> ls AsBuiltReport.Veeam.VBR
-
-    Directory: C:\Users\jocolon\AsBuiltReport.Veeam.VBR-dev
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
-d-----          1/7/2022   2:08 PM                .github
-d-----          1/7/2022   2:08 PM                .vscode
-d-----          1/7/2022   2:08 PM                Src
--a----          1/5/2022  10:52 AM           1191 AsBuiltreport.Veeam.VBR.json
--a----          1/5/2022  10:52 AM           3996 AsBuiltReport.Veeam.VBR.psd1
--a----          1/5/2022  10:52 AM            542 AsBuiltReport.Veeam.VBR.psm1
--a----          1/5/2022  10:52 AM          56642 AsBuiltReport.Veeam.VBR.Style.ps1
--a----          1/5/2022  10:52 AM           1871 CHANGELOG.md
--a----          1/5/2022  10:52 AM           1070 LICENSE
--a----          1/5/2022  10:52 AM          11796 README.md
-
-PS C:\Users\jocolon> 
-```
-
-Luego es necesario copiar la carpeta descomprimida **“AsBuiltReport.Veeam.VBR”** a una ruta establecida en **$env:PSModulePath**. Para lograr eso necesitamos identificar la carpeta donde copiaremos el contenido
-
-```
-PS C:\Users\jocolon> $env:PSModulePath
-
-C:\Users\jocolon\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files\Veeam\Backup and Replication\Console\;C:\Program Files\Veeam\Backup and Replication\Explorers\Exchange\;C:\Program Files\Veeam\Backup and Replication\Explorers\SharePoint\;C:\Program Files\Veeam\Backup and Replication\Explorers\SQL\;C:\Program Files\Veeam\Backup and Replication\Explorers\ActiveDirectory\;C:\Program Files\Veeam\Backup and Replicai 
-on\Explorers\Oracle\;C:\Program Files\Veeam\Backup and Replication\Explorers\Teams\;c:\Users\jocolon\.vscode\extensions\ms-vscode.powershell-2021.12.0\modules
-
-PS C:\Users\jocolon>
-```
-
- En mi caso la carpeta que utilizaré para copiar los archivos es **“C:\\Users\\jocolon\\Documents\\WindowsPowerShell\\Modules”**.
-
-```text
-PS C:\Users\jocolon> Copy-Item -Path .\AsBuiltReport.Veeam.VBR\ -Destination "C:\Users\jocolon\Documents\WindowsPowerShell\Modules\AsBuiltReport.Veeam.VBR" -PassThru -Recurse
-
-PS C:\Users\jocolon>
-```
-
-El último paso que debemos seguir es abrir una ventana de PowerShell y desbloquear los archivos descargados utilizando el comando **“Unblock-File”**.
-
-```text
-PS C:\Users\jocolon> $path = (Get-Module -Name AsBuiltReport.Veeam.VBR -ListAvailable).ModuleBase; Unblock-File -Path $path\*.*
-
-PS C:\Users\jocolon>
-
-
-PS C:\Users\jocolon> Get-Module -Name AsBuiltReport.Veeam.VBR -ListAvailable
-
-
-   Directory: C:\Users\jocolon\Documents\WindowsPowerShell\Modules
 
 
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
-Script     0.1.0      AsBuiltReport.Veeam.VBR             {Get-AbrVbrBackupServerCertificat....}
+Script     0.7.2      AsBuiltReport.Veeam.VBR             Invoke-AsBuiltReport.Veeam.VBR
 
 
-PS C:\Users\jocolon> Import-Module AsBuiltReport.Veeam.VBR -force
+    Directory: C:\Program Files\WindowsPowerShell\Modules
+
+
+ModuleType Version    Name                                ExportedCommands
+---------- -------    ----                                ----------------
+Script     1.3.0      AsBuiltReport.Core                  {New-AsBuiltReport, New-AsBuiltConfig, New-AsBuiltReportConfig}
+
+
+    Directory: C:\Program Files\Veeam\Backup and Replication\Console
+
+
+ModuleType Version    Name                                ExportedCommands
+---------- -------    ----                                ----------------
+Manifest   1.0        Veeam.Backup.PowerShell             {Add-VBRBackupCopyJob, Get-VBRBackupCopyJob, Set-VBRBackupCopyJob, Copy-VBRBackupCopyJob...}
+
+
+PS C:\Users\jocolon> 
 ```
+
+**Si por alguna razón no puedes instalar el informe a través de la PowerShellGallery te dejo aquí el método de instalación manual.**
 
 Un requisito opcional es generar los archivos de configuración que te permite establecer los parámetros de la organización que son utilizados para generar el reporte. Este proceso genera unos archivos tipo JSON que son utilizados como plantillas **“templates”** de forma que no tengas que llenar la información repetitiva cuando generes los reportes.
 
