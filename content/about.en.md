@@ -42,7 +42,7 @@ I live and work in [Puerto Rico](https://www.discoverpuertorico.com/) 🇵🇷�
 * NetApp Certified Storage Installation Engineer, ONTAP
 * CompTIA Network+
 
-### Trainings taken
+### Training undertaken
 
 * Data ONTAP SAN Implementation (SANIMP)
 * FortiGate Security & Infrastructure 6.2
