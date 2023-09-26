@@ -12,7 +12,7 @@ Algunas de mis obras "populares". Las no populares se pueden encontrar en mi [gi
 **[Packer Rhel vSphere Horizon](https://github.com/rebelinux/packer-rhel-vsphere-horizon-iso)** es un repositorio para construir automáticamente plantillas Rhel VM (Rhel 9.1) para entornos VMware vSphere y Horizon usando Hashicorp's Packer.
 
 {{< inTextImg url="/img/verified_recoverability.webp" height=30 >}}
-**[Veeam Diagrammer](https://github.com/rebelinux/Veeam.Diagrammer)** es un módulo de powershell para generar automáticamente diagramas de topología de recursos de Veeam Backup & Replication con sólo escribir un cmdlet de PowerShell y pasar el nombre del Veeam Backup Server.
+**[Veeam.Diagrammer](https://github.com/rebelinux/Veeam.Diagrammer)** es un módulo de powershell para generar automáticamente diagramas de topología de recursos de Veeam Backup & Replication con sólo escribir un cmdlet de PowerShell y pasar el nombre del Veeam Backup Server.
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.Microsoft.DHCP](https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.DHCP)** es un módulo de PowerShell que se utiliza para generar un informe sobre la configuración de la infraestructura de Microsoft DHCP.

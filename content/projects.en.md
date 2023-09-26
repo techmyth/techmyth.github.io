@@ -12,7 +12,7 @@ A few of my “popular” works. The unpopular ones can be found on my [github](
 **[Packer Rhel vSphere Horizon](https://github.com/rebelinux/packer-rhel-vsphere-horizon-iso)** is a repo to builds automatically Rhel VM templates (Rhel 9.1) for VMware vSphere and Horizon environment using Hashicorp's Packer.
 
 {{< inTextImg url="/img/verified_recoverability.webp" height=30 >}}
-**[Veeam Diagrammer](https://github.com/rebelinux/Veeam.Diagrammer)** is a powershell module to automatically generate Veeam Backup & Replication resource topology diagrams by just typing a PowerShell cmdlet and passing the name of the Veeam Backup Server.
+**[Veeam.Diagrammer](https://github.com/rebelinux/Veeam.Diagrammer)** is a powershell module to automatically generate Veeam Backup & Replication resource topology diagrams by just typing a PowerShell cmdlet and passing the name of the Veeam Backup Server.
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.Microsoft.DHCP](https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.DHCP)** is a powerShell module used to generate an as built report on the configuration of Microsoft DHCP Infrastructure.
