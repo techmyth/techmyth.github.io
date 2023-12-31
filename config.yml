@@ -128,7 +128,7 @@ params:
   - name: "reddit"
     url: "https://www.reddit.com/user/jcolonfzenpr"
   - name: "cv"
-    url: "https://rxresu.me/jcolonf/jonathan-colon-"
+    url: "https://resume-pi-two.vercel.app/"
   label:
     text: "TechMyth"
     icon: /img/home_logo.webp
