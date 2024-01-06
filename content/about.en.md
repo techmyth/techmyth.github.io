@@ -56,4 +56,4 @@ I live and work in [Puerto Rico](https://www.discoverpuertorico.com/) 🇵🇷�
 
 ### Volunteer experience
 
-* 2020: project advocate & contributor, [AsBuiltReport](https://www.asbuiltreport.com/about/acknowledgements/)
+* 2020: project advocate & lead contributor, [AsBuiltReport](https://www.asbuiltreport.com/about/acknowledgements/)
