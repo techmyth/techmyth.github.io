@@ -120,7 +120,7 @@ params:
   - name: "x"
     url: "https://twitter.com/jcolonfzenpr"
   - name: "rss"
-    url: "https://techmyth.info/index.xml"
+    url: "https://techmyth.blog/index.xml"
   - name: "linkedin"
     url: "https://www.linkedin.com/in/jcolonfzenpr/"
   - name: "github"
