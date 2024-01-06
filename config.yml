@@ -55,7 +55,7 @@ languages:
       weight: 2
       homeInfoParams:
         Title: "Bienvenidos al blog de Jonathan Colón 👋"
-        Content: "Investigador en Ciber-seguridad, Desarrollador y experto en Infraestructura con intereses en Automatización, DevOps, Redes, Sistemas basados en Multi-OS, Python, Golang, Powershell y apasionado por la contribución Open Source; amante de la Línea de Comandos, FOSS. Mojo: Un mal dia en la playa es mejor que cualquier buen dia en el trabajo!"
+        Content: "Investigador en Ciberseguridad, Desarrollador y experto en Infraestructura con intereses en Automatización, DevOps, Redes, Sistemas basados en Multi-OS, Python, Golang, Powershell y apasionado por la contribución Open Source; amante de la Línea de Comandos, FOSS. Mojo: Un mal dia en la playa es mejor que cualquier buen dia en el trabajo!"
 
   en:
     languageName: English
