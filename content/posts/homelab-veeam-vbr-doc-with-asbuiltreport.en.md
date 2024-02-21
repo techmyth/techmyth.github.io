@@ -48,6 +48,8 @@ SerializationVersion           1.1.0.1
 PS C:\Users\jocolon>
 ```
 
+### Installation from PowerShellGallery
+
 To validate whether the required Veeam modules are present, use the cmdlet **Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell') | Format-Table -AutoSize** as shown in the example below:
 
 ```powershell
@@ -106,9 +108,42 @@ PS C:\Users\jocolon> Install-Module -SkipPublisherCheck -Force -Name @('PScribo'
 
 ```
 
-An optional requirement is to build the configuration files that allow you to set the organization parameters that are used for report generation. This process generates JSON files that are used as templates **templates** so that you do not have to fill in repetitive information when generating the reports.
+### Installation without Internet access
 
-#### ****Configuration files**** (****AsBuiltReport** JSON**)
+If for any reason, the computer where you are going to run the report does not have Internet access to download and install the required powershell modules from PowershellGallery. Since Powershell 5.1+ it is possible to save the previously installed modules on a computer so that they can be installed on the computer where the report will finally be run.
+
+The **Save-Module** cmdlet allows you to save the required powershell modules to be installed on the machine that will finally run the report.
+
+```powershell
+PS C:\Users\jocolon> Save-Module -Path "C:\Users\Administrator\Downloads\OfflineModules" -Name @('PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer')
+```
+
+![Text](/img/veeam_vbr_save_module.webp#center)
+
+The files produced by the cmdlet **Save-Module** must be copied to the computer without access to the Internet in the folder **C:\Program Files\WindowsPowerShell\Modules**
+
+![Text](/img/veeam_vbr_repor_modules_copy.webp#center)
+
+To confirm whether all dependencies have been installed you can use the cmdlet: **Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer') | select-object -Property Name, Version | Format-Table -AutoSize**.
+
+```powershell
+PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer') | select-object -Property Name, Version | Format-Table -AutoSize
+
+Name                    Version    
+----                    -------
+AsBuiltReport.Veeam.VBR 0.8.5
+Veeam.Diagrammer        0.5.9
+AsBuiltReport.Core      1.3.0
+PScribo                 0.10.0
+PScriboCharts           0.9.0
+Veeam.Backup.PowerShell 12.1.0.2131
+
+PS C:\Users\jocolon>
+```
+
+### Configuration files (AsBuiltReport JSON)
+
+An optional requirement is to build the configuration files that allow you to set the organization parameters that are used for report generation. This process generates JSON files that are used as templates **templates** so that you do not have to fill in repetitive information when generating the reports.
 
 The powershell cmdlet **New-AsBuiltConfig** allows you to generate the template that you will use as the basis of the report. This template sets the non-technical parameters of the report.
 
@@ -310,6 +345,8 @@ Once the process is completed, a JSON file will be created with the following co
 ```
 
 These configuration file can be used to specify the level of detail of the report as well as which report sections will be enabled.
+
+### Report generation
 
 The report can then be generated using the cmdlet: **New-AsBuiltReport -Report Veeam.VBR -Target Backup_Server_FQDN_or_IP -AsBuiltConfigFilePath AsBuiltReport.json -OutputFolderPath C:\Users\jocolon\AsBuiltReport\ -Credential $Cred -Format HTML -ReportConfigFilePath AsBuiltReport.Veeam.VBR.json -EnableHealthCheck -Verbose**. 
 
