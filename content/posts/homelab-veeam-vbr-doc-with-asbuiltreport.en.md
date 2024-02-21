@@ -141,6 +141,8 @@ Veeam.Backup.PowerShell 12.1.0.2131
 PS C:\Users\jocolon>
 ```
 
+If for whatever reason, you have errors that the modules cannot be found or cannot be loaded in most cases it is recommended to quit the Powershell console and reopen a new Powershell session.
+
 ### Configuration files (AsBuiltReport JSON)
 
 An optional requirement is to build the configuration files that allow you to set the organization parameters that are used for report generation. This process generates JSON files that are used as templates **templates** so that you do not have to fill in repetitive information when generating the reports.
