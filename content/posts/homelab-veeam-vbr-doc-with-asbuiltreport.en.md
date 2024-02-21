@@ -112,7 +112,7 @@ PS C:\Users\jocolon> Install-Module -SkipPublisherCheck -Force -Name @('PScribo'
 
 If for any reason, the computer where you are going to run the report does not have Internet access to download and install the required powershell modules from PowershellGallery. Since Powershell 5.1+ it is possible to save the previously installed modules on a computer so that they can be installed on the computer where the report will finally be run.
 
-The **Save-Module** cmdlet allows you to save the required powershell modules to be installed on the machine that will finally run the report.
+The **Save-Module** cmdlet allows you to save the required powershell modules.
 
 ```powershell
 PS C:\Users\jocolon> Save-Module -Path "C:\Users\Administrator\Downloads\OfflineModules" -Name @('PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer')
