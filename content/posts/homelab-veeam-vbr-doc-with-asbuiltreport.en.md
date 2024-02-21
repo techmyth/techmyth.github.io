@@ -81,7 +81,7 @@ Installing package 'AsBuiltReport.Veeam.VBR'
 PS C:\Users\jocolon> 
 ```
 
-To confirm whether all dependencies have been installed you can use the cmdlet **Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','AsBuiltReport.Veeam.VBR','AsBuiltReport.Core', 'Veeam.Diagrammer') | select-object -Property Name, Version | Format-Table -AutoSize**.
+To confirm whether all dependencies have been installed you can use the cmdlet: **Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer') | select-object -Property Name, Version | Format-Table -AutoSize**.
 
 ```powershell
 PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer') | select-object -Property Name, Version | Format-Table -AutoSize
@@ -311,7 +311,9 @@ Once the process is completed, a JSON file will be created with the following co
 
 These configuration file can be used to specify the level of detail of the report as well as which report sections will be enabled.
 
-The report can then be generated using the cmdlet **New-AsBuiltReport -Report Veeam.VBR -Target Backup_Server_FQDN_or_IP -AsBuiltConfigFilePath AsBuiltReport.json -OutputFolderPath C:\Users\jocolon\AsBuiltReport\ -Credential $Cred -Format HTML -ReportConfigFilePath AsBuiltReport.Veeam.VBR.json -EnableHealthCheck -Verbose**. It is important to note that it is required to use the **IP Address or FQDN** of the **Veeam** backup server as **Target**.
+The report can then be generated using the cmdlet: **New-AsBuiltReport -Report Veeam.VBR -Target Backup_Server_FQDN_or_IP -AsBuiltConfigFilePath AsBuiltReport.json -OutputFolderPath C:\Users\jocolon\AsBuiltReport\ -Credential $Cred -Format HTML -ReportConfigFilePath AsBuiltReport.Veeam.VBR.json -EnableHealthCheck -Verbose**. 
+
+It is important to note that it is required to use the **IP Address or FQDN** of the **Veeam** backup server as **Target**.
 
 ```powershell
 # Build the Credential Object
