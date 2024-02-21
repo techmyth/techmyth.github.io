@@ -9,9 +9,7 @@ tags:
 
 Hello everyone!
 
-As you well know due to the impact of the Covid-19 pandemic I have not had much room to do anything other than stay confined to my house 😒. Even more so when so many of my family members have tested positive for the virus. So this situation has been the best excuse to get me into programming. Recently I have received many requests from various users and friends for me to build a report documenting the Backup application **Veeam Backup &amp; Replication**.
-
-For this reason, I took on the task of developing yet another report, yes yet another one 🤣 and it is related to documenting **Veeam Backup &amp; Replication** implementations specifically for version **11+** onwards. This report uses as a base the AsBuildReport **framework** which is a project created by [Tim Carman](https://www.asbuiltreport.com/).
+I took on the task of developing yet another report, yes yet another one 🤣 and it is related to the documentation of **Veeam Backup & Replication** implementations in specific for version **11+** onwards. This report is based on the AsBuildReport **framework** which is a project created by [Tim Carman](https://www.asbuiltreport.com/).
 
 The source code of the report can be found in Github here I leave the link so you can see the scope of the project.
 
