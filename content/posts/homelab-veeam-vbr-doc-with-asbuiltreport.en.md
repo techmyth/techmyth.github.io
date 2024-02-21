@@ -120,7 +120,7 @@ PS C:\Users\jocolon> Save-Module -Path "C:\Users\Administrator\Downloads\Offline
 
 ![Text](/img/veeam_vbr_save_module.webp#center)
 
-The files produced by the cmdlet **Save-Module** must be copied to the computer without access to the Internet in the folder **C:\Program Files\WindowsPowerShell\Modules**
+The files produced by the cmdlet **Save-Module** must be copied to the computer without access to the Internet in the following Path: **C:\Program Files\WindowsPowerShell\Modules**
 
 ![Text](/img/veeam_vbr_repor_modules_copy.webp#center)
 
