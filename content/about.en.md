@@ -9,12 +9,12 @@ I am also involved in security and open source contribution aspects of the proje
 
 My internet nick is typically `rebelinux`, that's re-vel-linus.
 
-I live and work in [Puerto Rico](https://www.discoverpuertorico.com/) 🇵🇷🌴🌞🌊.
+I live and work in [Puerto Rico](https://www.discoverpuertorico.com/) 🇵🇷🌴🌞🌊.info
 
 ### Awards
 
 * vExpert 2020-2023, [VMware](https://vexpert.vmware.com/directory/6271)
-* Vanguard 2022-2023, [VEEAM](https://community.veeam.com/p/veeamvanguard?)
+* Vanguard 2022-2024, [VEEAM](https://community.veeam.com/p/veeamvanguard?)
 
 ### Experience
 
