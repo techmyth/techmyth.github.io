@@ -9,7 +9,7 @@ I am also involved in security and open source contribution aspects of the proje
 
 My internet nick is typically `rebelinux`, that's re-vel-linus.
 
-I live and work in [Puerto Rico](https://www.discoverpuertorico.com/) 🇵🇷🌴🌞🌊.info
+I live and work in [Puerto Rico](https://www.discoverpuertorico.com/) 🇵🇷🌴🌞🌊
 
 ### Awards
 
