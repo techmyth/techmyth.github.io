@@ -159,3 +159,7 @@ markup:
       wrapStandAloneImageWithinParagraph: false
       markup.goldmark.parser.attribute:
         block: true
+
+services:
+  disqus:
+    shortname: disqus_P5I5u1axaV
