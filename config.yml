@@ -130,6 +130,8 @@ params:
     url: "https://www.reddit.com/user/jcolonfzenpr"
   - name: "cv"
     url: "https://resume-pi-two.vercel.app/"
+  - name: "exercism"
+    url: "https://exercism.org/profiles/rebelinux"
   label:
     text: "TechMyth"
     icon: /img/home_logo.webp
