@@ -3,7 +3,10 @@ title: "Contribuciones"
 draft: false
 ---
 
-Algunas de mis obras "populares". Las no populares se pueden encontrar en mi [github](https://github.com/rebelinux).
+Algunas de mis contribuciones "populares". Las no populares se pueden encontrar en mi [github](https://github.com/rebelinux).
+
+{{< inTextImg url="/img/diagrammer.webp" height=30 >}}
+**[Diagrammer.Core](https://github.com/rebelinux/Diagrammer.Core)** es un módulo de PowerShell que proporciona el marco básico para generar diagramas integrados para muchos sistemas de centros de datos comunes.
 
 {{< inTextImg url="/img/packer.webp" height=30 >}}
 **[Packer Ubuntu vSphere Horizon](https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso)** es un repositorio para construir automáticamente plantillas VM de Ubuntu (Ubuntu 22.04) para entornos VMware vSphere y Horizon usando Hashicorp's Packer.
@@ -18,7 +21,7 @@ Algunas de mis obras "populares". Las no populares se pueden encontrar en mi [gi
 **[AsBuiltReport.Microsoft.DHCP](https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.DHCP)** es un módulo de PowerShell que se utiliza para generar un informe sobre la configuración de la infraestructura de Microsoft DHCP.
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
-**[AsBuiltReport.Veeam.VB365](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VB365)** es un módulo de powerShell utilizado para generar un informe as-built sobre la configuración de Veeam Backup para Microsoft 365. Veeam VB365 funciona conjuntamente con [AsBuiltReport.Core](https://github.com/AsBuiltReport/AsBuiltReport.Core).
+**[AsBuiltReport.Veeam.VB365](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VB365)** es un módulo de PowerShell utilizado para generar un informe as-built sobre la configuración de Veeam Backup para Microsoft 365. Veeam VB365 funciona conjuntamente con [AsBuiltReport.Core](https://github.com/AsBuiltReport/AsBuiltReport.Core).
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.Veeam.VBR](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR)** es un módulo de PowerShell utilizado para generar un informe as-built sobre la configuración de VEEAM Backup & Replication. Veeam VBR trabaja en conjunto con [AsBuiltReport.Core](https://github.com/AsBuiltReport/AsBuiltReport.Core).
