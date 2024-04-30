@@ -1,9 +1,12 @@
 ---
-title: "Contribuciones"
+title: "Proyectos"
 draft: false
 ---
 
 Algunas de mis contribuciones "populares". Las no populares se pueden encontrar en mi [github](https://github.com/rebelinux).
+
+{{< inTextImg url="/img/diagrammer.microsoft.ad.webp" height=30 >}}
+**[Diagrammer.Microsoft.AD](https://github.com/rebelinux/Diagrammer.Microsoft.AD)** es un módulo de Powershell para generar automáticamente diagramas de topología de recursos de Microsoft Active Directory.
 
 {{< inTextImg url="/img/diagrammer.webp" height=30 >}}
 **[Diagrammer.Core](https://github.com/rebelinux/Diagrammer.Core)** es un módulo de PowerShell que proporciona el marco básico para generar diagramas integrados para muchos sistemas de centros de datos comunes.
