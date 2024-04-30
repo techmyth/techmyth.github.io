@@ -9,6 +9,8 @@ tags:
 
 En esta ocasión estaré hablando sobre varias mejoras que he estado realizando para mejorar el reporte de AsBuiltReport.Veeam.VBR.
 
+Aquí les dejo el enlace del reporte en formato HTML: [Reporte](https://htmlpreview.github.io/?https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/dev/Samples/Sample%20Veeam%20Backup%20%26%20Replication%20As%20Built%20Report.html)
+
 Una petición que me realizo un usuario fue añadir un `health check` para verificar la expiración de la cuenta de acceso al `Tenant` en `Cloud Connect`.
 
 ![cloud_connect_tenant_healthcheck](/img/2024/abr-veeam-vbr-0_8_6/clouc_connect_tenant_healthcheck.webp)
