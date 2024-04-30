@@ -17,17 +17,21 @@ Another aspect that was added to the report was to capture vCloud Director resou
 
 ![service_provider_vCD](/img/2024/abr-veeam-vbr-0_8_6/service_provider_vCD.webp)
 
-Adding a graph to plot the space used in the Veeam VBR repository was one of the things I always wanted to do and this time I was able to add this capability by using the [PScriboCharts](https://github.com/iainbrighton/PScriboCharts) Powershell module.
+Adding a graph to plot the space used in the Backup Repositories was one of the things I always wanted to do and this time I was able to add this feature by using the [PScriboCharts](https://github.com/iainbrighton/PScriboCharts) Powershell module.
 
 ![backup_repo_space_utiliaction_chart](/img/2024/abr-veeam-vbr-0_8_6/backup_repo_space_utiliaction_chart.webp)
 
-In the 1.4.0 version of the `AsBuiltReport.Core` module a default theme style was defined. This caused a Bug that did not allow the report to be generated. In this new release the Bug was fixed and in addition a `Reportstyle` option was added to let the user define which theme to use `Veeam` or `AsBuiltReport`.
+In v1.4.0 of the `AsBuiltReport.Core` module a default style theme was defined. This caused a Bug that did not allow the report to be generated. In this new release the Bug was fixed and in addition a `Reportstyle` option was added to let the user define which theme to use `Veeam` or `AsBuiltReport`.
 
 ![abr_reportstyle](/img/2024/abr-veeam-vbr-0_8_6/abr_reportstyle.webp)
 
 Additionally, the style theme for the charts was modified to support this new change.
 
+New default style:
 ![new_abr_default_theme](/img/2024/abr-veeam-vbr-0_8_6/new_abr_default_theme.webp)
+
+Veeam style:
+![abr_veeam_theme](/img/2024/abr-veeam-vbr-0_8_6/abr_veeam_theme.webp)
 
 One of the changes made in version 0.8.1 was to remove the `Infrastructure Hardening` session since most of the content was integrated through `Health Check` distributed among several sections of the report. One of the sections that was not integrated was the identification of Windows patches not installed on the Backup server. In this version the session was added to validate that the Backup server has the latest operating system patches installed.
 

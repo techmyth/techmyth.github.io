@@ -27,7 +27,11 @@ En la version de 1.4.0 del modulo de AsBuiltReport.Core se definió un tema grá
 
 Adicionalmente se modifico el tema de las gráficas para dar soporte a este nuevo cambio.
 
+New default style:
 ![new_abr_default_theme](/img/2024/abr-veeam-vbr-0_8_6/new_abr_default_theme.webp)
+
+Veeam style:
+![abr_veeam_theme](/img/2024/abr-veeam-vbr-0_8_6/abr_veeam_theme.webp)
 
 Uno de los cambios que se realizo en la version 0.8.1 fue remover la session de `Infrastructure Hardening` ya que la mayoría del contenido fue integrado a través de `Health Check` distribuidos entre varias secciones del reporte. Una de las secciones que no se integro fue la identificación de parcho de Windows no instalados en el servidor de Backup. En esta version se añadió la session para validad que el servidor de Backup tiene instalado los parches mas recientes del sistema operativo.
 
