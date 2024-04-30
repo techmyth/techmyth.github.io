@@ -1,9 +1,12 @@
 ---
-title: "Projects"
+title: "Contributions"
 draft: false
 ---
 
-A few of my “popular” works. The unpopular ones can be found on my [github](https://github.com/rebelinux).
+A few of my “popular” contributions. The unpopular ones can be found on my [github](https://github.com/rebelinux).
+
+{{< inTextImg url="/img/diagrammer.webp" height=30 >}}
+**[Diagrammer.Core](https://github.com/rebelinux/Diagrammer.Core)** is a powerShell module which provides the core framework for generating as built diagrams for many common datacenter systems.
 
 {{< inTextImg url="/img/packer.webp" height=30 >}}
 **[Packer Ubuntu vSphere Horizon](https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso)** is a repo to builds automatically Ubuntu VM templates (Ubuntu 22.04) for VMware vSphere and Horizon environment using Hashicorp's Packer.
