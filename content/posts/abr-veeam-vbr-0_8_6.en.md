@@ -15,7 +15,7 @@ A request made by a user was to add a `health check` to verify the expiration of
 
 ![cloud_connect_tenant_healthcheck](/img/2024/abr-veeam-vbr-0_8_6/clouc_connect_tenant_healthcheck.webp)
 
-Another aspect that was added to the report was to capture vCloud Director resources within the Service Providers session.
+Another aspect that was added to the report was to capture vCloud Director resources within the Service Providers section.
 
 ![service_provider_vCD](/img/2024/abr-veeam-vbr-0_8_6/service_provider_vCD.webp)
 
@@ -35,7 +35,7 @@ New default style:
 Veeam style:
 ![abr_veeam_theme](/img/2024/abr-veeam-vbr-0_8_6/abr_veeam_theme.webp)
 
-One of the changes made in version 0.8.1 was to remove the `Infrastructure Hardening` session since most of the content was integrated through `Health Check` distributed among several sections of the report. One of the sections that was not integrated was the identification of Windows patches not installed on the Backup server. In this version the session was added to validate that the Backup server has the latest operating system patches installed.
+One of the changes made in version 0.8.1 was to remove the `Infrastructure Hardening` section since most of the content was integrated through `Health Check` distributed among several sections of the report. One of the sections that was not integrated was the identification of missing Windows patches on the Backup server. In this version a section was added to validate that the Backup server has the latest operating system patches installed.
 
 ![missing_patches](/img/2024/abr-veeam-vbr-0_8_6/missing_patches.webp)
 
