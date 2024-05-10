@@ -9,7 +9,7 @@ tags:
 
 Hello everyone!
 
-I took on the task of developing yet another report, yes yet another one 🤣 and it is related to the documentation of **Veeam Backup & Replication** implementations in specific for version **12+** onwards. This report is based on the AsBuildReport **framework** which is a project created by [Tim Carman](https://www.asbuiltreport.com/).
+I took on the task of developing yet another report, yes yet another one 🤣 and it is related to the documentation of `Veeam Backup & Replication` implementations in specific for version `12+` onwards. This report is based on the AsBuildReport `framework` which is a project created by [Tim Carman](https://www.asbuiltreport.com/).
 
 The source code of the report can be found in Github here I leave the link so you can see the scope of the project.
 
@@ -17,17 +17,21 @@ The source code of the report can be found in Github here I leave the link so yo
 
 ![Text](/img/Veeam_VBR_Portal.webp#center)
 
-**Important: The report is currently available at *PowerShell Gallery**
+** Important: The report is currently available at PowerShell Gallery
 
 Now, to get started we need to meet the following requirements:
 
 - Windows platform only (Veeam powershell modules run on Windows only)
 - PowerShell v5.1+
-- AsBuiltReport.Core >= 1.3.0
+- AsBuiltReport.Core >= 1.4.0
 - Veeam.Backup.PowerShell >= 1.0
-- Veeam.Diagrammer >= 0.5.9
+- Veeam.Diagrammer >= 0.6.0
+- Diagrammer.Core >= 0.2.0
+- PSGraph >= 2.1.38.27
+- PScribo >= 0.10.0
+- PScriboCharts >= 0.9.0
 
-This report uses PowerShell version 5.+, to validate this use the **$PSVersionTable** variable from inside the PowerShell console:
+This report uses PowerShell version 5.+, to validate this use the `$PSVersionTable` variable from inside the PowerShell console:
 
 ```powershell
 PS C:\Users\jocolon> $PSVersionTable
@@ -48,7 +52,7 @@ PS C:\Users\jocolon>
 
 ### Installation from PowerShellGallery
 
-To validate whether the required Veeam modules are present, use the cmdlet **Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell') | Format-Table -AutoSize** as shown in the example below:
+To validate whether the required Veeam modules are present, use the cmdlet `Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell') | Format-Table -AutoSize` as shown in the example below:
 
 ```powershell
 PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell') | Format-Table -AutoSize
@@ -62,15 +66,15 @@ Manifest   12.1.0.2131 Veeam.Backup.PowerShell {Get-VBRAmazonEC2VM, Get-VBRAzure
 PS C:\Users\jocolon>
 ```
 
-If the cmdlet does not produce any result it means that the modules are not installed. In order to install the **Veeam.Backup.PowerShell** modules, it is important to mention that they are available on the Veeam Backup server or on any device where the management console is installed.
+If the cmdlet does not produce any result it means that the modules are not installed. In order to install the `Veeam.Backup.PowerShell` modules, it is important to mention that they are available on the Veeam Backup server or on any device where the management console is installed.
 
-**Reference:**
+#### Reference:
 
 > The remote machine from which you run Veeam PowerShell commands must have the Veeam Backup & Replication Console installed. After you install the Veeam Backup & Replication Console, Veeam PowerShell module will be installed by default
 >
 > [Veeam PowerShell Reference](https://helpcenter.veeam.com/docs/backup/powershell/)
 
-To install the **AsBuiltReport.Veeam.VBR** report from **PowerShell Gallery** use the **Install-Module -Name AsBuiltReport.Veeam.VBR** cmdlet:
+To install the `AsBuiltReport.Veeam.VBR` report from `PowerShell Gallery` use the `Install-Module -Name AsBuiltReport.Veeam.VBR` cmdlet:
 
 ```powershell
 PS C:\Users\jocolon> Install-Module -Name AsBuiltReport.Veeam.VBR  
@@ -81,24 +85,26 @@ Installing package 'AsBuiltReport.Veeam.VBR'
 PS C:\Users\jocolon> 
 ```
 
-To confirm whether all dependencies have been installed you can use the cmdlet: **Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer') | select-object -Property Name, Version | Format-Table -AutoSize**.
+To confirm whether all dependencies have been installed you can use the cmdlet: `Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer', 'Diagrammer.Core', 'PSGraph') | select-object -Property Name, Version | Format-Table -AutoSize`.
 
 ```powershell
-PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer') | select-object -Property Name, Version | Format-Table -AutoSize
+PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer', 'Diagrammer.Core', 'PSGraph') | select-object -Property Name, Version | Format-Table -AutoSize
 
 Name                    Version    
 ----                    -------
-AsBuiltReport.Veeam.VBR 0.8.5
-Veeam.Diagrammer        0.5.9
-AsBuiltReport.Core      1.3.0
+AsBuiltReport.Veeam.VBR 0.8.6
+Veeam.Diagrammer        0.6.0
+Diagrammer.Core         0.2.0
+AsBuiltReport.Core      1.4.0
 PScribo                 0.10.0
 PScriboCharts           0.9.0
+PSGraph                 2.1.38.27
 Veeam.Backup.PowerShell 12.1.0.2131
 
 PS C:\Users\jocolon>
 ```
 
-If for some reason a module was not installed. You can install the required modules by using the following cmdlet: **Install-Module -SkipPublisherCheck -Force -Name @('PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer')**
+If for some reason a module was not installed. You can install the required modules by using the following cmdlet: `Install-Module -SkipPublisherCheck -Force -Name @('PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer')`
 
 ```powershell
 
@@ -110,7 +116,7 @@ PS C:\Users\jocolon> Install-Module -SkipPublisherCheck -Force -Name @('PScribo'
 
 If for any reason, the computer where you are going to run the report does not have Internet access to download and install the required powershell modules from PowershellGallery. Since Powershell 5.1+ it is possible to save the previously installed modules on a computer so that they can be installed on the computer where the report will finally be run.
 
-The **Save-Module** cmdlet allows you to save the required powershell modules.
+The `Save-Module` cmdlet allows you to save the required powershell modules.
 
 ```powershell
 PS C:\Users\jocolon> Save-Module -Path "C:\Users\Administrator\Downloads\OfflineModules" -Name @('PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer')
@@ -118,11 +124,11 @@ PS C:\Users\jocolon> Save-Module -Path "C:\Users\Administrator\Downloads\Offline
 
 ![Text](/img/veeam_vbr_save_module.webp#center)
 
-The files produced by the cmdlet **Save-Module** must be copied to the computer without access to the Internet in the following Path: **C:\Program Files\WindowsPowerShell\Modules**
+The files produced by the cmdlet `Save-Module` must be copied to the computer without access to the Internet in the following Path: `C:\Program Files\WindowsPowerShell\Modules`
 
 ![Text](/img/veeam_vbr_repor_modules_copy.webp#center)
 
-To confirm whether all dependencies have been installed you can use the cmdlet: **Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer') | select-object -Property Name, Version | Format-Table -AutoSize**.
+To confirm whether all dependencies have been installed you can use the cmdlet: `Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer') | select-object -Property Name, Version | Format-Table -AutoSize`.
 
 ```powershell
 PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer') | select-object -Property Name, Version | Format-Table -AutoSize
@@ -131,6 +137,7 @@ Name                    Version
 ----                    -------
 AsBuiltReport.Veeam.VBR 0.8.5
 Veeam.Diagrammer        0.5.9
+Diagrammer.Core         0.2.0
 AsBuiltReport.Core      1.3.0
 PScribo                 0.10.0
 PScriboCharts           0.9.0
@@ -143,9 +150,9 @@ If for whatever reason, you have errors that the modules cannot be found or cann
 
 ### Configuration files (AsBuiltReport JSON)
 
-An optional requirement is to build the configuration files that allow you to set the organization parameters that are used for report generation. This process generates JSON files that are used as templates **templates** so that you do not have to fill in repetitive information when generating the reports.
+An optional requirement is to build the configuration files that allow you to set the organization parameters that are used for report generation. This process generates JSON files that are used as templates `templates` so that you do not have to fill in repetitive information when generating the reports.
 
-The powershell cmdlet **New-AsBuiltConfig** allows you to generate the template that you will use as the basis of the report. This template sets the non-technical parameters of the report.
+The powershell cmdlet `New-AsBuiltConfig` allows you to generate the template that you will use as the basis of the report. This template sets the non-technical parameters of the report.
 
 ```powershell
 PS C:\Users\jocolon>  New-AsBuiltConfig
@@ -228,7 +235,7 @@ Once the process is completed, a JSON file will be created with the following co
 
 ```
 
-The **New-AsBuiltReportConfig** command allows you to set the technical parameters of the report such as the level and type of information **verbose level**.
+The `New-AsBuiltReportConfig` command allows you to set the technical parameters of the report such as the level and type of information `verbose level`.
 
 ```powershell
 PS C:\Users\jocolon> New-AsBuiltReportConfig Veeam.VBR -FolderPath C:\Users\jocolon\AsBuiltReport\
@@ -348,9 +355,9 @@ These configuration file can be used to specify the level of detail of the repor
 
 ### Report generation
 
-The report can then be generated using the cmdlet: **New-AsBuiltReport -Report Veeam.VBR -Target Backup_Server_FQDN_or_IP -AsBuiltConfigFilePath AsBuiltReport.json -OutputFolderPath C:\Users\jocolon\AsBuiltReport\ -Credential $Cred -Format HTML -ReportConfigFilePath AsBuiltReport.Veeam.VBR.json -EnableHealthCheck -Verbose**. 
+The report can then be generated using the cmdlet: `New-AsBuiltReport -Report Veeam.VBR -Target Backup_Server_FQDN_or_IP -AsBuiltConfigFilePath AsBuiltReport.json -OutputFolderPath C:\Users\jocolon\AsBuiltReport\ -Credential $Cred -Format HTML -ReportConfigFilePath AsBuiltReport.Veeam.VBR.json -EnableHealthCheck -Verbose`. 
 
-It is important to note that it is required to use the **IP Address or FQDN** of the **Veeam** backup server as **Target**.
+It is important to note that it is required to use the `IP Address or FQDN` of the Veeam backup server as `Target`.
 
 ```powershell
 # Build the Credential Object
@@ -369,7 +376,7 @@ Veeam VBR As Built Report 'Veeam Backup & Replication As Built Report' has been 
 
 ```
 
-Once the cmdlet completes, a file will be generated in the format specified in **-Format** inside the folder specified in **-OutputFolderPath**.
+Once the cmdlet completes, a file will be generated in the format specified in `-Format` inside the folder specified in `-OutputFolderPath`.
 
 Here is an example of the resulting report.
 
