@@ -17,8 +17,8 @@ However, to get started, the following requirements must be met:
 
 - Windows OS platform
 - PowerShell v5.1+ or v7
-- ImportExcel module &gt;= 7+
-- VMware PowerCLI module &gt;= 12.3+
+- ImportExcel module >= 7+
+- VMware PowerCLI module >= 12.3+
 
 To install this tool we only need to use the `Install-Module` command from a Powershell console.
 

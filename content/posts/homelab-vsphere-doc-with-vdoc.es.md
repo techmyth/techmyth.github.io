@@ -5,7 +5,7 @@ tags:
     - VMware
 ---
 
-En esta ocasión estaré mostrando una herramienta que utilizo regularmente para identificar de manera rápida la información de inventario en una infraestructura de vsphere. Esta herramienta se llama “vDocumentation” y precisamente utiliza PowerCLI para obtener la información de inventario. El creador de esta herramienta “Ariel Sánchez Mora” @arielsanchezmor define vDocumentation como:
+En esta ocasión estaré mostrando una herramienta que utilizo regularmente para identificar de manera rápida la información de inventario en una infraestructura de vsphere. Esta herramienta se llama `vDocumentation` y precisamente utiliza PowerCLI para obtener la información de inventario. El creador de esta herramienta `Ariel Sánchez Mora` @arielsanchezmor define vDocumentation como:
 
 > vDocumentation provides a community-created set of PowerCLI scripts that produce infrastructure documentation of vSphere environments in CSV or Excel file format.
 >
@@ -17,8 +17,8 @@ Ahora bien, para comenzar es necesario cumplir con los siguientes requisitos:
 
 - Plataforma Windows OS
 - PowerShell v5.1+ ó v7
-- El módulo de ImportExcel &gt;= 7+
-- El módulo de VMware PowerCLI &gt;= 12.3+
+- El módulo de ImportExcel >= 7+
+- El módulo de VMware PowerCLI >= 12.3+
 
 Para instalar esta herramienta solo necesitamos utilizar el comando `Install-Module` desde una consola de Powershell.
 
@@ -76,7 +76,7 @@ Name                           Port  User
 PS C:\Users\Administrator>
 ```
 
-Luego de establecida la conexión podemos utilizar los módulos. En este ejemplo utilizaré el comando “`Get-ESXInventory`” para obtener la informacion de inventario de los servidores ESXi conectados al vCenter con la dirección de IP `192.168.5.2`
+Luego de establecida la conexión podemos utilizar los módulos. En este ejemplo utilizaré el comando `Get-ESXInventory` para obtener la informacion de inventario de los servidores ESXi conectados al vCenter con la dirección de IP `192.168.5.2`
 
 ```text
 PS C:\Users\Administrator> Get-ESXInventory

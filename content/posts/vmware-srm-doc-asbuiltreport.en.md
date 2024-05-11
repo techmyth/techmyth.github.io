@@ -27,8 +27,8 @@ Now, to get started we need to meet the following requirements:
 
 - Multi-platform Windows, Linux or MAC
 - PowerShell v5.1+ ó v7
-- AsBuiltReport.Core Module &gt;= 1.1.0
-- VMware PowerCLI Module &gt;= 12.3+
+- AsBuiltReport.Core Module >= 1.1.0
+- VMware PowerCLI Module >= 12.3+
 
 This report uses PowerShell version 5.+ or PSCore 7, to validate the version we can use the `$PSVersionTable` variable from the PowerShell console:
 
