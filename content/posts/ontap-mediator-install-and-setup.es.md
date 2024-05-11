@@ -9,13 +9,13 @@ tags:
 
 Hol@ a todos,
 
-El día de hoy estaré hablando un poco de como instalar y configurar la aplicación de “Ontap Mediator” que es utilizado como una vía alterna para validar el estado de salud de un conjunto de clúster. Para establecer el rol de esta aplicación utilizaré como referencia la documentación del portal de NetApp:
+El día de hoy estaré hablando un poco de como instalar y configurar la aplicación de `Ontap Mediator` que es utilizado como una vía alterna para validar el estado de salud de un conjunto de clúster. Para establecer el rol de esta aplicación utilizaré como referencia la documentación del portal de NetApp:
 
 > ONTAP Mediator provides an alternate health path to the peer cluster, with the intercluster LIFs providing the other health path. With the Mediator’s health information, clusters can differentiate between intercluster LIF failure and site failure. When the site goes down, Mediator passes on the health information to the peer cluster on demand, facilitating the peer cluster to fail over. With the Mediator-provided information and the intercluster LIF health check information, ONTAP determines whether to perform an auto failover, if it is failover incapable, continue or stop.
 
 [Roles de ONTAP Mediator](https://docs.netapp.com/us-en/ontap/smbc/smbc_intro_role_of_mediator.html)
 
-Esta aplicación puede ser utilizada en escenarios de “MetroCluster” como también con la tecnología de “SnapMirror Business Continuity” (SM-BC). A partir de ONTAP 9.8, “SnapMirror Business Continuity” (SM-BC) puedes ser utilizado para proteger las aplicaciones con LUNs, permitiendo que las aplicaciones puedan migrar de forma transparente, asegurando la continuidad del negocio en caso de desastre. SM-BC utiliza la tecnología de “SnapMirror Synchronous” que permite replicar los datos hacia el destino tan pronto como se escriben en el volumen de origen.
+Esta aplicación puede ser utilizada en escenarios de `MetroCluster` como también con la tecnología de `SnapMirror Business Continuity` (SM-BC). A partir de ONTAP 9.8, `SnapMirror Business Continuity` (SM-BC) puedes ser utilizado para proteger las aplicaciones con LUNs, permitiendo que las aplicaciones puedan migrar de forma transparente, asegurando la continuidad del negocio en caso de desastre. SM-BC utiliza la tecnología de `SnapMirror Synchronous` que permite replicar los datos hacia el destino tan pronto como se escriben en el volumen de origen.
 
 ![Text](/img/rtaImage-1.webp#center)
 
@@ -23,13 +23,13 @@ En este laboratorio instalaremos la aplicación Mediator con el propósito de en
 
 ![Text](/img/Ontap-Mediator.webp#center)
 
-Como pueden ver el “Mediator” esta constantemente evaluando el estado del Datacenter para identificar posibles fallas y poder reaccionar migrando el acceso a los volumenes al Datacenter que este en función. Puede ser útil entender algunos de los conceptos básicos de recuperación y restauración de SM-BC.
+Como pueden ver el `Mediator` esta constantemente evaluando el estado del Datacenter para identificar posibles fallas y poder reaccionar migrando el acceso a los volumenes al Datacenter que este en función. Puede ser útil entender algunos de los conceptos básicos de recuperación y restauración de SM-BC.
 
-**Recuperación planificada**:
+#### Recuperación planificada:
 
 Una operación manual para cambiar los roles de acceso a los volúmenes en una relación SM-BC. El primario pasa a ser el secundario y el secundario pasa a ser el primario. El reporte del estado de ALUA también es modificado según el estado de la relación.
 
-**Recuperación automática no planificada (AUFO)**:
+#### Recuperación automática no planificada (AUFO):
 
 Una operación automática para realizar una conmutación por error a la copia espejo. La operación requiere la asistencia del Ontap Mediator para detectar que la copia primaria no está disponible.
 
@@ -37,19 +37,19 @@ A continuación les incluyo los requisitos para instalar la aplicación.
 
 #### Requerimientos
 
-Para validar la lista completa de requisitos puede visitar la documentación de [“Ontap Mediator”](https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/task_install_configure_mediator.html)
+Para validar la lista completa de requisitos puede visitar la documentación de [`Ontap Mediator`](https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/task_install_configure_mediator.html)
 
 ![Text](/img/2021-06-26_20-27.webp#center)
 
 Para este laboratorio estaré utilizando Red Hat Enterprise Linux 8.1 corriendo en en una VM de vSphere. Lo primero que debemos hacer es descargar el paquete de instalación de la aplicación. Para esto accedemos el portal de soporte de NetApp según se muestra en la próxima imagen.
 
-**Enlace de Ontap Mediator:**
+#### Enlace de Ontap Mediator:
 
 <https://mysupport.netapp.com/site/products/all/details/ontap-mediator/downloads-tab>
 
 ![Text](/img/2021-06-29_21-57-1536x1344-1.webp#center)
 
-Una vez descargado el paquete de instalación copiamos el archivo **“ONTAP-MEDIATOR-1.3”** al servidor que utilizaremos para este propósito. Luego procedemos a cambiar el archivo de instalación a modo ejecutable con el comando **chmod +x**.
+Una vez descargado el paquete de instalación copiamos el archivo `ONTAP-MEDIATOR-1.3` al servidor que utilizaremos para este propósito. Luego procedemos a cambiar el archivo de instalación a modo ejecutable con el comando `chmod +x ONTAP-MEDIATOR-1.3`.
 
 ```bash
 [root@NTAPMED-01V ~]# ls
@@ -58,7 +58,7 @@ anaconda-ks.cfg  ONTAP-MEDIATOR-1.3
 [root@NTAPMED-01V ~]#
 ```
 
-Ahora procedemos a instalar las dependencias de la aplicación con el comando **yum install** según se muestra a continuación.
+Ahora procedemos a instalar las dependencias de la aplicación con el comando `yum install` según se muestra a continuación.
 
 ```bash
 [root@NTAPMED-01V ~]# yum install openssl openssl-devel kernel-devel gcc libselinux-utils make redhat-lsb-core patch bzip2 python36 python36-devel perl-Data-Dumper perl-ExtUtils-MakeMaker python3-pip elfutils-libelf-devel policycoreutils-python-utils -y
@@ -76,7 +76,7 @@ Complete!
 
 ```
 
-Una vez hayamos instalado las dependencia podemos comenzar a ejecutar el archivo de instalación de la aplicación. Para este propósito utilizaremos el comando **./ONTAP-MEDIATOR-1.3**.
+Una vez hayamos instalado las dependencia podemos comenzar a ejecutar el archivo de instalación de la aplicación. Para este propósito utilizaremos el comando `./ONTAP-MEDIATOR-1.3`.
 
 Nota: Este comando debe ejecutarse en el lugar donde este guardado el archivo de instalación.
 
@@ -116,7 +116,7 @@ Preparing for installation of ONTAP Mediator packages.
 Do you wish to continue? Y(es)/n(o): 
 ```
 
-El instalador nos realizara varias preguntas sobre la contraseña de los usuarios utilizados por el servicio de ONTAP Mediator y los puertos TCP que se abrirán en el “Firewall” local del servidor. Una vez todo este debidamente especificado el instalador validara que todos los pre-requisitos de la aplicación estén instalados.
+El instalador nos realizara varias preguntas sobre la contraseña de los usuarios utilizados por el servicio de ONTAP Mediator y los puertos TCP que se abrirán en el `Firewall` local del servidor. Una vez todo este debidamente especificado el instalador validara que todos los pre-requisitos de la aplicación estén instalados.
 
 ```bash
 Do you wish to continue? Y(es)/n(o): Y
@@ -146,7 +146,7 @@ ONTAP Mediator logging enabled
 [root@NTAPMED-01V ~]#
 ```
 
-Una vez instalada la aplicación es importante validar que los servicio del Ontap Mediator estén activados y funcionales. Para validar los servicio utilizamos el comando **systemctl status ontap_mediator mediator-scst**.
+Una vez instalada la aplicación es importante validar que los servicio del Ontap Mediator estén activados y funcionales. Para validar los servicio utilizamos el comando `systemctl status ontap_mediator mediator-scst`.
 
 ```bash
 [root@NTAPMED-01V ~]# systemctl status ontap_mediator mediator-scst
@@ -155,7 +155,7 @@ Una vez instalada la aplicación es importante validar que los servicio del Onta
    Active: active (running) since Fri 2021-07-09 14:21:31 AST; 11min ago
   Process: 1296 ExecStop=/bin/kill -s INT $MAINPID (code=exited, status=0/SUCCESS)
  Main PID: 1298 (uwsgi)
-   Status: "uWSGI is ready"
+   Status: `uWSGI is ready`
     Tasks: 3 (limit: 23832)
    Memory: 61.4M
  Started ONTAP Mediator.
@@ -171,7 +171,7 @@ Una vez instalada la aplicación es importante validar que los servicio del Onta
 [root@NTAPMED-01V ~]# 
 ```
 
-Adicionalmente es importante validar que los servicios estén utilizando los puertos correctos. Con el comando **netstat -anlt | grep -E ‘3260|31784’** podemos validar que los puertos 3260 y 31784 este en modo **“LISTEN”**.
+Adicionalmente es importante validar que los servicios estén utilizando los puertos correctos. Con el comando `netstat -anlt | grep -E ‘3260|31784’` podemos validar que los puertos 3260 y 31784 este en modo `LISTEN`.
 
 ```bash
 [root@NTAPMED-01V ~]# netstat -anlt | grep -E '3260|31784'
@@ -181,7 +181,7 @@ tcp6       0      0 :::3260                 :::*                    LISTEN
 [root@NTAPMED-01V ~]# 
 ```
 
-Con el comando **firewall-cmd –list-all** podemos validar que las reglas para los puertos 31784/tcp y 3260/tcp estén configurados en el “Firewall” local del servidor.
+Con el comando `firewall-cmd –list-all` podemos validar que las reglas para los puertos 31784/tcp y 3260/tcp estén configurados en el `Firewall` local del servidor.
 
 ```bash
 [root@NTAPMED-01V ~]# firewall-cmd --list-all
@@ -202,11 +202,11 @@ public (active)
 [root@NTAPMED-01V ~]# 
 ```
 
-Luego de culminado el proceso de instalación pasamos a añadir el Ontap Mediator a la configuración de los cluster donde deseamos utilizar la tecnología de “SnapMirror Business Continuity” (SM-BC). Para añadir la configuración es necesario ir a **[Protection\]** => **[Overview]** => **[Mediator]** => **[Configure]**. Luego hay que añadir la configuración según se muestra en la siguientes imágenes. Es importante mencionar que el certificado que se añade en esta configuración es el del CA que se encuentra en:
+Luego de culminado el proceso de instalación pasamos a añadir el Ontap Mediator a la configuración de los cluster donde deseamos utilizar la tecnología de `SnapMirror Business Continuity` (SM-BC). Para añadir la configuración es necesario ir a `[Protection\]` => `[Overview]` => `[Mediator]` => `[Configure]`. Luego hay que añadir la configuración según se muestra en la siguientes imágenes. Es importante mencionar que el certificado que se añade en esta configuración es el del CA que se encuentra en:
 
 * /opt/netapp/lib/ontap mediator/ontap mediator/server config/ca.crt
 
-Nota: Es importante mencionar que para que esta configuración funciones debe de existir una relación de “cluster peer” y “vserver peer” previamente establecida.
+Nota: Es importante mencionar que para que esta configuración funciones debe de existir una relación de `cluster peer` y `vserver peer` previamente establecida.
 
 ![Text](/img/mediator_1.webp#center)
 
@@ -218,7 +218,7 @@ Nota: Es importante mencionar que para que esta configuración funciones debe de
 
 ![Text](/img/mediator_5.webp#center)
 
-Por consola también podemos validar que la configuración del Ontap Mediator este funcionando correctamente. Con el comando **snapmirror mediator show** podemos validar que el estado de la conexión esta “connected” y el “Quorum Status” esta en “true”.
+Por consola también podemos validar que la configuración del Ontap Mediator este funcionando correctamente. Con el comando `snapmirror mediator show` podemos validar que el estado de la conexión esta `connected` y el `Quorum Status` esta en `true`.
 
 Nota: Este comando debe de ser utilizado en ambos cluster para validar que la conexión esta correctamente establecida.
 
@@ -242,9 +242,9 @@ OnPrem-DR::>
 
 A continuación les incluyo como añadir al cluster el Ontap Mediator utilizando el modo de consola de Ontap.
 
-#### **Ontap Mediator CLI Setup**
+#### Ontap Mediator CLI Setup
 
-Con el comando **snapmirror mediator add** añadimos el Ontap Mediator con la dirección IP de 192.168.6.16 al cluster **Onprem-HQ**. Es importante mencionar que para que esta configuración funciones debe de existir una relación de “Cluster peer” y “Vserver peer” previamente establecida.
+Con el comando `snapmirror mediator add` añadimos el Ontap Mediator con la dirección IP de 192.168.6.16 al cluster `Onprem-HQ`. Es importante mencionar que para que esta configuración funciones debe de existir una relación de `Cluster peer` y `Vserver peer` previamente establecida.
 
 ```text
 OnPrem-HQ::> snapmirror mediator add -mediator-address 192.168.7.167 -peer-cluster OnPrem-DR -username mediatoradmin 
@@ -259,7 +259,7 @@ Info: [Job: 171] 'mediator add' job queued
 OnPrem-HQ::> 
 ```
 
-Con el comando **snapmirror mediator show** podemos validar que el estado de la conexión esta “connected” y el “Quorum Status” esta en “true”.
+Con el comando `snapmirror mediator show` podemos validar que el estado de la conexión esta `connected` y el `Quorum Status` esta en `true`.
 
 ```text
 OnPrem-HQ::> snapmirror mediator show                    
@@ -279,11 +279,11 @@ Mediator Address Peer Cluster     Connection Status Quorum Status
 OnPrem-DR::> 
 ```
 
-Adicionalmente les muestro como remplazar el certificado SSL del servicio de Ontap Mediator por uno generado de un “Certificate Authority” de Microsoft.
+Adicionalmente les muestro como remplazar el certificado SSL del servicio de Ontap Mediator por uno generado de un `Certificate Authority` de Microsoft.
 
-#### **Opcional - Remplazo Certificado SSL**
+#### Opcional - Remplazo Certificado SSL
 
-**Paso1:** Generar un archivo de configuración para crear el “Certificate Signing Request” (CSR). En este paso es importante establecer el CN y DNS con el “fully qualified domain name” (FQDN) del nombre del servidor. En mi caso el nombre del servidor es **NTAPMED-01V**
+`Paso 1:` Generar un archivo de configuración para crear el `Certificate Signing Request` (CSR). En este paso es importante establecer el CN y DNS con el `fully qualified domain name` (FQDN) del nombre del servidor. En mi caso el nombre del servidor es `NTAPMED-01V`
 
 ```text
 [root@NTAPMED-01V ~]# nano -w req.conf 
@@ -306,15 +306,15 @@ subjectAltName = @alt_names
 DNS.1 = NTAPMED-01V.zenprsolutions.local
 ```
 
-**Paso2:** Utilizar el comando **openssl** para generar el archivo CSR que utilizaremos como plantilla para crear el certificado que utilizaremos para el servicio de Ontap Mediator.
+`Paso 2:` Utilizar el comando `openssl` para generar el archivo CSR que utilizaremos como plantilla para crear el certificado que utilizaremos para el servicio de Ontap Mediator.
 
-Nota: Si el comando **openssl** no esta disponible en el sistema puede utilizar el comando **yum install openssl** para instalar los paquetes necesarios.
+Nota: Si el comando `openssl` no esta disponible en el sistema puede utilizar el comando `yum install openssl` para instalar los paquetes necesarios.
 
 ```text
 [root@NTAPMED-01V ~]# openssl req -new -out ntapmed.csr -newkey rsa:2048 -nodes -sha256 -keyout ntapmed.key -config req.conf
 ```
 
-Una vez ejecutado el comando openssl se crearan dos archivos el **ntapmed.csr** es la plantilla que utilizaremos para generar el certificado y el **ntapmed.key** es la llave privada.
+Una vez ejecutado el comando openssl se crearan dos archivos el `ntapmed.csr` es la plantilla que utilizaremos para generar el certificado y el `ntapmed.key` es la llave privada.
 
 ```text
 [root@NTAPMED-01V ~]# ls -al ntapmed.*
@@ -323,17 +323,17 @@ Una vez ejecutado el comando openssl se crearan dos archivos el **ntapmed.csr** 
 [root@rebelpc rebelinux]# 
 ```
 
-**Paso 3:** Acceder al servidor de “Certificate Authority” de Microsoft y utilizar el comando **certreq.exe** para generar el certificado utilizando el archivo **ntapmed.csr** como plantilla
+`Paso 3:` Acceder al servidor de `Certificate Authority` de Microsoft y utilizar el comando `certreq.exe` para generar el certificado utilizando el archivo `ntapmed.csr` como plantilla
 
 ```text
-C:\>certreq.exe -submit -attrib "CertificateTemplate:WebServer" ntapmed.csr ntapmed.cer
+C:\>certreq.exe -submit -attrib `CertificateTemplate:WebServer` ntapmed.csr ntapmed.cer
 ```
 
 ![Text](/img/2021-07-09_17-06.webp#center)
 
-Una vez culmine el proceso se creara un archivo con el nombre de **ntapmed.cer** que utilizaremos para el servicio de Ontap Mediator.
+Una vez culmine el proceso se creara un archivo con el nombre de `ntapmed.cer` que utilizaremos para el servicio de Ontap Mediator.
 
-**Paso 4:** Para remplazar el certificado SSL es necesario también cambiar el certificado publico del CA . Para obtener este certificado del CA utilizamos el comando **certutil -ca.cert ca.cer** que nos producirá el certificado en el archivo ca.cer.
+`Paso 4:` Para remplazar el certificado SSL es necesario también cambiar el certificado publico del CA . Para obtener este certificado del CA utilizamos el comando `certutil -ca.cert ca.cer` que nos producirá el certificado en el archivo ca.cer.
 
 ```text
 C:\>certutil -ca.cert ca.cer
@@ -343,7 +343,7 @@ C:\>certutil -ca.cert ca.cer
 
 Una vez culminado este proceso copiamos todos los archivos (ca.cer, ntapmed.cer y ntapmed.key) al servidor de Ontap Mediator.
 
-**Paso 5:** Movernos a la carpeta **/opt/netapp/lib/ontap_mediator/ontap_mediator/server_config/** y modificar los archivos de los certificados segun se muestra a continuacion.
+`Paso 5:` Movernos a la carpeta `/opt/netapp/lib/ontap_mediator/ontap_mediator/server_config/` y modificar los archivos de los certificados segun se muestra a continuacion.
 
 ```text
 [root@NTAPMED-01V ~]# cd /opt/netapp/lib/ontap_mediator/ontap_mediator/server_config/
@@ -380,7 +380,7 @@ serial=5D2E25D9AFFDE4904A05D70BEB7ACBD2
 
 ![Text](/img/2021-07-09_20-30.webp#center)
 
-Una vez realizado los cambios es necesario reiniciar los servicios utilizando el comando **systemctl restart ontap_mediator mediator-scst**
+Una vez realizado los cambios es necesario reiniciar los servicios utilizando el comando `systemctl restart ontap_mediator mediator-scst`
 
 ```text
 [root@NTAPMED-01V server_config]# systemctl restart ontap_mediator mediator-scst
@@ -390,7 +390,7 @@ Una vez realizado los cambios es necesario reiniciar los servicios utilizando el
    Active: active (running) since Fri 2021-07-09 20:31:48 AST; 8s ago
   Process: 22222 ExecStop=/bin/kill -s INT $MAINPID (code=exited, status=0/SUCCESS)
  Main PID: 22232 (uwsgi)
-   Status: "uWSGI is ready"
+   Status: `uWSGI is ready`
     Tasks: 3 (limit: 23832)
    Memory: 56.5M
 
@@ -406,4 +406,4 @@ Una vez realizado los cambios es necesario reiniciar los servicios utilizando el
 
 ### Resumen
 
-En este laboratorio instalamos y configuramos el Ontap Mediator que utilizaremos en un futuro para realizar un laboratorio sobre “SnapMirror Business Continuity” (SM-BC) junto con VMware. Espero que este laboratorio les haya gustado. Si tienes dudas o alguna pregunta sobre este laboratorio, déjalo en los comentarios. Saludos.
+En este laboratorio instalamos y configuramos el Ontap Mediator que utilizaremos en un futuro para realizar un laboratorio sobre `SnapMirror Business Continuity` (SM-BC) junto con VMware. Espero que este laboratorio les haya gustado. Si tienes dudas o alguna pregunta sobre este laboratorio, déjalo en los comentarios. Saludos.
