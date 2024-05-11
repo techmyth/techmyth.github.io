@@ -18,15 +18,15 @@ Using NetApp documentation as a reference:
 
 In this tutorial I explain how easy it is to configure and manage this impressive security feature.
 
-Before starting to configure this feature it is necessary to have an existing “Key Management Service”. For the purpose of this tutorial I will use the “HyTrust KeyControl” KMS which I previously explained in the blog. If you want to know more about it, read the following [post](http://192.168.7.40/2021/05/16/hytrust-keycontrol-key-management-server-setup/).
+Before starting to configure this feature it is necessary to have an existing `Key Management Service`. For the purpose of this tutorial I will use the `HyTrust KeyControl` KMS which I previously explained in the blog. If you want to know more about it, read the following [post](http://192.168.7.40/2021/05/16/hytrust-keycontrol-key-management-server-setup/).
 
 **Step 1:** Create a client certificate for authentication purposes:
 
-Go to **[KMIP > Client Certificate]** and select Create Certificate in the Actions menu.
+Go to `[KMIP > Client Certificate]` and select Create Certificate in the Actions menu.
 
 ![Text](/img/2021-05-16_15-25-1024x563.webp#center)
 
-Select a name for the certificate and press **Create**.
+Select a name for the certificate and press `Create`.
 
 ![Text](/img/2021-05-16_15-27-1024x565.webp#center)
 
@@ -34,7 +34,7 @@ Once the certificate has been created, it should be stored in a safe place.
 
 ![Text](/img/2021-05-16_15-28-1024x737.webp#center)
 
-The downloaded file contains the **Client** and **Root CA** certificate needed to configure the KMS option in Ontap.
+The downloaded file contains the `Client` and `Root CA` certificate needed to configure the KMS option in Ontap.
 
 ![Text](/img/2021-05-16_15-31-1024x493.webp#center)
 
@@ -42,7 +42,7 @@ The downloaded file contains the **Client** and **Root CA** certificate needed t
 
 The important things to consider before you can configure this security feature are the cluster status and the necessary license to support the encryption feature.
 
-The **cluster show** command displays the overall status of the Ontap cluster.
+The `cluster show` command displays the overall status of the Ontap cluster.
 
 ```bash
 OnPrem-HQ::> cluster show 
@@ -53,7 +53,7 @@ OnPrem-HQ-02         true    true
 2 entries were displayed.
 ```
 
-The **system node show** command displays the node health and the system model.
+The `system node show` command displays the node health and the system model.
 
 ```bash
 OnPrem-HQ::> system node show
@@ -63,7 +63,7 @@ OnPrem-HQ-01 true true           00:18:10 SIMBOX
 OnPrem-HQ-02 true true           00:18:08 SIMBOX
 2 entries were displayed.
 ```
-With the **system license show** command you can validate the license installed on the cluster. Here you can see that the volume encryption license is installed on both nodes.
+With the `system license show` command you can validate the license installed on the cluster. Here you can see that the volume encryption license is installed on both nodes.
 
 ```bash
 OnPrem-HQ::> system license show -package VE
@@ -140,7 +140,7 @@ The certificate's generated name for reference: HyTrustKeyControlCertificateAuth
 
 **Step 4:** Configure the NetApp Volume Encryption solution:
 
-For this tutorial it is necessary to configure an external “KMS” key management server so that the storage system can securely store and retrieve authentication keys for the NetApp Volume Encryption (NVE) solution.
+For this tutorial it is necessary to configure an external `KMS` key management server so that the storage system can securely store and retrieve authentication keys for the NetApp Volume Encryption (NVE) solution.
 
 ##### Note: NetApp recommends a minimum of two server for redundancy and disaster recovery.
 
@@ -161,7 +161,7 @@ Key Server
 192.168.7.201:5696
 ```
 
-It is important to validate that the KMS service is **“available”** before proceeding to create encrypted volumes. The **security key-manager external show-status** command does allow you to validate the status of the service.
+It is important to validate that the KMS service is `available` before proceeding to create encrypted volumes. The `security key-manager external show-status` command does allow you to validate the status of the service.
 
 ```text
 OnPrem-HQ::> security key-manager external show-status
@@ -189,7 +189,7 @@ OnPrem-HQ::> vol create TEST_Encryption -vserver SAN -size 10G -aggregate OnPrem
 [Job 763] Job succeeded: Successful 
 ```
 
-With the **vol show** command i can verify that the volume has been created with the encryption option.
+With the `vol show` command i can verify that the volume has been created with the encryption option.
 
 ```text
 OnPrem-HQ::> vol show -encryption -vserver SAN -encryption-state full 
@@ -202,7 +202,7 @@ OnPrem-HQ::>
 
 **Step 6:** Validate the Encryption information on the KMS server.
 
-In the last step we must enter the administration portal of the **“HyTrust KeyControl”** application to validate that the encryption keys are stored in the platform. To validate this information go to the menu **[KMIP > Objects]** where you can validate that the keys were created after the creation of the volume within Ontap.
+In the last step we must enter the administration portal of the `HyTrust KeyControl` application to validate that the encryption keys are stored in the platform. To validate this information go to the menu `[KMIP > Objects]` where you can validate that the keys were created after the creation of the volume within Ontap.
 
 ![Text](/img/HytrustDashBoard.webp#center)
 

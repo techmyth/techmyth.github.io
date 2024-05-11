@@ -11,7 +11,7 @@ tags:
 
 ### El Problema
 
-En estos últimos meses he estado estudiando para la certificación de **VEEAM VMCE Arquitect** y uno de los requisitos es implementar la opción de **Scale Out Backup Repository**. Una forma sencilla de lograr esto es utilizando el servicio de Minio.
+En estos últimos meses he estado estudiando para la certificación de `VEEAM VMCE Arquitect` y uno de los requisitos es implementar la opción de `Scale Out Backup Repository`. Una forma sencilla de lograr esto es utilizando el servicio de Minio.
 
 ### Sobre Minio
 
@@ -103,7 +103,7 @@ EOT
 
 ![Text](/img/2021-02-23_13-16-1024x491.webp#center)
 
-#### [Permitiendo tráfico en el «firewall» local]
+#### [Permitiendo tráfico en el `firewall` local]
 
 ```bash
 [root@VEEAM-MINIO ~]# firewall-cmd --zone=public --add-port=9000/tcp --permanent

@@ -16,7 +16,7 @@ En esta ocasión estaré hablando un poco de un proyecto que he estado trabajand
 
 Demás está en decir que este proyecto está actualmente en continuo desarrollo por ende puede que se encuentren con errores o bugs 😁.
 
-**Importante: Este módulo se encuentra publicado en PowerShell Gallery.**
+#### Importante: Este módulo se encuentra publicado en PowerShell Gallery.
 
 Ahora, para empezar, hay que cumplir los siguientes requisitos:
 
@@ -24,7 +24,7 @@ Ahora, para empezar, hay que cumplir los siguientes requisitos:
 - PowerShell v5.1+
 - Veeam.Backup.PowerShell module >= 1.0
 
-Para validar la versión de Powershell, la variable **“$PSVersionTable”** puede utilizarse desde una consola PowerShell:
+Para validar la versión de Powershell, la variable `$PSVersionTable` puede utilizarse desde una consola PowerShell:
 
 ```text
 PS C:\Users\jocolon> $PSVersionTable
@@ -43,7 +43,7 @@ SerializationVersion           1.1.0.1
 PS C:\Users\jocolon>
 ```
 
-Para confirmar si los módulos de Veeam necesarios están presentes, se puede utilizar el cmdlet **"Get-Module "** como se muestra en el siguiente ejemplo:
+Para confirmar si los módulos de Veeam necesarios están presentes, se puede utilizar el cmdlet `Get-Module` como se muestra en el siguiente ejemplo:
 
 ```text
 PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell')
@@ -65,14 +65,14 @@ Si el comando no devuelve ningún resultado, significa que el módulo no está i
 >
 > [Veeam PowerShell Reference](https://helpcenter.veeam.com/docs/backup/powershell/)
 
-Para instalar el **Veeam.Diagrammer** desde la **PowerShell Gallery** utilice el comando **"Install-Module "**:
+Para instalar el `Veeam.Diagrammer` desde la `PowerShell Gallery` utilice el comando `Install-Module`:
 
 ```text
 PS C:\Users\jocolon> Install-Module -Name Veeam.Diagrammer                                                                                                                    
 PS C:\Users\jocolon> 
 ```
 
-Para confirmar si se han instalado todas las dependencias, puede utilizar el cmdlet **"Get-Module "**.
+Para confirmar si se han instalado todas las dependencias, puede utilizar el cmdlet `Get-Module`.
 
 ```text
 PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell','Veeam.Diagrammer')     
@@ -95,7 +95,7 @@ Manifest   1.0        Veeam.Backup.PowerShell             {Get-VBRComputerFilePr
 PS C:\Users\jocolon> 
 ```
 
-Por último, se utiliza el cmdlet **"New-VeeamDiagram "** para producir el diagrama. Es importante tener en cuenta que es necesario utilizar la dirección IP o el FQDN del Veeam Backup Server como **"Target"**.
+Por último, se utiliza el cmdlet `New-VeeamDiagram` para producir el diagrama. Es importante tener en cuenta que es necesario utilizar la dirección IP o el FQDN del Veeam Backup Server como `Target`.
 
 #### Guardar Credenciales en una Variable
 
@@ -104,7 +104,7 @@ PS C:\Users\jocolon> $Credential = Get-Credential
 PowerShell credential request
 Enter your credentials.
 User: Veeam_Admin
-Password for user Veeam_Admin: ***********
+Password for user Veeam_Admin: `````*
 ```
 
 #### Command final

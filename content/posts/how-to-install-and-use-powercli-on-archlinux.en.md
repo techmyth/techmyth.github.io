@@ -18,7 +18,7 @@ Well, to install and use PowerCLI we have to install Powershell first. PowerShel
 
 As you can see Powershell is a tool highly used by infrastructure manufacturers and is offered as a method for automation or rapid deployment of software-based infrastructure. Powershell is my second preferred programming language with Python at the top of my list.
 
-The first thing we have to do is to install Powershell and for this I will use the program “yay” which is a tool in Archlinux to install programs from the unofficial repository “Arch User Repository”. With the command **yay -S powershell-bin** we can install the Powershell program to the system.
+The first thing we have to do is to install Powershell and for this I will use the program `yay` which is a tool in Archlinux to install programs from the unofficial repository `Arch User Repository`. With the command `yay -S powershell-bin` we can install the Powershell program to the system.
 
 #### yay -S powershell-bin
 
@@ -108,7 +108,7 @@ cd powershell-bin
 makepkg -si
 ```
 
-To access the Powershell application the **pwsh** command is used to call the interpreter. From the interpreter we can run Powershell commands that are commonly called “Cmdlets”.
+To access the Powershell application the `pwsh` command is used to call the interpreter. From the interpreter we can run Powershell commands that are commonly called `Cmdlets`.
 
 ```bash
 [rebelinux@blabla ~]$ pwsh
@@ -121,7 +121,7 @@ Type 'help' to get help.
 PS /home/rebelinux> 
 ```
 
-The next step to run PowerCLI is to install its module by using the **Install-Module -name VMware.PowerCLI** command from the Powershell interpreter.
+The next step to run PowerCLI is to install its module by using the `Install-Module -name VMware.PowerCLI` command from the Powershell interpreter.
 
 ```powershell
 PS /home/blabla> Install-Module -name VMware.PowerCLI
@@ -132,7 +132,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 PS /home/blabla>  
 ```
 
-To connect to the vCenter we use the “cmdlet” **Connect-VIServer** specifying the IP address or DNS name of the server.
+To connect to the vCenter we use the `cmdlet` `Connect-VIServer` specifying the IP address or DNS name of the server.
 
 ```powershell
 PS /home/blabla> Connect-VIServer vcenter-01v.zenprsolutions.local -Verbose -Username administrator@vsphere.local -Password XXXXXX
@@ -144,7 +144,7 @@ vcenter-01v.zenprsolutions.local 443  VSPHERE.LOCAL\Administrator
 PS /home/blabla> 
 ```
 
-I will use a basic command to do connection testing against vCenter. In this test I will use the **Get-Cluster** command to check the currently created clusters.
+I will use a basic command to do connection testing against vCenter. In this test I will use the `Get-Cluster` command to check the currently created clusters.
 
 ```powershell
 PS /home/blabla> Get-Cluster
@@ -159,7 +159,7 @@ RegionA01-COMP                 True       1          True       FullyAutomated
 PS /home/blabla> 
 ```
 
-Another basic example is to use the **Get-Datastore** command to validate which datastores currently exist in the virtual DataCenter. In the output of the **Get-Datastore** command you can see the free and used space in the datastores configured in the DataCenter.
+Another basic example is to use the `Get-Datastore` command to validate which datastores currently exist in the virtual DataCenter. In the output of the `Get-Datastore` command you can see the free and used space in the datastores configured in the DataCenter.
 
 ```powershell
 PS /home/blabla> Get-Datastore

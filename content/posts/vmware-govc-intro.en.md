@@ -9,7 +9,7 @@ tags:
 
 Hello everyone,
 
-This time I will be talking about how to use **Govc**, a CLI alternative developed in the **[GO](https://go.dev/)** programming language, this CLI is designed to be an easy to use alternative to the Web GUI and very suitable for automation tasks. This tool is based on **govmomi**, which is a library for GO used to interact with the VMware vSphere Application Programming Interface (API).
+This time I will be talking about how to use `Govc`, a CLI alternative developed in the [GO](https://go.dev/) programming language, this CLI is designed to be an easy to use alternative to the Web GUI and very suitable for automation tasks. This tool is based on `govmomi`, which is a library for GO used to interact with the VMware vSphere Application Programming Interface (API).
 
 #### Note: vSphere versions that have reached end of support may work, but are not officially supported.
 
@@ -38,11 +38,11 @@ LICENSE.txt
 README.md
 govc
 [bla@blabla govc]$ ls
-CHANGELOG.md  **govc**  govc_Linux_x86_64.tar.gz  LICENSE.txt  README.md
+CHANGELOG.md  `govc`  govc_Linux_x86_64.tar.gz  LICENSE.txt  README.md
 [bla@blabla govc]$ 
 ```
 
-In the folder unzipped there is the **govc** file which is the main binary of the tool. To test with **govc** I will connect to my HomeLab's vCenter which uses the FQDN address **vcenter-01v.pharmax.local**.
+In the folder unzipped there is the `govc` file which is the main binary of the tool. To test with `govc` I will connect to my HomeLab's vCenter which uses the FQDN address `vcenter-01v.pharmax.local`.
 
 ```sh
 [bla@blabla Downloads]$ ./govc about -u administrator@vsphere.local:SECUREPASSWORD@vcenter-01v.pharmax.local
@@ -61,6 +61,6 @@ UUID:         43f86c8f-1a6d-44c8-b6ac-6ec33a36d141
 
 #### Note: This tool assumes that the HTTPS certificate can be validated with its trust chain. If the certificate is "Self Sign" it is required to set the GOVC_INSECURE=1 variable.
 
-In this article I showed you an introduction about the **Govc** tool in the next articles I will be going into detail on how to use this tool to streamline the automation processes in our vSphere infrastructure.
+In this article I showed you an introduction about the `Govc` tool in the next articles I will be going into detail on how to use this tool to streamline the automation processes in our vSphere infrastructure.
 
 #### Hasta Luego Amigos!

@@ -13,7 +13,7 @@ Recientemente en un [post](https://community.netapp.com/t5/Microsoft-Virtualizat
 
 Un dato curioso sobre esta petición es que de manera nativa las librerías de Ontap no te permiten filtrar la información requerida y que pueda ser desplegada en una sola Tabla. Para esto creamos un objeto dentro de PowerShell donde podemos construir el formato de la información y que este tenga un sentido mas lógico.
 
-Las librerías de NetApp pueden ser instaladas desde el **PowerShell Gallery**:
+Las librerías de NetApp pueden ser instaladas desde el `PowerShell Gallery`:
 
 [https://www.powershellgallery.com/packages/DataONTAP/9.8.0](https://www.powershellgallery.com/packages/DataONTAP/9.8.0)
 

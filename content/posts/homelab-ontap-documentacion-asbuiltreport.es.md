@@ -15,13 +15,13 @@ El reporte se encuentra en estado inicial y en constante desarrollo, pero decid�
 
 ![Text](/img/AsBuildReport_NetApp_ONTAP.webp#center)
 
-Debo aclarar que este reporte no está diseñado para reemplazar o competir de ninguna forma con la herramienta **NetAppDocs**. Me percate de las muchas peticiones en el foro de NetApp de varios usuarios que tienen la necesidad de generar un reporte actualizado de su infraestructura de almacenamiento. Es por esta razón que tome la iniciativa de crear un reporte disponible de forma gratuita para los clientes y/o usuarios de NetApp. Una ventaja de utilizar el proyecto **AsBuiltReport**, es que te permite crear el reporte en múltiples formato (Word,Html o Texto) y hasta puedes automatizar su envío a través de correo electrónico.
+Debo aclarar que este reporte no está diseñado para reemplazar o competir de ninguna forma con la herramienta `NetAppDocs`. Me percate de las muchas peticiones en el foro de NetApp de varios usuarios que tienen la necesidad de generar un reporte actualizado de su infraestructura de almacenamiento. Es por esta razón que tome la iniciativa de crear un reporte disponible de forma gratuita para los clientes y/o usuarios de NetApp. Una ventaja de utilizar el proyecto `AsBuiltReport`, es que te permite crear el reporte en múltiples formato (Word,Html o Texto) y hasta puedes automatizar su envío a través de correo electrónico.
 
 Ahora bien, para comenzar necesitamos cumplir con los siguientes requisitos:
 
 - Multi-plataforma Windows, Linux o MAC
 - PowerShell v5.1+ ó v7
-- El módulo de «NetApp PowerShell Toolkit» >= 9.9.1.2106
+- El módulo de `NetApp PowerShell Toolkit` >= 9.9.1.2106
 - El módulo de AsBuiltReport.Core >= 1.1.0
 
 Este reporte utiliza la versión de PowerShell 5.+ ó PSCore 7, para validar la versión podemos utilizar la variable $PSVersionTable desde la consola de PowerShell:
@@ -44,9 +44,9 @@ WSManStackVersion              3.0
 PS /home/rebelinux>
 ```
 
-El reporte fue creado específicamente para la versión de **«NetApp PowerShell Toolkit»** >= 9.9.1.2106. Para validar que versión tenemos o si ha sido instalada podemos utilizar el comando **Get-Module** según se muestra en el siguiente ejemplo:
+El reporte fue creado específicamente para la versión de ``NetApp PowerShell Toolkit`` >= 9.9.1.2106. Para validar que versión tenemos o si ha sido instalada podemos utilizar el comando `Get-Module` según se muestra en el siguiente ejemplo:
 
-#### Nota: Adicionalmente validamos la versión de «AsBuiltReport.Core» que es una dependencia adicional para poder generar el reporte
+#### Nota: Adicionalmente validamos la versión de `AsBuiltReport.Core` que es una dependencia adicional para poder generar el reporte
 
 ```text
 PS /home/rebelinux> >Get-Module> -ListAvailable -Name >@('AsBuiltReport.Core','Netapp.Ontap')>                                    
@@ -61,7 +61,7 @@ Manifest   >9.9.1.2106>            >NetApp.ONTAP >                       Desk   
 PS /home/rebelinux>
 ```
 
-Si el comando no produce algún resultado quiere decir que ninguno de los módulos está instalado. Para instalar estas dependencias utilizamos el comando **Install-Module**:
+Si el comando no produce algún resultado quiere decir que ninguno de los módulos está instalado. Para instalar estas dependencias utilizamos el comando `Install-Module`:
 
 ```text
 PS /home/rebelinux> >Install-Module> -Name >@('AsBuiltReport.Core','Netapp.Ontap')>
@@ -87,7 +87,7 @@ Downloaded 0.2 MB out of 0.88 MB.
 PS /home/rebelinux>
 ```
 
-Para validar si la instalación fue exitosa utilizamos el comando **Get-Module**.
+Para validar si la instalación fue exitosa utilizamos el comando `Get-Module`.
 
 ```text
 PS /home/rebelinux> >Get-Module> -ListAvailable >"AsBuiltReport.NetApp.ONTAP"> 
@@ -104,9 +104,9 @@ PS /home/rebelinux>
 
 #### Nota: Como se puede ver se realizó la instalación del módulo versión 0.4.0
 
-Un requisito opcional es generar los archivos de configuración que te permite establecer los parámetros de la organización que son utilizados para generar el reporte. Este proceso genera unos archivos tipo JSON que son utilizados como plantillas **“templates”** de forma que no tengas que llenar la información repetitiva cuando generes los reportes.
+Un requisito opcional es generar los archivos de configuración que te permite establecer los parámetros de la organización que son utilizados para generar el reporte. Este proceso genera unos archivos tipo JSON que son utilizados como plantillas `templates` de forma que no tengas que llenar la información repetitiva cuando generes los reportes.
 
-El «cmdlet» de powershell **New-AsBuiltConfig** te permite generar la plantilla que utilizaremos como base del reporte. Esta plantilla establece los parámetros no técnicos del reporte.
+El `cmdlet` de powershell `New-AsBuiltConfig` te permite generar la plantilla que utilizaremos como base del reporte. Esta plantilla establece los parámetros no técnicos del reporte.
 
 ```text
 PS C:\WINDOWS\system32> >New-AsBuiltConfig
@@ -186,7 +186,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 }
 ```
 
-El comando **New-AsBuiltReportConfig** permite establecer los parámetros técnico del reporte como el nivel y tipo de información **«verbose level»**.
+El comando `New-AsBuiltReportConfig` permite establecer los parámetros técnico del reporte como el nivel y tipo de información ``verbose level``.
 
 ```text
 PS C:\WINDOWS\system32> >New-AsBuiltReportConfig NetApp.ONTAP> -FolderPath C:\Users\jocolon\AsBuiltReport\
@@ -277,7 +277,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 }
 ```
 
-Luego podemos generar el reporte utilizando el comando **«New-AsBuiltReport -Report NetApp.ONTAP -Target IP/FQDN«**
+Luego podemos generar el reporte utilizando el comando ``New-AsBuiltReport -Report NetApp.ONTAP -Target IP/FQDN``
 
 ```text
 PS /home/rebelinux> >New-AsBuiltReport> -Report >NetApp.ONTAP> -AsBuiltConfigFilePath /home/rebelinux/script/AsBuiltReport.json -OutputFolderPath /home/rebelinux/script >-Target> >192.168.7.60> -Format HTML  >-EnableHealthCheck> -Credential $cred -ReportConfigFilePath /home/rebelinux/script/AsBuiltReport.NetApp.ONTAP.json               

@@ -73,11 +73,11 @@ Es importante mencionar que vCheck tiene soporte para otros productos como se pr
 
 Para comenzar en necesario descargar la herramienta desde el portal de [Github](https://github.com/alanrenouf/vCheck-vSphere) donde es continuamente desarrollado. Para descargar vCheck directamente presione el siguiente enlace [Download](https://github.com/alanrenouf/vCheck-vSphere)
 
-Una vez descarguemos el «script» es necesario descomprimir el mismo.
+Una vez descarguemos el `script` es necesario descomprimir el mismo.
 
 ![Text](/img/2021-06-10_08-51-1024x551.webp#center)
 
-La primera vez que se ejecuta vCheck se iniciará el proceso de configuración, esta configuración permite crear una plantilla con la información que se utilizará para todas las futuras ejecuciones del programa. Para volver a modificar estos parámetros puede utilizar la opción **-config** de la siguiente manera:
+La primera vez que se ejecuta vCheck se iniciará el proceso de configuración, esta configuración permite crear una plantilla con la información que se utilizará para todas las futuras ejecuciones del programa. Para volver a modificar estos parámetros puede utilizar la opción `-config` de la siguiente manera:
 
 ```powershell
 [blabla@blabla ~]$ pwsh #Powershell core on Linux :)
@@ -313,12 +313,12 @@ WARNING: Site Recovery Manager - RPO Violation Report
 Specify Credential
 Please specify server credential
 User: administrator@vsphere.local
-Password for user administrator@vsphere.local: ********
+Password for user administrator@vsphere.local: ````
 ```
 
 {{< /collapse >}}
 
-Después de establecer la configuración inicial podemos comenzar a ejecutar el «script» principal de la herramienta utilizando el comando **vCheck.ps1 -Outputpath**. La opción **«Outputpath»** nos permite establecer dónde se guardará el reporte. Al ejecutar el comando nos pedirá las credenciales de acceso a vCenter. En mi caso utilicé la cuenta de administrador pero se recomienda utilizar una cuenta con privilegios de sólo lectura **«read-only»**.
+Después de establecer la configuración inicial podemos comenzar a ejecutar el `script` principal de la herramienta utilizando el comando `vCheck.ps1 -Outputpath`. La opción ``Outputpath`` nos permite establecer dónde se guardará el reporte. Al ejecutar el comando nos pedirá las credenciales de acceso a vCenter. En mi caso utilicé la cuenta de administrador pero se recomienda utilizar una cuenta con privilegios de sólo lectura ``read-only``.
 
 ```powershell
 PS /home/blabla/vCheck> ./vCheck.ps1 -Outputpath vcheck-reports/                                   
@@ -326,7 +326,7 @@ PS /home/blabla/vCheck> ./vCheck.ps1 -Outputpath vcheck-reports/
 Specify Credential
 Please specify server credential
 User: administrator@vsphere.local #vCenter credentials
-Password for user administrator@vsphere.local: ********
+Password for user administrator@vsphere.local: ````
 ```
 
 En esta área les presento el ejemplo del vCheck recopilando la información.
@@ -350,7 +350,7 @@ Begin Plugin Processing
 ..Displaying HTML results
 ```
 
-Una vez el comando termina se generá un archivo **.html** con el resultado del reporte. Una de las capacidades que tiene vCheck es que puede ser programado «schedule» para que el reporte sea enviado por correo electrónico de forma recurrente. De manera, que puedes tener un reporte semanal de cómo esta la salud de tu virtual.
+Una vez el comando termina se generá un archivo `.html` con el resultado del reporte. Una de las capacidades que tiene vCheck es que puede ser programado `schedule` para que el reporte sea enviado por correo electrónico de forma recurrente. De manera, que puedes tener un reporte semanal de cómo esta la salud de tu virtual.
 
 Estos son varios ejemplos de informes generados con vCheck.
 

@@ -1,5 +1,5 @@
 ---
-title: "HomeLab: Cómo desabilitar vSphere Cluster Services (vCLS)"
+title: "HomeLab: Cómo deshabilitar vSphere Cluster Services (vCLS)"
 author: 'Jonathan Colon Feliciano'
 date: 2020-12-18T08:39:31-04:00
 draft: false
@@ -7,7 +7,7 @@ tags:
   - "VMware"
 ---
 
-En la versión de vSphere 7 update 1 VMware añadió una nueva capacidad para la tecnología de `Distributed Resource Scheduler` (DRS) que consiste en tres VM  llamadas agentes. Las VMs agentes forman el estado de quórum del cluster y tienen la capacidad de auto corregirse. De forma que si apagas o borrar las VMs llamadas vCLS el servidor de vCenter volverá a encender o crear las VM nuevamente. Para efectos de un HomeLab esta nueva función consume recurso de CPU, Memoria y espacio de disco que aunque es mínimo no vale la pena tener una configuración que no añade nada a un ambiente de prueba y desarrollo.
+En la versión de vSphere 7 update 1 VMware añadió una nueva capacidad para la tecnología de `Distributed Resource Scheduler (DRS)` que consiste en tres VM  llamadas agentes. Las VMs agentes forman el estado de quorum del cluster y tienen la capacidad de auto corregirse. De forma que si apagas o borrar las VMs llamadas vCLS el servidor de vCenter volverá a encender o crear las VM nuevamente. Para efectos de un HomeLab esta nueva función consume recurso de CPU, Memoria y espacio de disco que aunque es mínimo no vale la pena tener una configuración que no añade nada a un ambiente de prueba y desarrollo.
 
 ![Text](/img/25079036c801ac924d3ff7d4cb3b9438.webp#center)
 
@@ -52,7 +52,7 @@ Id                              : ClusterComputeResource-(domain-c81)
 PS /home/rebelinux>
 ```
 
-Una vez tengamos el ID del clúster que en mi caso es `domain-c81` procedemos a añadir la configuracion en vCenter navegando a `[Advanced Settings => Configure => Edit Settings]`.
+Una vez tengamos el ID del clúster que en mi caso es `domain-c81` procedemos a añadir la configuración en vCenter navegando a `[Advanced Settings => Configure => Edit Settings]`.
 
 ![Text](/img/2021-05-29_21-47-1024x599.webp#center)
 

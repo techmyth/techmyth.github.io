@@ -7,7 +7,7 @@ tags:
 
 Hola a todos,
 
-Estos últimos días he estado realizando varios servicios de soportes relacionados a Veeam Backup & Replication donde he tenido la oportunidad de utilizar más los módulos de Powershell de Veeam. De manera que en esta oportunidad les estare mostrando de forma básica como obtener información relacionada a los repositorios conectados al servidor de Backup. Como siempre es necesario establecer conexión con el servidor de Backup utilizando el comando **“Connect-VBRServer”**.
+Estos últimos días he estado realizando varios servicios de soportes relacionados a Veeam Backup & Replication donde he tenido la oportunidad de utilizar más los módulos de Powershell de Veeam. De manera que en esta oportunidad les estare mostrando de forma básica como obtener información relacionada a los repositorios conectados al servidor de Backup. Como siempre es necesario establecer conexión con el servidor de Backup utilizando el comando `Connect-VBRServer`.
 
 ```text
 PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credential (Get-Credential)
@@ -15,12 +15,12 @@ PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credenti
 cmdlet Get-Credential at command pipeline position 1
 Supply values for the following parameters:
 User: pharmax\administrator
-Password for user pharmax\administrator: ********
+Password for user pharmax\administrator: ````
 
 PS C:\Users\jocolon> 
 ```
 
-Luego de conectarnos al servidor podemos utilizar el comando **“Get-VBRBackupRepository”** para identificar los repositorio conectados al servidor de Backup.
+Luego de conectarnos al servidor podemos utilizar el comando `Get-VBRBackupRepository` para identificar los repositorio conectados al servidor de Backup.
 
 ```text
 PS C:\Users\jocolon> Get-VBRBackupRepository                                           

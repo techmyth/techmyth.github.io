@@ -77,7 +77,7 @@ Once the script is downloaded, it is necessary to unzip it.
 
 ![Text](/img/2021-06-10_08-51-1024x551.webp#center)
 
-The first time vCheck is run it will start the configuration process, this configuration allows you to create a template with the information that will be used for all future runs of the program. To modify these parameters again you can use the **-config** option as follows:
+The first time vCheck is run it will start the configuration process, this configuration allows you to create a template with the information that will be used for all future runs of the program. To modify these parameters again you can use the `-config` option as follows:
 
 ```powershell
 [blabla@blabla ~]$ pwsh #Powershell core on Linux :)
@@ -313,12 +313,12 @@ WARNING: Site Recovery Manager - RPO Violation Report
 Specify Credential
 Please specify server credential
 User: administrator@vsphere.local
-Password for user administrator@vsphere.local: ********
+Password for user administrator@vsphere.local: ````
 ```
 
 {{< /collapse >}}
 
-After setting up the initial configuration we can start running the main script of the tool using the **vCheck.ps1 -Outputpath** command. The **“Outputpath”** option allows us to set where the report will be saved. When you run the command it will ask you for the vCenter login credentials. In my case I used the default administrator account but it is recommended to use an account with read-only privileges.
+After setting up the initial configuration we can start running the main script of the tool using the `vCheck.ps1 -Outputpath` command. The `Outputpath` option allows us to set where the report will be saved. When you run the command it will ask you for the vCenter login credentials. In my case I used the default administrator account but it is recommended to use an account with read-only privileges.
 
 ```powershell
 PS /home/blabla/vCheck> ./vCheck.ps1 -Outputpath vcheck-reports/                                   
@@ -326,7 +326,7 @@ PS /home/blabla/vCheck> ./vCheck.ps1 -Outputpath vcheck-reports/
 Specify Credential
 Please specify server credential
 User: administrator@vsphere.local #vCenter credentials
-Password for user administrator@vsphere.local: ********
+Password for user administrator@vsphere.local: ````
 ```
 
 In this area I show you the example of the vCheck collection process.
@@ -350,7 +350,7 @@ Begin Plugin Processing
 ..Displaying HTML results
 ```
 
-Once the command finishes, an **.html** file will be created with the result of the report. vCheck has the feature of being able to schedule the report to be sent by e-mail on a recurring basis. So, you can have a weekly report of how is the health of your virtual infrastructure.
+Once the command finishes, an `.html` file will be created with the result of the report. vCheck has the feature of being able to schedule the report to be sent by e-mail on a recurring basis. So, you can have a weekly report of how is the health of your virtual infrastructure.
 
 Here are several examples of report generated with vCheck.
 

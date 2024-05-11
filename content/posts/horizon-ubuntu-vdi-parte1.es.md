@@ -14,7 +14,7 @@ tags:
 
 <!---[Parte 1]({{< ref "/posts/horizon-ubuntu-vdi-parte1.es.md" >}} "Cómo utilizar Ubuntu Linux 22.04 como VDI en Horizon 8 2303")-->
 
-En esta ocasión estaré hablando sobre como utilizar **HashiCorp** `packer` para crear una imagen VM master que podemos utilizar como platilla. Una ventaja de este proceso es que esta imagen puede ser utilizada para publicar un Pool en VMware Horizon. Aunque existen varios `HowTo` de como crear automáticamente una plantilla con `packer` todos los artículos que he visto están orientados a Windows 10/11 y no asi para Linux. Es por esta razón, que me di a la tarea de crear este artículo.
+En esta ocasión estaré hablando sobre como utilizar `HashiCorp` `packer` para crear una imagen VM master que podemos utilizar como platilla. Una ventaja de este proceso es que esta imagen puede ser utilizada para publicar un Pool en VMware Horizon. Aunque existen varios `HowTo` de como crear automáticamente una plantilla con `packer` todos los artículos que he visto están orientados a Windows 10/11 y no asi para Linux. Es por esta razón, que me di a la tarea de crear este artículo.
 
 Es importante mencionar que VMware ofrece varios ejemplos de como crear una plantilla para los distinto sistemas operativos que se pueden automatizar con `packer`. Les dejo aquí el enlace:
 
@@ -40,7 +40,7 @@ Para comenzar, he creado una plantilla de `packer` para Ubuntu 22.04 que voy a u
 
 El primer paso es clonar el repositorio de Github localmente. En mi caso estoy utilizando Linux en mi computadora principal pero también puede utilizarse Windows 10/11 para este ejemplo.
 
-Para clonar el repositorio utilizaremos el comando `git clone "https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso"`
+Para clonar el repositorio utilizaremos el comando `git clone "https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso`
 
 #### Paso 1: Clonar repositorio packer-ubuntu-vsphere-horizon-iso
 
@@ -86,7 +86,7 @@ vsphere_server          = "vcenter.lab.local"
 vsphere_username        = "administrator@vsphere.local"
 
 # vsphere password
-vsphere_password        = "**************"
+vsphere_password        =```````
 
 # vsphere datacenter name
 vsphere_datacenter      = "LAB-VSI-DC"
@@ -146,7 +146,7 @@ timezone = "America/Puerto_Rico"
 ad_domain = "PHARMAX.LOCAL"
 
 # AD Domain join password
-join_password = "**********"
+join_password =`````
 
 # AD Domain join username
 join_username = "Administrator"

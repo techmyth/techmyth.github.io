@@ -17,7 +17,7 @@ The source code of the report can be found in Github here I leave the link so yo
 
 ![Text](/img/Veeam_VBR_Portal.webp#center)
 
-** Important: The report is currently available at PowerShell Gallery
+` Important: The report is currently available at PowerShell Gallery
 
 Now, to get started we need to meet the following requirements:
 

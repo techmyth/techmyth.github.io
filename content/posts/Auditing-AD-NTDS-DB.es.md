@@ -1,12 +1,12 @@
 ---
-title: "Seguridad: Auditoría de bases de datos de Active Directory con NtdsAudit"
+title: 'Seguridad: Auditoría de bases de datos de Active Directory con NtdsAudit'
 author: 'Jonathan Colon Feliciano'
 date: 2023-02-20T08:39:31-04:00
 draft: false
 tags:
-  - "Active Directory"
-  - "Seguridad"
-  - "Auditación"
+  - 'Active Directory'
+  - 'Seguridad'
+  - 'Auditación'
 ---
 
 En esta ocasión estaré hablando sobre un método para realizar auditación del contenido de la base de datos (NTDS.dit) de Active Directory. Esta herramienta llamada NtdsAudit fue creada por Dionach, aquí les dejo el enlace para que puedan ver las funcionalidades de la aplicación:
@@ -15,13 +15,13 @@ En esta ocasión estaré hablando sobre un método para realizar auditación del
 
 Según se explica en la pagina de la herramienta NtdsAudit es una aplicación que ayuda a auditar las bases de datos de Active Directory. Proporciona algunas estadísticas útiles relacionadas con cuentas y contraseñas. También se puede utilizar para extraer hashes de contraseñas para su posterior crackeo.
 
-Bueno ponemos aun lado la explicación y nos movemos al propósito de este articulo que es utilizar esta herramienta en un ambiente de "Active Directory" (AD). Para comenzar necesitamos extraer el contenido de la base de dados de AD, para lograr esta tarea necesitamos utilizar el comando "ntdsutil" desde un servidor controlador de dominio "Domain Controller".
+Bueno ponemos aun lado la explicación y nos movemos al propósito de este articulo que es utilizar esta herramienta en un ambiente de `Active Directory` (AD). Para comenzar necesitamos extraer el contenido de la base de dados de AD, para lograr esta tarea necesitamos utilizar el comando `ntdsutil` desde un servidor controlador de dominio `Domain Controller`.
 
-**Paso 1:** Abrir consola de comando en modo Administrador
+`Paso 1:` Abrir consola de comando en modo Administrador
 
 ![Text](/img/2023/auditing-ad-ntds-db/runasadmin-cmd.webp#center)
 
-**Paso 2:** ejecutar el comando "ntdsutil"
+`Paso 2:` ejecutar el comando `ntdsutil`
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -32,7 +32,7 @@ ntdsutil:
 C:\Users\Administrator>
 ```
 
-**Paso 3:** ejecutar el comando "activate instance ntds"
+`Paso 3:` ejecutar el comando `activate instance ntds`
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -40,11 +40,11 @@ Microsoft Windows [Version 10.0.17763.4010]
 
 C:\Users\Administrator>ntdsutil
 ntdsutil: activate instance ntds
-Active instance set to "ntds".
+Active instance set to `ntds`.
 C:\Users\Administrator>
 ```
 
-**Paso 4:** ejecutar el comando "ifm"
+`Paso 4:` ejecutar el comando `ifm`
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -55,7 +55,7 @@ C:\Users\Administrator>
 ntdsutil: ifm
 ```
 
-**Paso 5:** ejecutar el comando "create full c:\ntds_export"
+`Paso 5:` ejecutar el comando `create full c:\ntds_export`
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -85,7 +85,7 @@ Snapshot {1d9e428c-26c4-4c0e-ba29-4e3e9d5678cd} unmounted.
 IFM media created successfully in c:\ntds_export
 ```
 
-**Paso 6:** Salir del entorno de ntdsutils
+`Paso 6:` Salir del entorno de ntdsutils
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -117,7 +117,7 @@ c:\ntds_export>dir
 c:\ntds_export>
 ```
 
-Una vez tengamos los archivos de la base de dato **ntds.dit** podemos utilizar la herramienta para proveer estadísticas relacionado a cuentas de usuario y las contraseñas.
+Una vez tengamos los archivos de la base de dato `ntds.dit` podemos utilizar la herramienta para proveer estadísticas relacionado a cuentas de usuario y las contraseñas.
 
 Ahora es necesario descargar el archivo ejecutable de la aplicación que podemos conseguir en el siguiente enlace:
 
@@ -125,7 +125,7 @@ Ahora es necesario descargar el archivo ejecutable de la aplicación que podemos
 
 ![Text](/img/2023/auditing-ad-ntds-db/ntdsaudit_download.webp#center)
 
-En mi caso copie el archivo **NtdsAudit.exe** en la misma carpeta donde están los archivos de la base de datos ntds.dit (ntds_export):
+En mi caso copie el archivo `NtdsAudit.exe` en la misma carpeta donde están los archivos de la base de datos ntds.dit (ntds_export):
 
 ```cmd
 c:\ntds_export>dir
@@ -137,7 +137,7 @@ c:\ntds_export>dir
 02/20/2023  09:19 PM    <DIR>          .
 02/20/2023  09:19 PM    <DIR>          ..
 02/20/2023  08:41 PM    <DIR>          Active Directory
-02/19/2023  11:32 AM           702,464 **NtdsAudit.exe**
+02/19/2023  11:32 AM           702,464 `NtdsAudit.exe`
 02/20/2023  08:41 PM    <DIR>          registry
                1 File(s)        702,464 bytes
                4 Dir(s)   8,457,658,368 bytes free
@@ -145,7 +145,7 @@ c:\ntds_export>dir
 c:\ntds_export>
 ```
 
-A continuación les dejo los parámetros del comando **NtdsAudit.exe**. Este comando tiene varias opciones que te permiten escoger que función especifica deseas utilizar.
+A continuación les dejo los parámetros del comando `NtdsAudit.exe`. Este comando tiene varias opciones que te permiten escoger que función especifica deseas utilizar.
 
 ```cmd
 Usage:  [arguments] [options]
@@ -171,12 +171,12 @@ WARNING: Use of the --pwdump option will result in decryption of password hashes
 Sensitive information will be stored in memory and on disk. Ensure the pwdump file is handled appropriately
 ```
 
-Por último, solo es necesario ejecutar el comando NtdsAudit.exe apuntando a la base de datos **ntds.dit** y al registro de **SYSTEM**. Ambos archivos se encuentran dentro de la carpeta **ntds_export**.
+Por último, solo es necesario ejecutar el comando NtdsAudit.exe apuntando a la base de datos `ntds.dit` y al registro de `SYSTEM`. Ambos archivos se encuentran dentro de la carpeta `ntds_export`.
 
 Ejemplo:
 
 ```cmd
-c:\ntds_export> ntdsaudit "Active Directory\ntds.dit" -s registry\SYSTEM -p pwdump.txt -u users.csv
+c:\ntds_export> ntdsaudit `Active Directory\ntds.dit` -s registry\SYSTEM -p pwdump.txt -u users.csv
 
 The base date used for statistics is 2/21/2023 12:41:21 AM
 
@@ -233,7 +233,7 @@ Account stats for: uia.local
 
 WARNING:
 The NTDS file has been retrieved from a global catalog (GC) server. Whilst GCs store information for other domains, they only store password hashes for their primary domain.
-Password hashes have only been dumped for the "pharmax.local" domain.
+Password hashes have only been dumped for the `pharmax.local` domain.
 If you require password hashes for other domains, please obtain the NTDS and SYSTEM files for each domain.
 
 Password stats for: pharmax.local
@@ -245,8 +245,8 @@ Password stats for: pharmax.local
 c:\ntds_export>
 ```
 
-Como pueden observar este comando se puede utilizar para realizar "Cybersecurity researching" :)
+Como pueden observar este comando se puede utilizar para realizar `Cybersecurity researching` :)
 
-Espero este articulo les haya sido de ayuda. **Hasta luego!!!**
+Espero este articulo les haya sido de ayuda. `Hasta luego!!!`
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)

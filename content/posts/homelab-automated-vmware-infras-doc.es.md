@@ -6,9 +6,9 @@ tags:
     - VMware
 ---
 
-En este blog estaré hablando sobre como automatizar la creación de reportes de documentación de nuestra infraestructura virtual. Existen varias soluciones comerciales para generar este tipo de reporte pero estaré hablando de [**“As Built Report”**](https://www.asbuiltreport.com/) una herramienta gratuita que utiliza powershell como base para generar los reportes.
+En este blog estaré hablando sobre como automatizar la creación de reportes de documentación de nuestra infraestructura virtual. Existen varias soluciones comerciales para generar este tipo de reporte pero estaré hablando de [`As Built Report`](https://www.asbuiltreport.com/) una herramienta gratuita que utiliza powershell como base para generar los reportes.
 
-La herramienta «As Built Report» utiliza los módulos de VMware.PowerCLI que explicamos anteriormente en nuestro blog. Si de sea saber un poco más sobre PowerCLI sigue este enlace [**here**](http://192.168.7.40/2021/06/05/how-to-install-and-use-powercli-on-archlinux/). Un dato importante sobre **«As Built Report»** es que no solo se utiliza para generar reporte sobre VMware también cuenta con soporte para los siguientes productos:
+La herramienta `As Built Report` utiliza los módulos de VMware.PowerCLI que explicamos anteriormente en nuestro blog. Si de sea saber un poco más sobre PowerCLI sigue este enlace [`here`](http://192.168.7.40/2021/06/05/how-to-install-and-use-powercli-on-archlinux/). Un dato importante sobre ``As Built Report`` es que no solo se utiliza para generar reporte sobre VMware también cuenta con soporte para los siguientes productos:
 
 - VMware vSphere, NSX & SRM
 - Cisco UCS Manager
@@ -25,7 +25,7 @@ Primero que todo para utilizar esta herramienta necesitamos validar los requisit
 - Windows PowerShell 5.1 o later
 - VMware.PowerCLI
 
-Para instalar el modulo de powershell de **«As Built Report»** utilizamos el comando **Install-Module** seguido del nombre del modulo AsBuiltReport.
+Para instalar el modulo de powershell de ``As Built Report`` utilizamos el comando `Install-Module` seguido del nombre del modulo AsBuiltReport.
 
 ```powershell
 PS /home/blabla> Install-Module -Name AsBuiltReport
@@ -36,11 +36,11 @@ You are installing the modules from an untrusted repository. If you trust this r
 PS /home/blabla>   
 ```
 
-Un requisito opcional es generar los archivo de configuración que te permite establecer los parámetros de la organización que son utilizados para generar el reporte. Este proceso genera unos archivos tipo JSON que son utilizados como plantillas **«templates»** de forma que no tengas que llenar la información repetitiva cuando generes los reportes.
+Un requisito opcional es generar los archivo de configuración que te permite establecer los parámetros de la organización que son utilizados para generar el reporte. Este proceso genera unos archivos tipo JSON que son utilizados como plantillas ``templates`` de forma que no tengas que llenar la información repetitiva cuando generes los reportes.
 
 #### AsBuiltReport archivo de configuratiom tipo JSON
 
-El **«cmdlet»** de powershell New-AsBuiltConfig te permite generar la plantilla que utilizaremos como base del reporte. Esta plantilla establece los parámetros no técnicos del reporte.
+El ``cmdlet`` de powershell New-AsBuiltConfig te permite generar la plantilla que utilizaremos como base del reporte. Esta plantilla establece los parámetros no técnicos del reporte.
 
 ```powershell
 PS C:\WINDOWS\system32> New-AsBuiltConfig
@@ -121,7 +121,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 }
 ```
 
-El comando **New-AsBuiltReportConfig** permite establecer los parámetros técnico del reporte como el nivel y tipo de información **«verbose level»**.
+El comando `New-AsBuiltReportConfig` permite establecer los parámetros técnico del reporte como el nivel y tipo de información ``verbose level``.
 
 ```batch
 PS C:\WINDOWS\system32> New-AsBuiltReportConfig VMware.vSphere -FolderPath C:\Users\jocolon\AsBuiltReport\ -Filename ReportConfig
@@ -215,7 +215,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 }
 ```
 
-Por ultimo, generamos el reporte utilizando el comando **New-AsBuiltReport** con los parámetros de información del vCenter y haciendo referencia a los archivo JSON que generamos como plantillas.
+Por ultimo, generamos el reporte utilizando el comando `New-AsBuiltReport` con los parámetros de información del vCenter y haciendo referencia a los archivo JSON que generamos como plantillas.
 
 ```powershell
 PS C:\WINDOWS\system32> New-AsBuiltReport -Report VMware.vSphere -Target vcenter-01v.zenprsolutions.local -Username administrator@vsphere.local -Password XXXXX -Format Word,Text,HTML -OutputFolderPath 'C:\Users\jocolon\OneDrive\Desktop\' -EnableHealthCheck -AsBuiltConfigFilePath 'HomeLab VMware Report.json' -ReportConfigFilePath 'ReportConfig.json'
@@ -224,14 +224,14 @@ VMware vSphere As Built Report 'VMware vSphere As Built Report' has been saved t
 PS C:\WINDOWS\system32>
 ```
 
-Una vez termine el proceso de recopilar la información desde el vCenter el comando graba el reporte según se le especificó con el parámetro de **OutputFolderPath**. En la siguiente imagen se muestra el reporte generado en el formato de **Word,Text,HTML** según se le especificó.
+Una vez termine el proceso de recopilar la información desde el vCenter el comando graba el reporte según se le especificó con el parámetro de `OutputFolderPath`. En la siguiente imagen se muestra el reporte generado en el formato de `Word,Text,HTML` según se le especificó.
 
 ![Text](/img/2021-06-06_13-57.webp#center)
 
-A continuación les muestro varias imágenes que muestran el resultado del reporte generado para el vCenter **vcenter-01v**:
+A continuación les muestro varias imágenes que muestran el resultado del reporte generado para el vCenter `vcenter-01v`:
 
 ![Text](/img/asbuiltreport-vsphere.webp#center)
 
 ### Resumen
 
-En este laboratorio vimos que fácil es generar documentación sobre nuestra infraestructura virtual utilizando herramientas disponibles gratuitamente. «As Built Report» es una herramienta robusta que nos facilita el proceso manual de crear o mantener actualizada nuestra documentación.
+En este laboratorio vimos que fácil es generar documentación sobre nuestra infraestructura virtual utilizando herramientas disponibles gratuitamente. `As Built Report` es una herramienta robusta que nos facilita el proceso manual de crear o mantener actualizada nuestra documentación.

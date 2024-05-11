@@ -11,7 +11,7 @@ tags:
 
 ### The Problem
 
-In the last few months I have been studying for the **“VEEAM VMCE Arquitect”** certification and one of the requirements is to implement the **“Scale Out Backup Repository”** option. A simple way to achieve this is by using the Minio service.
+In the last few months I have been studying for the `VEEAM VMCE Arquitect` certification and one of the requirements is to implement the `Scale Out Backup Repository` option. A simple way to achieve this is by using the Minio service.
 
 ### About Minio
 

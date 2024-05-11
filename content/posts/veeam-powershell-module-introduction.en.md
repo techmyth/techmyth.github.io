@@ -8,7 +8,7 @@ tags:
 
 Hello to everyone,
 
-This time I will be showing an introduction of the Veeam Powershell module and how to make the initial connection to the backup server. In Veeam Backup & Replication version 11 a new powershell module called **“Veeam.Backup.PowerShell”** was introduced. According to the Veeam documentation portal there are two ways to use this powershell module:
+This time I will be showing an introduction of the Veeam Powershell module and how to make the initial connection to the backup server. In Veeam Backup & Replication version 11 a new powershell module called `Veeam.Backup.PowerShell` was introduced. According to the Veeam documentation portal there are two ways to use this powershell module:
 
 1. Accessing Powershell from the Veeam Backup &amp; Replication console.
 
@@ -29,7 +29,7 @@ It is important to mention that the Powershell module is available on the Veeam 
 >
 > [Veeam PowerShell Reference](https://helpcenter.veeam.com/docs/backup/powershell/)
 
-To validate if the module was loaded successfully you can use the **“Get-Module”** command. As you can see in the example version 1.0 of **“Veeam.Backup.PowerShell”** was loaded on the system.
+To validate if the module was loaded successfully you can use the `Get-Module` command. As you can see in the example version 1.0 of `Veeam.Backup.PowerShell` was loaded on the system.
 
 ```powershell
 PS C:\Users\jocolon> Get-Module -ListAvailable -Name Veeam.Backup.PowerShell
@@ -50,7 +50,7 @@ Speaking a bit of history, the traditional way to load the Powershell module in 
  Add-PSSnapin -Name VeeamPSSnapIn #Veeam Powershell Pre11
 ```
 
-Now in Veeam VBR version 11 the traditional **“Import-Module”** command is used like any other Powershell module. In the case of Veeam 11 we use the command referring to the module called “Veeam.Backup.PowerShell”. Once the module is loaded you can verify which cmdlets are available with the **“Get-Command”** cmdlet.
+Now in Veeam VBR version 11 the traditional `Import-Module` command is used like any other Powershell module. In the case of Veeam 11 we use the command referring to the module called `Veeam.Backup.PowerShell`. Once the module is loaded you can verify which cmdlets are available with the `Get-Command` cmdlet.
 
 ```powershell
 PS C:\Users\jocolon> Get-Command -Module Veeam.Backup.PowerShell
@@ -72,7 +72,7 @@ Truncated.......
 PS C:\Users\jocolon>
 ```
 
-Now that everything is ready you can establish the initial connection to your Backup server. To accomplish this process use the command **“Connect-VBRServer”**. In the following example we use the option to request credentials but Veeam modules accept traditional methods to provide credentials in Powershell ([Referencias](https://duffney.io/addcredentialstopowershellfunctions/)).
+Now that everything is ready you can establish the initial connection to your Backup server. To accomplish this process use the command `Connect-VBRServer`. In the following example we use the option to request credentials but Veeam modules accept traditional methods to provide credentials in Powershell ([Referencias](https://duffney.io/addcredentialstopowershellfunctions/)).
 
 ```powershell
 PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credential (Get-Credential)
@@ -80,11 +80,11 @@ PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credenti
 cmdlet Get-Credential at command pipeline position 1
 Supply values for the following parameters:
 User: pharmax\veeam_admin
-Password for user pharmax\veeam_admin: ********
+Password for user pharmax\veeam_admin: ````
 PS C:\Users\jocolon> 
 ```
 
-In this example I connect to the server with the name **“veeam-vbr.pharmax.local”** with the username **“pharmax\\veeam\_admin”**. It is important to mention that only users with the **“Veeam Backup Administrator”** role can establish connection via powershell. If you try to connect with an account that does not have this privilege level, you will get the following error:
+In this example I connect to the server with the name `veeam-vbr.pharmax.local` with the username `pharmax\\veeam\_admin`. It is important to mention that only users with the `Veeam Backup Administrator` role can establish connection via powershell. If you try to connect with an account that does not have this privilege level, you will get the following error:
 
 ```powershell
 PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credential (Get-Credential)
@@ -92,7 +92,7 @@ PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credenti
 cmdlet Get-Credential at command pipeline position 1
 Supply values for the following parameters:
 User: pharmax\vrauser
-Password for user pharmax\vrauser: ********
+Password for user pharmax\vrauser: ````
 Connect-VBRServer : Only users with Veeam Backup Administrator role assigned can use Veeam Backup PowerShell Snap-in
 At line:1 char:1
 + Connect-VBRServer -Server veeam-vbr.pharmax.local -Credential (Get-Cr ...
@@ -103,7 +103,7 @@ At line:1 char:1
 PS C:\Users\jocolon> 
 ```
 
-To validate existing sessions use the command **“Get-VBRServerSession”**. The following example shows the connection to the **“veeam-vbr”** server using the **“veeam\_admin”** user.
+To validate existing sessions use the command `Get-VBRServerSession`. The following example shows the connection to the `veeam-vbr` server using the `veeam\_admin` user.
 
 ```powershell
 PS C:\Users\jocolon> Get-VBRServerSession                 

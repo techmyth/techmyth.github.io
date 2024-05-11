@@ -5,7 +5,7 @@ tags:
     - VMware
 ---
 
-This time I will be showing a tool that I use regularly to quickly identify inventory information in a vsphere infrastructure. This tool is called **“vDocumentation”** and precisely uses PowerCLI to obtain the inventory information. The creator of this tool **“Ariel Sanchez Mora”** @arielsanchezmor defines vDocumentation as:
+This time I will be showing a tool that I use regularly to quickly identify inventory information in a vsphere infrastructure. This tool is called `vDocumentation` and precisely uses PowerCLI to obtain the inventory information. The creator of this tool `Ariel Sanchez Mora` @arielsanchezmor defines vDocumentation as:
 
 > vDocumentation provides a community-created set of PowerCLI scripts that produce infrastructure documentation of vSphere environments in CSV or Excel file format.
 >
@@ -20,7 +20,7 @@ However, to get started, the following requirements must be met:
 - ImportExcel module &gt;= 7+
 - VMware PowerCLI module &gt;= 12.3+
 
-To install this tool we only need to use the **“Install-Module”** command from a Powershell console.
+To install this tool we only need to use the `Install-Module` command from a Powershell console.
 
 ```powershell
 Install-Module -Name VMware.PowerCLI
@@ -28,7 +28,7 @@ Install-Module -Name ImportExcel
 Install-Module -Name vDocumentation
 ```
 
-Once the modules are installed the installation can be verified using the **“Get-Module”** command.
+Once the modules are installed the installation can be verified using the `Get-Module` command.
 
 ```text
 PS C:\Users\Administrator> Get-Module -ListAvailable -Name @('VMware.PowerCLI','ImportExcel','vDocumentation')
@@ -43,7 +43,7 @@ Manifest   12.4.1.18…            VMware.PowerCLI                     Desk
 PS C:\Users\Administrator>
 ```
 
-After validating the installation process, use the **“Get-Command”** command to identify the cmdlets that this tool brings to PowerShell.
+After validating the installation process, use the `Get-Command` command to identify the cmdlets that this tool brings to PowerShell.
 
 ```text
 PS C:\Users\Administrator> Get-Command -Module vDocumentation
@@ -63,7 +63,7 @@ Function        Get-vSANInfo                                       2.4.7      vD
 PS C:\Users\Administrator>
 ```
 
-Before using the modules it is required to first establish the connection to the vCenter server or ESXi. To achieve this task we use the command **“Connect-VIServer”**.
+Before using the modules it is required to first establish the connection to the vCenter server or ESXi. To achieve this task we use the command `Connect-VIServer`.
 
 ```text
 PS C:\Users\Administrator> Connect-VIServer -Server 192.168.5.2 -Username administrator@vsphere.local -Password XXXXXX
@@ -76,7 +76,7 @@ Name                           Port  User
 PS C:\Users\Administrator>
 ```
 
-After the connection is established the modules can be used. In this example I will use the command “**Get-ESXInventory”** to get the inventory information of the ESXi servers connected to the vCenter.
+After the connection is established the modules can be used. In this example I will use the command ``Get-ESXInventory` to get the inventory information of the ESXi servers connected to the vCenter.
 
 ```text
 PS C:\Users\Administrator> Get-ESXInventory
@@ -170,7 +170,7 @@ Syslog Client Enabled     : False
 PS C:\Users\Administrator>
 ```
 
-The next example I will show you is about the **“Get-ESXStorage”** command. This command allows you to get storage device information connected to the ESXi server.
+The next example I will show you is about the `Get-ESXStorage` command. This command allows you to get storage device information connected to the ESXi server.
 
 ```text
 PS C:\Users\Administrator> Get-ESXStorage
@@ -217,7 +217,7 @@ File System Version    : 6.81
 PS C:\Users\Administrator>
 ```
 
-The last example I will show you is the **“Get-ESXNetworking”** command used to retrieve the information of the existing physical and virtual network ports on the server.
+The last example I will show you is the `Get-ESXNetworking` command used to retrieve the information of the existing physical and virtual network ports on the server.
 
 ```text
 PS C:\Users\Administrator> Get-ESXNetworking

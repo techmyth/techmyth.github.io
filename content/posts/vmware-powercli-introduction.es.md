@@ -15,9 +15,9 @@ VMware describe a PowerCLI como:
 >
 > [VMware {Code}](https://developer.vmware.com/web/tool/12.4/vmware-powercli)
 
-Como pueden ver PowerCLI está directamente integrado en el ecosistema de VMware y es la herramienta principal de automatización y desarrollo. Con esta herramienta se pueden crear “script” sencillos como tambien es util a la hora de programar o automatizar tareas en datacenter físico y virtuales.
+Como pueden ver PowerCLI está directamente integrado en el ecosistema de VMware y es la herramienta principal de automatización y desarrollo. Con esta herramienta se pueden crear `script` sencillos como tambien es util a la hora de programar o automatizar tareas en datacenter físico y virtuales.
 
-Para comenzar a utilizar PowerCLI es necesario instalar la herramienta, para alcanzar este objetivo podemos instalarlo desde una consola de PowerShell. En mi caso, estaré utilizando **‘PowerShell Core’** en linux pero puede ser instalado de igual forma en Windows o Macos. Para acceder PowerShell desde Linux utilizamos el comando **“pwsh”** desde una consola o **“shell”**.
+Para comenzar a utilizar PowerCLI es necesario instalar la herramienta, para alcanzar este objetivo podemos instalarlo desde una consola de PowerShell. En mi caso, estaré utilizando `PowerShell Core` en linux pero puede ser instalado de igual forma en Windows o Macos. Para acceder PowerShell desde Linux utilizamos el comando `pwsh` desde una consola o `shell`.
 
 ```text
 [rebelinux@xxxxx ~]$ pwsh
@@ -30,7 +30,7 @@ Type 'help' to get help.
 PS /home/rebelinux>
 ```
 
-Una vez tengamos acceso a la consola de **“pwsh”** podemos utilizar el comando **“Install-Module”** para instalar la herramienta. En el siguiente ejemplo les muestro el resultado:
+Una vez tengamos acceso a la consola de `pwsh` podemos utilizar el comando `Install-Module` para instalar la herramienta. En el siguiente ejemplo les muestro el resultado:
 
 ```text
 PS /home/rebelinux> Install-Module -Name VMware.PowerCLI                                                                                                                                                                                                                                             Installing package 'VMware.PowerCLI'
@@ -41,7 +41,7 @@ Downloaded 13.78 MB out of 15.25 MB.
 PS /home/rebelinux>                                                                                                                        
 ```
 
-Para validar que version de PowerCLI tenemos instalado podemos utilizar el comando **“Get-Module”:**
+Para validar que version de PowerCLI tenemos instalado podemos utilizar el comando `Get-Module`:
 
 ```text
 \PS /home/rebelinux> Get-Module -ListAvailable VMware.PowerCLI
@@ -55,10 +55,10 @@ Manifest   12.4.1.18…            VMware.PowerCLI                     Desk
 PS /home/rebelinux> 
 ```
 
-Una vez PowerCLI es instalado podemos utilizar los módulos de administración. Para identificar qué comandos o los llamados [cmdlets](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.1) de PowerShell están disponibles podemos utilizar el comando **“Get-command”**.
+Una vez PowerCLI es instalado podemos utilizar los módulos de administración. Para identificar qué comandos o los llamados [cmdlets](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.1) de PowerShell están disponibles podemos utilizar el comando `Get-command`.
 
 ```text
-PS /home/rebelinux> Get-Command -Module VMware* <em>get-vm* </em>    
+PS /home/rebelinux> Get-Command -Module VMware* *get-vm*
 
 CommandType     Name                                               Version    Source
 -----------     ----                                               -------    ------
@@ -115,7 +115,7 @@ Cmdlet          Get-VMStartPolicy                                  12.4.0.18… 
 PS /home/rebelinux>
 ```
 
-En el caso específico del ejemplo anterior se aplicó un filtro al comando para mostrar solo los cmdlet que comienzan con **get-vm***. En el próximo artículo les estare mostrando como realizar la conexión inicial hacia vCenter o a un servidor ESXi “standalone”.
+En el caso específico del ejemplo anterior se aplicó un filtro al comando para mostrar solo los cmdlet que comienzan con `get-vm *`. En el próximo artículo les estaré mostrando como realizar la conexión inicial hacia vCenter o a un servidor ESXi `standalone`.
 
 Hasta luego!
 

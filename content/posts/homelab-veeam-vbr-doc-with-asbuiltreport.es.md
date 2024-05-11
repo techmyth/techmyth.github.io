@@ -17,7 +17,7 @@ El website de desarrollo del reporte se encuentra en Github les dejo el enlace p
 
 ![Text](/img/Veeam_VBR_Portal.webp#center)
 
-** Importante: El reporte se encuentra actualmente disponible en `PowerShell Gallery`.
+` Importante: El reporte se encuentra actualmente disponible en `PowerShell Gallery`.
 
 Ahora bien, para comenzar necesitamos cumplir con los siguientes requisitos:
 

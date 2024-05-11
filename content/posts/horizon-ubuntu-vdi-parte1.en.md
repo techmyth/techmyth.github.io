@@ -14,7 +14,7 @@ tags:
 
 <!---[Parte 1]({{< ref "/posts/horizon-ubuntu-vdi-parte1.es.md" >}} "Cómo utilizar Ubuntu Linux 22.04 como VDI en Horizon 8 2303")-->
 
-This time I am going to talk about how to use **HashiCorp** `packer` to create a VM master image that can be used as a template to publish a Pool in VMware Horizon. Although there are many HowTo's on how to automatically create a template with `packer`, all the ones I have seen are oriented to Windows 10/11 and not for Linux. It is for this reason, that I gave myself the task of creating this post.
+This time I am going to talk about how to use `HashiCorp` `packer` to create a VM master image that can be used as a template to publish a Pool in VMware Horizon. Although there are many HowTo's on how to automatically create a template with `packer`, all the ones I have seen are oriented to Windows 10/11 and not for Linux. It is for this reason, that I gave myself the task of creating this post.
 
 It is important to mention that VMware offers several examples of how to create a template for the different operating systems that can be automated with `packer`. Here is the link:
 
@@ -38,7 +38,7 @@ To start, I have created a `packer` template for Ubuntu 22.04 that I am going to
 
 The first step would be to clone the Github repository locally. In my case I am using Linux on my main computer but Windows 10/11 can also be used for this example.
 
-To do this we will use the command `git clone "https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso"`
+To do this we will use the command `git clone "https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso`
 
 #### Step 1: Clone packer-ubuntu-vsphere-horizon-iso repository
 
@@ -84,7 +84,7 @@ vsphere_server          = "vcenter.lab.local"
 vsphere_username        = "administrator@vsphere.local"
 
 # vsphere password
-vsphere_password        = "**************"
+vsphere_password        =```````
 
 # vsphere datacenter name
 vsphere_datacenter      = "LAB-VSI-DC"
@@ -144,7 +144,7 @@ timezone = "America/Puerto_Rico"
 ad_domain = "PHARMAX.LOCAL"
 
 # AD Domain join password
-join_password = "**********"
+join_password =`````
 
 # AD Domain join username
 join_username = "Administrator"

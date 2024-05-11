@@ -17,7 +17,7 @@ VMware describes PowerCLI as:
 
 As you can see PowerCLI is directly integrated into the VMware ecosystem and is the main tool for automation and development. With this tool you can create simple scripts as well as schedule or automate tasks in large physical and virtual datacenters.
 
-To start using PowerCLI it is required to install the tool, to achieve this goal you can install it from a PowerShell console. In my case, I will be using ‘PowerShell Core’ on linux but it can be installed in the same way on Windows or Macos. To access PowerShell from Linux we use the **“pwsh”** command from a console or **“shell”**.
+To start using PowerCLI it is required to install the tool, to achieve this goal you can install it from a PowerShell console. In my case, I will be using ‘PowerShell Core’ on linux but it can be installed in the same way on Windows or Macos. To access PowerShell from Linux we use the `pwsh` command from a console or `shell`.
 
 ```text
 [rebelinux@xxxxx ~]$ pwsh
@@ -30,7 +30,7 @@ Type 'help' to get help.
 PS /home/rebelinux>
 ```
 
-Once you have access to the **“pwsh”** console you can use the **“Install-Module”** command to install the tool. The following example shows the result:
+Once you have access to the `pwsh` console you can use the `Install-Module` command to install the tool. The following example shows the result:
 
 ```text
 PS /home/rebelinux> Install-Module -Name VMware.PowerCLI                                                                                                                                                                                                                                             Installing package 'VMware.PowerCLI'
@@ -41,7 +41,7 @@ Downloaded 13.78 MB out of 15.25 MB.
 PS /home/rebelinux>                                                                                                                        
 ```
 
-To validate which version of PowerCLI you have installed you can use the **“Get-Module”** command:
+To validate which version of PowerCLI you have installed you can use the `Get-Module` command:
 
 ```text
 PS /home/rebelinux> Get-Module -ListAvailable VMware.PowerCLI
@@ -55,10 +55,10 @@ Manifest   12.4.1.18…            VMware.PowerCLI                     Desk
 PS /home/rebelinux> 
 ```
 
-Once PowerCLI is installed the administration modules can be used. To identify which commands or the so-called PowerShell **cmdlets** are available we can use the **“Get-command”** command.
+Once PowerCLI is installed the administration modules can be used. To identify which commands or the so-called PowerShell `cmdlets` are available we can use the `Get-command` command.
 
 ```text
-PS /home/rebelinux> Get-Command -Module VMware* <em>get-vm* </em>    
+PS /home/rebelinux> Get-Command -Module VMware* *get-vm*  
 
 CommandType     Name                                               Version    Source
 -----------     ----                                               -------    ------
@@ -115,7 +115,7 @@ Cmdlet          Get-VMStartPolicy                                  12.4.0.18… 
 PS /home/rebelinux>
 ```
 
-In the specific case of the previous example a filter was applied to the command to show only the cmdlet starting with **“get-vm\*”**. In the next article I will be showing you how to make the initial connection to vCenter or to a standalone ESXi server.
+In the specific case of the previous example a filter was applied to the command to show only the cmdlet starting with `get-vm *`. In the next article I will be showing you how to make the initial connection to vCenter or to a standalone ESXi server.
 
 See you soon!
 

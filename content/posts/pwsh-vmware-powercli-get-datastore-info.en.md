@@ -7,7 +7,7 @@ tags:
 
 Hello,
 
-In this post I will show you how to get the datastore list in a vSphere infrastructure using PowerCLI. Now, first of all we have to establish connection to our vCenter/ESXi to get this information. We can do this using the **“Connect-VIServer”** command.
+In this post I will show you how to get the datastore list in a vSphere infrastructure using PowerCLI. Now, first of all we have to establish connection to our vCenter/ESXi to get this information. We can do this using the `Connect-VIServer` command.
 
 ```text
 PS C:\Users\jocolon> Connect-VIServer -Server 192.168.5.2
@@ -15,7 +15,7 @@ PS C:\Users\jocolon> Connect-VIServer -Server 192.168.5.2
 Specify Credential
 Please specify server credential
 User: administrator@vsphere.local
-Password for user administrator@vsphere.local: ********
+Password for user administrator@vsphere.local: ````
 
 Name                           Port  User
 ----                           ----  ----
@@ -25,7 +25,7 @@ Name                           Port  User
 PS C:\Users\jocolon> 
 ```
 
-After the connection is established you can use the **“Get-Datastore”** command.
+After the connection is established you can use the `Get-Datastore` command.
 
 ```text
 PS C:\Users\jocolon> Get-Datastore 
@@ -51,7 +51,7 @@ HDD-VM-ISO-LOW-PERF                    461.363         931.250
 PS C:\Users\jocolon>
 ```
 
-This command shows the existing Datastore and the basic information about the used space. With this command we can also filter the search allowing to obtain additional Datastore information. if we add the Datastore name to the **“Get-Datastore”** command with the **“-Name”** option. For example if we use the command **“Get-Datastore -Name &lt;DatastoreName&gt; | Format-List”** the following result is shown.
+This command shows the existing Datastore and the basic information about the used space. With this command we can also filter the search allowing to obtain additional Datastore information. if we add the Datastore name to the `Get-Datastore` command with the `-Name` option. For example if we use the command `Get-Datastore -Name *DatastoreName* | Format-List` the following result is shown.
 
 ```text
 PS C:\Users\jocolon> Get-Datastore -Name NVME-VFLASH-01 | Format-List  
@@ -83,7 +83,7 @@ Uid                            : /VIServer=vsphere.local\administrator@192.168.5
 PS C:\Users\jocolon>
 ```
 
-Like most Powershell commands, the PowerCLI commands allow the use of **[“Pipeline”](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.2)**. If we use the **“Get-VMHost”** command to get the ESXi servers together with the “Get-Datastore” command you can further filter the content of the Datastore connected to the server.
+Like most Powershell commands, the PowerCLI commands allow the use of [Pipeline](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.2). If we use the `Get-VMHost` command to get the ESXi servers together with the `Get-Datastore` command you can further filter the content of the Datastore connected to the server.
 
 ```text
 PS C:\Users\jocolon> Get-VMHost -Name esxsvr-00f.pharmax.local | Get-Datastore

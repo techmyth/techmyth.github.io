@@ -16,9 +16,9 @@ Ahora bien, para instalar y utilizar PowerCLI tenemos que instalar primero Power
 - DELL\EMC Unity-Powershell
 - Amazon AWS Tools for PowerShell
 
-Como pueden ver Powershell es una herramienta altamente desarrollada por los manufactureros de infraestructura y es ofrecida como un método para la automatización o la rápida implementación de infraestructura basada en «software». En mi caso particular Powershell es mi segundo lenguaje de programación preferido siendo Python el primero en mí lista.
+Como pueden ver Powershell es una herramienta altamente desarrollada por los manufactureros de infraestructura y es ofrecida como un método para la automatización o la rápida implementación de infraestructura basada en `software`. En mi caso particular Powershell es mi segundo lenguaje de programación preferido siendo Python el primero en mí lista.
 
-Lo primero que tenemos que hacer es instalar Powershell y para esto utilizaré el programa «yay» que es una herramienta en Archlinux para instalar programas desde el repositorio no oficial **«Arch User Repository»**. Con el comando **yay -S powershell-bin** podemos instalar el programa de Powershell al sistema. Para ver el procedimiento de instalación, basta con hacer clic en el icono «+».
+Lo primero que tenemos que hacer es instalar Powershell y para esto utilizaré el programa `yay` que es una herramienta en Archlinux para instalar programas desde el repositorio no oficial ``Arch User Repository``. Con el comando `yay -S powershell-bin` podemos instalar el programa de Powershell al sistema. Para ver el procedimiento de instalación, basta con hacer clic en el icono `+`.
 
 #### yay -S powershell-bin
 
@@ -98,7 +98,7 @@ Net Upgrade Size:        0.00 MiB
 [rebelinux@blabla ~]$
 ```
 
-Existe otro método de instalación más avanzado que permite también instalar Powershell desde linea de comando. Les dejo aquí los comando necesarios. Para ver el procedimiento de instalación, basta con hacer clic en el icono «+».
+Existe otro método de instalación más avanzado que permite también instalar Powershell desde linea de comando. Les dejo aquí los comando necesarios. Para ver el procedimiento de instalación, basta con hacer clic en el icono `+`.
 
 #### Instalación manual de Powershell
 
@@ -108,7 +108,7 @@ cd powershell-bin
 makepkg -si
 ```
 
-Para acceder la aplicación de Powershell se utiliza el comando **pwsh** que permite acceder el interpretador. Desde el interpretador podemos correr los comando de Powershell que son comúnmente llamados «Cmdlets».
+Para acceder la aplicación de Powershell se utiliza el comando `pwsh` que permite acceder el interpretador. Desde el interpretador podemos correr los comando de Powershell que son comúnmente llamados `Cmdlets`.
 
 ```bash
 [rebelinux@blabla ~]$ pwsh
@@ -121,7 +121,7 @@ Type 'help' to get help.
 PS /home/rebelinux> 
 ```
 
-El próximo paso para correr PowerCLI es instalar su modulo utilizando el comando **Install-Module -name VMware.PowerCLI** desde el interpretador de Powershell.
+El próximo paso para correr PowerCLI es instalar su modulo utilizando el comando `Install-Module -name VMware.PowerCLI` desde el interpretador de Powershell.
 
 ```powershell
 PS /home/blabla> Install-Module -name VMware.PowerCLI
@@ -132,7 +132,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 PS /home/blabla>  
 ```
 
-Para conectarnos al vCenter utilzamos el «cmdlet» **Connect-VIServer** especificando la dirección IP o el nombre DNS del servidor.
+Para conectarnos al vCenter utilzamos el `cmdlet` `Connect-VIServer` especificando la dirección IP o el nombre DNS del servidor.
 
 ```powershell
 PS /home/blabla> Connect-VIServer vcenter-01v.zenprsolutions.local -Verbose -Username administrator@vsphere.local -Password XXXXXX
@@ -144,7 +144,7 @@ vcenter-01v.zenprsolutions.local 443  VSPHERE.LOCAL\Administrator
 PS /home/blabla> 
 ```
 
-Utilizaré un comando básico para hacer pruebas de conexión contra el vCenter. En esta prueba utilizare el comando **Get-Cluster** para verificar los cluster actualmente creados.
+Utilizaré un comando básico para hacer pruebas de conexión contra el vCenter. En esta prueba utilizare el comando `Get-Cluster` para verificar los cluster actualmente creados.
 
 ```powershell
 PS /home/blabla> Get-Cluster
@@ -159,7 +159,7 @@ RegionA01-COMP                 True       1          True       FullyAutomated
 PS /home/blabla> 
 ```
 
-Otro ejemplo básico es utilizar el comando **Get-Datastore** para validar que «Datastore» existen actualmente en el **«DataCenter»** virtual. En el resultado del comando se puede ver el espacio libre y utilizado en los **«datastore»** configurados en el **«DataCenter»**.
+Otro ejemplo básico es utilizar el comando `Get-Datastore` para validar que `Datastore` existen actualmente en el ``DataCenter`` virtual. En el resultado del comando se puede ver el espacio libre y utilizado en los ``datastore`` configurados en el ``DataCenter``.
 
 ```powershell
 PS /home/blabla> Get-Datastore

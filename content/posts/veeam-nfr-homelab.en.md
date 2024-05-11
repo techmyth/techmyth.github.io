@@ -6,11 +6,11 @@ tags:
     - VEEAM
 ---
 
-In this opportunity I come to show you how to get free Veeam licenses that you can use to protect your “HomeLab” or can be used to practice if you are planning to get certified as a “Veeam Certified Engineer” (VMCE). I am currently protecting my virtual environment with these licenses that can be obtained if you meet one of these requirements:
+In this opportunity I come to show you how to get free Veeam licenses that you can use to protect your `HomeLab` or can be used to practice if you are planning to get certified as a `Veeam Certified Engineer (VMCE)`. I am currently protecting my virtual environment with these licenses that can be obtained if you meet one of these requirements:
 
 ![Text](/img/image.webp#center)
 
-### **Who is eligible?**
+### Who is eligible?
 
 - Veeam Certified Engineers (VMCE)
 - VMware: vExperts, VMware Certified Professionals (VCPs & VCAPs)
@@ -37,7 +37,7 @@ After filling out the form, you will receive an email with the attached NFR lice
 
 ![Text](/img/2021-06-11_21-43.webp#center)
 
-Although there is a “Veeam Community” version that is also freely available, this license does not have all the features of the NFR edition. I have included the link of the Veeam portal where you can compare the features available for each type of edition. Here is the link:
+Although there is a `Veeam Community` version that is also freely available, this license does not have all the features of the NFR edition. I have included the link of the Veeam portal where you can compare the features available for each type of edition. Here is the link:
 
 [Veeam Feature comparison](https://www.veeam.com/products-edition-comparison.html)
 

@@ -283,7 +283,7 @@ Additionally I show you how to replace the SSL certificate of the Ontap Mediator
 
 #### Optional SSL Certificate Replacement
 
-`Step 1:` Generate a configuration file to create the Certificate Signing Request (CSR). In this step it is important to set the CN and DNS with the fully qualified domain name (FQDN) of the server name. In my case the server name is NTAPMED-01V.
+**Step 1:** Generate a configuration file to create the Certificate Signing Request (CSR). In this step it is important to set the CN and DNS with the fully qualified domain name (FQDN) of the server name. In my case the server name is NTAPMED-01V.
 
 ```text
 [root@NTAPMED-01V ~]# nano -w req.conf 
@@ -306,7 +306,7 @@ subjectAltName = @alt_names
 DNS.1 = NTAPMED-01V.zenprsolutions.local
 ```
 
-`Step 2:` Use the openssl command to generate the CSR file that will be used as a template to create the certificate that the Ontap Mediator service will use.
+**Step 2:** Use the openssl command to generate the CSR file that will be used as a template to create the certificate that the Ontap Mediator service will use.
 
 Note: If the openssl command is not available on your system you can use the `yum install openssl` command to install the necessary packages
 
@@ -323,7 +323,7 @@ Once the openssl command has finished, two files will be created, the `ntapmed.c
 [root@rebelpc rebelinux]# 
 ```
 
-`Step 3:` Access Microsoft’s Certificate Authority server and use the `certreq.exe` command to generate the certificate using the `ntapmed.csr` file as template.
+**Step 3:** Access Microsoft’s Certificate Authority server and use the `certreq.exe` command to generate the certificate using the `ntapmed.csr` file as template.
 
 ```text
 C:\>certreq.exe -submit -attrib `CertificateTemplate:WebServer` ntapmed.csr ntapmed.cer
@@ -333,7 +333,7 @@ C:\>certreq.exe -submit -attrib `CertificateTemplate:WebServer` ntapmed.csr ntap
 
 Once the process is completed, a file will be created with the name ntapmed.cer that is used for the Ontap Mediator service.
 
-`Step 4:` To replace the SSL certificate it is also necessary to change the public certificate of the CA. To obtain this certificate from the CA use the command `certutil -ca.cert ca.cert` which will produce the certificate in the `ca.cer` file.
+**Step 4:** To replace the SSL certificate it is also necessary to change the public certificate of the CA. To obtain this certificate from the CA use the command `certutil -ca.cert ca.cert` which will produce the certificate in the `ca.cer` file.
 
 ```text
 C:\>certutil -ca.cert ca.cer
@@ -343,7 +343,7 @@ C:\>certutil -ca.cert ca.cer
 
 Once this process is completed simply copy all the files (ca.cer, ntapmed.cer and ntapmed.key) to the Ontap Mediator server.
 
-`Step 5:` Move to the `/opt/netapp/lib/ontap\_mediator/ontap\_mediator/server\_config/` folder and modify the certificate files as shown below.
+**Step 5:** Move to the `/opt/netapp/lib/ontap\_mediator/ontap\_mediator/server\_config/` folder and modify the certificate files as shown below.
 
 ```text
 [root@NTAPMED-01V ~]# cd /opt/netapp/lib/ontap_mediator/ontap_mediator/server_config/

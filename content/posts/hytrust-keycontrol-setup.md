@@ -51,7 +51,7 @@ Specify the VM Network parameters.
 
 **Step 2** – Configuring the newly deployed KMS appliance.
 
-Power on the newly deployed VM server. It will ask you to specify a password for the htadmin account. Enter a new password for **htadmin** and press **OK**.
+Power on the newly deployed VM server. It will ask you to specify a password for the htadmin account. Enter a new password for `htadmin` and press `OK`.
 
 ![Text](/img/2021-03-13_16-17-1024x757.webp#center)
 
@@ -59,7 +59,7 @@ Wait for the configuration process to complete
 
 ![Text](/img/2021-03-13_16-17_1-1024x764.webp#center)
 
-Go to the KMS management console by acceding https://**kms-ip-address** then provide the default credentials.
+Go to the KMS management console by acceding https://`kms-ip-address` then provide the default credentials.
 
 ![Text](/img/2021-03-13_16-35.webp#center)
 
@@ -79,7 +79,7 @@ Download and save the Admin Key to a secure location.
 
 ![Text](/img/2021-03-13_16-39_1-1024x379.webp#center)
 
-The Key Management Interoperability Protocol (KMIP) enables communication between key management systems and cryptographically-enabled applications, including email, databases, and storage devices. Select KMIP in the top banner bar. Go to State and put it on **Enabled**. Then open Protocol and select **Version 1.1** from the drop-down list. As a final step go to **Restrict TLS** and select **Enabled** to make sure traffic is on the TLS 1.2 protocol. Click the **Apply** button now to apply the new settings.
+The Key Management Interoperability Protocol (KMIP) enables communication between key management systems and cryptographically-enabled applications, including email, databases, and storage devices. Select KMIP in the top banner bar. Go to State and put it on `Enabled`. Then open Protocol and select `Version 1.1` from the drop-down list. As a final step go to `Restrict TLS` and select `Enabled` to make sure traffic is on the TLS 1.2 protocol. Click the `Apply` button now to apply the new settings.
 
 ![Text](/img/2021-03-13_20-34-1024x403.webp#center)
 

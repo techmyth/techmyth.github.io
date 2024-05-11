@@ -7,7 +7,7 @@ tags:
 
 Hello everyone
 
-This time I come to show you the integration of “VMware Skyline Health Diagnostics” (VSHD) with VMware vCenter. I will also show you how to run the diagnostics to know how is the health of your Virtual infrastructure. VSHD is a self-diagnostic platform that allows to detect and solve problems in both vSphere and vSAN product line.
+This time I come to show you the integration of `VMware Skyline Health Diagnostics` (VSHD) with VMware vCenter. I will also show you how to run the diagnostics to know how is the health of your Virtual infrastructure. VSHD is a self-diagnostic platform that allows to detect and solve problems in both vSphere and vSAN product line.
 
 This tool provides recommendations in the form of Knowledge Base articles or links to troubleshooting procedures. vSphere administrators can use this tool to troubleshoot issues before contacting VMware Global Support.
 
@@ -21,9 +21,8 @@ Benefits:
 
 To start we must access the following link where we can download the OVA file that allows us to manage the creation of the virtual machine where the VSHD services run.
 
-```http
-https://my.vmware.com/group/vmware/get-download?downloadGroup=SKYLINE_HD_VSPHERE
-```
+- https://my.vmware.com/group/vmware/get-download?downloadGroup=SKYLINE_HD_VSPHERE
+
 
 Once authenticated on the VMware portal you will be redirected to the area where you can download the file OVA.
 
@@ -31,9 +30,9 @@ Once authenticated on the VMware portal you will be redirected to the area where
 
 Below is the process of creating the VM using the OVA template that you downloaded.
 
-#### **Installing VSHD through VMware vCenter**
+#### Installing VSHD through VMware vCenter
 
-Start by using the “Deploy OVF Template” wizard where you upload the installation file by pressing “UPLOAD FILES”.
+Start by using the `Deploy OVF Template` wizard where you upload the installation file by pressing `UPLOAD FILES`.
 
 ![Text](/img/2021-07-25_11-54.webp)
 
@@ -41,23 +40,23 @@ Set a name and select the folder in which the VM object will be created.
 
 ![Text](/img/2021-07-25_11-54_1.webp)
 
-Select the “Compute Cluster” and press “NEXT”.
+Select the `Compute Cluster` and press `NEXT`.
 
 ![Text](/img/2021-07-25_11-55.webp)
 
-Confirm the information and press “NEXT”.
+Confirm the information and press `NEXT`.
 
 ![Text](/img/2021-07-25_11-57.webp)
 
-Accept the Licensing Agreement and press “NEXT”.
+Accept the Licensing Agreement and press `NEXT`.
 
 ![Text](/img/2021-07-25_11-57_1.webp)
 
-Select the storage location where the VM will be created and press “NEXT”.
+Select the storage location where the VM will be created and press `NEXT`.
 
 ![Text](/img/2021-07-25_11-57_2.webp)
 
-Select the network to be used by the VM and press “NEXT”.
+Select the network to be used by the VM and press `NEXT`.
 
 ![Text](/img/2021-07-25_11-59.webp)
 
@@ -65,15 +64,15 @@ At this stage the unique properties of the VM such as the hostname, the password
 
 ![Text](/img/2021-07-25_12-05.png)
 
-After the information has been validated, click “FINISH” to complete the process.
+After the information has been validated, click `FINISH` to complete the process.
 
 ![Text](/img/2021-07-25_12-06.webp)
 
-The installation process can be monitored from the “Recent Tasks” tab.
+The installation process can be monitored from the `Recent Tasks` tab.
 
 ![Text](/img/2021-07-25_12-06_1.webp)
 
-An optional requirement is the association of a DNS name to the IP used in the installation process. In the following screen we can see how to register a DNS name “FQDN” using Powershell from a Windows console
+An optional requirement is the association of a DNS name to the IP used in the installation process. In the following screen we can see how to register a DNS name `FQDN` using Powershell from a Windows console
 
 ```text
 Windows PowerShell
@@ -100,8 +99,8 @@ When we turn on the VM we can see the DNS name information and the IP address th
 
 With the IP address we can access the administration portal of the application using the following credentials:
 
-- Username: **shd-admin**
-- Password: **previously established**
+- Username: `shd-admin`
+- Password: `previously established`
 
 ![Text](/img/2021-07-30_15-01.webp)
 
@@ -109,11 +108,11 @@ The next step is to add the vCenter/ESXi information and corresponding credentia
 
 ![Text](/img/2021-07-30_15-08.webp)
 
-We can validate that the information entered is correct by pressing the “CHECK CONNECTION” button.
+We can validate that the information entered is correct by pressing the `CHECK CONNECTION` button.
 
 ![Text](/img/2021-07-30_15-08_1.webp)
 
-After validating the information and credentials, you proceed to run the diagnostic by pressing “RUN DIAGNOSTIC”.
+After validating the information and credentials, you proceed to run the diagnostic by pressing `RUN DIAGNOSTIC`.
 
 ![Text](/img/2021-07-30_15-10.webp)
 
@@ -121,7 +120,7 @@ In this screen we select the ESXi and vCenter servers you wish to scan and what 
 
 ![Text](/img/2021-07-30_15-11-1.webp)
 
-Optionally you can set up a “Tag” that can be used for an easy search of the diagnostics. Then you can click on “FINISH”.
+Optionally you can set up a `Tag` that can be used for an easy search of the diagnostics. Then you can click on `FINISH`.
 
 ![Text](/img/2021-07-30_15-13.webp)
 
@@ -133,7 +132,7 @@ Additionally from the vCenter management console you can see a task related to t
 
 ![Text](/img/2021-07-30_15-15.webp)
 
-Once the process has finished you can view the status of the task by clicking on the “SHOW SUMMARY” button.
+Once the process has finished you can view the status of the task by clicking on the `SHOW SUMMARY` button.
 
 ![Text](/img/2021-07-30_15-41-1.webp)
 
@@ -141,7 +140,7 @@ In this screen we can see that the tasks were executed without problems.
 
 ![Text](/img/2021-07-30_15-41_1.webp)
 
-By pressing the “SHOW REPORT” button you can view the resulting reports.
+By pressing the `SHOW REPORT` button you can view the resulting reports.
 
 ![Text](/img/2021-07-30_15-42.webp)
 
@@ -155,4 +154,4 @@ Here I show you several examples of the resulting report where you can pinpoint 
 
 ### Summary
 
-In this lab, I installed and configured the “VMware Skyline Health Diagnostics” (VSHD) which allows vSphere administrators to use this tool to troubleshoot issues before contacting VMware support. One nice thing about this tool is that it is freely available. I hope you liked this lab. If you have any doubts or questions about this lab, leave them in the comments. Regards.
+In this lab, I installed and configured the VMware Skyline Health Diagnostics` (VSHD) which allows vSphere administrators to use this tool to troubleshoot issues before contacting VMware support. One nice thing about this tool is that it is freely available. I hope you liked this lab. If you have any doubts or questions about this lab, leave them in the comments. Regards.

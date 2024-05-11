@@ -8,7 +8,7 @@ tags:
 
 Hello to all!
 
-Earlier I wrote about the NetApp.Ontap report that I helped develop through the AsBuildReport project created by “Tim Carman” [@tpcarman](https://twitter.com/tpcarman) (Here the [link](http://192.168.7.40/2021/09/27/homelab-ontap-docs-asbuiltreport/)). Well this time I will be talking about another report that I have been working on during these last months related to building documentation about the **“Active Directory” (AD)** infrastructure. For many years I have done several implementations and/or consultancies related to this service and I have always had the intention of creating a condensed report on how this service infrastructure was designed, which for statistical purposes runs in more than 95% of the world’s companies.
+Earlier I wrote about the NetApp.Ontap report that I helped develop through the AsBuildReport project created by `Tim Carman` [@tpcarman](https://twitter.com/tpcarman) (Here the [link](http://192.168.7.40/2021/09/27/homelab-ontap-docs-asbuiltreport/)). Well this time I will be talking about another report that I have been working on during these last months related to building documentation about the `Active Directory (AD)` infrastructure. For many years I have done several implementations and/or consultancies related to this service and I have always had the intention of creating a condensed report on how this service infrastructure was designed, which for statistical purposes runs in more than 95% of the world’s companies.
 
 Although I have to admit that there are a number of experts who have created several similar reports, a unique feature of this report is that it uses [AsBuildReport](https://www.asbuiltreport.com/) as the basis for generating the programming necessary to set up the report structure. So I as a programmer can concentrate on the technology I want to document and not on adding code to generate the formatting in Word or HTML.
 
@@ -25,7 +25,7 @@ This report can only be run on Windows 10+ or Windows Server 2012+. Additionally
 - [PSPKI](https://www.powershellgallery.com/packages/PSPKI/3.7.2)
 - [GroupPolicy](https://docs.microsoft.com/en-us/powershell/module/grouppolicy/?view=windowsserver2019-ps)
 
-This report uses PowerShell version 5.+ or PSCore 7, to validate the version we can use the variable **“$PSVersionTable”** from the PowerShell console:
+This report uses PowerShell version 5.+ or PSCore 7, to validate the version we can use the variable `$PSVersionTable` from the PowerShell console:
 
 ```text
 PS C:\Users\jocolon> $PSVersionTable
@@ -45,7 +45,7 @@ SerializationVersion           1.1.0.1
 PS C:\Users\jocolon>
 ```
 
-To validate if the required modules are present we can use the **“Get-Module”** command as shown in the following example:
+To validate if the required modules are present we can use the `Get-Module` command as shown in the following example:
 
 ```text
 PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('ActiveDirectory','GroupPolicy','PSPKI')
@@ -66,7 +66,7 @@ Manifest   1.0.0.0    GroupPolicy                         {Backup-GPO, Block-GPI
 PS C:\Users\jocolon>
 ```
 
-If the command does not produce any result it means that none of the modules are installed. To install these dependencies we use the “**Install-Module”** command:
+If the command does not produce any result it means that none of the modules are installed. To install these dependencies we use the `Install-Module` command:
 
 ```text
 Installation of the PSPKI module:
@@ -74,7 +74,7 @@ PS C:\WINDOWS\system32> Install-Module -Name PSPKI                              
 PS C:\WINDOWS\system32>                                                                                                                                                                                                                                                                                 
 ```
 
-To install the **“ActiveDirectory”** and **“GroupPolicy”** modules use the command **“Add-WindowsCapability”** for Windows 10 or the command **“Install-WindowsFeature”** for Windows Server 2012+.
+To install the `ActiveDirectory` and `GroupPolicy` modules use the command `Add-WindowsCapability` for Windows 10 or the command `Install-WindowsFeature` for Windows Server 2012+.
 
 ```text
 Installation of ActiveDirectory and GroupPolicy module:
@@ -93,21 +93,21 @@ PS C:\WINDOWS\system32>
 
 ```
 
-Once we have installed the prerequisites we can proceed with the installation of the main module **“AsBuiltReport.Microsoft.AD”**.
+Once we have installed the prerequisites we can proceed with the installation of the main module `AsBuiltReport.Microsoft.AD`.
 
 ```text
 PS C:\WINDOWS\system32> Install-Module -Name AsBuiltReport.Microsoft.AD
 
 Untrusted repository
 You are installing the modules from an untrusted repository. If you trust this repository, change its InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is `N`): Y
 
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
 PS C:\WINDOWS\system32>
 ```
 
-To validate if the module was properly installed you can use the **“Get-Module”** command.
+To validate if the module was properly installed you can use the `Get-Module` command.
 
 ```text
 PS C:\WINDOWS\system32> Get-Module -ListAvailable -Name AsBuiltReport.Microsoft.AD
@@ -124,13 +124,13 @@ Script     0.4.0      AsBuiltReport.Microsoft.AD          Invoke-AsBuiltReport.M
 PS C:\WINDOWS\system32>
 ```
 
-Note: As you can see, the module **“0.4.0”** version was installed.
+Note: As you can see, the module `0.4.0` version was installed.
 
 An optional requirement is to build a configuration file that allows you to set the organization’s parameters that are used to generate the report. This process will generate a JSON file that is used as a template so that you do not have to fill in repetitive information when generating reports.
 
-#### ****Configuration files (AsBuiltReport JSON)****
+#### Configuration files (AsBuiltReport JSON)
 
-The powershell cmdlet **New-AsBuiltConfig** allows you to generate the template that we will use as the basis of the report. This template sets the non-technical parameters of the report.
+The powershell cmdlet New-AsBuiltConfig allows you to generate the template that we will use as the basis of the report. This template sets the non-technical parameters of the report.
 
 ```text
 PS C:\WINDOWS\system32> New-AsBuiltConfig
@@ -184,33 +184,33 @@ Once the process is completed, a JSON file will be created with the following co
 
 ```json
 {
-    "Email":  {
-                  "Port":  null,
-                  "Credentials":  null,
-                  "Server":  null,
-                  "To":  null,
-                  "From":  null,
-                  "UseSSL":  null,
-                  "Body":  null
+    `Email`:  {
+                  `Port`:  null,
+                  `Credentials`:  null,
+                  `Server`:  null,
+                  `To`:  null,
+                  `From`:  null,
+                  `UseSSL`:  null,
+                  `Body`:  null
               },
-    "Company":  {
-                    "FullName":  "Zen PR Solutions",
-                    "Contact":  "Jonathan Colon",
-                    "Phone":  "787-203-2790",
-                    "Email":  "jcolonf@zenprsolutions.com",
-                    "ShortName":  "ZENPR",
-                    "Address":  "Puerto Rico"
+    `Company`:  {
+                    `FullName`:  `Zen PR Solutions`,
+                    `Contact`:  `Jonathan Colon`,
+                    `Phone`:  `787-203-2790`,
+                    `Email`:  `jcolonf@zenprsolutions.com`,
+                    `ShortName`:  `ZENPR`,
+                    `Address`:  `Puerto Rico`
                 },
-    "UserFolder":  {
-                       "Path":  "C:\\Users\\jocolon\\AsBuiltReport"
+    `UserFolder`:  {
+                       `Path`:  `C:\\Users\\jocolon\\AsBuiltReport`
                    },
-    "Report":  {
-                   "Author":  "Jonathan Colon"
+    `Report`:  {
+                   `Author`:  `Jonathan Colon`
                }
 }
 ```
 
-The **New-AsBuiltReportConfig** command allows you to set the technical parameters of the report such as the level and type of information collected “verbose level”.
+The New-AsBuiltReportConfig command allows you to set the technical parameters of the report such as the level and type of information collected `verbose level`.
 
 ```text
 PS C:\WINDOWS\system32> New-AsBuiltReportConfig Microsoft.AD -FolderPath C:\Users\jocolon\AsBuiltReport\
@@ -220,47 +220,47 @@ Once the process is completed, a JSON file will be created with the following co
 
 ```json
 {
-    "Report": {
-        "Name": "Microsoft AD As Built Report",
-        "Version": "1.0",
-        "Status": "Released",
-        "ShowCoverPageImage": true,
-        "ShowTableOfContents": true,
-        "ShowHeaderFooter": true,
-        "ShowTableCaptions": true
+    `Report`: {
+        `Name`: `Microsoft AD As Built Report`,
+        `Version`: `1.0`,
+        `Status`: `Released`,
+        `ShowCoverPageImage`: true,
+        `ShowTableOfContents`: true,
+        `ShowHeaderFooter`: true,
+        `ShowTableCaptions`: true
     },
-    "Options": {
+    `Options`: {
 
     },
-    "InfoLevel": {
-        "_comment_": "0 = Disabled, 1 = Enabled, 2 = Adv Summary, 3 = Detailed",
-        "Forest": 1,
-        "Domain": 1,
-        "DHCP": 1,
-        "DNS": 1,
-        "CA": 0,
-        "Security": 0
+    `InfoLevel`: {
+        `_comment_`: `0 = Disabled, 1 = Enabled, 2 = Adv Summary, 3 = Detailed`,
+        `Forest`: 1,
+        `Domain`: 1,
+        `DHCP`: 1,
+        `DNS`: 1,
+        `CA`: 0,
+        `Security`: 0
     },
-    "HealthCheck": {
-        "Domain": {
-            "GMSA": true,
-            "GPO": true
+    `HealthCheck`: {
+        `Domain`: {
+            `GMSA`: true,
+            `GPO`: true
         },
-        "DomainController": {
-            "Diagnostic": true,
-            "Services": true
+        `DomainController`: {
+            `Diagnostic`: true,
+            `Services`: true
         },
-        "Site": {
-            "Replication": true
+        `Site`: {
+            `Replication`: true
         },
-        "DNS": {
-            "Aging": true
+        `DNS`: {
+            `Aging`: true
         },
-        "DHCP": {
-            "Summary": true,
-            "Credential": true,
-            "Statistics": true,
-            "BP": true
+        `DHCP`: {
+            `Summary`: true,
+            `Credential`: true,
+            `Statistics`: true,
+            `BP`: true
         }
     }
 }
@@ -268,7 +268,7 @@ Once the process is completed, a JSON file will be created with the following co
 
 This configuration file can be used to specify the level of detail of the report as well as which specific report sessions are to be enabled.
 
-Then we can generate the report using the command **“New-AsBuiltReport -Report Microsoft.AD -Target DC\_FQDN”**. It is important to emphasize that it is required that the computer where the report is generated is added to the AD domain to be documented. It is also required to use the **“fully qualified domain name “(FQDN)** of the server with the **“Domain Controller”** role within the AD **“Forest”**.
+Then we can generate the report using the command `New-AsBuiltReport -Report Microsoft.AD -Target DC\_FQDN`. It is important to emphasize that it is required that the computer where the report is generated is added to the AD domain to be documented. It is also required to use the `fully qualified domain name `(FQDN) of the server with the `Domain Controller` role within the AD `Forest`.
 
 ```text
 PS C:\Users\jocolon>  New-AsBuiltReport -Report Microsoft.AD -Target server-dc-01v.zenpr.local -Format HTML -AsBuiltConfigFilePath C:\Users\jocolon\AsBuiltReport\AsBuiltReport.json -OutputFolderPath C:\Users\jocolon\AsBuiltReport\ -ReportConfigFilePath '.\AsBuiltReport\AsBuiltReport.Microsoft.AD.json' -Credential $cred -EnableHealthCheck               
@@ -293,7 +293,7 @@ PS C:\Users\jocolon>
 
 Here is an example of the resulting Active Directory documentation.
 
-{{< embed-pdf url="./img/Sample-Microsoft-AD-As-Built-Report.pdf" >}}
+{{< embed-pdf url=`./img/Sample-Microsoft-AD-As-Built-Report.pdf` >}}
 
 Additionally I include several examples of how to invoke the documentation report.
 

@@ -7,7 +7,7 @@ tags:
   - 'VMware'
 ---
 
-In vSphere 7 update 1 VMware added a new capability for Distributed Resource Scheduler (DRS) technology consisting of three VMs called agents. The agent VMs form the quorum state of the cluster and have the ability to self-healing. So if you turn off or delete the VMs called vCLS the vCenter server will turn the VMs back on or re-create the VMs again. For HomeLab purposes this new feature consumes CPU resource, Memory and disk space which although minimal is not worth having a configuration that adds nothing to a test and development environment.
+In vSphere 7 update 1 VMware added a new capability for `Distributed Resource Scheduler (DRS)` technology consisting of three VMs called agents. The agent VMs form the quorum state of the cluster and have the ability to self-healing. So if you turn off or delete the VMs called vCLS the vCenter server will turn the VMs back on or re-create the VMs again. For HomeLab purposes this new feature consumes CPU resource, Memory and disk space which although minimal is not worth having a configuration that adds nothing to a test and development environment.
 
 ![Text](/img/25079036c801ac924d3ff7d4cb3b9438.webp#center)
 

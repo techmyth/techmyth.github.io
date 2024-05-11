@@ -6,9 +6,9 @@ tags:
     - VMware
 ---
 
-In this blog I will be talking about how to automate the creation of documentation reports of our virtual infrastructure. There are several commercial solutions to generate this type of report but I will be talking about [**“As Built Report”**](https://www.asbuiltreport.com/) a free tool that uses powershell as a base to build the reports.
+In this blog I will be talking about how to automate the creation of documentation reports of our virtual infrastructure. There are several commercial solutions to generate this type of report but I will be talking about [`As Built Report`](https://www.asbuiltreport.com/) a free tool that uses powershell as a base to build the reports.
 
-The “As Built Report” tool uses the VMware.PowerCLI modules that we explained previously in our blog. If you want to know more about PowerCLI follow this link [**here**](http://192.168.7.40/2021/06/05/how-to-install-and-use-powercli-on-archlinux/). An important fact about “As Built Report” is that it is not only used to generate reports on VMware but also supports the following products:
+The `As Built Report` tool uses the VMware.PowerCLI modules that we explained previously in our blog. If you want to know more about PowerCLI follow this link [`here`](http://192.168.7.40/2021/06/05/how-to-install-and-use-powercli-on-archlinux/). An important fact about `As Built Report` is that it is not only used to generate reports on VMware but also supports the following products:
 
 - VMware vSphere, NSX & SRM
 - Cisco UCS Manager
@@ -25,7 +25,7 @@ First of all to use this tool we need to validate the requirements that in gener
 - Windows PowerShell 5.1 o later
 - VMware.PowerCLI
 
-To install the “As Built Report” powershell module use the command **Install-Module** followed by the module name **AsBuiltReport**.
+To install the `As Built Report` powershell module use the command `Install-Module` followed by the module name `AsBuiltReport`.
 
 ```powershell
 PS /home/blabla> Install-Module -Name AsBuiltReport
@@ -40,7 +40,7 @@ An optional requirement is to build a configuration file that allows you to set 
 
 #### AsBuiltReport JSON Configuration File
 
-The powershell cmdlet **New-AsBuiltConfig** allows you to generate a template that will be used as the basis of the report. This template sets the non-technical parameters of the report.
+The powershell cmdlet `New-AsBuiltConfig` allows you to generate a template that will be used as the basis of the report. This template sets the non-technical parameters of the report.
 
 ```powershell
 PS C:\WINDOWS\system32> New-AsBuiltConfig
@@ -121,7 +121,7 @@ Once the process is completed, a JSON file will be created with the following co
 }
 ```
 
-The **New-AsBuiltReportConfig** command allows you to set the technical parameters of the report such as the verbose level and type of information collected.
+The `New-AsBuiltReportConfig` command allows you to set the technical parameters of the report such as the verbose level and type of information collected.
 
 ```batch
 PS C:\WINDOWS\system32> New-AsBuiltReportConfig VMware.vSphere -FolderPath C:\Users\jocolon\AsBuiltReport\ -Filename ReportConfig
@@ -215,7 +215,7 @@ Once the process is completed, a JSON file will be created with the following co
 }
 ```
 
-Finally, we generate the report using the **New-AsBuiltReport** command with the vCenter information parameters and referencing the JSON file we have created as templates.
+Finally, we generate the report using the `New-AsBuiltReport` command with the vCenter information parameters and referencing the JSON file we have created as templates.
 
 ```powershell
 PS C:\WINDOWS\system32> New-AsBuiltReport -Report VMware.vSphere -Target vcenter-01v.zenprsolutions.local -Username administrator@vsphere.local -Password XXXXX -Format Word,Text,HTML -OutputFolderPath 'C:\Users\jocolon\OneDrive\Desktop\' -EnableHealthCheck -AsBuiltConfigFilePath 'HomeLab VMware Report.json' -ReportConfigFilePath 'ReportConfig.json'
@@ -224,14 +224,14 @@ VMware vSphere As Built Report 'VMware vSphere As Built Report' has been saved t
 PS C:\WINDOWS\system32>
 ```
 
-Once the process of collecting the information from the vCenter is finished, the command saves the report as specified with the **OutputFolderPath** parameter. The following image shows the generated report in the **Word,Text,HTML** format.
+Once the process of collecting the information from the vCenter is finished, the command saves the report as specified with the `OutputFolderPath` parameter. The following image shows the generated report in the `Word,Text,HTML` format.
 
 ![Text](/img/2021-06-06_13-57.webp#center)
 
-Below I show you some images showing the result of the report collected from the vCenter **vcenter-01v**:
+Below I show you some images showing the result of the report collected from the vCenter `vcenter-01v`:
 
 ![Text](/img/asbuiltreport-vsphere.webp#center)
 
 ### Summary
 
-In this lab we learned how easy it is to create documentation about our virtual infrastructure by using freely available tools. “As Built Report” is a robust tool that facilitates the manual process of creating or updating our documentation.
+In this lab we learned how easy it is to create documentation about our virtual infrastructure by using freely available tools. `As Built Report` is a robust tool that facilitates the manual process of creating or updating our documentation.

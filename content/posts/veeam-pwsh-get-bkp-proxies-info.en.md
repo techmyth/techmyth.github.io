@@ -8,7 +8,7 @@ tags:
 
 Hello friends,
 
-In this opportunity I will be showing you how to obtain Backup Proxy related information from powershell in a Veeam Backup & Replication infrastructure. To begin with it is necessary to establish the initial connection to the Backup Server using the **“Connect-VBRServer”** command. In my case the FQDN of my Backup Server is **“veeam-vbr.pharmax.local”**.
+In this opportunity I will be showing you how to obtain Backup Proxy related information from powershell in a Veeam Backup & Replication infrastructure. To begin with it is necessary to establish the initial connection to the Backup Server using the `Connect-VBRServer` command. In my case the FQDN of my Backup Server is `veeam-vbr.pharmax.local`.
 
 ```text
 PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credential (Get-Credential)
@@ -16,11 +16,11 @@ PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credenti
 cmdlet Get-Credential at command pipeline position 1
 Supply values for the following parameters:
 User: pharmax\administrator
-Password for user pharmax\administrator: ********
+Password for user pharmax\administrator: ````
 PS C:\Users\jocolon> 
 ```
 
-After connecting to the server you can use the **“Get-VBRViProxy”** cmdlet to identify which Backup Proxy servers are in your infrastructure.
+After connecting to the server you can use the `Get-VBRViProxy` cmdlet to identify which Backup Proxy servers are in your infrastructure.
 
 ```text
 PS C:\Users\jocolon> Get-VBRViProxy | Format-Table -Wrap -AutoSize
@@ -36,7 +36,7 @@ VEEAM-VBR-02V.pharmax.local Vi   VEEAM-VBR-02V.pharmax.local False      Created 
 PS C:\Users\jocolon>
 ```
 
-As you can see this command shows basic information about the Backup Proxy but if you want to see the complete content you can exchange the **“Format-Table”** command for **“Format-list”**.
+As you can see this command shows basic information about the Backup Proxy but if you want to see the complete content you can exchange the `Format-Table` command for `Format-list`.
 
 ```text
 PS C:\Users\jocolon> Get-VBRViProxy | Format-List                 

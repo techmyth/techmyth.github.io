@@ -9,7 +9,7 @@ tags:
 
 Hola a todos,
 
-Esta vez estaré hablando de cómo utilizar **Govc**, una alternativa de CLI desarrollada en el lenguaje de programación **[GO](https://go.dev/)**, esta CLI está diseñada para ser una alternativa fácil de usar al Web GUI y muy adecuada para tareas de automatización. Esta herramienta es basada en **govmomi**, que es una librería para GO utilizada para interactuar con el Application Programming Interface (API) de VMware vSphere
+Esta vez estaré hablando de cómo utilizar `Govc`, una alternativa de CLI desarrollada en el lenguaje de programación [GO](https://go.dev/), esta CLI está diseñada para ser una alternativa fácil de usar al Web GUI y muy adecuada para tareas de automatización. Esta herramienta es basada en `govmomi`, que es una librería para GO utilizada para interactuar con el Application Programming Interface (API) de VMware vSphere
 
 #### Nota: Las versiones de vSphere que han llegado al final de su soporte pueden funcionar, pero no cuentan con soporte oficial.
 
@@ -38,11 +38,11 @@ LICENSE.txt
 README.md
 govc
 [bla@blabla govc]$ ls
-CHANGELOG.md  **govc**  govc_Linux_x86_64.tar.gz  LICENSE.txt  README.md
+CHANGELOG.md  `govc`  govc_Linux_x86_64.tar.gz  LICENSE.txt  README.md
 [bla@blabla govc]$ 
 ```
 
-En la carpeta que hemos descomprimido podemos ver el archivo **govc** que es el binario principal de la herramienta. Para hacer pruebas con **govc** me conectaré al vCenter de mi HomeLab que utiliza la dirección FQDN **vcenter-01v.pharmax.local**.
+En la carpeta que hemos descomprimido podemos ver el archivo `govc` que es el binario principal de la herramienta. Para hacer pruebas con `govc` me conectaré al vCenter de mi HomeLab que utiliza la dirección FQDN `vcenter-01v.pharmax.local`.
 
 ```sh
 [bla@blabla Downloads]$ ./govc about -u administrator@vsphere.local:SECUREPASSWORD@vcenter-01v.pharmax.local
@@ -61,6 +61,6 @@ UUID:         43f86c8f-1a6d-44c8-b6ac-6ec33a36d141
 
 #### Nota: Esta herramienta asume que el certificado HTTPS puede ser validado con la cadena de confianza. Si el certificado es "Self Sign" es necesario configurar la variable GOVC_INSECURE=1
 
-En este artículo les mostré una introducción sobre la herramienta **Govc** en los proximos articulos estaré entrando en detalle de como utilizar esta herramienta para agilizar los procesos de automatización en nuestra infraestructura de vSphere.
+En este artículo les mostré una introducción sobre la herramienta `Govc` en los proximos articulos estaré entrando en detalle de como utilizar esta herramienta para agilizar los procesos de automatización en nuestra infraestructura de vSphere.
 
 #### Hasta Luego Amigos!

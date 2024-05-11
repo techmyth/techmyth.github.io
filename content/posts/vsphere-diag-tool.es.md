@@ -8,7 +8,7 @@ tags:
 
 Hola a todos,
 
-Esta vez voy a mostrarte cómo utilizar la aplicación **vSphere Diagnostic Tool**, esta herramienta es utilizada para realizar verificaciones de diagnóstico sobre el servidor de VMware vCenter Server Appliance. Este herramienta consiste en un script en python que ejecuta comandos de diagnóstico para validar el estado de salud del servicio de vCenter.
+Esta vez voy a mostrarte cómo utilizar la aplicación `vSphere Diagnostic Tool`, esta herramienta es utilizada para realizar verificaciones de diagnóstico sobre el servidor de VMware vCenter Server Appliance. Este herramienta consiste en un script en python que ejecuta comandos de diagnóstico para validar el estado de salud del servicio de vCenter.
 
 #### Nota: Como requisito mínimo en necesario tener una versión de vCenter Server 6.5 o mayor.
 
@@ -31,11 +31,11 @@ Aquí les dejo el enlace para que puedas ver las características de esta herram
 
 - <https://flings.vmware.com/vsphere-diagnostic-tool#summary>
 
-El primer paso será descargar la herramienta desde el portal de **[VMware Fling](https://flings.vmware.com/vsphere-diagnostic-tool)**
+El primer paso será descargar la herramienta desde el portal de [VMware Fling](https://flings.vmware.com/vsphere-diagnostic-tool)
 
 ![Text](/img/2022/vsphere-diag-tool/VDT-Download.webp#center)
 
-Luego de descargar el archivo es necesario copiar el mismo al servidor de vCenter. En mi caso utilizaré el comando **scp** pero pueden utilizar cualquier herramienta que soporte conexiones ssh como por ejemplo:
+Luego de descargar el archivo es necesario copiar el mismo al servidor de vCenter. En mi caso utilizaré el comando `scp` pero pueden utilizar cualquier herramienta que soporte conexiones ssh como por ejemplo:
 
 - WinSCP
 - FileZilla
@@ -56,7 +56,7 @@ vdt-v1.1.4.zip                                                                  
 [rebelinux@rebelpc Downloads]$ 
 ```
 
-Luego es necesario conectarse a través de **ssh** al servidor de vcenter. Para esto utilizamos el comando ssh o cualquier herramienta de emulación de terminal (Putty, etc..)
+Luego es necesario conectarse a través de `ssh` al servidor de vcenter. Para esto utilizamos el comando ssh o cualquier herramienta de emulación de terminal (Putty, etc..)
 
 ```sh
 [rebelinux@rebelpc Downloads]$ ssh -l root (IP/FQDN of vCenter Server)
@@ -70,12 +70,12 @@ Last login: Tue Dec 27 20:30:20 2022 from 192.168.70.2
 root@vcenter-01v [ ~ ]# 
 ```
 
-Una vez conectados al servidor de vCenter es necesario el descomprimir el archivo de la herramienta de VDT que cargamos con el comando **SCP**
+Una vez conectados al servidor de vCenter es necesario el descomprimir el archivo de la herramienta de VDT que cargamos con el comando `SCP`
 
 ```sh
 root@vcenter-01v [ ~ ]# cd /root/
 root@vcenter-01v [ ~ ]# ls
-**vdt-v1.1.4.zip**
+`vdt-v1.1.4.zip`
 root@vcenter-01v [ ~ ]# unzip vdt-v1.1.4.zip
 Archive:  vdt-v1.1.4.zip
 3557676756cffd658fd61aab5a6673269104e83c
@@ -112,20 +112,20 @@ Archive:  vdt-v1.1.4.zip
   inflating: vdt-v1.1.4/templates/python_template.py  
   inflating: vdt-v1.1.4/vdt.py       
 root@vcenter-01v [ ~ ]# ls
-**vdt-v1.1.4**  vdt-v1.1.4.zip
+`vdt-v1.1.4`  vdt-v1.1.4.zip
 root@vcenter-01v [ ~ ]#
 ```
 
-El próximo paso seria movernos a la carpeta de **vdt-vX.X.X**
+El próximo paso seria movernos a la carpeta de `vdt-vX.X.X`
 
 ```sh
 root@vcenter-01v [ ~ ]# cd vdt-v1.1.4
 root@vcenter-01v [ ~/vdt-v1.1.4 ]# ls
-cfg  formerly_pulse.txt  lib  README.md  scripts  templates  **vdt.py**
+cfg  formerly_pulse.txt  lib  README.md  scripts  templates  `vdt.py`
 root@vcenter-01v [ ~/vdt-v1.1.4 ]# 
 ```
 
-El archivo inportante en esta carpeta es el llamado **vdt.py** que es el que utilizaremos para ejecutar el diagnostigo. Una vez dentro de la carpeta **vdt-vx.x.x** podemos ejecutar el comando **python vdt.py**
+El archivo inportante en esta carpeta es el llamado `vdt.py` que es el que utilizaremos para ejecutar el diagnostigo. Una vez dentro de la carpeta `vdt-vx.x.x` podemos ejecutar el comando `python vdt.py`
 
 ```sh
 root@vcenter-01v [ ~/vdt-v1.1.4 ]# python vdt.py 

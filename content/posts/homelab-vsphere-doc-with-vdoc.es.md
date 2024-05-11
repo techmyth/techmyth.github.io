@@ -20,7 +20,7 @@ Ahora bien, para comenzar es necesario cumplir con los siguientes requisitos:
 - El módulo de ImportExcel &gt;= 7+
 - El módulo de VMware PowerCLI &gt;= 12.3+
 
-Para instalar esta herramienta solo necesitamos utilizar el comando **“Install-Module”** desde una consola de Powershell.
+Para instalar esta herramienta solo necesitamos utilizar el comando `Install-Module` desde una consola de Powershell.
 
 ```text
 Install-Module -Name VMware.PowerCLI
@@ -28,7 +28,7 @@ Install-Module -Name ImportExcel
 Install-Module -Name vDocumentation
 ```
 
-Una vez instalado los módulos podemos verificar la instalación utilizando el comando **“Get-Module”**.
+Una vez instalado los módulos podemos verificar la instalación utilizando el comando `Get-Module`.
 
 ```text
 PS C:\Users\Administrator> <strong>Get-Module</strong> -ListAvailable -Name @('VMware.PowerCLI','ImportExcel','vDocumentation')
@@ -43,7 +43,7 @@ Manifest   12.4.1.18…            <strong>VMware.PowerCLI</strong>             
 PS C:\Users\Administrator>
 ```
 
-Luego de validar la instalación puedes utilizar el comando **“Get-Command”** para identificar los cmdlets que incluye esta herramienta a PowerShell.
+Luego de validar la instalación puedes utilizar el comando `Get-Command` para identificar los cmdlets que incluye esta herramienta a PowerShell.
 
 ```text
 PS C:\Users\Administrator> <strong>Get-Command</strong> -Module <strong>vDocumentation</strong>
@@ -63,7 +63,7 @@ Function        <strong>Get-vSANInfo</strong>                                   
 PS C:\Users\Administrator>
 ```
 
-Antes de utilizar los módulos es necesario establecer la conexión inicial con el servidor de vCenter o el ESXi. Para lograr este objetivo utilizamos el comando **“Connect-VIServer”**.
+Antes de utilizar los módulos es necesario establecer la conexión inicial con el servidor de vCenter o el ESXi. Para lograr este objetivo utilizamos el comando `Connect-VIServer`.
 
 ```text
 PS C:\Users\Administrator> <strong>Connect-VIServer</strong> -Server 192.168.5.2 -Username administrator@vsphere.local -Password XXXXXX
@@ -76,7 +76,7 @@ Name                           Port  User
 PS C:\Users\Administrator>
 ```
 
-Luego de establecida la conexión podemos utilizar los módulos. En este ejemplo utilizaré el comando “**Get-ESXInventory**” para obtener la informacion de inventario de los servidores ESXi conectados al vCenter con la dirección de IP **“192.168.5.2”**
+Luego de establecida la conexión podemos utilizar los módulos. En este ejemplo utilizaré el comando “`Get-ESXInventory`” para obtener la informacion de inventario de los servidores ESXi conectados al vCenter con la dirección de IP `192.168.5.2`
 
 ```text
 PS C:\Users\Administrator> Get-ESXInventory
@@ -170,7 +170,7 @@ Syslog Client Enabled     : False
 PS C:\Users\Administrator>
 ```
 
-El próximo ejemplo que les mostraré es sobre el comando **“Get-ESXStorage”**. Este comando permite obtener información sobre los dispositivos de almacenamiento conectados al servidor de ESXi.
+El próximo ejemplo que les mostraré es sobre el comando `Get-ESXStorage`. Este comando permite obtener información sobre los dispositivos de almacenamiento conectados al servidor de ESXi.
 
 ```text
 PS C:\Users\Administrator> Get-ESXStorage
@@ -217,7 +217,7 @@ File System Version    : 6.81
 PS C:\Users\Administrator>
 ```
 
-El último comando que les mostraré es el **“Get-ESXNetworking”** utilizado para obtener la información de los puertos de red físicos y virtuales existentes en el servidor.
+El último comando que les mostraré es el `Get-ESXNetworking` utilizado para obtener la información de los puertos de red físicos y virtuales existentes en el servidor.
 
 ```text
 PS C:\Users\Administrator> Get-ESXNetworking

@@ -15,13 +15,13 @@ This report is in an initial state and in active development, but I decided to r
 
 ![Text](/img/AsBuildReport_NetApp_ONTAP.webp#center)
 
-I should make it clear that this report is not designed to replace or compete in any way with the **NetAppDocs** tool. I noticed many requests on the NetApp forum from various users who have the need to generate an updated report of their storage infrastructure. It is for this reason that I took the initiative to create a report available free of charge for NetApp customers and/or users. One advantage of using the **AsBuiltReport** project, is that it allows you to create the report in multiple formats (Word, HTML or Text) and it is also possible to automate the sending of the report via email.
+I should make it clear that this report is not designed to replace or compete in any way with the `NetAppDocs` tool. I noticed many requests on the NetApp forum from various users who have the need to generate an updated report of their storage infrastructure. It is for this reason that I took the initiative to create a report available free of charge for NetApp customers and/or users. One advantage of using the `AsBuiltReport` project, is that it allows you to create the report in multiple formats (Word, HTML or Text) and it is also possible to automate the sending of the report via email.
 
 Now, to get started we need to meet the following requirements:
 
 - Multi-platform Windows, Linux o MAC
 - PowerShell v5.1+ ó v7
-- “NetApp PowerShell Toolkit” >= 9.9.1.2106 powershell module
+- `NetApp PowerShell Toolkit` >= 9.9.1.2106 powershell module
 - AsBuiltReport.Core >= 1.1.0 powershell module
 
 This report uses PowerShell version 5.+ or PSCore 7, to validate the version you can use the $PSVersionTable variable from the PowerShell shell:
@@ -44,9 +44,9 @@ WSManStackVersion              3.0
 PS /home/rebelinux>
 ```
 
-The report was created specifically for the version of “NetApp PowerShell Toolkit” >= 9.9.1.2106. To validate what version you have or if it has been installed you can use the Get-Module command as shown in the following example:
+The report was created specifically for the version of `NetApp PowerShell Toolkit` >= 9.9.1.2106. To validate what version you have or if it has been installed you can use the Get-Module command as shown in the following example:
 
-Note: Additionally I validate the version of “AsBuiltReport.Core” which is an additional dependency to be able to generate the report.
+Note: Additionally I validate the version of `AsBuiltReport.Core` which is an additional dependency to be able to generate the report.
 
 ```text
 PS /home/rebelinux> >Get-Module> -ListAvailable -Name >@('AsBuiltReport.Core','Netapp.Ontap')>                                    
@@ -106,7 +106,7 @@ Note: As you can see, the module 0.4.0 version was installed.
 
 An optional requirement is to generate a configuration file that allows you to set the organization parameters that are used to build the report. This process creates a JSON files that are used as templates so that you do not have to fill in repetitive information when building the reports.
 
-The powershell cmdlet **New-AsBuiltConfig** allows you to build the template that will be used as the basis of the report. This template sets the non-technical parameters of the report.
+The powershell cmdlet `New-AsBuiltConfig` allows you to build the template that will be used as the basis of the report. This template sets the non-technical parameters of the report.
 
 ```text
 PS C:\WINDOWS\system32> >New-AsBuiltConfig
@@ -186,7 +186,7 @@ Once the process is completed, a JSON file will be created with the following co
 }
 ```
 
-The **New-AsBuiltReportConfig** command allows you to set the technical parameters of the report such as the verbose level and type of information.
+The `New-AsBuiltReportConfig` command allows you to set the technical parameters of the report such as the verbose level and type of information.
 
 ```text
 PS C:\WINDOWS\system32> >New-AsBuiltReportConfig NetApp.ONTAP> -FolderPath C:\Users\jocolon\AsBuiltReport\
@@ -277,7 +277,7 @@ Once the process is completed, a JSON file will be created with the following co
 }
 ```
 
-Then we can build the report using the command **“New-AsBuiltReport -Report NetApp.ONTAP -Target IP/FQDN”**.
+Then we can build the report using the command `New-AsBuiltReport -Report NetApp.ONTAP -Target IP/FQDN`.
 
 ```text
 PS /home/rebelinux> >New-AsBuiltReport> -Report >NetApp.ONTAP> -AsBuiltConfigFilePath /home/rebelinux/script/AsBuiltReport.json -OutputFolderPath /home/rebelinux/script >-Target> >192.168.7.60> -Format HTML  >-EnableHealthCheck> -Credential $cred -ReportConfigFilePath /home/rebelinux/script/AsBuiltReport.NetApp.ONTAP.json               

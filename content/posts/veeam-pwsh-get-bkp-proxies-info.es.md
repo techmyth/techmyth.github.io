@@ -8,7 +8,7 @@ tags:
 
 Hola a todos,
 
-En esta oportunidad les estare mostrando como obtener desde powershell la información relacionada a los Backup Proxy en una infraestructura de Veeam Backup & Replication. Para comenzar es necesario establecer la conexión inicial al Backup Server utilizando el comando **“Connect-VBRServer”**. En mi caso el FQDN de mi Servidor de Backup es el **“veeam-vbr.pharmax.local”**.
+En esta oportunidad les estare mostrando como obtener desde powershell la información relacionada a los Backup Proxy en una infraestructura de Veeam Backup & Replication. Para comenzar es necesario establecer la conexión inicial al Backup Server utilizando el comando `Connect-VBRServer`. En mi caso el FQDN de mi Servidor de Backup es el `veeam-vbr.pharmax.local`.
 
 ```text
 PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credential (Get-Credential)
@@ -16,11 +16,11 @@ PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credenti
 cmdlet Get-Credential at command pipeline position 1
 Supply values for the following parameters:
 User: pharmax\administrator
-Password for user pharmax\administrator: ********
+Password for user pharmax\administrator: ````
 PS C:\Users\jocolon> 
 ```
 
-Luego de conectarnos al servidor podemos utilizar el cmdlet **“Get-VBRViProxy**” para identificar cuales son los servidores Backup Proxy en nuestra infraestructura.
+Luego de conectarnos al servidor podemos utilizar el cmdlet `Get-VBRViProxy`` para identificar cuales son los servidores Backup Proxy en nuestra infraestructura.
 
 ```text
 PS C:\Users\jocolon> Get-VBRViProxy | Format-Table -Wrap -AutoSize
@@ -36,7 +36,7 @@ VEEAM-VBR-02V.pharmax.local Vi   VEEAM-VBR-02V.pharmax.local False      Created 
 PS C:\Users\jocolon>
 ```
 
-Como pueden ver este comando muestra información básica sobre los Backup Proxy pero si desean ver el contenido completo se puede intercambiar el comando de **“Format-Table”** por **“Format-list”**.
+Como pueden ver este comando muestra información básica sobre los Backup Proxy pero si desean ver el contenido completo se puede intercambiar el comando de `Format-Table` por `Format-list`.
 
 ```text
 PS C:\Users\jocolon> Get-VBRViProxy | Format-List                 

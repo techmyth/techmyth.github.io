@@ -7,7 +7,7 @@ tags:
 ---
 
 
-This time I am going to show you how to use the **vSphere Diagnostic Tool**, this tool is used to perform diagnostic checks on the VMware vCenter Server Appliance. This tool consists of a python script that executes diagnostic commands to validate the health status of the vCenter service.
+This time I am going to show you how to use the `vSphere Diagnostic Tool`, this tool is used to perform diagnostic checks on the VMware vCenter Server Appliance. This tool consists of a python script that executes diagnostic commands to validate the health status of the vCenter service.
 
 #### Note: As a minimum requirement it is required to have a version of vCenter Server 6.5 or higher.
 
@@ -30,11 +30,11 @@ Here is the link so you can see the features of this tool.
 
 - <https://flings.vmware.com/vsphere-diagnostic-tool#summary>
 
-The first step would be to download the tool from the portal of **[VMware Fling](https://flings.vmware.com/vsphere-diagnostic-tool)**
+The first step would be to download the tool from the portal of [VMware Fling](https://flings.vmware.com/vsphere-diagnostic-tool)
 
 ![Text](/img/2022/vsphere-diag-tool/VDT-Download.webp#center)
 
-After downloading the file it is required to copy it to the vCenter server. In my case I will use the **scp** command but you can use any tool that supports ssh connections as for example:
+After downloading the file it is required to copy it to the vCenter server. In my case I will use the `scp` command but you can use any tool that supports ssh connections as for example:
 
 - WinSCP
 - FileZilla
@@ -55,7 +55,7 @@ vdt-v1.1.4.zip                                                                  
 [rebelinux@rebelpc Downloads]$ 
 ```
 
-Then it is needed to connect through **ssh** to the vcenter server. To do this use the ssh command or any terminal emulation tool (Putty, etc...).
+Then it is needed to connect through `ssh` to the vcenter server. To do this use the ssh command or any terminal emulation tool (Putty, etc...).
 
 ```sh
 [rebelinux@rebelpc Downloads]$ ssh -l root (IP/FQDN of vCenter Server)
@@ -69,12 +69,12 @@ Last login: Tue Dec 27 20:30:20 2022 from 192.168.70.2
 root@vcenter-01v [ ~ ]# 
 ```
 
-Once connected to the vCenter server it is required to unzip the VDT tool file that is loaded with the command **SCP**.
+Once connected to the vCenter server it is required to unzip the VDT tool file that is loaded with the command `SCP`.
 
 ```sh
 root@vcenter-01v [ ~ ]# cd /root/
 root@vcenter-01v [ ~ ]# ls
-**vdt-v1.1.4.zip**
+`vdt-v1.1.4.zip`
 root@vcenter-01v [ ~ ]# unzip vdt-v1.1.4.zip
 Archive:  vdt-v1.1.4.zip
 3557676756cffd658fd61aab5a6673269104e83c
@@ -111,20 +111,20 @@ Archive:  vdt-v1.1.4.zip
   inflating: vdt-v1.1.4/templates/python_template.py  
   inflating: vdt-v1.1.4/vdt.py       
 root@vcenter-01v [ ~ ]# ls
-**vdt-v1.1.4**  vdt-v1.1.4.zip
+`vdt-v1.1.4`  vdt-v1.1.4.zip
 root@vcenter-01v [ ~ ]#
 ```
 
-The next step would be to move to the **vdt-vX.X.X** folder.
+The next step would be to move to the `vdt-vX.X.X` folder.
 
 ```sh
 root@vcenter-01v [ ~ ]# cd vdt-v1.1.4
 root@vcenter-01v [ ~/vdt-v1.1.4 ]# ls
-cfg  formerly_pulse.txt  lib  README.md  scripts  templates  **vdt.py**
+cfg  formerly_pulse.txt  lib  README.md  scripts  templates  `vdt.py`
 root@vcenter-01v [ ~/vdt-v1.1.4 ]# 
 ```
 
-The important file in this folder is the one called **vdt.py** which is the one to be used to run the diagnostics. Once inside the **vdt-vx.x.x** folder execute the command **python vdt.py**.
+The important file in this folder is the one called `vdt.py` which is the one to be used to run the diagnostics. Once inside the `vdt-vx.x.x` folder execute the command `python vdt.py`.
 
 ```sh
 root@vcenter-01v [ ~/vdt-v1.1.4 ]# python vdt.py 

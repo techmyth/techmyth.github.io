@@ -16,7 +16,7 @@ This time I'll be talking a bit about a project I've been working on for the las
 
 Moreover, this project is still under continuous development, so you may encounter errors or bugs 😁.
 
-**Important: This module is published in PowerShell Gallery.
+`Important: This module is published in PowerShell Gallery.
 
 Now, to get started, the following requirements must be met:
 
@@ -24,7 +24,7 @@ Now, to get started, the following requirements must be met:
 - PowerShell v5.1+
 - Veeam.Backup.PowerShell module >= 1.0
 
-To validate the Powershell version, the **"$PSVersionTable "** variable can be used from a PowerShell console:
+To validate the Powershell version, the `$PSVersionTable` variable can be used from a PowerShell console:
 
 ```text
 PS C:\Users\jocolon> $PSVersionTable
@@ -45,7 +45,7 @@ SerializationVersion           1.1.0.1
 PS C:\Users\jocolon>
 ```
 
-To confirm if the required Veeam modules are present, you can use the **"Get-Module "** cmdlet as shown in the following example:
+To confirm if the required Veeam modules are present, you can use the `Get-Module` cmdlet as shown in the following example:
 
 ```text
 PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell')
@@ -67,7 +67,7 @@ If the command does not return any results, it means that the module is not inst
 >
 > [Veeam PowerShell Reference](https://helpcenter.veeam.com/docs/backup/powershell/)
 
-To install the **Veeam.Diagrammer** from the **PowerShell Gallery** use the **"Install-Module "** command:
+To install the `Veeam.Diagrammer` from the `PowerShell Gallery` use the `Install-Module` command:
 
 ```text
 PS C:\Users\jocolon> Install-Module -Name Veeam.Diagrammer                                                                                                                    
@@ -99,7 +99,7 @@ Manifest   1.0        Veeam.Backup.PowerShell             {Get-VBRComputerFilePr
 PS C:\Users\jocolon> 
 ```
 
-Finally, the **"New-VeeamDiagram "** cmdlet is used to build the diagram. It is important to note that you need to use the IP address or the FQDN of the Veeam Backup Server as **"Target "**.
+Finally, the `New-VeeamDiagram` cmdlet is used to build the diagram. It is important to note that you need to use the IP address or the FQDN of the Veeam Backup Server as `Target`.
 
 #### Store Credentials in a Variable
 
@@ -108,7 +108,7 @@ PS C:\Users\jocolon> $Credential = Get-Credential
 PowerShell credential request
 Enter your credentials.
 User: Veeam_Admin
-Password for user Veeam_Admin: ***********
+Password for user Veeam_Admin: `````*
 ```
 
 #### New-VeeamDiagram command
