@@ -1,10 +1,10 @@
 ---
-title: "HomeLab: How to disable vSphere Cluster Services (vCLS)"
+title: 'HomeLab: How to disable vSphere Cluster Services (vCLS)'
 author: 'Jonathan Colon Feliciano'
 date: 2020-12-18T08:39:31-04:00
 draft: false
 tags:
-  - "VMware"
+  - 'VMware'
 ---
 
 In vSphere 7 update 1 VMware added a new capability for Distributed Resource Scheduler (DRS) technology consisting of three VMs called agents. The agent VMs form the quorum state of the cluster and have the ability to self-healing. So if you turn off or delete the VMs called vCLS the vCenter server will turn the VMs back on or re-create the VMs again. For HomeLab purposes this new feature consumes CPU resource, Memory and disk space which although minimal is not worth having a configuration that adds nothing to a test and development environment.
@@ -27,7 +27,7 @@ vCenter: In this part you can get the cluster ID by navigating to the [Hosts and
 
 ![Text](/img/2021-05-30_00-11-1024x309.webp#center)
 
-PowerCLI: Using Powershell with the VMware.PowerCLI module you can obtain the cluster ID by invoking the **Get-Cluster** command. As shown in the result of the command you can see the value of the Id **domain-c81** for the cluster named RegionA01-COMP.
+PowerCLI: Using Powershell with the VMware.PowerCLI module you can obtain the cluster ID by invoking the `Get-Cluster` command. As shown in the result of the command you can see the value of the Id `domain-c81` for the cluster named RegionA01-COMP.
 
 ```text
 PS /home/rebelinux> Get-Cluster RegionA01-COMP | FL
@@ -52,11 +52,11 @@ Id                              : ClusterComputeResource-(domain-c81)
 PS /home/rebelinux>
 ```
 
-Once we have the cluster ID which in my case is **domain-c81** we proceed to add the configuration in vCenter by navigating to **[Advanced Settings => Configure => Edit Settings]**.
+Once we have the cluster ID which in my case is `domain-c81` we proceed to add the configuration in vCenter by navigating to `[Advanced Settings => Configure => Edit Settings]`.
 
 ![Text](/img/2021-05-29_21-47-1024x599.webp#center)
 
-In this screen add the **config.vcls.clusters.domain-cID.enabled** value which in my case would be **config.vcls.clusters.domain-c81.enabled** with the value of **false** in the **Value** field.
+In this screen add the `config.vcls.clusters.domain-cID.enabled` value which in my case would be `config.vcls.clusters.domain-c81.enabled` with the value of `false` in the `Value` field.
 
 ![Text](/img/2021-05-29_22-53-1024x871.webp#center)
 
@@ -68,7 +68,7 @@ In the following image you can see the tasks performed by vCenter to remove the 
 
 ![Text](/img/2021-05-29_23-14-1024x426.webp#center)
 
-**Hasta luego!!!**
+### Hasta luego!!!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
 

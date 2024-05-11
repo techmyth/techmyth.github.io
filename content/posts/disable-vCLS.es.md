@@ -7,7 +7,7 @@ tags:
   - "VMware"
 ---
 
-En la versión de vSphere 7 update 1 VMware añadió una nueva capacidad para la tecnología de "Distributed Resource Scheduler" (DRS) que consiste en tres VM  llamadas agentes. Las VMs agentes forman el estado de quórum del cluster y tienen la capacidad de auto corregirse. De forma que si apagas o borrar las VMs llamadas vCLS el servidor de vCenter volverá a encender o crear las VM nuevamente. Para efectos de un HomeLab esta nueva función consume recurso de CPU, Memoria y espacio de disco que aunque es mínimo no vale la pena tener una configuración que no añade nada a un ambiente de prueba y desarrollo.
+En la versión de vSphere 7 update 1 VMware añadió una nueva capacidad para la tecnología de `Distributed Resource Scheduler` (DRS) que consiste en tres VM  llamadas agentes. Las VMs agentes forman el estado de quórum del cluster y tienen la capacidad de auto corregirse. De forma que si apagas o borrar las VMs llamadas vCLS el servidor de vCenter volverá a encender o crear las VM nuevamente. Para efectos de un HomeLab esta nueva función consume recurso de CPU, Memoria y espacio de disco que aunque es mínimo no vale la pena tener una configuración que no añade nada a un ambiente de prueba y desarrollo.
 
 ![Text](/img/25079036c801ac924d3ff7d4cb3b9438.webp#center)
 
@@ -27,7 +27,7 @@ vCenter: En esta parte puedes obtener el ID del clúster navegando a la pestaña
 
 ![Text](/img/2021-05-30_00-11-1024x309.webp#center)
 
-PowerCLI: Utilizando Powershell con el modulo de VMware.PowerCLI podemos obtener el ID del clúster al invocar el commando **Get-Cluster**. Según se muestra en el resultado del commando se puede ver el valor del Id **domain-c81** para el clúster llamado RegionA01-COMP.
+PowerCLI: Utilizando Powershell con el modulo de VMware.PowerCLI podemos obtener el ID del clúster al invocar el commando `Get-Cluster`. Según se muestra en el resultado del commando se puede ver el valor del Id `domain-c81` para el clúster llamado RegionA01-COMP.
 
 ```text
 PS /home/rebelinux> Get-Cluster RegionA01-COMP | FL
@@ -52,11 +52,11 @@ Id                              : ClusterComputeResource-(domain-c81)
 PS /home/rebelinux>
 ```
 
-Una vez tengamos el ID del clúster que en mi caso es **domain-c81** procedemos a añadir la configuracion en vCenter navegando a **[Advanced Settings => Configure => Edit Settings]**.
+Una vez tengamos el ID del clúster que en mi caso es `domain-c81` procedemos a añadir la configuracion en vCenter navegando a `[Advanced Settings => Configure => Edit Settings]`.
 
 ![Text](/img/2021-05-29_21-47-1024x599.webp#center)
 
-En esta pantalla añadimos el valor **config.vcls.clusters.domain-domain-cID.enabled** que en mi caso sería **config.vcls.clusters.domain-c81.enabled** con el valor de **false** en el campo de **Value**.
+En esta pantalla añadimos el valor `config.vcls.clusters.domain-domain-cID.enabled` que en mi caso sería `config.vcls.clusters.domain-c81.enabled` con el valor de `false` en el campo de `Value`.
 
 ![Text](/img/2021-05-29_22-53-1024x871.webp#center)
 
@@ -68,7 +68,7 @@ En esta imagen se puede ver las tareas que realizo el vCenter para remover las V
 
 ![Text](/img/2021-05-29_23-14-1024x426.webp#center)
 
-**Hasta luego!!!**
+### Hasta luego!!!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
 
