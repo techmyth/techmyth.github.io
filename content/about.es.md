@@ -42,6 +42,7 @@ Vivo y trabajo en [Puerto Rico](https://www.discoverpuertorico.com/es) 🇵🇷�
 
 ### Cursos tomados
 
+* Google Cloud Certification Journey Professional Cloud Architect Cohort
 * Data ONTAP SAN Implementation (SANIMP)
 * FortiGate Security & Infrastructure 6.2
 * MAINTAINING IBM DS/DCS STORAGE SUBSYSTEMS
