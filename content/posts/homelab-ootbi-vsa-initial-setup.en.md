@@ -1,5 +1,5 @@
 ---
-title: 'HomeLab: Object First OOTBI VSA initial Implementation'
+title: 'HomeLab: Object First OOTBI VSA initial Setup'
 date: '2024-08-14T12:10:00-04:00'
 tags:
     - VMware
