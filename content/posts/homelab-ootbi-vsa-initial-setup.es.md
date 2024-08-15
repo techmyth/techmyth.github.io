@@ -107,7 +107,7 @@ Ya que tenemos la parte del nombre de DNS realizado podemos pasar a realizar el 
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-02.webp)
 
-#### Paso 3: Seleccionar Nombre de la VM y la carpeta de ubicación
+#### Paso 3: Seleccionar el Nombre de la VM y la carpeta donde se ubicará
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-11.webp)
 
@@ -163,11 +163,11 @@ En esta pantalla podemos especificar el nombre del clúster y la direction de IP
 
 ** Nota: Esta dirección de IP debe de ser distinta a la configurada en el nodo que se utiliza para manejar la VM.
 
-Luego pasamos a especificar la contraseña de la cuanta "default" llamada `objectfirst`.
+Luego pasamos a especificar la contraseña de la cuenta "default" llamada `objectfirst`.
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-21.webp)
 
-Lego de completar todos estos pasos al final el nuevo clúster sera configurado con los parámetros que establecimos.
+Luego de completar todos estos pasos al final el nuevo clúster sera configurado con los parámetros que establecimos.
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-22.webp)
 
