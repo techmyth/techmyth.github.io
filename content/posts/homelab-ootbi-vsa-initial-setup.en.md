@@ -20,7 +20,7 @@ According to Object First the `OOTBI` offers:
 
 > Ransomware-proof and immutable out-of-the-box storage, `OOTBI` offers secure, simple and powerful backup storage.
 
-Beneficios:
+Benefits:
 
 - A storage 100% developed for Veeam.
 - `Zero Trust Data Resilience (ZTDR)` architecture.
@@ -30,8 +30,6 @@ Beneficios:
 - Secure and seamless on-premises-to-cloud data copy in S3 format with no overhead.
 - The S3 protocol has guaranteed data delivery (unlike SMB or NFS), so businesses get end-to-end data reliability.
 - Natively solves many of the availability needs organizations consider when considering backup storage and the 3-2-1 backup rule.
-
-Para comenzar debemos de acceder el siguiente enlace donde podemos descargar el archivo tipo OVA que permite gestionar la creación de la maquina virtual donde corren los servicios de `OOTBI`.
 
 To start you must access the following link where the OVA file can be downloaded. This file allows you to deploy the virtual appliance where the `OOTBI` services run.
 
