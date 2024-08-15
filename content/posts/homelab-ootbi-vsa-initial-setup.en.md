@@ -12,7 +12,7 @@ Hello everyone!
 
 In this opportunity I am going to show you the initial implementation of the virtual storage appliance from the company `Object First`. I will also show you how to access the management Web portal.
 
-Este dispositivo de `OOTBI` ofrece almacenamiento seguro para la aplicación de resguardo de la compañía `Veeam Backup & Replication`. Aquí les dejo el enlace Web de `Object First`:
+This `OOTBI` appliance provides secure storage for the `Veeam Backup & Replication` backup application. Here is the `Object First` web link:
 
 - https://objectfirst.com/object-storage/
 
