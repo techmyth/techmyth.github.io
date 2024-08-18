@@ -188,7 +188,7 @@ Below is the Management portal!
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-27.webp)
 
-### Summary
+### That's all folks
 
 In this lab I installed and configured the `Object First OOTBI` virtual appliance that allows Veeam administrators to use this appliance as an S3-like repository. I hope you liked this lab. If you have any doubts or questions about this lab, leave them in the comments.
 
