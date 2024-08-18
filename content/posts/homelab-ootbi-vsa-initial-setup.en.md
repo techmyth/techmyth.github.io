@@ -10,11 +10,11 @@ tags:
 
 Hello everyone!
 
-In this opportunity I am going to show you the initial implementation of the virtual storage appliance from the company `Object First`. I will also show you how to access the management Web portal.
+In this opportunity I am going to show you the initial implementation of the virtual storage appliance from the company `Object First`. I will also show you how to access the Web management portal.
 
 This `OOTBI` appliance provides secure storage for the `Veeam Backup & Replication` backup application. Here is the `Object First` web link:
 
-- https://objectfirst.com/object-storage/
+- <https://objectfirst.com/object-storage/>
 
 According to Object First the `OOTBI` offers:
 
@@ -31,19 +31,19 @@ Benefits:
 - The S3 protocol has guaranteed data delivery (unlike SMB or NFS), so businesses get end-to-end data reliability.
 - Natively solves many of the availability needs organizations consider when considering backup storage and the 3-2-1 backup rule.
 
-To start you must access the following link where the OVA file can be downloaded. This file allows you to deploy the virtual appliance where the `OOTBI` services run.
+To start download the OVA file from the following link:
 
-- https://objectfirst.com/es/virtual-storage-appliance/setup-file-download/
+<https://objectfirst.com/virtual-storage-appliance/setup-file-download/>
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-00.webp)
 
-Below is the process of creating the VM using the template we downloaded in OVA format.
+Below is the process of creating the VM using the template downloaded from the `Object First` web site.
 
 #### Deploying `OOTBI` through VMware vCenter
 
 In this section a DNS record is created that will be used to do the name resolution of the storage appliance.
 
-##### Creation of a type A DNS resources record with Powershell
+##### Creating a type A DNS resources record with Powershell
 
 ```powershell
 Windows PowerShell
@@ -68,7 +68,7 @@ veeam-ootbi-01v           A          1          0                    01:00:00   
 PS C:\Users\Administrator>
 ```
 
-##### Validating dns host names with Powershell
+##### Validating DNS host names with Powershell
 
 ```powershell
 Windows PowerShell
@@ -140,7 +140,7 @@ Here in this page you must accept the license to be able to continue...
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-14.webp)
 
-Next, we proceed to create a new cluster.
+Next, proceed to create a new cluster.
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-15.webp)
 
@@ -188,7 +188,7 @@ Below is the Management portal!
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-27.webp)
 
-### Resumen
+### Summary
 
 In this lab I installed and configured the `Object First OOTBI` virtual appliance that allows Veeam administrators to use this appliance as an S3-like repository. I hope you liked this lab. If you have any doubts or questions about this lab, leave them in the comments.
 
