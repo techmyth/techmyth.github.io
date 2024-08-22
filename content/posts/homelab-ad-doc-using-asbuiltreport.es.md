@@ -1,6 +1,6 @@
 ---
 title: 'HomeLab: Documentación Automatizada de Active Directory utilizando AsBuiltReport'
-date: '2021-10-14T07:22:42-04:00'
+date: '2024-10-21T07:22:42-04:00'
 tags:
     - HomeLab
     - Active Directory
