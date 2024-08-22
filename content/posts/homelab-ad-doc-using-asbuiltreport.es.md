@@ -8,26 +8,32 @@ tags:
 
 Hola a tod@s!
 
-Anteriormente les hable sobre el reporte de NetApp.Ontap que ayude a desarrollar a través del proyecto de AsBuildReport creado por `Tim Carman` [@tpcarman](https://twitter.com/tpcarman) (Aquí el [enlace](http://192.168.7.40/2021/09/27/homelab-ontap-docs-asbuiltreport/)).Pues esta vez les estaré hablando de otro reporte que he estado trabajando durante estos últimos meses relacionado a generar documentación sobre la infraestructura de `Active Directory (AD)`. Durante muchos años he realizado varias implementaciones y/o consultorías relacionadas a este servicio y siempre he tenido la intención de crear un reporte condensado de cómo está diseñada esta infraestructura de servicios que para efectos estadísticos corre en más del 95% de las empresas mundiales.
+Anteriormente les hable sobre el reporte de NetApp.Ontap que ayude a desarrollar a través del proyecto de AsBuildReport creado por `Tim Carman` [@tpcarman](https://twitter.com/tpcarman) (Aquí el [enlace](http://192.168.7.40/2021/09/27/homelab-ontap-docs-asbuiltreport/)). Pues esta vez les estaré hablando de otro reporte que he estado trabajando durante estos últimos meses relacionado a generar documentación sobre la infraestructura de `Active Directory (AD)`. Durante muchos años he realizado varias implementaciones y/o consultorías relacionadas a este servicio y siempre he tenido la intención de crear un reporte condensado de cómo está diseñada esta infraestructura de servicios que para efectos estadísticos corre en más del 95% de las empresas mundiales.
 
 Aunque tengo que reconocer que existen un sin número de expertos que han creado varios reportes similares, un dato único de este reporte es que utiliza [AsBuildReport](https://www.asbuiltreport.com/) como base para generar la programación necesaria para establecer la estructura del reporte. De forma que yo como programador me puedo concentrar en la tecnología que deseo documentar y no en añadir código para generar el formato en Word o HTML.
 
-El reporte se encuentra en estado inicial y en constante desarrollo, pero decidí liberarlo públicamente para poder recibir recomendaciones o más bien para fomentar que otros desarrolladores aporte a mejorar su contenido. El website de desarrollo del reporte se encuentra en Github les dejo el enlace para que puedan ver el alcance y el objetivo del proyecto.
+El website de desarrollo del reporte se encuentra en Github les dejo el enlace para que puedan ver el alcance y el objetivo del proyecto.
 
 - <https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.AD>
 
 ![Text](/img/AsbuildReport_AD.webp)
 
-Este reporte solo puede ser ejecutado en Windows 10+ o Windows Server 2012+. Adicionalmente es requerida la versión de PowerShell 5.1 o PowerShell 7+ y los siguientes módulos son requeridos para poder generar el reporte:
+Este reporte solo puede ser ejecutado en Windows 10+ yo Windows Server 2016+. Adicionalmente es requerido tener instalado la version de PowerShell 5.1 o PowerShell 7+ y los siguientes módulos para poder generar el reporte:
 
 - [AsBuiltReport.Microsoft.AD](https://www.powershellgallery.com/packages/AsBuiltReport.Microsoft.AD/0.3.0)
 - [ActiveDirectory](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps)
+- [ADCSAdministration](https://learn.microsoft.com/en-us/powershell/module/adcsadministration/?view=windowsserver2019-ps)
+- [DnsServer](https://learn.microsoft.com/en-us/powershell/module/dnsserver/?view=windowsserver2019-ps)
 - [PSPKI](https://www.powershellgallery.com/packages/PSPKI/3.7.2)
 - [GroupPolicy](https://docs.microsoft.com/en-us/powershell/module/grouppolicy/?view=windowsserver2019-ps)
+- [PSGraph](https://github.com/KevinMarquette/PSGraph)
+- [Diagrammer.Core](https://github.com/rebelinux/Diagrammer.Core)
+- [Diagrammer.Microsoft.AD](https://github.com/rebelinux/Diagrammer.Microsoft.AD)
+- [PScriboCharts](https://github.com/iainbrighton/PScriboCharts)
 
 Este reporte utiliza la versión de PowerShell 5.+ ó PSCore 7, para validar la versión podemos utilizar la variable `$PSVersionTable` desde la consola de PowerShell:
 
-```text
+```powershell
 PS C:\Users\jocolon> $PSVersionTable
 
 Name                           Value
@@ -47,21 +53,20 @@ PS C:\Users\jocolon>
 
 Para validar si tenemos los módulos requeridos podemos utilizar el comando `Get-Module` según se muestra en el siguiente ejemplo:
 
-```text
-PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('ActiveDirectory','GroupPolicy','PSPKI')
+```powershell
+PS C:\Users\jocolon> Get-Module -ListAvailable -Name @('ActiveDirectory','GroupPolicy','PSPKI', 'PSGraph', 'Diagrammer.Core', 'Diagrammer.Microsoft.AD', 'PScriboCharts ') | Select-Object -Property Name,Version
 
-    Directory: C:\Program Files\WindowsPowerShell\Modules
-
-ModuleType Version    Name                                ExportedCommands
----------- -------    ----                                ----------------
-Script     3.7.2      PSPKI                               {Set-CertificateExtension, Get-CertificationAuthorityDbSch...
-
-    Directory: C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
-
-ModuleType Version    Name                                ExportedCommands
----------- -------    ----                                ----------------
-Manifest   1.0.1.0    ActiveDirectory                     {Add-ADCentralAccessPolicyMember...
-Manifest   1.0.0.0    GroupPolicy                         {Backup-GPO, Block-GPInheritance...
+Name                    Version  
+----                    -------
+Diagrammer.Core         0.2.2
+Diagrammer.Microsoft.AD 0.2.3
+PSGraph                 2.1.38.27
+PSPKI                   4.2.0
+PSGraph                 2.1.38.27
+PSPKI                   4.2.0
+ActiveDirectory         1.0.1.0
+GroupPolicy             1.0.0.0
+PSPKI                   3.7.2
 
 PS C:\Users\jocolon>
 ```
@@ -69,21 +74,26 @@ PS C:\Users\jocolon>
 Si el comando no produce algún resultado quiere decir que ninguno de los módulos está instalado. Para instalar estas dependencias utilizamos el comando `Install-Module`:
 
 ```text
-Installation of the PSPKI module:
-PS C:\WINDOWS\system32> Install-Module -Name PSPKI                                                                                                                                                                                                                                                                                Installing package 'PSPKI'                                                                                                                                                                                                                                                        Copying unzipped package to 'C:\Users\jocolon\AppData\Local\Temp\2052046370\PSPKI'                                                                                                                                                                                             [oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]    
-PS C:\WINDOWS\system32>                                                                                                                                                                                                                                                                                 
+Install-Module -Name PSPKI, PSGraph, Diagrammer.Core, Diagrammer.Microsoft.AD, PScriboCharts
 ```
 
-Para instalar los módulos de `ActiveDirectory` y `GroupPolicy` utilizamos el comando `Add-WindowsCapability` para Windows 10 o el comando `Install-WindowsFeature` para Windows Server 2012+
+Para instalar los módulos de `ActiveDirectory`, `ADCSAdministration`, `DnsServer` y `GroupPolicy` en Windows Server 2016+ utilizamos el comando `Add-WindowsCapability`.
 
-```text
-Installation of ActiveDirectory and GroupPolicy module:
-PS C:\WINDOWS\system32> Add-WindowsCapability -online -Name 'Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1 0'                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-Path          :
-Online        : True
-RestartNeeded : False
+```powershell
+PS C:\WINDOWS\system32> Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-ADCS,RSAT-ADCS-mgmt,RSAT-DNS-Server,GPMC
 
-PS C:\WINDOWS\system32> Add-WindowsCapability -online -Name 'Rsat.GroupPolicy.Management.Tools~~~~0.0.1.0'
+Success Restart Needed Exit Code      Feature Result
+------- -------------- ---------      --------------
+True    No             NoChangeNeeded {}
+
+PS C:\WINDOWS\system32>
+
+```
+
+Para instalar los módulos de `ActiveDirectory`, `ADCSAdministration`, `DnsServer` y `GroupPolicy` utilizamos el comando `Add-WindowsCapability` para Windows 10.
+
+```powershell
+PS C:\WINDOWS\system32> Add-WindowsCapability -online -Name 'Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0' ; Add-WindowsCapability -Online -Name 'Rsat.CertificateServices.Tools~~~~0.0.1.0'; Add-WindowsCapability -online -Name 'Rsat.GroupPolicy.Management.Tools~~~~0.0.1.0' ; Add-WindowsCapability –online –Name 'Rsat.Dns.Tools~~~~0.0.1.0'
 
 Path          :
 Online        : True
@@ -93,9 +103,9 @@ PS C:\WINDOWS\system32>
 
 ```
 
-Una vez instalamos los prerrequisito podemos continuar con la instalación del módulo principal `AsBuiltReport.Microsoft.AD`.
+Una vez instalamos los pre-requisito podemos continuar con la instalación del módulo principal `AsBuiltReport.Microsoft.AD`.
 
-```text
+```powershell
 PS C:\WINDOWS\system32> Install-Module -Name AsBuiltReport.Microsoft.AD
 
 Untrusted repository
@@ -109,22 +119,19 @@ PS C:\WINDOWS\system32>
 
 Para validar que el módulo fue instalado correctamente podemos utilizar el comando *`Get-Module`*.
 
-```text
+```powershell
 PS C:\WINDOWS\system32> Get-Module -ListAvailable -Name AsBuiltReport.Microsoft.AD
 
-
-    Directory: C:\Users\jocolon\Documents\WindowsPowerShell\Modules
-
+    Directory: C:\Program Files\WindowsPowerShell\Modules
 
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
-Script     0.4.0      AsBuiltReport.Microsoft.AD          Invoke-AsBuiltReport.Microsoft.AD
-
+Script     0.8.2      AsBuiltReport.Microsoft.AD          Invoke-AsBuiltReport.Microsoft.AD
 
 PS C:\WINDOWS\system32>
 ```
 
-#### Nota: Como se puede ver se realizó la instalación del módulo versión `0.4.0`
+#### Nota: Como se puede ver se realizó la instalación del módulo versión `0.8.2`
 
 Un requisito opcional es generar los archivos de configuración que te permite establecer los parámetros de la organización que son utilizados para generar el reporte. Este proceso genera unos archivos tipo JSON que son utilizados como plantillas `templates` de forma que no tengas que llenar la información repetitiva cuando generes los reportes.
 
@@ -184,83 +191,101 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 
 ```json
 {
-    `Email`:  {
-                  `Port`:  null,
-                  `Credentials`:  null,
-                  `Server`:  null,
-                  `To`:  null,
-                  `From`:  null,
-                  `UseSSL`:  null,
-                  `Body`:  null
+    "Email":  {
+                  "Port":  null,
+                  "Credentials":  null,
+                  "Server":  null,
+                  "To":  null,
+                  "From":  null,
+                  "UseSSL":  null,
+                  "Body":  null
               },
-    `Company`:  {
-                    `FullName`:  `Zen PR Solutions`,
-                    `Contact`:  `Jonathan Colon`,
-                    `Phone`:  `787-203-2790`,
-                    `Email`:  `jcolonf@zenprsolutions.com`,
-                    `ShortName`:  `ZENPR`,
-                    `Address`:  `Puerto Rico`
+    "Company":  {
+                    "FullName":  "Zen PR Solutions",
+                    "Contact":  "Jonathan Colon",
+                    "Phone":  "787-203-2790",
+                    "Email":  "jcolonf@zenprsolutions.com",
+                    "ShortName":  "ZENPR",
+                    "Address":  "Puerto Rico"
                 },
-    `UserFolder`:  {
-                       `Path`:  `C:\\Users\\jocolon\\AsBuiltReport`
+    "UserFolder":  {
+                       "Path":  "C:\\Users\\jocolon\\AsBuiltReport"
                    },
-    `Report`:  {
-                   `Author`:  `Jonathan Colon`
+    "Report":  {
+                   "Author":  "Jonathan Colon"
                }
 }
 ```
 
 El comando New-AsBuiltReportConfig permite establecer los parámetros técnico del reporte como el nivel y tipo de información `verbose level`.
 
-```text
-PS C:\WINDOWS\system32> New-AsBuiltReportConfig Microsoft.AD -FolderPath C:\Users\jocolon\AsBuiltReport\
+```powershell
+PS C:\WINDOWS\system32> New-AsBuiltReportConfig -Report Microsoft.AD -FolderPath C:\Users\jocolon\AsBuiltReport\
 ```
 
 Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente contenido:
 
 ```json
 {
-    `Report`: {
-        `Name`: `Microsoft AD As Built Report`,
-        `Version`: `1.0`,
-        `Status`: `Released`,
-        `ShowCoverPageImage`: true,
-        `ShowTableOfContents`: true,
-        `ShowHeaderFooter`: true,
-        `ShowTableCaptions`: true
+    "Report": {
+        "Name": "Microsoft Active Directory As Built Report",
+        "Version": "1.0",
+        "Status": "Released",
+        "ShowCoverPageImage": true,
+        "ShowTableOfContents": true,
+        "ShowHeaderFooter": true,
+        "ShowTableCaptions": true
     },
-    `Options`: {
+    "Options": {
+        "ShowDefinitionInfo": false,
+        "PSDefaultAuthentication": "Negotiate",
+        "Exclude": {
+            "Domains": [],
+            "DCs": []
+        },
+        "Include": {
+            "Domains": []
+        }
+    },
+    "InfoLevel": {
+        "_comment_": "0 = Disabled, 1 = Enabled, 2 = Adv Summary, 3 = Detailed",
+        "Forest": 2,
+        "Domain": 2,
+        "DNS": 1,
+        "CA": 0
+    },
+    "HealthCheck": {
+        "Domain": {
+            "GMSA": true,
+            "GPO": true,
+            "Backup": true,
+            "DFS": true,
+            "SPN": true,
+            "DuplicateObject": true,
+            "Security": true,
+            "BestPractice": true
+        },
+        "DomainController": {
+            "Diagnostic": true,
+            "Services": true,
+            "Software": true,
+            "BestPractice": true
+        },
+        "Site": {
+            "Replication": true,
+            "BestPractice": true
+        },
+        "DNS": {
+            "Aging": true,
+            "DP": true,
+            "Zones": true,
+            "BestPractice": true
 
-    },
-    `InfoLevel`: {
-        `_comment_`: `0 = Disabled, 1 = Enabled, 2 = Adv Summary, 3 = Detailed`,
-        `Forest`: 1,
-        `Domain`: 1,
-        `DHCP`: 1,
-        `DNS`: 1,
-        `CA`: 0,
-        `Security`: 0
-    },
-    `HealthCheck`: {
-        `Domain`: {
-            `GMSA`: true,
-            `GPO`: true
         },
-        `DomainController`: {
-            `Diagnostic`: true,
-            `Services`: true
-        },
-        `Site`: {
-            `Replication`: true
-        },
-        `DNS`: {
-            `Aging`: true
-        },
-        `DHCP`: {
-            `Summary`: true,
-            `Credential`: true,
-            `Statistics`: true,
-            `BP`: true
+        "CA": {
+            "Status": true,
+            "Statistics": true,
+            "BestPractice": true
         }
     }
 }
@@ -270,7 +295,7 @@ Este archivo de configuración se puede utilizar para especificar el nivel de de
 
 Luego podemos generar el reporte utilizando el comando `New-AsBuiltReport -Report Microsoft.AD -Target DC_FQDN`. Es importante recalcar que es requerido que la computadora donde se genere el reporte esté añadida al dominio de AD que se quiere documentar. También es requerido utilizar el `fully qualified domain name (FQDN)` del servidor con el rol de `Domain Controller` que esté dentro del `Forest` de AD.
 
-```text
+```powershell
 PS C:\Users\jocolon>  New-AsBuiltReport -Report Microsoft.AD -Target server-dc-01v.zenpr.local -Format HTML -AsBuiltConfigFilePath C:\Users\jocolon\AsBuiltReport\AsBuiltReport.json -OutputFolderPath C:\Users\jocolon\AsBuiltReport\ -ReportConfigFilePath '.\AsBuiltReport\AsBuiltReport.Microsoft.AD.json' -Credential $cred -EnableHealthCheck               
 
 Please wait while the Microsoft AD As Built Report is being generated.
