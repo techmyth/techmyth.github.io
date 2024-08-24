@@ -13,7 +13,7 @@ In this opportunity, I would like to show you how to update the version of the `
 
 Starting with the vCenter portal, find the virtual machine instance so that you can access the `OOTBI` text user interface.
 
-![Text](/img/2024/homelab-ootbi-update-version/OOTBI-vcenter-Console.png)
+![Text](/img/2024/homelab-ootbi-update-version/OOTBI-vcenter-Console.webp)
 
 After that, we proceed with the following steps:
 
@@ -49,4 +49,4 @@ Hasta la Próxima!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
 
-![Text](/img/2024/homelab-ootbi-update-version/HastaLuegoJirafales.png#center)
+![Text](/img/2024/homelab-ootbi-update-version/HastaLuegoJirafales.webp#center)

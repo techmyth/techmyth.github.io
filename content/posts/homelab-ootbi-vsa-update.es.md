@@ -13,7 +13,7 @@ En esta oportunidad vengo a mostrarles cómo actualizar la versión de la unidad
 
 Para comenzar, desde el portal de vCenter ubicamos la instancia de la VM para tener acceso al "Text User Interface" (TUI) de `OOTBI`.
 
-![Text](/img/2024/homelab-ootbi-update-version/OOTBI-vcenter-Console.png)
+![Text](/img/2024/homelab-ootbi-update-version/OOTBI-vcenter-Console.webp)
 
 Luego de eso, realizamos los siguientes pasos:
 
@@ -49,4 +49,4 @@ Hasta la Próxima!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
 
-![Text](/img/2024/homelab-ootbi-update-version/HastaLuegoJirafales.png#center)
+![Text](/img/2024/homelab-ootbi-update-version/HastaLuegoJirafales.webp#center)
