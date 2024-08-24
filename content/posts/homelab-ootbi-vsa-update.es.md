@@ -9,21 +9,23 @@ tags:
 
 Hola a tod@s
 
-En esta oportunidad vengo a mostrarles como actualizar la version de la unidad de almacenamiento de la compañía `Object First`. Anteriormente les mostramos como realizar la implementación inicial de este producto, pueden acceder el articulo [aquí]({{< ref "homelab-ootbi-vsa-initial-setup.es.md" >}} "aquí")
+En esta oportunidad vengo a mostrarles cómo actualizar la versión de la unidad de almacenamiento de la compañía `Object First`. Anteriormente, les mostramos cómo realizar la implementación inicial de este producto. Pueden acceder el artículo [aquí]({{< ref "homelab-ootbi-vsa-initial-setup.es.md" >}} "aquí")
 
-Para comenzar desde el portal de vCenter ubicamos la instancia de la VM para tener acceso al "Text User Interface" (TUI) de `OOTBI`.
+Para comenzar, desde el portal de vCenter ubicamos la instancia de la VM para tener acceso al "Text User Interface" (TUI) de `OOTBI`.
 
-Luego de eso procedemos a realizar los siguientes pasos:
+![Text](/img/2024/homelab-ootbi-update-version/OOTBI-vcenter-Console.png)
+
+Luego de eso, realizamos los siguientes pasos:
 
 #### Paso 1: Acceder la consola de OOTBI (TUI)
 
-En este paso accedemos la consola de manejo de `OOTBI` donde seleccionamos el `Software Updates` desde menú de texto.
+En este paso accedemos a la consola de manejo de `OOTBI` donde seleccionamos el `Software Updates` desde menú de texto.
 
 ![Text](/img/2024/homelab-ootbi-update-version/OOTBI-Update-00.webp)
 
 #### Paso 2: Aceptar los cambios de la actualización
 
-Si el wizard encuentra una version nueva te notificará que aceptes los cambios presionando la opción de `Enter`.
+Si el wizard encuentra una versión nueva, te notificará que aceptes los cambios presionando la opción de `Enter`.
 
 ![Text](/img/2024/homelab-ootbi-update-version/OOTBI-Update-01.webp)
 
@@ -35,7 +37,7 @@ Aquí en este paso te permite ver el progreso de la actualización.
 
 #### Paso 4: Culminación del proceso de actualización
 
-Luego de que el proceso de la actualización culmine puedes observar en la parte inferior que la version del producto fue incrementada.
+Luego de que el proceso de la actualización culmine, puedes observar en la parte inferior que la versión del producto fue incrementada.
 
 ![Text](/img/2024/homelab-ootbi-update-version/OOTBI-Update-03.webp)
 
