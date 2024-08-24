@@ -9,17 +9,17 @@ tags:
 
 En este blog, estaré hablando sobre cómo podemos optimizar la utilización de memoria RAM en nuestro ambiente de prueba `HomeLab`. El objetivo principal de este procedimiento es que podamos tener mayores niveles de consolidación a la hora de realizar nuestros laboratorios.
 
-`Transparent Page Sharing (TPS)` es un método por el cual se eliminan las copias de páginas de memoria duplicadas. En otras palabras, el concepto de TPS es algo similar a la deduplicación. Esto ayuda al servidor de ESXi a liberar bloques de memoria repetidas de una máquina virtual permitiendo aumentar los niveles de consolidación.
+`Transparent Page Sharing (TPS)` es un método por el cual se eliminan las copias de páginas de memoria duplicadas. En otras palabras, el concepto de TPS es algo similar a la deduplicación. Esto ayuda al servidor de ESXi a liberar bloques de memoria repetidos de una máquina virtual permitiendo aumentar los niveles de consolidación.
 
 ![Text](/img/image003.webp#center)
 
-Si desean saber un poco más sobre TPS su beneficios y riesgos pueden acceder el siguiente enlace [Transparent Page Sharing (TPS) in hardware MMU systems](https://kb.vmware.com/s/article/1021095). Aunque se sabe que el uso de TPS puede ser una alarma de seguridad, entiendo que no representa un riesgo importante en un entorno de pruebas como el nuestro. Les facilito una referencia para esta información:
+Si desean saber un poco más sobre TPS sus beneficios y riesgos pueden acceder el siguiente enlace [Transparent Page Sharing (TPS) in hardware MMU systems](https://kb.vmware.com/s/article/1021095). Aunque se sabe que el uso de TPS puede ser una alarma de seguridad, entiendo que no representa un riesgo importante en un entorno de pruebas como el nuestro. Les facilito una referencia para esta información:
 
 > In a nutshell, independent research indicates that TPS can be abused to gain unauthorized access to data under certain highly controlled conditions. In line with its `secure by default` security posture, VMware has opted to change the default behavior of TPS and provide customers with a configurable option for selectively and more securely enabling TPS in their environment.
 
 #### [Disabling TPS in vSphere – Impact on Critical Applications](https://blogs.vmware.com/apps/2014/10/disabling-tps-vsphere-impact-critical-applications.html)
 
-#### Nota: Te muestro cómo cambiar este valor usando Powershell porque te permite hacer el cambio en varios servidores al mismo tiempo
+#### Nota: Te muestro cómo cambiar este valor usando PowerShell porque te permite hacer el cambio en varios servidores al mismo tiempo
 
 Para empezar debemos verificar qué valor está configurado actualmente en los servidores ESXi. Para realizar esta tarea utilizamos el comando `Get-VMHost` para extraer la información de los servidores conectados al vCenter. El resultado se envía al comando `Get-AdvancedSetting -Name Mem.ShareForceSalting` que nos permite extraer el valor configurado en la variable `Mem.ShareForceSalting`.
 
@@ -69,7 +69,7 @@ comp-01a.zenprsolutions.local   Mem.ShareForceSalting     2 VMHost
 PS /home/blabla> 
 ```
 
-Para esta prueba encendimos 23 máquinas virtuales (Windows) para poner el servidor en modo de contención y así poder ver qué beneficios tiene el TPS. Este resultado que les muestro a continuación representa las estadísticas de memoria del servidor ESXi obtenidas con el comando `esxtop`. Aquí podemos ver las estadísticas antes de que configuráramos la función `TPS Inter-VM` con el valor `#2`. La variable que vemos en negrita `PSHARE/MB` representa el valor de memoria compartida que tiene actualmente el servidor, es decir, sólo se está utilizando TPS en modo `Intra-VM`. Esta variable tiene un valor de `1400/MB`.
+Para esta prueba encendimos 23 máquinas virtuales (Windows) para poner el servidor en modo de contención y así poder ver qué beneficios tiene el TPS. Este resultado que les muestro a continuación representa las estadísticas de memoria del servidor ESXi obtenidas con el comando `esxtop`. Aquí podemos ver las estadísticas antes de que configuráramos la función `TPS Inter-VM` con el valor `#2`. La variable que vemos en negrita `PSHARE/MB` representa el valor de memoria compartida que tiene actualmente el servidor, es decir, solo se está utilizando TPS en modo `Intra-VM`. Esta variable tiene un valor de `1400/MB`.
 
 ```text
 2:58:11pm up 50 min, 722 worlds, 23 VMs, 45 vCPUs; MEM overcommit avg: 1.10, 1.10, 0.99

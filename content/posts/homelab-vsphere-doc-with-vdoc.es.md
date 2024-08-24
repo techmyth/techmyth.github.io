@@ -76,7 +76,7 @@ Name                           Port  User
 PS C:\Users\Administrator>
 ```
 
-Luego de establecida la conexión podemos utilizar los módulos. En este ejemplo utilizaré el comando `Get-ESXInventory` para obtener la informacion de inventario de los servidores ESXi conectados al vCenter con la dirección de IP `192.168.5.2`
+Luego de establecida la conexión podemos utilizar los módulos. En este ejemplo utilizaré el comando `Get-ESXInventory` para obtener la información de inventario de los servidores ESXi conectados al vCenter con la dirección de IP `192.168.5.2`
 
 ```text
 PS C:\Users\Administrator> Get-ESXInventory
@@ -336,4 +336,4 @@ Security Promiscuous/MacChanges/ForgedTransmits : Accept/Accept/Accept
 PS C:\Users\Administrator>
 ```
 
-Espero les haya sido de utilidad esta herramienta de reporte. Hasta Luego!
+Espero les haya sido de utilidad esta herramienta de reporte. ¡Hasta Luego!

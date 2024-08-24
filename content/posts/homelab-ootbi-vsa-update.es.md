@@ -45,7 +45,7 @@ Luego de que el proceso de la actualización culmine, puedes observar en la part
 
 En este laboratorio te mostramos que sencillo es instalar las actualizaciones del appliance virtual de `Object First OOTBI`. Espero que este laboratorio les haya gustado. Si tienes dudas o alguna pregunta sobre este laboratorio, déjalo en los comentarios.
 
-Hasta la Próxima!
+¡Hasta la Próxima!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
 

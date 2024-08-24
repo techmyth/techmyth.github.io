@@ -7,9 +7,9 @@ tags:
 
 Hi all,
 
-In a previous post [PowerShell: VMware PowerCLI Introduction]({{< ref "/posts/vmware-powercli-introduction.en.md" >}} "PowerShell: VMware PowerCLI Introduction") I showed you how to install VMware PowerCLI and a basic introduction of the purpose of this management tool. In this post I will show you how to do the initial connection to the vCenter using the PowerCLI tool. It is important to mention that PowerCLI can be used to connect to both vCenter and vSphere `ESXi` server independently but in this post I will be showing examples only referring to the vCenter server.
+In a previous post [PowerShell: VMware PowerCLI Introduction]({{< ref "/posts/vmware-powercli-introduction.en.md" >}} "PowerShell: VMware PowerCLI Introduction") I showed you how to install VMware PowerCLI and a basic introduction of the purpose of this management tool. In this post I will show you how to do the initial connection to the vCenter using the PowerCLI tool. It is important to mention that PowerCLI can be used to connect to both vCenter and `vSphere ESXi` server independently but in this post I will be showing examples only referring to the vCenter server.
 
-To start, we need to establish the initial connection to our vCenter server. PowerCLI provides the `Connect-VIServer` command for this purpose but there are also other commands to manage and even validate existing connections. The following example shows how to deploy the vCenter connect/disconnect commands.
+To start, we need to establish the initial connection to our vCenter server. PowerCLI provides the `Connect-VIServer` command for this purpose, but there are other commands to manage and even validate existing connections. The following example shows how to deploy the vCenter connect/disconnect commands.
 
 ```text
 PS /home/rebelinux> Get-Command *VIserver*
@@ -60,7 +60,7 @@ Name                           Port  User
 PS /home/rebelinux> 
 ```
 
-In the previous example the credentials are saved in a variable with the name $Credentials and then this variable is used as `Input` in the `Connect-VIServer` command using the `(-Credential $Credentials)` option. Once the initial connection is made you can use the variable `$defaultVIServer` to validate the existing connection. It is important to mention that the session found in the `$defaultVIServer` variable will be used by default when using the cmdlet if the `-Server` option is not specified.
+At the previous example the credentials are saved in a variable with the name $Credentials and then this variable is used as `Input` in the `Connect-VIServer` command using the `(-Credential $Credentials)` option. Once the initial connection is made you can use the variable `$defaultVIServer` to validate the existing connection. It is important to mention that the session found in the `$defaultVIServer` variable will be used by default when using the cmdlet if the `-Server` option is not specified.
 
 ```text
 PS /home/rebelinux> $defaultVIServer
@@ -123,7 +123,7 @@ csr-pharmax-dr       PoweredOff 1        4.000
 PS /home/rebelinux
 ```
 
-If there are connections to multiple vCenter sessions all VMs of all connected vCenters will be shown. To filter the result to only a specific vCenter you can use the `-Server` option when executing the cmdlet.
+If there are connections to multiple vCenter sessions all VMs of all connected `vCenters` will be shown. To filter the result to only a specific vCenter you can use the `-Server` option when executing the cmdlet.
 
 ```text
 PS /home/rebelinux> Get-VMHost -Server 192.168.5.2

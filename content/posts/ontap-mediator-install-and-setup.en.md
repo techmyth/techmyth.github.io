@@ -11,11 +11,11 @@ Hello everyone,
 
 Today I will be talking a bit about how to install and configure the `Ontap Mediator` application that is used as an alternate way to validate the health status of a cluster collection. To set up the role of this application I will use as reference the NetApp portal documentation:
 
-> ONTAP Mediator provides an alternate health path to the peer cluster, with the intercluster LIFs providing the other health path. With the Mediator’s health information, clusters can differentiate between intercluster LIF failure and site failure. When the site goes down, Mediator passes on the health information to the peer cluster on demand, facilitating the peer cluster to fail over. With the Mediator-provided information and the intercluster LIF health check information, ONTAP determines whether to perform an auto failover, if it is failover incapable, continue or stop.
+> ONTAP Mediator provides an alternate health path to the peer cluster, with the `intercluster` LIFs providing the other health path. With the Mediator’s health information, clusters can differentiate between `intercluster` LIF failure and site failure. When the site goes down, Mediator passes on the health information to the peer cluster on demand, facilitating the peer cluster to fail over. With the Mediator-provided information and the `intercluster` LIF health check information, ONTAP determines whether to perform an auto failover, if it is failover incapable, continue or stop.
 
 [Role of ONTAP Mediator](https://docs.netapp.com/us-en/ontap/smbc/smbc_intro_role_of_mediator.html)
 
-This application can be used in `MetroCluster` scenarios as well as with `SnapMirror Business Continuity` (SM-BC) technology. As of ONTAP 9.8, SnapMirror Business Continuity (SM-BC) can be used to protect applications with LUNs, allowing applications to migrate transparently, ensuring business continuity in the event of a disaster. SM-BC uses `SnapMirror Synchronous` technology that allows data to be replicated to the target as soon as it is written to the source volume.
+This application can be used in `MetroCluster` scenarios as well as with `SnapMirror Business Continuity` (SM-BC) technology. As of ONTAP 9.8, SnapMirror Business Continuity (SM-BC) can be used to protect applications with `LUNs`, allowing applications to migrate transparently, ensuring business continuity in the event of a disaster. SM-BC uses `SnapMirror Synchronous` technology that allows data to be replicated to the target as soon as it is written to the source volume.
 
 ![Text](/img/rtaImage-1.webp#center)
 
@@ -41,7 +41,7 @@ To validate the complete list of requirements you can visit the documentation of
 
 ![Text](/img/2021-06-26_20-27.webp#center)
 
-For this lab I am going to use Red Hat Enterprise Linux 8.1 running on a vSphere VM. The first thing to do is to download the application installation package. This is done by accessing the NetApp support portal as shown in the following image.
+For this lab I am going to use Red Hat Enterprise Linux 8.1 running on a `vSphere` VM. The first thing to do is to download the application installation package. This is done by accessing the NetApp support portal as shown in the following image.
 
 #### Link to Ontap Mediator:
 
@@ -171,7 +171,7 @@ After installing the application it is important to validate that the services o
 [root@NTAPMED-01V ~]# 
 ```
 
-Additionally, it is important to ensure that the services are using the correct tcp ports. With the command `netstat -anlt | grep -E '3260|31784'` you can validate that ports 3260 and 31784 are in `LISTEN` mode.
+Additionally, it is important to ensure that the services are using the correct TCP ports. With the command `netstat -anlt | grep -E '3260|31784'` you can validate that ports 3260 and 31784 are in `LISTEN` mode.
 
 ```bash
 [root@NTAPMED-01V ~]# netstat -anlt | grep -E '3260|31784'
@@ -279,11 +279,11 @@ Mediator Address Peer Cluster     Connection Status Quorum Status
 OnPrem-DR::> 
 ```
 
-Additionally I show you how to replace the SSL certificate of the Ontap Mediator service with one generated from a Microsoft Certificate Authority.
+Additionally, I show you how to replace the SSL certificate of the Ontap Mediator service with one generated from a Microsoft Certificate Authority.
 
 #### Optional SSL Certificate Replacement
 
-**Step 1:** Generate a configuration file to create the Certificate Signing Request (CSR). In this step it is important to set the CN and DNS with the fully qualified domain name (FQDN) of the server name. In my case the server name is NTAPMED-01V.
+##### Step 1: Generate a configuration file to create the Certificate Signing Request (CSR). In this step it is important to set the CN and DNS with the fully qualified domain name (FQDN) of the server name. In my case the server name is NTAPMED-01V.
 
 ```text
 [root@NTAPMED-01V ~]# nano -w req.conf 
@@ -306,7 +306,7 @@ subjectAltName = @alt_names
 DNS.1 = NTAPMED-01V.zenprsolutions.local
 ```
 
-**Step 2:** Use the openssl command to generate the CSR file that will be used as a template to create the certificate that the Ontap Mediator service will use.
+##### Step 2: Use the openssl command to generate the CSR file that will be used as a template to create the certificate that the Ontap Mediator service will use.
 
 Note: If the openssl command is not available on your system you can use the `yum install openssl` command to install the necessary packages
 
@@ -326,12 +326,12 @@ Once the openssl command has finished, two files will be created, the `ntapmed.c
 **Step 3:** Access Microsoft’s Certificate Authority server and use the `certreq.exe` command to generate the certificate using the `ntapmed.csr` file as template.
 
 ```text
-C:\>certreq.exe -submit -attrib `CertificateTemplate:WebServer` ntapmed.csr ntapmed.cer
+C:\>certreq.exe -submit -attrib `CertificateTemplate:WebServer` ntapmed.csr `ntapmed.cer`
 ```
 
 ![Text](/img/2021-07-09_17-06.webp#center)
 
-Once the process is completed, a file will be created with the name ntapmed.cer that is used for the Ontap Mediator service.
+Once the process is completed, a file will be created with the name `ntapmed.cer` that is used for the Ontap Mediator service.
 
 **Step 4:** To replace the SSL certificate it is also necessary to change the public certificate of the CA. To obtain this certificate from the CA use the command `certutil -ca.cert ca.cert` which will produce the certificate in the `ca.cer` file.
 

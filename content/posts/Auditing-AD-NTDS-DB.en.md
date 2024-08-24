@@ -9,7 +9,7 @@ tags:
   - 'Auditing'
 ---
 
-This time I am going to talk about a method to perform audits of the contents of the Active Directory database (NTDS.dit). The tool called `NtdsAudit` was created by Dionach, here I leave the link so you can see the functionality of the application:
+This time I am going to talk about a method to perform audits of the contents of the Active Directory database (NTDS.dit). The tool called `NtdsAudit` was created by `Dionach`, here I leave the link so you can see the functionality of the application:
 
 - <https://github.com/dionach/NtdsAudit>
 
@@ -17,11 +17,11 @@ As explained on the tool's web page `NtdsAudit` is an application that helps to 
 
 Well we put aside the explanation and move to the purpose of this article which is to use this tool in an `Active Directory` (AD) environment. To start we need to extract the contents of the AD database, to accomplish this task we need to use the `ntdsutil` command from a domain controller server `Domain Controller`.
 
-**Step 1:** Open command console in Administrator mode
+##### Step 1: Open command console in Administrator mode
 
 ![Text](/img/2023/auditing-ad-ntds-db/runasadmin-cmd.webp#center)
 
-**Step 2:** Execute the command `ntdsutil`.
+##### Step 2: Execute the command `ntdsutil`.
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -32,7 +32,7 @@ ntdsutil:
 C:\Users\Administrator>
 ```
 
-**Step 3:** Execute the command `activate instance ntds`
+##### Step 3: Execute the command `activate instance ntds`
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -44,7 +44,7 @@ Active instance set to `ntds`.
 C:\Users\Administrator>
 ```
 
-**Step 4:** Execute the command `ifm`
+##### Step 4: Execute the command ifm
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -55,7 +55,7 @@ C:\Users\Administrator>
 ntdsutil: ifm
 ```
 
-**Step 5:** Execute the command `create full c:\ntds_export`
+##### Step 5: Execute the command `create full c:\ntds_export`
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -85,7 +85,7 @@ Snapshot {1d9e428c-26c4-4c0e-ba29-4e3e9d5678cd} unmounted.
 IFM media created successfully in c:\ntds_export
 ```
 
-**Step 6:** Leaving the ntdsutils environment
+##### Step 6: Leaving the ntdsutils environment
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -96,7 +96,7 @@ ifm: quit
 ntdsutil: quit
 ```
 
-It is important to review the contents of the ntds_export folder to validate if the data was saved correctly during the database export process.
+It is important to review the contents of the `ntds_export` folder to validate if the data was saved correctly during the database export process.
 
 ```cmd
 c:\NetApp>cd c:\ntds_export
@@ -125,7 +125,7 @@ Now it is necessary to download the executable file of the application which can
 
 ![Text](/img/2023/auditing-ad-ntds-db/ntdsaudit_download.webp#center)
 
-In my case I copied the `NtdsAudit.exe` file into the same folder where the ntds.dit database files were exported (ntds_export):
+In my case I copied the `NtdsAudit.exe` file into the same folder where the `ntds.dit` database files were exported (ntds_export):
 
 ```cmd
 c:\ntds_export>dir

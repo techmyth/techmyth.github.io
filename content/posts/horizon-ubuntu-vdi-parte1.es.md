@@ -14,13 +14,13 @@ tags:
 
 <!---[Parte 1]({{< ref "/posts/horizon-ubuntu-vdi-parte1.es.md" >}} "Cómo utilizar Ubuntu Linux 22.04 como VDI en Horizon 8 2303")-->
 
-En esta ocasión estaré hablando sobre como utilizar `HashiCorp` `packer` para crear una imagen VM master que podemos utilizar como platilla. Una ventaja de este proceso es que esta imagen puede ser utilizada para publicar un Pool en VMware Horizon. Aunque existen varios `HowTo` de como crear automáticamente una plantilla con `packer` todos los artículos que he visto están orientados a Windows 10/11 y no asi para Linux. Es por esta razón, que me di a la tarea de crear este artículo.
+En esta ocasión estaré hablando sobre como utilizar `HashiCorp` `packer` para crear una imagen VM máster que podemos utilizar como platilla. Una ventaja de este proceso es que esta imagen puede ser utilizada para publicar un Pool en VMware Horizon. Aunque existen varios `HowTo` de como crear automáticamente una plantilla con `packer` todos los artículos que he visto están orientados a Windows 10/11 y no así para Linux. Es por esta razón, que me di a la tarea de crear este artículo.
 
-Es importante mencionar que VMware ofrece varios ejemplos de como crear una plantilla para los distinto sistemas operativos que se pueden automatizar con `packer`. Les dejo aquí el enlace:
+Es importante mencionar que VMware ofrece varios ejemplos de como crear una plantilla para los distintos sistemas operativos que se pueden automatizar con `packer`. Les dejo aquí el enlace:
 
 <https://github.com/hashicorp/packer-plugin-vsphere>
 
-Para este artículo utilizaré Ubuntu Linux 22.04 como ejemplo pero también es posible automatizar cualquier version de Linux soportada por VMware Horizon para escritorios en Linux.
+Para este artículo utilizaré Ubuntu Linux 22.04 como ejemplo, pero también es posible automatizar cualquierversiónn de Linux soportada por VMware Horizon para escritorios en Linux.
 
 Sistemas operativos Linux compatibles con Horizon Agent:
 
@@ -64,7 +64,7 @@ build-2204.sh   http   setup      variables.auto.pkrvars.hcl.sample
 [rebelinux@PC ~]$
 ```
 
-Luego que tengamos el repositorio en nuestro directorio local es necesario modificar las variable pertinentes de nuestro ambiente de VMware vSphere.
+Luego que tengamos el repositorio en nuestro directorio local es necesario modificar las variables pertinentes de nuestro ambiente de VMware vSphere.
 
 #### Paso 2: Renombrar el archivo de variables
 
@@ -107,7 +107,7 @@ vsphere_datastore       = "SSD-VM-HIGH-CAPACITY-PERF-KN"
 vsphere_vm_name         = "hz-tpl-ubuntu"
 ```
 
-Esta porción del archivo define los parámetros básico de la VM como lo son las credenciales y los script que modifican la imagen:
+Esta porción del archivo define los parámetros básicos de la VM como lo son las credenciales y los script que modifican la imagen:
 
 ```bash
 # final clean up script

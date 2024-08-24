@@ -8,7 +8,7 @@ tags:
 
 Hola a todos,
 
-En esta oportunidad les estare mostrando como obtener desde powershell la información relacionada a los Backup Proxy en una infraestructura de Veeam Backup & Replication. Para comenzar es necesario establecer la conexión inicial al Backup Server utilizando el comando `Connect-VBRServer`. En mi caso el FQDN de mi Servidor de Backup es el `veeam-vbr.pharmax.local`.
+En esta oportunidad les estaré mostrando como obtener desde powershell la información relacionada con los `Backup Proxy` en una infraestructura de `Veeam Backup & Replication`. Para comenzar es necesario establecer la conexión inicial al `Backup Server` utilizando el comando `Connect-VBRServer`. En mi caso el FQDN de mi Servidor de Backup es el `veeam-vbr.pharmax.local`.
 
 ```text
 PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credential (Get-Credential)
@@ -20,7 +20,7 @@ Password for user pharmax\administrator: ````
 PS C:\Users\jocolon> 
 ```
 
-Luego de conectarnos al servidor podemos utilizar el cmdlet `Get-VBRViProxy`` para identificar cuales son los servidores Backup Proxy en nuestra infraestructura.
+Luego de conectarnos al servidor podemos utilizar el cmdlet `Get-VBRViProxy` para identificar cuáles son los servidores `Backup Proxy` en nuestra infraestructura.
 
 ```text
 PS C:\Users\jocolon> Get-VBRViProxy | Format-Table -Wrap -AutoSize
@@ -36,7 +36,7 @@ VEEAM-VBR-02V.pharmax.local Vi   VEEAM-VBR-02V.pharmax.local False      Created 
 PS C:\Users\jocolon>
 ```
 
-Como pueden ver este comando muestra información básica sobre los Backup Proxy pero si desean ver el contenido completo se puede intercambiar el comando de `Format-Table` por `Format-list`.
+Como pueden ver este comando muestra información básica sobre los `Backup Proxy`, pero si desean ver el contenido completo se puede intercambiar el comando de `Format-Table` por `Format-list`.
 
 ```text
 PS C:\Users\jocolon> Get-VBRViProxy | Format-List                 
@@ -93,7 +93,7 @@ ChassisType       : ViVirtual
 PS C:\Users\jocolon> 
 ```
 
-Para culminar les dejo un pequeño código para ver mejor el contenido sobre los Backup Proxy de Veeam:
+Para culminar les dejo un pequeño código para ver mejor el contenido sobre los `Backup Proxy` de Veeam:
 
 ```powershell
 $BackupProxies = Get-VBRViProxy
@@ -121,7 +121,7 @@ foreach ($BackupProxy in $BackupProxies) {
 $OutObj | Format-Table -Wrap -AutoSize
 ```
 
-Aqui les dejo el resultado del código.
+Aquí les dejo el resultado del código.
 
 ![Text](/img/BackupProxy_Code-scaled.webp#center)
 

@@ -6,7 +6,7 @@ tags:
     - VMware
 ---
 
-In this blog I will be showing you how to install the PowerCLI tool specifically on the ArchLinux operating system. Archlinux is an advanced Linux distribution that is characterized by being simple and lightweight. Additionally it offers the user full control in managing and modifying everything related to the system.
+In this blog I will be showing you how to install the PowerCLI tool specifically on the ArchLinux operating system. Archlinux is an advanced Linux distribution that is characterized by being simple and lightweight. Additionally, it offers the user full control in managing and modifying everything related to the system.
 
 Well, to install and use PowerCLI we have to install Powershell first. PowerShell is a cross-platform automation and configuration tool. PowerShell has a large number of commands oriented to system administration. But at the same time, PowerShell is a full-featured programming language that allows writing functional programs. There are many Powershell-based administration tools from different manufacturers such as:
 

@@ -8,9 +8,9 @@ tags:
 
 En esta oportunidad vengo a mostrarles cómo descargar y utilizar la herramienta vCheck que se utiliza para validar el estado de salud de la infraestructura de VMware vSphere. Esta herramienta es desarrollada por [Alan Renouf](http://www.virtu-al.net) como un mecanismo para identificar posibles fallas o errores de configuración en la implementación de vSphere. Para conocer más sobre esta herramienta utilizaré como referencia la documentación de vCheck:
 
-> This script picks on the key known issues and potential issues scripted as plugins for various technologies written as Powershell scripts and reports it all in one place so all you do in the morning is check your email.
+> This script picks on the key known issues and potential issues scripted as plugins for various technologies written as PowerShell scripts and reports it all in one place so all you do in the morning is check your email.
 >
-> #### [vCheck Github Page](https://github.com/alanrenouf/vCheck-vSphere)
+> #### [vCheck GitHub Page](https://github.com/alanrenouf/vCheck-vSphere)
 
 ![Text](/img/health-check-300x300.webp#center)
 

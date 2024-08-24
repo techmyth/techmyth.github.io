@@ -39,7 +39,7 @@ One of the changes made in version 0.8.1 was to remove the `Infrastructure Harde
 
 ![missing_patches](/img/2024/abr-veeam-vbr-0_8_6/missing_patches.webp)
 
-Among the main purposes of this new version was to add the ability to generate a simple diagram of the `Veeam Backup & Replication` infrastructure. This diagram allows to visualize the components implemented in the infrastructure.
+Among the main purposes of this new version was to add the ability to generate a simple diagram of the `Veeam Backup & Replication` infrastructure. This diagram allows visualizing the components implemented in the infrastructure.
 
 In this initial release the diagram only features the following components:
 

@@ -10,7 +10,7 @@ Hola a todos,
 
 Esta vez voy a mostrarte cómo utilizar la aplicación `vSphere Diagnostic Tool`, esta herramienta es utilizada para realizar verificaciones de diagnóstico sobre el servidor de VMware vCenter Server Appliance. Este herramienta consiste en un script en python que ejecuta comandos de diagnóstico para validar el estado de salud del servicio de vCenter.
 
-#### Nota: Como requisito mínimo en necesario tener una versión de vCenter Server 6.5 o mayor.
+#### Nota: Como requisito mínimo en necesario tener una versión de vCenter Server 6.5 o mayor
 
 Esta herramienta realiza las siguientes validaciones:
 

@@ -8,7 +8,7 @@ tags:
 
 Hello friends,
 
-In this opportunity I will be showing you how to obtain Backup Proxy related information from powershell in a Veeam Backup & Replication infrastructure. To begin with it is necessary to establish the initial connection to the Backup Server using the `Connect-VBRServer` command. In my case the FQDN of my Backup Server is `veeam-vbr.pharmax.local`.
+In this opportunity I will be showing you how to obtain Backup Proxy related information from PowerShell in a Veeam Backup & Replication infrastructure. To begin with it is necessary to establish the initial connection to the Backup Server using the `Connect-VBRServer` command. In my case the FQDN of my Backup Server is `veeam-vbr.pharmax.local`.
 
 ```text
 PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credential (Get-Credential)

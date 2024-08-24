@@ -1,5 +1,3 @@
-
-
 ---
 title: 'HomeLab: Implementación Inicial de Object First OOTBI VSA'
 date: '2024-08-14T12:10:00-04:00'
@@ -72,7 +70,7 @@ veeam-ootbi-01v           A          1          0                    01:00:00   
 PS C:\Users\Administrator>
 ```
 
-##### Validación de record A en dns con Powershell
+##### Validación de récord A en DNS con PowerShell
 
 ```powershell
 Windows PowerShell
@@ -97,7 +95,7 @@ Name                           Type   TTL   Section    NameHost
 PS C:\Users\jocolon>
 ```
 
-Ya que tenemos la parte del nombre de DNS realizado podemos pasar a realizar el despliegue de el appliance. En este caso accedemos el vCenter para hacer el despliegue del archivo tipo OVA.
+Ya que tenemos la parte del nombre de DNS realizado podemos pasar a realizar el despliegue del appliance. En este caso accedemos el vCenter para hacer el despliegue del archivo tipo OVA.
 
 #### Paso 1: Despliegue de plantilla OVF
 
@@ -157,7 +155,7 @@ Continuamos con la configuración del `HostName` de la VM.
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-17.webp)
 
-En esta pantalla podemos especificar el nombre del clúster y la direction de IP.
+En esta pantalla podemos especificar el nombre del clúster y la dirección de IP.
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-20.webp)
 
@@ -167,11 +165,11 @@ Luego pasamos a especificar la contraseña de la cuenta "default" llamada `objec
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-21.webp)
 
-Luego de completar todos estos pasos al final el nuevo clúster sera configurado con los parámetros que establecimos.
+Luego de completar todos estos pasos al final el nuevo clúster será configurado con los parámetros que establecimos.
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-22.webp)
 
-Finalmente el clúster se creo con éxito! Yay.
+Finalmente, el clúster se creó con éxito! Yay.
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-23.webp)
 
@@ -197,7 +195,7 @@ A continuación el portal de Manejo!
 
 En este laboratorio instalamos y configuramos el appliance virtual de `Object First OOTBI` que permite a los administradores de Veeam utilizar este dispositivo como repositorio tipo S3. Espero que este laboratorio les haya gustado. Si tienes dudas o alguna pregunta sobre este laboratorio, déjalo en los comentarios.
 
-Hasta la Próxima!
+¡Hasta la Próxima!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
 

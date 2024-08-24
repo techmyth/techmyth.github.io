@@ -9,7 +9,7 @@ tags:
 
 This time I am going to show you how to use the `vSphere Diagnostic Tool`, this tool is used to perform diagnostic checks on the VMware vCenter Server Appliance. This tool consists of a python script that executes diagnostic commands to validate the health status of the vCenter service.
 
-#### Note: As a minimum requirement it is required to have a version of vCenter Server 6.5 or higher.
+#### Note: As a minimum requirement it is required to have a version of vCenter Server 6.5 or higher
 
 This tool performs the following validations:
 

@@ -23,7 +23,7 @@ According to Object First the `OOTBI` offers:
 Benefits:
 
 - A storage 100% developed for Veeam.
-- `Zero Trust Data Resilience (ZTDR)` architecture.
+- `Zero Trust Data Resilience (ZTDR)` Architecture.
 - S3 native object locking. Secure, resilient and purpose-built: data is isolated and untouchable.
 - Object-based systems anticipate horizontal scalability, which never sacrifices performance for capacity.
 - Bugs, quirks, or limitations of a traditional file system are absent in object-based architectures.
@@ -37,7 +37,7 @@ To start download the OVA file from the following link:
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-00.webp)
 
-Below is the process of creating the VM using the template downloaded from the `Object First` web site.
+Below is the process of creating the VM using the template downloaded from the `Object First` website.
 
 #### Deploying `OOTBI` through VMware vCenter
 
@@ -166,7 +166,7 @@ After completing all these steps, the new cluster will be configured with the pa
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-22.webp)
 
-Finally the cluster was successfully created! Yay.
+Finally, the cluster was successfully created! Yay.
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-23.webp)
 
@@ -174,9 +174,9 @@ On this next screen it allows you to choose whether Telemetry is enabled or not.
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-24.webp)
 
-**  Note: These parameters can be set later through the Web portal.
+** Note: These parameters can be set later through the Web portal.
 
-In this screen the version and the IP address of the VM can be seen. With this information the OOTBI management Web Portal can be accessed.
+In this screen the version and the IP address of the VM can be seen. With this information the `OOTBI` management Web Portal can be accessed.
 
 ![Text](/img/2024/homelab-ootbi-initial-setup/OOTBI-28.webp)
 

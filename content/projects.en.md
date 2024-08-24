@@ -6,7 +6,7 @@ draft: false
 A few of my “popular” contributions. The unpopular ones can be found on my [github](https://github.com/rebelinux).
 
 {{< inTextImg url="/img/diagrammer.microsoft.ad.webp" height=30 >}}
-**[Diagrammer.Microsoft.AD](https://github.com/rebelinux/Diagrammer.Microsoft.AD)** is a Powershell module to automatically generate Microsoft Active Directory resource topology diagrams.
+**[Diagrammer.Microsoft.AD](https://github.com/rebelinux/Diagrammer.Microsoft.AD)** is a PowerShell module to automatically generate Microsoft Active Directory resource topology diagrams.
 
 {{< inTextImg url="/img/diagrammer.webp" height=30 >}}
 **[Diagrammer.Core](https://github.com/rebelinux/Diagrammer.Core)** is a PowerShell module which provides the core framework for generating as built diagrams for many common datacenter systems.

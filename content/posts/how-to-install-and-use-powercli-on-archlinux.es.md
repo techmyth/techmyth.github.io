@@ -6,9 +6,9 @@ tags:
     - VMware
 ---
 
-En este blog les estaré mostrando como instalar la herramienta de PowerCLI específicamente en el sistema operativo de ArchLinux. Archlinux es una distribución avanzada de Linux que se caracteriza por ser simple y ligera. Adicionalmente le ofrece al usuario total control en el manejo y la modificación de todo lo relacionado al sistema.
+En este blog les estaré mostrando como instalar la herramienta de PowerCLI específicamente en el sistema operativo de ArchLinux. Archlinux es una distribución avanzada de Linux que se caracteriza por ser simple y ligera. Adicionalmente, le ofrece al usuario total control en el manejo y la modificación de todo lo relacionado al sistema.
 
-Ahora bien, para instalar y utilizar PowerCLI tenemos que instalar primero Powershell. PowerShell es una herramienta de automatización y configuración multi-plataforma. PowerShell tiene un gran número de comandos orientados a la administración del sistema. Pero al mismo tiempo, PowerShell es un lenguaje de programación completo que permite escribir programas funcionales. Existen muchas herramientas de administración basadas en Powershell de diferentes manufactureros como por ejemplo:
+Ahora bien, para instalar y utilizar PowerCLI tenemos que instalar primero Powershell. PowerShell es una herramienta de automatización y configuración multiplataforma. PowerShell tiene un gran número de comandos orientados a la administración del sistema. Pero al mismo tiempo, PowerShell es un lenguaje de programación completo que permite escribir programas funcionales. Existen muchas herramientas de administración basadas en Powershell de diferentes manufactureros como por ejemplo:
 
 - VMware PowerCLI
 - Cisco UCS PowerTool
@@ -98,9 +98,9 @@ Net Upgrade Size:        0.00 MiB
 [rebelinux@blabla ~]$
 ```
 
-Existe otro método de instalación más avanzado que permite también instalar Powershell desde linea de comando. Les dejo aquí los comando necesarios. Para ver el procedimiento de instalación, basta con hacer clic en el icono `+`.
+Existe otro método de instalación más avanzado que permite también instalar Powershell desde línea de comando. Les dejo aquí los comando necesarios. Para ver el procedimiento de instalación, basta con hacer clic en el icono `+`.
 
-#### Instalación manual de Powershell
+#### Instalación manual de PowerShelll
 
 ```bash
 git clone https://aur.archlinux.org/powershell-bin.git
@@ -121,7 +121,7 @@ Type 'help' to get help.
 PS /home/rebelinux> 
 ```
 
-El próximo paso para correr PowerCLI es instalar su modulo utilizando el comando `Install-Module -name VMware.PowerCLI` desde el interpretador de Powershell.
+El próximo paso para correr PowerCLI es instalar su módulo utilizando el comando `Install-Module -name VMware.PowerCLI` desde el interpretador de Powershell.
 
 ```powershell
 PS /home/blabla> Install-Module -name VMware.PowerCLI
@@ -144,7 +144,7 @@ vcenter-01v.zenprsolutions.local 443  VSPHERE.LOCAL\Administrator
 PS /home/blabla> 
 ```
 
-Utilizaré un comando básico para hacer pruebas de conexión contra el vCenter. En esta prueba utilizare el comando `Get-Cluster` para verificar los cluster actualmente creados.
+Utilizaré un comando básico para hacer pruebas de conexión contra el vCenter. En esta prueba utilizaré el comando `Get-Cluster` para verificar los clúster actualmente creados.
 
 ```powershell
 PS /home/blabla> Get-Cluster

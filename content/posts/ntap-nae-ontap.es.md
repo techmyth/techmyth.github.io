@@ -15,7 +15,7 @@ Previamente en un [post]({{< ref "/posts/ntap-nve-external-key-manager.es.md" >}
 
 Para eliminar esta desventaja los gurus de NetApp se ingeniaron la idea de aplicar la función de encriptación a nivel de agregado permitiendo que los volúmenes que residan dentro del mismo agregado compartan la llave de encriptación. Esta tecnología es conocida como `NetApp Aggregate Encryption (NAE)`. Esto permite que los clientes tengan la opción de aprovecharse de las tecnologías de eficiencia de almacenamiento en conjunto al proceso de encriptación.
 
-Ahora nos toca hablar de como podemos crear un agregado encriptado en Ontap pero primero que nada… ¿Que es un agregado dentro de Ontap?
+Ahora nos toca hablar de como podemos crear un agregado encriptado en Ontap, pero primero que nada… ¿Qué es un agregado dentro de Ontap?
 
 Utilizando como referencia el portal de `Knowledge Base` de NetApp:
 
@@ -25,9 +25,9 @@ Utilizando como referencia el portal de `Knowledge Base` de NetApp:
 
 ![Text](/img/2021-05-20_21-21-1024x746.webp#center)
 
-**Paso 1:** Validar pre-requisitos en Ontap.
+##### Paso 1: Validar prerrequisitos en Ontap
 
-Para poder utilizar la opción de encriptación a nivel de agregado en necesario tener una versión de Ontap 9.6 o mayor y que estén instaladas las licencias necesarias en el cluster. En este caso utilizamos el comando `version` para validar la versión actual del cluster y el comando `license show -package VE` para desplegar la información de las licencias.
+Para poder utilizar la opción de encriptación a nivel de agregado en necesario tener una versión de Ontap 9.6 o mayor y que estén instaladas las licencias necesarias en el clúster. En este caso utilizamos el comando `version` para validar la versión actual del clúster y el comando `license show -package VE` para desplegar la información de las licencias.
 
 ```bash
 OnPrem-HQ::> version
@@ -46,11 +46,11 @@ OnPrem-HQ::>
 
 ##### Nota: previamente he realizado la configuración del KMS externo en Ontap. [Link]({{< ref "/posts/ntap-nve-external-key-manager.es.md" >}} "NetApp Volume Encryption Setup with External Key Manager")
 
-**Paso 2:** Validar los disco `Spare` disponibles.
+##### Paso 2: Validar los discos `Spare` disponibles.
 
-Para comenzar, existen dos formas para encriptar un agregado; inicialmente cuando es creado o la conversión en vivo de un agregado existente. Inicialmente estaré creando un agregado nuevo y luego en otro tutorial les mostrare como podemos convertir un agregado existente. Para crear un agregado es necesario tener disco duros disponibles o en el estado de `spare` como comúnmente le llama NetApp.
+Para comenzar, existen dos formas para encriptar un agregado; inicialmente cuando es creado o la conversión en vivo de un agregado existente. Inicialmente estaré creando un agregado nuevo y luego en otro tutorial les mostraré como podemos convertir un agregado existente. Para crear un agregado es necesario tener disco duros disponibles o en el estado de `spare` como comúnmente le llama NetApp.
 
-El comando `storage aggregate show-spare-disks` nos permite ver cuantos discos particionado están disponibles en el nodo donde crearemos el nuevo agregado encriptado. En este caso en particular podemos ver que existen 24 disco particionados utilizando la opción de `Root-Data1-Data2`. Para conocer mas sobre esta estrategia de disco favor de seguir el siguiente enlace:
+El comando `storage aggregate show-spare-disks` nos permite ver cuantos discos particionado están disponibles en el nodo donde crearemos el nuevo agregado encriptado. En este caso en particular podemos ver que existen 24 discos particionados utilizando la opción de `Root-Data1-Data2`. Para conocer más sobre esta estrategia de disco favor de seguir el siguiente enlace:
 
 > [ADP(v1) and ADPv2 in a nutshell, it’s delicious!](https://blog.iops.ca/2016/11/10/adpv1-and-adpv2-in-a-nutshell-its-delicious/)
 >
@@ -95,11 +95,11 @@ Original Owner: OnPrem-HQ-01
 OnPrem-HQ::> 
 ```
 
-**PAso 3:** Crear el agregado encriptado.
+##### Paso 3: Crear el agregado encriptado
 
 Para crear el agregado encriptado utilizamos el comando `storage aggregate create` con la opción de `encrypt-with-aggr-key true`. En este caso creamos un agregado seguro compuesto de 23 disco `particiones`.
 
-##### Nota: Para este ejemplo se utilizo el tipo de RAID `Dual Parity`
+##### Nota: Para este ejemplo se utilizó el tipo de RAID `Dual Parity`
 
 ```bash
 OnPrem-HQ::> storage aggregate create -aggregate OnPrem_HQ_01_SSD_1 -diskcount 23 -node OnPrem-HQ-01 -raidtype raid_dp -encrypt-with-aggr-key true 
@@ -162,9 +162,9 @@ OnPrem-HQ::>
 
 En el resultado del comando podemos ver que fue creado el agregado con la encriptación habilitada.
 
-**Paso 4:** Crear un volumen dentro del agregado encriptado.
+##### Paso 4: Crear un volumen dentro del agregado encriptado.
 
-A diferencia de la encriptación a nivel de volúmenes NVE, al utilizar encriptación a nivel de agregado no es necesario especificar la opción de encriptar a la hora de crear el volumen. El comando `vol create` crea un volumen encriptado de forma predeterminada cuando el volumen reside en un agregado que utiliza NAE.
+A diferencia de la encriptación a nivel de volúmenes `NVE`, al utilizar encriptación a nivel de agregado no es necesario especificar la opción de encriptar a la hora de crear el volumen. El comando `vol create` crea un volumen encriptado de forma predeterminada cuando el volumen reside en un agregado que utiliza `NAE`.
 
 ```bash
 OnPrem-HQ::> vol create -vserver SAN -volume Secure_Vol -aggregate OnPrem_HQ_01_SSD_1 -size 10GB -space-guarantee none 

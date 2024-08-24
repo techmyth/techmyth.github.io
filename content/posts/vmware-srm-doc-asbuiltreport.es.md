@@ -9,11 +9,11 @@ Hola a tod@s!
 
 Estas últimas semanas he estado trabajando en mejorar mis habilidades de programación tomando en cuenta que ahora la tendencia es `Software Defined Everything`. En esta ocasión he estado dedicando tiempo a PowerShell creando varios reportes a través del proyecto de AsBuildReport creado por `Tim Carman` [@tpcarman](https://twitter.com/tpcarman) ([Aquí el enlace]({{< ref "/posts/homelab-ontap-documentacion-asbuiltreport.es.md" >}} "HomeLab: Documentación automatizada utilizando AsBuiltReport")).
 
-El reporte que he ayudado a terminar en esta ocasión está relacionado a documentar las instalaciones de VMware Site Recovery Manager. El reporte fue creado inicialmente por `Matt Allford` [@mattallford](https://twitter.com/mattallford) y tome la iniciativa de culminar el trabajo que ya se había iniciado.
+El reporte que he ayudado a terminar en esta ocasión está relacionado con documentar las instalaciones de VMware Site Recovery Manager. El reporte fue creado inicialmente por `Matt Allford` [@mattallford](https://twitter.com/mattallford) tomé la iniciativa de culminar el trabajo que ya se había iniciado.
 
-Según el portal de documentación de VMware:
+Según el portal de documentación de `VMware`:
 
-> `Site Recovery Manager (SRM)` es la solución líder en gestión de recuperación ante desastres, que ha sido diseñada para minimizar el tiempo de inactividad en caso de desastre. Proporciona gestión basada en políticas y coordinación automatizada, y permite realizar pruebas de los planes de recuperación centralizados sin provocar interrupciones. Se ha concebido para máquinas virtuales y es escalable para gestionar todas las aplicaciones en un entorno de vSphere.
+> `Site Recovery Manager (SRM)` Es la solución líder en gestión de recuperación ante desastres, que ha sido diseñada para minimizar el tiempo de inactividad en caso de desastre. Proporciona gestión basada en políticas y coordinación automatizada, y permite realizar pruebas de los planes de recuperación centralizados sin provocar interrupciones. Se ha concebido para máquinas virtuales y es escalable para gestionar todas las aplicaciones en un entorno de `vSphere`.
 >
 > [VMware Documentation](https://www.vmware.com/latam/products/site-recovery-manager.html)
 
@@ -25,12 +25,12 @@ El reporte se encuentra en estado inicial y en constante desarrollo, pero decid�
 
 Ahora bien, para comenzar necesitamos cumplir con los siguientes requisitos:
 
-- Multi-plataforma Windows, Linux o MAC
+- Multiplataforma Windows, Linux o MAC
 - PowerShell v5.1+ ó v7
 - El módulo de AsBuiltReport.Core >= 1.1.0
 - El módulo de `VMware PowerCLI` >= 12.3+
 
-Este reporte utiliza la versión de PowerShell 5.+ ó PSCore 7, para validar la versión podemos utilizar la variable `$PSVersionTable`` desde la consola de PowerShell:
+Este reporte utiliza la versión de PowerShell 5.+ o PSCore 7, para validar la versión podemos utilizar la variable `$PSVersionTable`` desde la consola de PowerShell:
 
 ```text
 PS /home/rebelinux> $PSVersionTable
@@ -67,7 +67,7 @@ Manifest   12.4.1.18…            VMware.PowerCLI                     Desk
 PS /home/rebelinux>
 ```
 
-Si el comando no produce algún resultado quiere decir que el módulos no están instalados. Para instalar la dependencia utilizamos el comando ``Install-Module`:
+Si el comando no produce algún resultado quiere decir que el módulo no están instalados. Para instalar la dependencia utilizamos el comando ``Install-Module`:
 
 ```text
 PS /home/rebelinux>  Install-Module -Name @('VMware.PowerCLI','AsBuiltReport.Core')
@@ -81,7 +81,7 @@ Copying unzipped package to '..\2052046370\VMware.PowerCLI'
 PS /home/rebelinux> 
 ```
 
-Una vez instalamos los prerrequisito podemos continuar con la instalación del módulo principal ``AsBuiltReport.`VMware.SRM`. Ya que este reporte todavía no ha sido liberado públicamente en `PowerShell Gallery` necesitamos realizar manualmente la instalación. El primer paso es descargar el código desde el portal de Github [aquí](https://github.com/rebelinux/AsBuiltReport.VMware.SRM).
+Una vez instalamos los prerrequisitos podemos continuar con la instalación del módulo principal ``AsBuiltReport.`VMware.SRM`. Ya que este reporte todavía no ha sido liberado públicamente en `PowerShell Gallery` necesitamos realizar manualmente la instalación. El primer paso es descargar el código desde el portal de Github [aquí](https://github.com/rebelinux/AsBuiltReport.VMware.SRM).
 
 ![Text](/img/SRM_Download.webp#center)
 
@@ -97,7 +97,7 @@ AsBuiltReport.VMware.SRM.psd1  AsBuiltReport.VMware.SRM.Style.ps1  LICENSE      
 PS /home/rebelinux/Downloads> 
 ```
 
-Luego es necesario copiar la carpeta descomprimida `AsBuiltReport.VMware.SRM` a una ruta establecida en `$env:PSModulePath`. El último paso que debemos seguir si estamos en `Windows OS`` es abrir una ventana de PowerShell y desbloquear los archivos descargados utilizando el comando `Unblock-File`.
+Luego es necesario copiar la carpeta descomprimida `AsBuiltReport.VMware.SRM` a una ruta establecida en `$env:PSModulePath`. El último paso que debemos seguir si estamos en `Windows OS` es abrir una ventana de PowerShell y desbloquear los archivos descargados utilizando el comando `Unblock-File`.
 
 ```text
 $path = (Get-Module -Name AsBuiltReport.VMware.SRM -ListAvailable).ModuleBase; Unblock-File -Path $path\*.psd1; Unblock-File -Path $path\Src\Public\*.ps1; Unblock-File -Path $path\Src\Private\*.ps1
@@ -107,7 +107,7 @@ Un requisito opcional es generar los archivos de configuración que te permite e
 
 #### Archivos de configuración (AsBuiltReport JSON)
 
-El `cmdlet` de powershell `New-AsBuiltConfig` te permite generar la plantilla que utilizaremos como base del reporte. Esta plantilla establece los parámetros no técnicos del reporte.
+El `cmdlet` de PowerShell `New-AsBuiltConfig` te permite generar la plantilla que utilizaremos como base del reporte. Esta plantilla establece los parámetros no técnicos del reporte.
 
 ```text
 PS /home/rebelinux>  New-AsBuiltConfig
@@ -187,7 +187,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 }
 ```
 
-El comando `New-AsBuiltReportConfig` permite establecer los parámetros técnico del reporte como el nivel y tipo de información `verbose level`.
+El comando `New-AsBuiltReportConfig` permite establecer los parámetros técnicos del reporte como el nivel y tipo de información `verbose level`.
 
 ```text
 PS /home/rebelinux/ New-AsBuiltReportConfig VMware.SRM -FolderPath /home/rebelinux/AsBuiltReport/
@@ -234,7 +234,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 
 ```
 
-Este archivo de configuración se puede utilizar para especificar el nivel de detalle del reporte como también que sesiones del reporte van a ser habilitadas.
+Este archivo de configuración se puede utilizar para especificar el nivel de detalle del reporte como también qué sesiones del reporte van a ser habilitadas.
 
 Luego podemos generar el reporte utilizando el comando `*New-AsBuiltReport -Report VMware.SRM -Target vCenter_FQDN*_or_IP`. Es importante recalcar que es requerido utilizar la dirección del servidor de `vCenter` como `Target`.
 
@@ -353,7 +353,7 @@ Aquí les dejo el ejemplo del reporte generado.
 
 {{< embed-pdf url="./img/VMware-SRM-As-Built-Report.pdf" >}}
 
-Adicionalmente les incluyo varias opciones de cómo invocar el reporte.
+Adicionalmente, les incluyo varias opciones de cómo invocar el reporte.
 
 ```text
 # Generate a VMware SRM As Built Report for vCenter Server 'vcenter.zenpr.local' using specified credentials. Export report to HTML & DOCX formats. Use default report style. Append timestamp to report filename. Save reports to 'C:\Users\Jon\Documents'

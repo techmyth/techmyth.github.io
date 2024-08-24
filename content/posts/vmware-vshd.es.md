@@ -7,7 +7,7 @@ tags:
 
 Hola a tod@s
 
-En esta oportunidad vengo a mostrarles la integración de `VMware Skyline Health Diagnostics` (VSHD) con VMware vCenter. También veremos cómo generar los diagnostico para saber como esta la salud de nuestra infraestructura Virtual. VSHD es una plataforma de auto-diagnóstico que permitedetectar y solucionar problemas en la línea de productos de vSphere y vSAN.
+En esta oportunidad vengo a mostrarles la integración de `VMware Skyline Health Diagnostics` (VSHD) con VMware vCenter. También veremos cómo generar los diagnostico para saber como está la salud de nuestra infraestructura Virtual. VSHD es una plataforma de auto-diagnóstico que permitedetectar y solucionar problemas en la línea de productos de vSphere y vSAN.
 
 Esta herramienta proporciona recomendaciones en forma de artículos tipo `Knowledge Base` o enlaces con procedimiento para solucionar los problemas. Los administradores de vSphere pueden utilizar esta herramienta para solucionar los problemas antes de ponerse en contacto con el servicio de soporte global de VMware.
 
@@ -19,7 +19,7 @@ Beneficios:
 - El auto-servicio mejora el tiempo para obtener recomendaciones que asistan en la resolución del problema.
 - Una rápida reparación que contribuya a recuperar la infraestructura de un fallo y garantice que la empresa funcione con una menor interrupción.
 
-Para comenzar debemos de acceder el siguiente enlace donde podemos descargar los el archivo tipo OVA que permite gestionar la creación de la maquina virtual donde corren los servicios de VSHD.
+Para comenzar debemos de acceder el siguiente enlace donde podemos descargar los el archivo tipo OVA que permite gestionar la creación de la máquina virtual donde corren los servicios de VSHD.
 
 - https://my.vmware.com/group/vmware/get-download?downloadGroup=SKYLINE_HD_VSPHERE
 
@@ -29,7 +29,7 @@ Una vez autenticamos en el portal de VMware nos redirigirá al área donde podem
 
 A continuación les incluyo el proceso de crear la VM utilizando el template que bajamos en el formato OVA.
 
-#### Installing VSHD through VMware vCenter
+#### Instalando VSHD desde VMware vCenter
 
 Comenzamos utilizando el wizard de ``Deploy OVF Template`` donde añadimos el archivo de instalación oprimiendo ``UPLOAD FILES``,
 
@@ -59,7 +59,7 @@ Seleccionamos la red que utilizará la VM y oprimimos ``NEXT``.
 
 ![Text](/img/2021-07-25_11-59.webp)
 
-En esta etapa se definen las propiedades únicas de la VM como el Hostname, la contraseña de las cuentas de administración y la información de la direcciones de IP.
+En esta etapa se definen las propiedades únicas de la VM como el Hostname, la contraseña de las cuentas de administración y la información de las direcciones de IP.
 
 ![Text](/img/2021-07-25_12-05.png)
 
@@ -71,7 +71,7 @@ El proceso de instalación puede ser supervisado desde la pestaña de ``Recent T
 
 ![Text](/img/2021-07-25_12-06_1.webp)
 
-Un requisito opcional es la asociación de un nombre de DNS al IP utilizado en el proceso de instalación. En la siguiente pantalla podemos ver como se registra un nombre de DNS ``FQDN`` utilizando Powershell desde una consola de Windows
+Un requisito opcional es la asociación de un nombre de DNS a la IP utilizado en el proceso de instalación. En la siguiente pantalla podemos ver como se registra un nombre de DNS ``FQDN`` utilizando PowerShell desde una consola de Windows
 
 ```text
 Windows PowerShell
@@ -111,11 +111,11 @@ Podemos validar que la información ingresada es correcta oprimiendo el botón d
 
 ![Text](/img/2021-07-30_15-08_1.webp)
 
-Luego de validar la comunicación y las credenciales proseguimos a correr el diagnostico oprimiendo ``RUN DIAGNOSTIC``.
+Luego de validar la comunicación y las credenciales proseguimos a correr el diagnóstico oprimiendo ``RUN DIAGNOSTIC``.
 
 ![Text](/img/2021-07-30_15-10.webp)
 
-En esta pantalla seleccionamos los servidores de ESXi y vCenter que deseamos escanear y que tipo de pluging se ejecutará durante la recopilación de la información de diagnóstico
+En esta pantalla seleccionamos los servidores de ESXi y vCenter que deseamos escanear y qué tipo de plug-in se ejecutará durante la recopilación de la información de diagnóstico
 
 ![Text](/img/2021-07-30_15-11-1.webp)
 
@@ -127,7 +127,7 @@ En esta próxima imagen podemos ver el progreso de la recopilación de la inform
 
 ![Text](/img/2021-07-30_15-14_1-1.webp)
 
-Adicionalmente desde la consola de manejo del vCenter podemos ver una tarea relacionada al proceso de recopilación.
+Adicionalmente, desde la consola de manejo del vCenter podemos ver una tarea relacionada con el proceso de recopilación.
 
 ![Text](/img/2021-07-30_15-15.webp)
 

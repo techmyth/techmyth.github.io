@@ -13,11 +13,11 @@ The report I helped finish this time is related to documenting VMware Site Recov
 
 According to VMware’s documentation portal:
 
-> `Site Recovery Manager (SRM)` is the leading disaster recovery management solution designed to minimize downtime in the event of a disaster. It provides policy-based management and automated coordination, and enables testing of centralized recovery plans without disruption. It is designed for virtual machines and is scalable to manage all applications in a vSphere environment.
+> `Site Recovery Manager (SRM)` Is the leading disaster recovery management solution designed to minimize downtime in the event of a disaster. It provides policy-based management and automated coordination, and enables testing of centralized recovery plans without disruption. It is designed for virtual machines and is scalable to manage all applications in a `vSphere` environment.
 >
 > [VMware Documentation](https://www.vmware.com/latam/products/site-recovery-manager.html)
 
-The report is in an initial state and in constant development, but I decided to release it publicly to receive recommendations or rather to encourage other developers to contribute to improve its content. The development website of the report is in Github I leave the link so you can see the scope and objective of the project.
+The report is in an initial state and in constant development, but I decided to release it publicly to receive recommendations or rather to encourage other developers to contribute to improve its content. The development website of the report is in GitHub I leave the link so you can see the scope and objective of the project.
 
 - <https://github.com/AsBuiltReport/AsBuiltReport.VMware.SRM>
 
@@ -81,7 +81,7 @@ Copying unzipped package to '..\2052046370\VMware.PowerCLI'
 PS /home/rebelinux> 
 ```
 
-Once the prerequisites are met continue with the installation of the main module `AsBuiltReport.VMware.SRM`. Since this report has not yet been publicly released in `PowerShell Gallery` you need to manually perform the installation. The first step is to download the code from Github portal [here](https://github.com/rebelinux/AsBuiltReport.VMware.SRM).
+Once the prerequisites are met continue with the installation of the main module `AsBuiltReport.VMware.SRM`. Since this report has not yet been publicly released in `PowerShell Gallery` you need to manually perform the installation. The first step is to download the code from GitHub portal [here](https://github.com/rebelinux/AsBuiltReport.VMware.SRM).
 
 ![Text](/img/SRM_Download.webp#center)
 
@@ -105,9 +105,9 @@ $path = (Get-Module -Name AsBuiltReport.VMware.SRM -ListAvailable).ModuleBase; U
 
 An optional requirement is to generate configuration files that allow you to set the organization parameters that are used to generate the report. This process generates JSON files that are used as templates so that you do not have to fill in repetitive information when generating reports.
 
-#### Archivos de configuración (AsBuiltReport JSON)
+#### Configuration Files (AsBuiltReport JSON)
 
-The powershell cmdlet New-AsBuiltConfig allows you to generate the template that is used as the basis of the report. This template sets the non-technical parameters of the report.
+The PowerShell cmdlet New-AsBuiltConfig allows you to generate the template that is used as the basis of the report. This template sets the non-technical parameters of the report.
 
 ```text
 PS /home/rebelinux>  New-AsBuiltConfig

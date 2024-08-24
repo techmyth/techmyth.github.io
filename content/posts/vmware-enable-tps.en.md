@@ -19,9 +19,9 @@ If you want to know a little more about TPS, its benefits and risks, you can acc
 
 #### [Disabling TPS in vSphere – Impact on Critical Applications](https://blogs.vmware.com/apps/2014/10/disabling-tps-vsphere-impact-critical-applications.html)
 
-#### Note: I show you how to change this value using Powershell because it allows you to make the change to multiple servers at the same time
+#### Note: I show you how to change this value using PowerShell because it allows you to make the change to multiple servers at the same time
 
-To begin we must verify what value is currently configured on the ESXi servers. To accomplish this task i use the `Get-VMHost` command to extract the information of the servers connected to the vCenter. The result is then sent to the `Get-AdvancedSetting -Name Mem.ShareForceSalting` command which allows us to extract the value configured in the `Mem.ShareForceSalting` variable.
+To begin we must verify what value is currently configured on the ESXi servers. To accomplish this task I use the `Get-VMHost` command to extract the information of the servers connected to the vCenter. The result is then sent to the `Get-AdvancedSetting -Name Mem.ShareForceSalting` command which allows us to extract the value configured in the `Mem.ShareForceSalting` variable.
 
 ```text
 PS /home/blabla> Get-VMHost | Get-AdvancedSetting -Name Mem.ShareForceSalting | Select-Object Entity,Name,Value,Type | Format-Table -Wrap -AutoSize
@@ -55,7 +55,7 @@ Mem.ShareForceSalting 0                    VMHost
 PS /home/blabla> 
 ```
 
-Once again you can validate with the `Get-AdvancedSetting` command if the configured value is the one i specified previously.
+Once again you can validate with the `Get-AdvancedSetting` command if the configured value is the one I specified previously.
 
 ```text
 PS /home/blabla> Get-VMHost | Get-AdvancedSetting -Name Mem.ShareForceSalting | Select-Object Entity,Name,Value,Type | Format-Table -Wrap -AutoSize
@@ -69,7 +69,7 @@ comp-01a.zenprsolutions.local   Mem.ShareForceSalting     2 VMHost
 PS /home/blabla> 
 ```
 
-For this test i turned on 23 virtual machines (Windows) to bring the server in contention mode so that i can see what benefits the TPS has. This result I show you below represents the memory statistics of the ESXi server obtained with the command `esxtop`. Here you can see the statistics before i configured the `TPS Inter-VM` function with the value `#2`. The variable that is in bold `PSHARE/MB` represents the value of shared memory that the server currently has, i.e. only TPS is being used in `Intra-VM` mode. This variable has a value of `1400/MB`.
+For this test I turned on 23 virtual machines (Windows) to bring the server in contention mode so that I can see what benefits the TPS has. This result I show you below represents the memory statistics of the ESXi server obtained with the command `esxtop`. Here you can see the statistics before I configured the `TPS Inter-VM` function with the value `#2`. The variable that is in bold `PSHARE/MB` represents the value of shared memory that the server currently has, i.e. only TPS is being used in `Intra-VM` mode. This variable has a value of `1400/MB`.
 
 ```text
 2:58:11pm up 50 min, 722 worlds, 23 VMs, 45 vCPUs; MEM overcommit avg: 1.10, 1.10, 0.99
@@ -78,7 +78,7 @@ VMKMEM/MB: 65073 managed:  1265 minfree,  7501 rsvd,  57572 ursvd,  high state
 PSHARE/MB:    1648  shared,     248  (common:    1400 saving)
 ```
 
-Now i move on to validate the benefit of having the `TPS Inter-VM` feature enabled. As you can see in the following result of the `esxtop` command there was a substantial saving `(32097/MB)` of memory. This allowed us to increase the consolidation ratios of our `HomeLab`.
+Now I move on to validate the benefit of having the `TPS Inter-VM` feature enabled. As you can see in the following result of the `esxtop` command there was a substantial saving `(32097/MB)` of memory. This allowed us to increase the consolidation ratios of our `HomeLab`.
 
 ```text
 3:36:46pm up  1:29, 1024 worlds, 23 VMs, 45 vCPUs; MEM overcommit avg: 1.05, 1.05, 0.95

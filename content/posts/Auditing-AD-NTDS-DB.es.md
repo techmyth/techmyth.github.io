@@ -9,19 +9,19 @@ tags:
   - 'Auditación'
 ---
 
-En esta ocasión estaré hablando sobre un método para realizar auditación del contenido de la base de datos (NTDS.dit) de Active Directory. Esta herramienta llamada NtdsAudit fue creada por Dionach, aquí les dejo el enlace para que puedan ver las funcionalidades de la aplicación:
+En esta ocasión estaré hablando sobre un método para auditar el contenido de la base de datos (NTDS.dit) de `Active Directory`. Esta herramienta llamada `NtdsAudit` fue creada por `Dionach`, aquí les dejo el enlace para que puedan ver las funcionalidades de la aplicación:
 
 - <https://github.com/dionach/NtdsAudit>
 
-Según se explica en la pagina de la herramienta NtdsAudit es una aplicación que ayuda a auditar las bases de datos de Active Directory. Proporciona algunas estadísticas útiles relacionadas con cuentas y contraseñas. También se puede utilizar para extraer hashes de contraseñas para su posterior crackeo.
+Según se explica en la página de la herramienta `NtdsAudit` es una aplicación que ayuda a auditar las bases de datos de `Active Directory`. Proporciona algunas estadísticas útiles relacionadas con cuentas y contraseñas. También se puede utilizar para extraer `hashes` de contraseñas para su posterior crackeo.
 
-Bueno ponemos aun lado la explicación y nos movemos al propósito de este articulo que es utilizar esta herramienta en un ambiente de `Active Directory` (AD). Para comenzar necesitamos extraer el contenido de la base de dados de AD, para lograr esta tarea necesitamos utilizar el comando `ntdsutil` desde un servidor controlador de dominio `Domain Controller`.
+Bueno ponemos aún lado la explicación y nos movemos al propósito de este artículo que es utilizar esta herramienta en un ambiente de `Active Directory` (AD). Para comenzar necesitamos extraer el contenido de la base de dados de AD, para lograr esta tarea necesitamos utilizar el comando `ntdsutil` desde un servidor controlador de dominio `Domain Controller`.
 
-`Paso 1:` Abrir consola de comando en modo Administrador
+##### Paso 1: Abrir consola de comando en modo Administrador
 
 ![Text](/img/2023/auditing-ad-ntds-db/runasadmin-cmd.webp#center)
 
-`Paso 2:` ejecutar el comando `ntdsutil`
+##### Paso 2: ejecutar el comando `ntdsutil`
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -32,7 +32,7 @@ ntdsutil:
 C:\Users\Administrator>
 ```
 
-`Paso 3:` ejecutar el comando `activate instance ntds`
+##### Paso 3: ejecutar el comando `activate instance ntds`
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -55,7 +55,7 @@ C:\Users\Administrator>
 ntdsutil: ifm
 ```
 
-`Paso 5:` ejecutar el comando `create full c:\ntds_export`
+##### Paso 5: ejecutar el comando `create full c:\ntds_export`
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -85,7 +85,7 @@ Snapshot {1d9e428c-26c4-4c0e-ba29-4e3e9d5678cd} unmounted.
 IFM media created successfully in c:\ntds_export
 ```
 
-`Paso 6:` Salir del entorno de ntdsutils
+##### Paso 6: Salir del entorno de ntdsutils
 
 ```cmd
 Microsoft Windows [Version 10.0.17763.4010]
@@ -96,7 +96,7 @@ ifm: quit
 ntdsutil: quit
 ```
 
-Es importante verificar el contenido de la carpeta ntds_export para validar que se guardo correctamente la data durante el proceso de exportación de la base de datos.
+Es importante verificar el contenido de la carpeta `ntds_export` para validar que se ha guardado correctamente la data durante el proceso de exportación de la base de datos.
 
 ```cmd
 c:\NetApp>cd c:\ntds_export
@@ -117,7 +117,7 @@ c:\ntds_export>dir
 c:\ntds_export>
 ```
 
-Una vez tengamos los archivos de la base de dato `ntds.dit` podemos utilizar la herramienta para proveer estadísticas relacionado a cuentas de usuario y las contraseñas.
+Una vez tengamos los archivos de la base de dato `ntds.dit` podemos utilizar la herramienta para proveer estadísticas relacionada con cuentas de usuario y las contraseñas.
 
 Ahora es necesario descargar el archivo ejecutable de la aplicación que podemos conseguir en el siguiente enlace:
 
@@ -125,7 +125,7 @@ Ahora es necesario descargar el archivo ejecutable de la aplicación que podemos
 
 ![Text](/img/2023/auditing-ad-ntds-db/ntdsaudit_download.webp#center)
 
-En mi caso copie el archivo `NtdsAudit.exe` en la misma carpeta donde están los archivos de la base de datos ntds.dit (ntds_export):
+En mi caso se copió el archivo `NtdsAudit.exe` en la misma carpeta donde están los archivos de la base de datos `ntds.dit` (ntds_export):
 
 ```cmd
 c:\ntds_export>dir
@@ -145,7 +145,7 @@ c:\ntds_export>dir
 c:\ntds_export>
 ```
 
-A continuación les dejo los parámetros del comando `NtdsAudit.exe`. Este comando tiene varias opciones que te permiten escoger que función especifica deseas utilizar.
+A continuación les dejo los parámetros del comando `NtdsAudit.exe`. Este comando tiene varias opciones que te permiten escoger que función específica deseas utilizar.
 
 ```cmd
 Usage:  [arguments] [options]
@@ -247,6 +247,6 @@ c:\ntds_export>
 
 Como pueden observar este comando se puede utilizar para realizar `Cybersecurity researching` :)
 
-Espero este articulo les haya sido de ayuda. `Hasta luego!!!`
+Espero este artículo les haya sido de ayuda. `Hasta luego!!!`
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)

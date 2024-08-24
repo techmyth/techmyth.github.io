@@ -11,7 +11,7 @@ In vSphere 7 update 1 VMware added a new capability for `Distributed Resource Sc
 
 ![Text](/img/25079036c801ac924d3ff7d4cb3b9438.webp#center)
 
-In this blog I will be showing how to remove this feature but it is important to emphasize not to implement this change in production environments. The following image show the minimum amount of vCLS VMs used in vCenter 7U1.
+In this blog I will be showing how to remove this feature, but it is important to emphasize not to implement this change in production environments. The following image shows the minimum amount of vCLS VMs used in vCenter 7U1.
 
 ##### Note: vSphere DRS depends on the status of vCLS services as of vSphere 7.0 Update 1
 
@@ -27,7 +27,7 @@ vCenter: In this part you can get the cluster ID by navigating to the [Hosts and
 
 ![Text](/img/2021-05-30_00-11-1024x309.webp#center)
 
-PowerCLI: Using Powershell with the VMware.PowerCLI module you can obtain the cluster ID by invoking the `Get-Cluster` command. As shown in the result of the command you can see the value of the Id `domain-c81` for the cluster named RegionA01-COMP.
+PowerCLI: Using Powershell with the `VMware.PowerCLI` module you can obtain the cluster ID by invoking the `Get-Cluster` command. As shown in the result of the command you can see the value of the ID `domain-c81` for the cluster named RegionA01-COMP.
 
 ```text
 PS /home/rebelinux> Get-Cluster RegionA01-COMP | FL

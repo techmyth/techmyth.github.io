@@ -7,19 +7,19 @@ tags:
   - "NetApp"
 ---
 
-En la versión de Ontap 9.8 NetApp decidió añadirle compatibilidad al protocolo SMB de Windows al utilizar la tecnología de FlexCache, Por fin….
+En la versión de Ontap 9.8 NetApp decidió añadirle compatibilidad al protocolo SMB de Windows al utilizar la tecnología de `FlexCache`, Por fin….
 
-En este laboratorio de práctica crearé un volumen flexcache de origen y uno de caché en un clúster remoto. En el ejemplo de laboratorio también validare el beneficio ofrecido por la capacidad de ampliar un recurso compartido CIFS central de forma nativa.
+En este laboratorio de práctica crearé un volumen `flexcache` de origen y uno de caché en un clúster remoto. En el ejemplo de laboratorio también validaré el beneficio ofrecido por la capacidad de ampliar un recurso compartido `CIFS` central de forma nativa.
 
-Para comenzar utilizaré como referencia la documentación de NetApp para definir que rayos es un volumen Flexcache y para que es utilizado:
+Para comenzar utilizaré como referencia la documentación de NetApp para definir que rayos es un volumen `Flexcache` y para que es utilizado:
 
 ![Text](/img/f751fba8c585a669d5f9f36497c9c310-2.webp#center)
 
-> Un volumen FlexCache es un volumen poco poblado que está respaldado por un volumen de origen. El volumen FlexCache puede estar en el mismo clúster o en un clúster diferente al del volumen de origen. El volumen FlexCache proporciona acceso a los datos del volumen de origen sin necesidad de que todos los datos estén en el volumen FlexCache. A partir de ONTAP 9.8, un volumen FlexCache también soporta el protocolo SMB.
+> Un volumen `FlexCache` es un volumen poco poblado que está respaldado por un volumen de origen. El volumen `FlexCache` puede estar en el mismo clúster o en un clúster diferente al del volumen de origen. El volumen `FlexCache` proporciona acceso a los datos del volumen de origen sin necesidad de que todos los datos estén en el volumen `FlexCache`. A partir de ONTAP 9.8, un volumen `FlexCache` también soporta el protocolo SMB.
 
 ##### [NetApp Documentation Portal](https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-fc-mgmt/GUID-F4CE375E-DB00-403E-A20D-FB6CE6116D07.html)
 
-Para este laboratorio utilizaré como referencia el siguiente diagrama donde se muestra un dominio de `Active Directory` con dos `Sites` llamados `Gurabo` y `Ponce`. Ambos `Sites` poseen un clúster de Ontap con la versión 9.8P4. Flexcache requiere la configuración de interfaces tipo `Intercluster`.
+Para este laboratorio utilizaré como referencia el siguiente diagrama donde se muestra un dominio de `Active Directory` con dos `Sites` llamados `Gurabo` y `Ponce`. Ambos `Sites` poseen un clúster de Ontap con la versión 9.8P4. `Flexcache` requiere la configuración de interfaces tipo `Intercluster`.
 
 ##### Nota: Para el laboratorio se utilizó el simulador de Ontap
 
@@ -27,11 +27,11 @@ Para este laboratorio utilizaré como referencia el siguiente diagrama donde se 
 
 Para poder comenzar con el laboratorio es necesario crear una asociación entre ambos `vservers` el local `NAS` y el remoto `NAS-EDGE`. Para lograr esto utilizamos el comando `vserver peer create` especificando que el `applications` sea como `flexcache`.
 
-In order to start with the lab it is needed to create an peer relationship between the local and remote vserver. To achieve this i use the command `vserver peer create` specifying the `applications` as `flexcache`.
+In order to start with the lab it is needed to create an peer relationship between the local and remote `vserver`. To achieve this i use the command `vserver peer create` specifying the `applications` as `flexcache`.
 
 ##### Referencia: [vserver peer create](http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-940/vserver__peer__create.html)
 
-##### Nota: Previamente se realizo la asociación a nivel de clúster con el comando `cluster peer create`.
+##### Nota: Previamente, serealizóo la asociación a nivel de clúster con el comando `cluster peer create`.
 
 ```text
 OnPrem-HQ::> vserver peer create -vserver NAS -peer-cluster OnPrem-EDGE -peer-vserver NAS-EDGE -applications flexcache 
@@ -39,7 +39,7 @@ OnPrem-HQ::> vserver peer create -vserver NAS -peer-cluster OnPrem-EDGE -peer-vs
 Info: [Job 883] 'vserver peer create' job queued 
 ```
 
-Una vez creada la asociación entre ambos vserver podemos comenzar a validar que el volumen que usaremos como origen este creado. Para esto utilizamos el comando `volume show` desde el clúster local. Para éste laboratorio utilizaremos el volumen llamado share. Les dejaré como referencia el cómo crear un volumen en Ontap desde el comienzo. [Enlace](https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-960/volume__create.html)
+Una vez creada la asociación entre ambos `vserver` podemos comenzar a validar que el volumen que usaremos como origen esté creado. Para esto utilizamos el comando `volume show` desde el clúster local. Para este laboratorio utilizaremos el volumen llamado share. Les dejaré como referencia el cómo crear un volumen en Ontap desde el comienzo. [Enlace](https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-960/volume__create.html)
 
 ```text
 OnPrem-HQ::*> volume show -vserver NAS                
@@ -52,7 +52,7 @@ NAS       share        OnPrem_HQ_01_SSD_1 online RW      10.3GB   8.04GB   20%
 OnPrem-HQ::*> 
 ```
 
-Ya identificado el volumen que utilizaremos podemos crear el volumen tipo flexcache utilizando el comando `volume flexcache create`. Es importante mencionar que flexcache utiliza `FlexGroup` para crear el volumen. Es por esta razón, que se utiliza la opción de `aggr-list` para especificar cuales agregados se utilizarán para crear los volúmenes tipo
+Ya identificado el volumen que utilizaremos podemos crear el volumen tipo `flexcache` utilizando el comando `volume flexcache create`. Es importante mencionar que `flexcache` utiliza `FlexGroup` para crear el volumen. Es por esta razón, que se utiliza la opción de `aggr-list` para especificar cuáles agregados se utilizarán para crear los volúmenes tipo
 
 ```text
 OnPrem-EDGE::> volume flexcache create -vserver NAS-EDGE -volume share_edge -aggr-list OnPrem_EDGE_0* -origin-vserver NAS -origin-volume share -size 10GB -junction-path /share_edge
@@ -72,7 +72,7 @@ NAS-EDGE share_edge 10GB       NAS            shares            OnPrem-HQ
 OnPrem-EDGE::> 
 ```
 
-Desde el clúster local podemos ver el volumen de origen con el comando `volume flexcache origin show-caches`. En el resultado del comando podemos ver el volumen flexcache previamente creado.
+Desde el clúster local podemos ver el volumen de origen con el comando `volume flexcache origin show-caches`. En el resultado del comando podemos ver el volumen `flexcache` previamente creado.
 
 ```text
 OnPrem-HQ::*> volume flexcache origin show-caches
@@ -84,7 +84,7 @@ NAS            share         NAS-EDGE       share_edge    OnPrem-EDGE
 OnPrem-HQ::*> 
 ```
 
-Ahora procedemos a compartir el volumen caché share_edge utilizando el protocolo SMB. Para esto el comando `vserver cifs share create` es utilizado con la opción de `-path /share_edge` para especificar el `junction-path` del volumen flexclone.
+Ahora procedemos a compartir el volumen caché `share_edge` utilizando el protocolo SMB. Para esto el comando `vserver cifs share create` es utilizado con la opción de `-path /share_edge` para especificar el `junction-path` del volumen `flexclone`.
 
 ```text
 OnPrem-EDGE::> vserver cifs share create -vserver NAS-EDGE -share-name share_edge -path /share_edge
@@ -190,7 +190,7 @@ sys	0m6.128s
 root@CLIENT-EDGE-02V:/mnt/share_edge# 
 ```
 
-La tabla muestra el tiempo de transferencia de cada prueba realizada. Como pueden ver el cliente CLIENT-HQ-01V ubicado en el `site` Gurabo tiene acceso directo a la carpeta compartida desde el volumen origen teniendo un tiempo menor de transferencia `2m7.513s`. El cliente CLIENT-EDGE-01V esta conectado al `site` de Ponce utilizando la carpeta compartida del volumen de flexcache donde podemos ver que, al no estar el contenido inicialmente en el caché el tiempo de transferencia fue mayor `4m2.391s`. Esto es causado porque es necesario cargar toda la data desde el volumen de origen. Por último, el cliente CLIENT-EDGE-02V tuvo un tiempo de transferencia similar al CLIENT-HQ-01V, ya que el contenido del archivo `Very_Big_File.iso` se encuentra ya en el caché del volumen de flexcache.
+La tabla muestra el tiempo de transferencia de cada prueba realizada. Como pueden ver el cliente CLIENT-HQ-01V ubicado en el `site` Gurabo tiene acceso directo a la carpeta compartida desde el volumen origen teniendo un tiempo menor de transferencia `2m7.513s`. El cliente CLIENT-EDGE-01V esta conectado al `site` de Ponce utilizando la carpeta compartida del volumen de `flexcache` donde podemos ver que, al no estar el contenido inicialmente en el caché el tiempo de transferencia fue mayor `4m2.391s`. Esto es causado porque es necesario cargar toda la data desde el volumen de origen. Por último, el cliente CLIENT-EDGE-02V tuvo un tiempo de transferencia similar al CLIENT-HQ-01V, ya que el contenido del archivo `Very_Big_File.iso` se encuentra ya en el caché del volumen de `flexcache`.
 
 | Client Name  |     Elapsed Time    |  Share  |  Description |
 |:----------------------:|:--------------------:|:--------------------:|:--------------------:|

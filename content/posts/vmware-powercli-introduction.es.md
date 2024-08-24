@@ -7,15 +7,15 @@ tags:
 
 Hola tod@s
 
-En este post veremos cómo utilizar instalar y utilizar la herramienta de PowerCLI. Recientemente en el portal de Blog de VMware realizaron una encuesta sobre las 10 herramienta de los administradores de VMware más utilizada. Un dato curioso es que la herramienta de PowerCLI logró el primer lugar de la lista para este año 2021. Es por esta razón que tome la iniciativa de crear varios artículos introductorios sobre cómo realizar tareas básica utilizando PowerCLI.
+En este post veremos cómo utilizar instalar y utilizar la herramienta de PowerCLI. Recientemente en el portal de Blog de `VMware` realizaron una encuesta sobre las 10 herramientas de los administradores de `VMware` más utilizada. Un dato curioso es que la herramienta de PowerCLI logró el primer lugar de la lista para este año 2021. Es por esta razón que tome la iniciativa de crear varios artículos introductorios sobre cómo realizar tareas básicas utilizando PowerCLI.
 
-VMware describe a PowerCLI como:
+`VMware` describe a PowerCLI como:
 
 > VMware PowerCLI is a command-line and scripting tool built on Windows PowerShell, and provides more than 800 cmdlets for managing and automating VMware vSphere, VMware Cloud Director, vRealize Operations Manager, vSAN, VMware NSX-T Data Center, VMware Cloud Services, VMware Cloud on AWS, VMware HCX, VMware Site Recovery Manager, and VMware Horizon environments.
 >
 > [VMware {Code}](https://developer.vmware.com/web/tool/12.4/vmware-powercli)
 
-Como pueden ver PowerCLI está directamente integrado en el ecosistema de VMware y es la herramienta principal de automatización y desarrollo. Con esta herramienta se pueden crear `script` sencillos como tambien es util a la hora de programar o automatizar tareas en datacenter físico y virtuales.
+Como pueden ver PowerCLI está directamente integrado en el ecosistema de VMware y es la herramienta principal de automatización y desarrollo. Con esta herramienta se pueden crear `script` sencillos como también es útil a la hora de programar o automatizar tareas en datacenter físico y virtuales.
 
 Para comenzar a utilizar PowerCLI es necesario instalar la herramienta, para alcanzar este objetivo podemos instalarlo desde una consola de PowerShell. En mi caso, estaré utilizando `PowerShell Core` en linux pero puede ser instalado de igual forma en Windows o Macos. Para acceder PowerShell desde Linux utilizamos el comando `pwsh` desde una consola o `shell`.
 
@@ -41,7 +41,7 @@ Downloaded 13.78 MB out of 15.25 MB.
 PS /home/rebelinux>                                                                                                                        
 ```
 
-Para validar que version de PowerCLI tenemos instalado podemos utilizar el comando `Get-Module`:
+Para validar que versión de PowerCLI tenemos instalado podemos utilizar el comando `Get-Module`:
 
 ```text
 \PS /home/rebelinux> Get-Module -ListAvailable VMware.PowerCLI
@@ -115,7 +115,7 @@ Cmdlet          Get-VMStartPolicy                                  12.4.0.18… 
 PS /home/rebelinux>
 ```
 
-En el caso específico del ejemplo anterior se aplicó un filtro al comando para mostrar solo los cmdlet que comienzan con `get-vm *`. En el próximo artículo les estaré mostrando como realizar la conexión inicial hacia vCenter o a un servidor ESXi `standalone`.
+En el caso específico del ejemplo anterior se aplicó un filtro al comando para mostrar solo los cmdlet que comienzan con `get-vm *`. En el próximo artículo les estaré mostrando como realizar la conexión inicial hacia vCenter o a un servidor `ESXi` `standalone`.
 
 Hasta luego!
 

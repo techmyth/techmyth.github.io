@@ -17,7 +17,7 @@ VMware describes PowerCLI as:
 
 As you can see PowerCLI is directly integrated into the VMware ecosystem and is the main tool for automation and development. With this tool you can create simple scripts as well as schedule or automate tasks in large physical and virtual datacenters.
 
-To start using PowerCLI it is required to install the tool, to achieve this goal you can install it from a PowerShell console. In my case, I will be using ‘PowerShell Core’ on linux but it can be installed in the same way on Windows or Macos. To access PowerShell from Linux we use the `pwsh` command from a console or `shell`.
+To start using PowerCLI it is required to install the tool, to achieve this goal you can install it from a PowerShell console. In my case, I will be using ‘PowerShell Core’ on linux, but it can be installed in the same way on Windows or `Mac OS`. To access PowerShell from Linux we use the `pwsh` command from a console or `shell`.
 
 ```text
 [rebelinux@xxxxx ~]$ pwsh

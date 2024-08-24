@@ -9,9 +9,9 @@ tags:
 
 Hola a todos,
 
-Esta vez estaré hablando de cómo utilizar `Govc`, una alternativa de CLI desarrollada en el lenguaje de programación [GO](https://go.dev/), esta CLI está diseñada para ser una alternativa fácil de usar al Web GUI y muy adecuada para tareas de automatización. Esta herramienta es basada en `govmomi`, que es una librería para GO utilizada para interactuar con el Application Programming Interface (API) de VMware vSphere
+Esta vez estaré hablando de cómo utilizar `Govc`, una alternativa de CLI desarrollada en el lenguaje de programación [GO](https://go.dev/), esta CLI está diseñada para ser una alternativa fácil de usar al Web GUI y muy adecuada para tareas de automatización. Esta herramienta es basada en `govmomi`, que es una librería para GO utilizada para interactuar con el Application Programming Interface (API) de `VMware vSphere`
 
-#### Nota: Las versiones de vSphere que han llegado al final de su soporte pueden funcionar, pero no cuentan con soporte oficial.
+#### Nota: Las versiones de vSphere que han llegado al final de su soporte pueden funcionar, pero no cuentan con soporte oficial
 
 Aquí tienes el enlace para que puedas ver las características de esta herramienta.
 
@@ -19,7 +19,7 @@ Aquí tienes el enlace para que puedas ver las características de esta herramie
 
 Esta herramienta se puede instalar de muchas maneras pero para este tutorial utilizaré la versión compilada. Para utilizar otro método de instalación puede validar la documentación [Govc](https://github.com/vmware/govmomi/tree/main/govc#installation).
 
-El primer paso sería descargar la herramienta desde el portal [Github](https://github.com/vmware/govmomi/releases). En mi caso utilizaré la versión x86_64 que es la que corresponde a mi sistema Linux pero ésta herramienta provee soporte para la mayoría de los Sistemas Operativos más utilizados.
+El primer paso sería descargar la herramienta desde el portal [Github](https://github.com/vmware/govmomi/releases). En mi caso utilizaré la versión `x86_64` que es la que corresponde a mi sistema Linux, pero esta herramienta provee soporte para la mayoría de los Sistemas Operativos más utilizados.
 
 ![Text](/img/2022/vmware-govc-intro/govc_download_x86.webp#center)
 
@@ -61,6 +61,6 @@ UUID:         43f86c8f-1a6d-44c8-b6ac-6ec33a36d141
 
 #### Nota: Esta herramienta asume que el certificado HTTPS puede ser validado con la cadena de confianza. Si el certificado es "Self Sign" es necesario configurar la variable GOVC_INSECURE=1
 
-En este artículo les mostré una introducción sobre la herramienta `Govc` en los proximos articulos estaré entrando en detalle de como utilizar esta herramienta para agilizar los procesos de automatización en nuestra infraestructura de vSphere.
+En este artículo les mostré una introducción sobre la herramienta `Govc` en los próximos artículos estaré entrando en detalle de como utilizar esta herramienta para agilizar los procesos de automatización en nuestra infraestructura de `vSphere`.
 
 #### Hasta Luego Amigos!

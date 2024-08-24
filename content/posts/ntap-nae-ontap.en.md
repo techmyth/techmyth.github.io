@@ -9,13 +9,13 @@ tags:
   - "Encryption"
 ---
 
-Previously in a [post]({{< ref "/posts/ntap-nve-external-key-manager.en.md" >}} "NetApp Volume Encryption Setup with External Key Manager") I explained how to set up an encrypted volume using an encryption key manager (KMS) specifically from the company [HyTrust](https://www.hytrust.com/products/keycontrol/). In this specific case each volume is encrypted individually using independent keys. A disadvantage of this method is that it affects the possibility of increasing the efficiency levels of data reduction such as compression, compaction and de-duplication (cross-volume-dedupe).
+Previously in a [post]({{< ref "/posts/ntap-nve-external-key-manager.en.md" >}} "NetApp Volume Encryption Setup with External Key Manager") I explained how to set up an encrypted volume using an encryption key manager (KMS) specifically from the company [HyTrust](https://www.hytrust.com/products/keycontrol/). In this specific case each volume is encrypted individually using independent keys. A disadvantage of this method is that it affects the possibility of increasing the efficiency levels of data reduction such as compression, compaction and deduplication (cross-volume-dedupe).
 
 ![Text](/img/NVE-vs-NAE.webp#center)
 
 To eliminate this disadvantage the NetApp gurus came up with the idea of applying the encryption feature at the aggregate level by allowing volumes residing within the same aggregate to share the encryption key. This technology is known as `NetApp Aggregate Encryption` (NAE)`. This allows customers the option to take advantage of storage efficiency technologies in conjunction with the encryption process.
 
-Now it’s time to talk about how we can create an encrypted aggregate in Ontap but first of all… What is an aggregate within Ontap?
+Now it’s time to talk about how we can create an encrypted aggregate in Ontap but first… What is an aggregate within Ontap?
 
 Using the NetApp Knowledge Base portal as a reference:
 
@@ -25,7 +25,7 @@ Using the NetApp Knowledge Base portal as a reference:
 
 ![Text](/img/2021-05-20_21-21-1024x746.webp#center)
 
-**Step 1:** Validate Ontap requirements.
+##### Step 1: Validate Ontap requirements.
 
 In order to use the encryption option at the aggregate level, it is required to have a version of Ontap 9.6 or higher also make sure the required licenses are installed in the cluster. In this case we use the command `version` to validate the current version of the cluster and the command `license show -package VE` to display the license information.
 
@@ -44,13 +44,13 @@ X-XX-XXXXXXXXXXXXXXXXXXXXXXXXX VE      OnPrem-HQ-02 Volume Encryption License li
 OnPrem-HQ::> 
 ```
 
-##### Note: I previously done the external KMS setup in Ontap. [Link]({{< ref "/posts/ntap-nve-external-key-manager.en.md" >}} "NetApp Volume Encryption Setup with External Key Manager")
+##### Note: I have previously done the external KMS setup in Ontap. [Link]({{< ref "/posts/ntap-nve-external-key-manager.en.md" >}} "NetApp Volume Encryption Setup with External Key Manager")
 
-**Step 2:** Validate the available `Spare` discs.
+##### Step 2: Validate the available `Spare` discs
 
 To begin with, there are two ways to encrypt an aggregate; initially when it is created or the live conversion of an existing one. Initially I will be creating a new aggregate and then in another tutorial I will show you how easy is to convert an existing one. To create an aggregate you need to have disk drives available or in the `spare` state as NetApp commonly calls it.
 
-The `storage aggregate show-spare-disks` command allows us to see how many partitioned disks are available on the node where i will create the new encrypted aggregate. In this particular case you can see that there are 24 partitioned disks using the `Root-Data1-Data2` option. To learn more about this disk strategy please follow the link below:
+The `storage aggregate show-spare-disks` command allows us to see how many partitioned disks are available on the node where I will create the new encrypted aggregate. In this particular case you can see that there are 24 partitioned disks using the `Root-Data1-Data2` option. To learn more about this disk strategy please follow the link below:
 
 > [ADP(v1) and ADPv2 in a nutshell, it’s delicious!](https://blog.iops.ca/2016/11/10/adpv1-and-adpv2-in-a-nutshell-its-delicious/)
 >
@@ -95,7 +95,7 @@ Original Owner: OnPrem-HQ-01
 OnPrem-HQ::> 
 ```
 
-**Step 3:** Create an encrypted aggregate.
+##### Step 3: Create an encrypted aggregate
 
 To create the encrypted aggregate we use the `storage aggregate create` command with the option `encrypt-with-aggr-key true` turned on. In this case we create a secure aggregate composed of 23 disks `partitions`.
 
@@ -164,7 +164,7 @@ In the command result you can see that the aggregate was created with encryption
 
 **Step 4:** Create a volume within the encrypted aggregate.
 
-Unlike volume-level encryption NVE, when using aggregate-level encryption it is not required to specify the encrypt option to create the volume. The command `vol create` creates an encrypted volume by default when the volume resides in an aggregate configured with NAE.
+Unlike volume-level encryption `NVE`, when using aggregate-level encryption it is not required to specify the encrypt option to create the volume. The command `vol create` creates an encrypted volume by default when the volume resides in an aggregate configured with NAE.
 
 ```bash
 OnPrem-HQ::> vol create -vserver SAN -volume Secure_Vol -aggregate OnPrem_HQ_01_SSD_1 -size 10GB -space-guarantee none 

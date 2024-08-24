@@ -11,11 +11,11 @@ tags:
 
 ### The Problem
 
-In the last few months I have been studying for the `VEEAM VMCE Arquitect` certification and one of the requirements is to implement the `Scale Out Backup Repository` option. A simple way to achieve this is by using the Minio service.
+In the last few months I have been studying for the `VEEAM VMCE Arquitect` certification and one of the requirements is to implement the `Scale Out Backup Repository` option. A simple way to achieve this is by using the `Minio` service.
 
 ### About Minio
 
-Minio is an open source object storage service compatible with the Amazon S3 cloud storage service. Applications that have been configured to communicate with Amazon S3 can also be configured to communicate with Minio, allowing Minio to be a viable alternative to S3.
+`Minio` is an open source object storage service compatible with the Amazon S3 cloud storage service. Applications that have been configured to communicate with Amazon S3 can also be configured to communicate with `Minio`, allowing `Minio` to be a viable alternative to S3.
 
 ### Installation
 

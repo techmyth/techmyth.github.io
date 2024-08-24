@@ -7,9 +7,9 @@ tags:
 
 Hola tod@s
 
-En el articulo [PowerShell: Introducción básica de VMware PowerCLI]({{< ref "/posts/vmware-powercli-introduction.es.md" >}} "PowerShell: Introducción básica de VMware PowerCLI") les mostré cómo realizar la instalación de VMware PowerCLI y una introduccion basica del propósito de esta herramienta de administración. En este post veremos cómo realizar la conexión inicial a nuestro vCenter utilizando la herramienta de PowerCLI. Es importante mencionar que PowerCLI se puede utilizar para conectarse tanto a vCenter como al servidor de vSphere `ESXi` de forma independiente pero en este post estaré mostrando ejemplos solo haciendo referencia al servidor de vCenter.
+En el artículo [PowerShell: Introducción básica de VMware PowerCLI]({{< ref "/posts/vmware-powercli-introduction.es.md" >}} "PowerShell: Introducción básica de VMware PowerCLI") les mostré cómo realizar la instalación de VMware PowerCLI y una introducción básica del propósito de esta herramienta de administración. En este post veremos cómo realizar la conexión inicial a nuestro vCenter utilizando la herramienta de PowerCLI. Es importante mencionar que PowerCLI se puede utilizar para conectarse tanto a vCenter como al servidor de vSphere `ESXi` de forma independiente, pero en este post estaré mostrando ejemplos solo haciendo referencia al servidor de vCenter.
 
-Para comenzar, necesitamos establecer la conexión inicial hacia nuestro servidor de vCenter. PowerCLI ofrece el comando `Connect-VIServer` para este propósito pero también existe otros comando para manejar y hasta validar las conexiones existente. El siguiente ejemplo muestra cómo desplegar los comando de conexión/desconexión de vCenter
+Para comenzar, necesitamos establecer la conexión inicial hacia nuestro servidor de vCenter. PowerCLI ofrece el comando `Connect-VIServer` para este propósito, pero también existe otros comando para manejar y hasta validar las conexiones existentes. El siguiente ejemplo muestra cómo desplegar los comando de conexión/desconexión de vCenter
 
 ```text
 PS /home/rebelinux> Get-Command *VIserver*
@@ -24,7 +24,7 @@ Cmdlet          Disconnect-VIServer                                12.4.0.18… 
 PS /home/rebelinux>
 ```
 
-Utilizando el comando `Connect-VIServer` establecemos la conexión inicial hacia el vCenter en mi HomeLab con el direcion de IP `192.168.5.2`.
+Utilizando el comando `Connect-VIServer` establecemos la conexión inicial hacia el vCenter en mi HomeLab con la dirección de IP `192.168.5.2`.
 
 ```text
 PS /home/rebelinux> Connect-VIServer -Server 192.168.5.2 -Credential (Get-Credential)
@@ -41,7 +41,7 @@ Name                           Port  User
 PS /home/rebelinux> 
 ```
 
-En este ejemplo se puede ver que realizamos la conexión al vCenter utilizando la opción de `(Get-Credential)` para que sea solicitado las credenciales en consola. De igual forma pudimos crear una variable con las credenciales ya pre-establecidas. En este ejemplo les muestro como hacerlo.
+En este ejemplo se puede ver que realizamos la conexión al vCenter utilizando la opción de `(Get-Credential)` para que sea solicitado las credenciales en consola. De igual forma pudimos crear una variable con las credenciales ya preestablecidas. En este ejemplo les muestro como hacerlo.
 
 ```text
 PS /home/rebelinux> $Credenciales = Get-Credential
@@ -60,7 +60,7 @@ Name                           Port  User
 PS /home/rebelinux> 
 ```
 
-En el ejemplo anterior guardamos las credenciales en una variable con el nombre de `$Credenciales` para luego utilizar esta variable como `Input` en el comando `Connect-VIServer` utilizando la opción de `(-Credential $Credenciales)`. Una vez realicemos la conexión inicial podemos utilizar la variable `$defaultVIServer` para validar la conexión existente. Es importante mencionar que la session que se encuentra en la variable `$defaultVIServer` sera utilizada de manera predeterminada cuando se utilizan los cmdlet si no se le especifica la opción de `-Server`.
+En el ejemplo anterior guardamos las credenciales en una variable con el nombre de `$Credenciales` para luego utilizar esta variable como `Input` en el comando `Connect-VIServer` utilizando la opción de `(-Credential $Credenciales)`. Una vez realicemos la conexión inicial podemos utilizar la variable `$defaultVIServer` para validar la conexión existente. Es importante mencionar que la sesión que se encuentra en la variable `$defaultVIServer` sseráutilizada de manera predeterminada cuando se utilizan los cmdlet si no se le especifica la opción de `-Server`.
 
 ```text
 PS /home/rebelinux> $defaultVIServer
@@ -73,7 +73,7 @@ Name                           Port  User
 PS /home/rebelinux> 
 ```
 
-Al utilizando la variable `$defaultVIServers` podemos ver todas la conexiones previamente realizadas. Como se puede ver en el siguiente ejemplo se muestran las múltiples conexiones donde la session con la direción de IP `192.168.5.253`` pertenece a un servidor de ESXi.
+Al utilizando la variable `$defaultVIServers` podemos ver todas la conexiones previamente realizadas. Como se puede ver en el siguiente ejemplo se muestran las múltiples conexiones donde la sesión con la dirección de IP `192.168.5.253`` pertenece a un servidor de ESXi.
 
 ```text
 PS /home/rebelinux> $defaultVIServers                                                  

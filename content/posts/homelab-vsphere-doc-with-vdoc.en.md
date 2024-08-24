@@ -5,7 +5,7 @@ tags:
     - VMware
 ---
 
-This time I will be showing a tool that I use regularly to quickly identify inventory information in a vsphere infrastructure. This tool is called `vDocumentation` and precisely uses PowerCLI to obtain the inventory information. The creator of this tool `Ariel Sanchez Mora` @arielsanchezmor defines vDocumentation as:
+This time I will be showing a tool that I use regularly to quickly identify inventory information in a vSphere infrastructure. This tool is called `vDocumentation` and precisely uses PowerCLI to obtain the inventory information. The creator of this tool `Ariel Sanchez Mora` @arielsanchezmor defines vDocumentation as:
 
 > vDocumentation provides a community-created set of PowerCLI scripts that produce infrastructure documentation of vSphere environments in CSV or Excel file format.
 >

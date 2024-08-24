@@ -15,16 +15,16 @@ El reporte se encuentra en estado inicial y en constante desarrollo, pero decid�
 
 ![Text](/img/AsBuildReport_NetApp_ONTAP.webp#center)
 
-Debo aclarar que este reporte no está diseñado para reemplazar o competir de ninguna forma con la herramienta `NetAppDocs`. Me percate de las muchas peticiones en el foro de NetApp de varios usuarios que tienen la necesidad de generar un reporte actualizado de su infraestructura de almacenamiento. Es por esta razón que tome la iniciativa de crear un reporte disponible de forma gratuita para los clientes y/o usuarios de NetApp. Una ventaja de utilizar el proyecto `AsBuiltReport`, es que te permite crear el reporte en múltiples formato (Word,Html o Texto) y hasta puedes automatizar su envío a través de correo electrónico.
+Debo aclarar que este reporte no está diseñado para reemplazar o competir de ninguna forma con la herramienta `NetAppDocs`. Me percaté de las muchas peticiones en el foro de NetApp de varios usuarios que tienen la necesidad de generar un reporte actualizado de su infraestructura de almacenamiento. Es por esta razón que tome la iniciativa de crear un reporte disponible de forma gratuita para los clientes y/o usuarios de NetApp. Una ventaja de utilizar el proyecto `AsBuiltReport`, es que te permite crear el reporte en múltiples formatos (Word,Html o Texto) y hasta puedes automatizar su envío a través de correo electrónico.
 
 Ahora bien, para comenzar necesitamos cumplir con los siguientes requisitos:
 
-- Multi-plataforma Windows, Linux o MAC
+- Multiplataforma Windows, Linux o MAC
 - PowerShell v5.1+ ó v7
 - El módulo de `NetApp PowerShell Toolkit` >= 9.9.1.2106
 - El módulo de AsBuiltReport.Core >= 1.1.0
 
-Este reporte utiliza la versión de PowerShell 5.+ ó PSCore 7, para validar la versión podemos utilizar la variable $PSVersionTable desde la consola de PowerShell:
+Este reporte utiliza la versión de PowerShell 5.+ o PSCore 7, para validar la versión podemos utilizar la variable $PSVersionTable desde la consola de PowerShell:
 
 ```text
 PS /home/rebelinux> >$PSVersionTable
@@ -46,7 +46,7 @@ PS /home/rebelinux>
 
 El reporte fue creado específicamente para la versión de ``NetApp PowerShell Toolkit`` >= 9.9.1.2106. Para validar que versión tenemos o si ha sido instalada podemos utilizar el comando `Get-Module` según se muestra en el siguiente ejemplo:
 
-#### Nota: Adicionalmente validamos la versión de `AsBuiltReport.Core` que es una dependencia adicional para poder generar el reporte
+#### Nota: Adicionalmente, validamos la versión de `AsBuiltReport.Core` que es una dependencia adicional para poder generar el reporte
 
 ```text
 PS /home/rebelinux> >Get-Module> -ListAvailable -Name >@('AsBuiltReport.Core','Netapp.Ontap')>                                    
@@ -186,7 +186,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 }
 ```
 
-El comando `New-AsBuiltReportConfig` permite establecer los parámetros técnico del reporte como el nivel y tipo de información ``verbose level``.
+El comando `New-AsBuiltReportConfig` permite establecer los parámetros técnicos del reporte como el nivel y tipo de información ``verbose level``.
 
 ```text
 PS C:\WINDOWS\system32> >New-AsBuiltReportConfig NetApp.ONTAP> -FolderPath C:\Users\jocolon\AsBuiltReport\
@@ -314,7 +314,7 @@ Aquí les dejo el ejemplo del reporte generado.
 
 {{< embed-pdf url="./img/Sample-NetApp-ONTAP-As-Built-Report.pdf" >}}
 
-Adicionalmente les incluyo varios ejemplos de cómo generar el reporte. ¡Espero sea de su agrado!
+Adicionalmente, les incluyo varios ejemplos de cómo generar el reporte. ¡Espero sea de su agrado!
 
 ```text
 # Generate a NetApp ONTAP As Built Report for Cluster array '192.168.7.60' using specified credentials. Export report to HTML & DOCX formats. Use default report style. Append timestamp to report filename. Save reports to 'C:\Users\Jon\Documents'>
@@ -335,6 +335,6 @@ PS C:\> New-AsBuiltReport -Report NetApp.ONTAP -Target 192.168.7.60 -Credential 
 PS C:\> New-AsBuiltReport -Report NetApp.ONTAP -Target 192.168.7.60 -Username 'admin' -Password 'P@ssw0rd' -Format Html,Word -OutputFolderPath 'C:\Users\Jon\Documents' -SendEmail>
 ```
 
-Hasta Luego Amigos!
+¡Hasta Luego Amigos!
 
 ![Text](/img/infrastructure-so-complex-no-body-that-knows-how-it-was-35156082.webp#center)

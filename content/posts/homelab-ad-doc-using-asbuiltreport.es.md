@@ -8,7 +8,7 @@ tags:
 
 Hola a tod@s!
 
-Anteriormente les hable sobre el reporte de NetApp.Ontap que ayude a desarrollar a través del proyecto de AsBuildReport creado por `Tim Carman` [@tpcarman](https://twitter.com/tpcarman) (Aquí el [enlace](http://192.168.7.40/2021/09/27/homelab-ontap-docs-asbuiltreport/)). Pues esta vez les estaré hablando de otro reporte que he estado trabajando durante estos últimos meses relacionado a generar documentación sobre la infraestructura de `Active Directory (AD)`. Durante muchos años he realizado varias implementaciones y/o consultorías relacionadas a este servicio y siempre he tenido la intención de crear un reporte condensado de cómo está diseñada esta infraestructura de servicios que para efectos estadísticos corre en más del 95% de las empresas mundiales.
+Anteriormente les hable sobre el reporte de NetApp.Ontap que ayude a desarrollar a través del proyecto de AsBuildReport creado por `Tim Carman` [@tpcarman](https://twitter.com/tpcarman) (Aquí el [enlace](http://192.168.7.40/2021/09/27/homelab-ontap-docs-asbuiltreport/)). Pues esta vez les estaré hablando de otro reporte que he estado trabajando durante estos últimos meses relacionado con generar documentación sobre la infraestructura de `Active Directory (AD)`. Durante muchos años he realizado varias implementaciones y/o consultorías relacionadas con este servicio y siempre he tenido la intención de crear un reporte condensado de cómo está diseñada esta infraestructura de servicios que para efectos estadísticos corre en más del 95% de las empresas mundiales.
 
 Aunque tengo que reconocer que existen un sin número de expertos que han creado varios reportes similares, un dato único de este reporte es que utiliza [AsBuildReport](https://www.asbuiltreport.com/) como base para generar la programación necesaria para establecer la estructura del reporte. De forma que yo como programador me puedo concentrar en la tecnología que deseo documentar y no en añadir código para generar el formato en Word o HTML.
 
@@ -18,7 +18,7 @@ El website de desarrollo del reporte se encuentra en Github les dejo el enlace p
 
 ![Text](/img/AsbuildReport_AD.webp)
 
-Este reporte solo puede ser ejecutado en Windows 10+ yo Windows Server 2016+. Adicionalmente es requerido tener instalado la version de PowerShell 5.1 o PowerShell 7+ y los siguientes módulos para poder generar el reporte:
+Este reporte solo puede ser ejecutado en Windows 10+ yo Windows Server 2016+. Adicionalmente, es requerido tener instalado la versión de PowerShell 5.1 o PowerShell 7+ y los siguientes módulos para poder generar el reporte:
 
 - [AsBuiltReport.Microsoft.AD](https://www.powershellgallery.com/packages/AsBuiltReport.Microsoft.AD/0.3.0)
 - [ActiveDirectory](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps)
@@ -31,7 +31,7 @@ Este reporte solo puede ser ejecutado en Windows 10+ yo Windows Server 2016+. Ad
 - [Diagrammer.Microsoft.AD](https://github.com/rebelinux/Diagrammer.Microsoft.AD)
 - [PScriboCharts](https://github.com/iainbrighton/PScriboCharts)
 
-Este reporte utiliza la versión de PowerShell 5.+ ó PSCore 7, para validar la versión podemos utilizar la variable `$PSVersionTable` desde la consola de PowerShell:
+Este reporte utiliza la versión de PowerShell 5.+ o PSCore 7, para validar la versión podemos utilizar la variable `$PSVersionTable` desde la consola de PowerShell:
 
 ```powershell
 PS C:\Users\jocolon> $PSVersionTable
@@ -103,7 +103,7 @@ PS C:\WINDOWS\system32>
 
 ```
 
-Una vez instalamos los pre-requisito podemos continuar con la instalación del módulo principal `AsBuiltReport.Microsoft.AD`.
+Una vez instalamos los prerrequisitos podemos continuar con la instalación del módulo principal `AsBuiltReport.Microsoft.AD`.
 
 ```powershell
 PS C:\WINDOWS\system32> Install-Module -Name AsBuiltReport.Microsoft.AD
@@ -217,7 +217,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 }
 ```
 
-El comando New-AsBuiltReportConfig permite establecer los parámetros técnico del reporte como el nivel y tipo de información `verbose level`.
+El comando New-AsBuiltReportConfig permite establecer los parámetros técnicos del reporte como el nivel y tipo de información `verbose level`.
 
 ```powershell
 PS C:\WINDOWS\system32> New-AsBuiltReportConfig -Report Microsoft.AD -FolderPath C:\Users\jocolon\AsBuiltReport\
@@ -291,7 +291,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 }
 ```
 
-Este archivo de configuración se puede utilizar para especificar el nivel de detalle del reporte como también que sesiones del reporte van a ser habilitadas.
+Este archivo de configuración se puede utilizar para especificar el nivel de detalle del reporte como también qué sesiones del reporte van a ser habilitadas.
 
 Luego podemos generar el reporte utilizando el comando `New-AsBuiltReport -Report Microsoft.AD -Target DC_FQDN`. Es importante recalcar que es requerido que la computadora donde se genere el reporte esté añadida al dominio de AD que se quiere documentar. También es requerido utilizar el `fully qualified domain name (FQDN)` del servidor con el rol de `Domain Controller` que esté dentro del `Forest` de AD.
 
@@ -320,7 +320,7 @@ Aquí les dejo el ejemplo de la documentación generada.
 
 {{< embed-pdf url=`./img/Sample-Microsoft-AD-As-Built-Report.pdf` >}}
 
-Adicionalmente les incluyo varios ejemplos de cómo invocar el reporte.
+Adicionalmente, les incluyo varios ejemplos de cómo invocar el reporte.
 
 ```powershell
 # Generate a Microsoft Active Directory As Built Report for Domain Controller Server 'admin-dc-01v.contoso.local' using specified credentials. Export report to HTML & DOCX formats. Use default report style. Append timestamp to report filename. Save reports to 'C:\Users\Jon\Documents'

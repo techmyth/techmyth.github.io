@@ -5,9 +5,9 @@ tags:
     - VEEAM
 ---
 
-Hola a tod@s!
+¡Hola a tod@s!
 
-Como ya bien saben debido al impacto de la pandemia de Covid-19 no he tenido mucho espacio para hacer otra cosa que no sea estar encerrado en mi casa 😒. Más aún cuando tantos de mis familiares han dado positivo al virus. De manera que esta situación ha sido la mejor excusa para ponerme a programar. Recientemente he recibido muchas peticiones de varios usuario y amigos para que desarrolle un reporte que documentación de la aplicación de Backup `Veeam Backup & Replication`.
+Como ya bien saben debido al impacto de la pandemia de Covid-19 no he tenido mucho espacio para hacer otra cosa que no sea estar encerrado en mi casa 😒. Más aún cuando tantos de mis familiares han dado positivo al virus. De manera que esta situación ha sido la mejor excusa para ponerme a programar. Recientemente, he recibido muchas peticiones de varios usuarios y amigos para que desarrolle un reporte que documentación de la aplicación de Backup `Veeam Backup & Replication`.
 
 Por esta razón, me di a la tarea de desarrollar otro reporte más, sí otro más 🤣 y está relacionado a documentar las implementaciones de `Veeam Backup & Replication` específicamente para la versión `12+` en adelante. Este reporte utiliza como base el `framework` del proyecto de AsBuildReport creado por [Tim Carman](https://www.asbuiltreport.com/).
 
@@ -30,7 +30,6 @@ Ahora bien, para comenzar necesitamos cumplir con los siguientes requisitos:
 - El modulo de PSGraph >= 2.1.38.27
 - El modulo de Pscribo >= 0.10.0
 - El modulo de PscriboCharts >= 0.9.0
-
 
 Este reporte utiliza la versión de PowerShell 5.+, para validar la versión podemos utilizar la variable `$PSVersionTable` desde la consola de PowerShell:
 
@@ -65,15 +64,15 @@ Manifest   12.1.0.2131 Veeam.Backup.PowerShell {Get-VBRAmazonEC2VM, Get-VBRAzure
 PS C:\Users\jocolon>
 ```
 
-Si el comando no produce algún resultado quiere decir que el módulos no están instalados. Ahora bien para instalar los módulos de `Veeam.Backup.PowerShell` es importante mencionar que estos están disponible en el servidor de Backup de Veeam o en cualquier dispositivo donde la consola de manejo esté instalada. 
+Si el comando no produce algún resultado quiere decir que el módulo no están instalados. Ahora bien para instalar los módulos de `Veeam.Backup.PowerShell` es importante mencionar que estos están disponible en el servidor de Backup de Veeam o en cualquier dispositivo donde la consola de manejo esté instalada.
 
-#### Referencia:
+#### Referencia
 
 > The remote machine from which you run Veeam PowerShell commands must have the Veeam Backup & Replication Console installed. After you install the Veeam Backup & Replication Console, Veeam PowerShell module will be installed by default
 >
 > [Veeam PowerShell Reference](https://helpcenter.veeam.com/docs/backup/powershell/)
 
-Para instalar el reporte ``AsBuiltReport.Veeam.VBR``  desde `PowerShell Gallery` utilizamos el comando tradicional `Install-Module -Name AsBuiltReport.Veeam.VBR`:
+Para instalar el reporte ``AsBuiltReport.Veeam.VBR`` desde `PowerShell Gallery` utilizamos el comando tradicional `Install-Module -Name AsBuiltReport.Veeam.VBR`:
 
 ```powershell
 PS C:\Users\jocolon> Install-Module -Name AsBuiltReport.Veeam.VBR  
@@ -109,7 +108,7 @@ Un requisito opcional es generar los archivos de configuración que te permite e
 
 #### Archivos de configuración (AsBuiltReport JSON`)
 
-El cmdlet de powershell `New-AsBuiltConfig` te permite generar la plantilla que utilizaremos como base del reporte. Esta plantilla establece los parámetros no técnicos del reporte.
+El cmdlet de PowerShell `New-AsBuiltConfig` te permite generar la plantilla que utilizaremos como base del reporte. Esta plantilla establece los parámetros no técnicos del reporte.
 
 ```powershell
 PS C:\Users\jocolon>  New-AsBuiltConfig
@@ -192,7 +191,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 
 ```
 
-El comando `New-AsBuiltReportConfig` permite establecer los parámetros técnico del reporte como el nivel y tipo de información `verbose level`.
+El comando `New-AsBuiltReportConfig` permite establecer los parámetros técnicos del reporte como el nivel y tipo de información `verbose level`.
 
 ```powershell
 PS C:\Users\jocolon> New-AsBuiltReportConfig Veeam.VBR -FolderPath C:\Users\jocolon\AsBuiltReport\
@@ -308,7 +307,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 }
 ```
 
-Este archivo de configuración se puede utilizar para especificar el nivel de detalle del reporte como también que sesiones del reporte van a ser habilitadas.
+Este archivo de configuración se puede utilizar para especificar el nivel de detalle del reporte como también qué sesiones del reporte van a ser habilitadas.
 
 Luego podemos generar el reporte utilizando el comando `New-AsBuiltReport -Report Veeam.VBR -Target Backup_Server_FQDN_or_IP -AsBuiltConfigFilePath AsBuiltReport.json -OutputFolderPath C:\Users\jocolon\AsBuiltReport\ -Credential $Cred -Format HTML -ReportConfigFilePath AsBuiltReport.Veeam.VBR.json -EnableHealthCheck -Verbose`. Es importante recalcar que es requerido utilizar la dirección del servidor de backup de Veeam como `Target`.
 
@@ -334,7 +333,7 @@ Aquí les dejo el ejemplo del reporte generado.
 
 &nbsp;
 
-Adicionalmente les incluyo varias opciones de cómo invocar el reporte.
+Adicionalmente, les incluyo varias opciones de cómo invocar el reporte.
 
 ```powershell
 # Generate a Veeam VBR As Built Report for Backup Server 'backup-server.fqdn.local' using specified credentials. Export report to HTML & DOCX formats. Use default report style. Append timestamp to report filename. Save reports to 'C:\Users\Jon\Documents'

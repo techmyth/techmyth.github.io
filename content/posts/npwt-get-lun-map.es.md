@@ -9,9 +9,9 @@ tags:
   - "Powershell"
 ---
 
-Recientemente en un [post](https://community.netapp.com/t5/Microsoft-Virtualization-Discussions/PSTK-Combine-the-output-of-Get-NcLunMap-and-Get-NcIgroup-custom-object/m-p/164648/highlight/true#M6354) del foro de NetApp un usuario solicito ayuda para crear una función en Powershell utilizando las librerías de DataOntap. Aquí les muestro como utilizamos estas librerías para conseguir unir múltiples objetos con información relacionada a los LUN asignados en NetApp.
+Recientemente en un [post](https://community.netapp.com/t5/Microsoft-Virtualization-Discussions/PSTK-Combine-the-output-of-Get-NcLunMap-and-Get-NcIgroup-custom-object/m-p/164648/highlight/true#M6354) del foro de NetApp un usuario solicito ayuda para crear una función en Powershell utilizando las librerías de `DataOntap`. Aquí les muestro como utilizamos estas librerías para conseguir unir múltiples objetos con información relacionada con los `LUN` asignados en NetApp.
 
-Un dato curioso sobre esta petición es que de manera nativa las librerías de Ontap no te permiten filtrar la información requerida y que pueda ser desplegada en una sola Tabla. Para esto creamos un objeto dentro de PowerShell donde podemos construir el formato de la información y que este tenga un sentido mas lógico.
+Un dato curioso sobre esta petición es que de manera nativa las librerías de Ontap no te permiten filtrar la información requerida y que pueda ser desplegada en una sola Tabla. Para esto creamos un objeto dentro de PowerShell donde podemos construir el formato de la información y que este tenga un sentido más lógico.
 
 Las librerías de NetApp pueden ser instaladas desde el `PowerShell Gallery`:
 

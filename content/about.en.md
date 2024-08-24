@@ -3,8 +3,8 @@ title: "About me"
 draft: false
 ---
 
-I am a it consultant who works for Zen PR Solutions. My primary interest is in infrastructure
-implementation and management, software development with focus on automation, devops and networking.
+I am an `Infrastructure & Technology` consultant who works for Zen PR Solutions. My primary interest is in infrastructure
+implementation and management, software development with focus on automation, DevOps and networking.
 I am also involved in security and open source contribution aspects of the projects and products I co-maintain.
 
 My internet nick is typically `rebelinux`, that's re-vel-linus.
@@ -21,12 +21,12 @@ I live and work in [Puerto Rico](https://www.discoverpuertorico.com/) 🇵🇷�
 * 2019: information technology consultant, Zen PR Solutions
 * 2010: server/systems administrator, Ana G. Mendez University
 * 2008: information technology support specialist, Ana G. Mendez University
-* 2003: information technology technician, Inter American University of Puerto Rico
+* 2003: information technology technician, Inter-American University of Puerto Rico
 
 ### Formal education
 
-* 2020: Master Degree in Computer science with Specialization in Network and Security Systems, Inter American University of Puerto Rico
-* 2004: Bachelor’s Degree in Computer System Installation and Repair, Inter American University of Puerto Rico
+* 2020: Master Degree in Computer science with Specialization in Network and Security Systems, Inter-American University of Puerto Rico
+* 2004: Bachelor’s Degree in Computer System Installation and Repair, Inter-American University of Puerto Rico
 
 ### Professional certifications
 

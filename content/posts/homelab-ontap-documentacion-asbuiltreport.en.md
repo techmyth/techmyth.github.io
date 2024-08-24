@@ -9,7 +9,7 @@ Hello everyone!
 
 This time I come to talk about a project that I have been working on for a few months. If you remember some time ago I wrote about the AsBuildReport tool specifically the module to document VMware vSphere based infrastructures see the post [here](http://192.168.7.40/2021/06/06/homelab-automated-vmware-infrastructure-documentation/). Well today I come to show you a module that I help to develop with the purpose of documenting NetApp storage devices specifically on the ONTAP operating system.
 
-This report is in an initial state and in active development, but I decided to release it publicly in order to receive recommendations or rather to encourage other developers to contribute to improve its content. The development website of the report is in Github I leave the link so you can see the scope and objective of the project:
+This report is in an initial state and in active development, but I decided to release it publicly in order to receive recommendations or rather to encourage other developers to contribute to improve its content. The development website of the report is in GitHub I leave the link so you can see the scope and objective of the project:
 
 <https://github.com/AsBuiltReport/AsBuiltReport.NetApp.ONTAP>
 
@@ -314,7 +314,7 @@ Here is an example of the resulting report.
 
 {{< embed-pdf url="./img/Sample-NetApp-ONTAP-As-Built-Report.pdf" >}}
 
-Additionally I include several command line examples of how to generate the report. I hope you like it!
+Additionally, I include several command line examples of how to generate the report. I hope you like it!
 
 ```text
 # Generate a NetApp ONTAP As Built Report for Cluster array '192.168.7.60' using specified credentials. Export report to HTML & DOCX formats. Use default report style. Append timestamp to report filename. Save reports to 'C:\Users\Jon\Documents'>

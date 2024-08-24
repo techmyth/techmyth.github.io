@@ -8,7 +8,7 @@ tags:
 
 Hola a todos,
 
-En esta ocasión estaré hablando un poco de un proyecto que he estado trabajando en los últimos meses y que tiene la utilizad de crear diagramas básicos de los componentes de la infraestructura de Veeam Backup & Replication. La utilidad se llama Veeam.Diagrammer y pueden ver la página del proyecto en Github. A continuación les dejo el enlace para que puedan ver las características de esta utilidad.
+En esta ocasión estaré hablando un poco de un proyecto que he estado trabajando en los últimos meses y que tiene la utilidad de crear diagramas básicos de los componentes de la infraestructura de `Veeam Backup & Replication`. La utilidad se llama `Veeam.Diagrammer` y pueden ver la página del proyecto en GitHub. A continuación les dejo el enlace para que puedan ver las características de esta utilidad.
 
 - <https://github.com/rebelinux/Veeam.Diagrammer>
 
@@ -16,11 +16,11 @@ En esta ocasión estaré hablando un poco de un proyecto que he estado trabajand
 
 Demás está en decir que este proyecto está actualmente en continuo desarrollo por ende puede que se encuentren con errores o bugs 😁.
 
-#### Importante: Este módulo se encuentra publicado en PowerShell Gallery.
+#### Importante: Este módulo se encuentra publicado en PowerShell Gallery
 
 Ahora, para empezar, hay que cumplir los siguientes requisitos:
 
-- Windows OS (Los módulos de Veeam sólo funcionan en Windows)
+- Windows OS (Los módulos de Veeam solo funcionan en Windows)
 - PowerShell v5.1+
 - Veeam.Backup.PowerShell module >= 1.0
 
@@ -59,13 +59,13 @@ Manifest   1.0        Veeam.Backup.PowerShell             {Get-VBRComputerFilePr
 PS C:\Users\jocolon> 
 ```
 
-Si el comando no devuelve ningún resultado, significa que el módulo no está instalado. Es importante señalar que los módulos Veeam.Backup.PowerShell están disponibles en el servidor de Veeam Backup o en cualquier dispositivo donde ya esté instalada la consola de gestión. Referencia:
+Si el comando no devuelve ningún resultado, significa que el módulo no está instalado. Es importante señalar que los módulos `Veeam.Backup.PowerShell` están disponibles en el servidor de Veeam Backup o en cualquier dispositivo donde ya esté instalada la consola de gestión. Referencia:
 
-> El equipo remoto desde el que se ejecutan los comandos de Veeam PowerShell debe tener instalada la consola de Veeam Backup & Replication. Después de instalar la consola, el módulo de powershell de Veeam se instalará de forma predeterminada.
+> El equipo remoto desde el que se ejecutan los comandos de Veeam PowerShell debe tener instalada la consola de `Veeam Backup & Replication`. Después de instalar la consola, el módulo de powershell de Veeam se instalará de forma predeterminada.
 >
 > [Veeam PowerShell Reference](https://helpcenter.veeam.com/docs/backup/powershell/)
 
-Para instalar el `Veeam.Diagrammer` desde la `PowerShell Gallery` utilice el comando `Install-Module`:
+Para instalar el `Veeam.Diagrammer` desde la `PowerShell Gallery`, utilice el comando `Install-Module`:
 
 ```text
 PS C:\Users\jocolon> Install-Module -Name Veeam.Diagrammer                                                                                                                    
@@ -95,7 +95,7 @@ Manifest   1.0        Veeam.Backup.PowerShell             {Get-VBRComputerFilePr
 PS C:\Users\jocolon> 
 ```
 
-Por último, se utiliza el cmdlet `New-VeeamDiagram` para producir el diagrama. Es importante tener en cuenta que es necesario utilizar la dirección IP o el FQDN del Veeam Backup Server como `Target`.
+Por último, se utiliza el cmdlet `New-VeeamDiagram` para producir el diagrama. Es importante tener en cuenta que es necesario utilizar la dirección IP o el FQDN del servidor de Veeam Backup como `Target`.
 
 #### Guardar Credenciales en una Variable
 
@@ -161,15 +161,15 @@ PS C:\Users\jocolon>
 
 He aquí ejemplos del diagrama generado.
 
-#### Tape Infrastructure Diagram
+#### Diagrama de la infraestructura de Cintas
 
 ![Text](/img/Output.webp#center)
 
-#### Backup Repository Diagram
+#### Diagrama de los Repositorios de Backup
 
 ![Text](/img/Output1.webp#center)
 
-#### Scale-Out Backup Repository Diagram
+#### Diagrama de los repositorios Scale-Out  
 
 ![Text](/img/Output2.webp#center)
 
@@ -220,4 +220,4 @@ También incluyo varias opciones sobre cómo construir el diagrama.
     Control to enable subgraph debugging ( Subgraph Lines ).
 ```
 
-#### Hasta Luego Amigos!
+#### Hasta Luego Amigos

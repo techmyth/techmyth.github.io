@@ -7,7 +7,7 @@ tags:
     - VMware
 ---
 
-The vSphere 7.0 U2 release provides the ability to use native snapshot when using the NFS protocol as the access mechanism. As described on the VMware blog:
+The `vSphere` 7.0 U2 release provides the ability to use native snapshot when using the NFS protocol as the access mechanism. As described on the VMware blog:
 
 > `NFS Improvements`
 >
@@ -19,8 +19,8 @@ The vSphere 7.0 U2 release provides the ability to use native snapshot when usin
 
 In this blog I explain the configuration needed to test this new feature. To start we should validate the prerequisites to be able to implement this solution. According to the VMware documentation portal the prerequisites are as follows:
 
-- Verify that the NAS array supports the fast file clone operation with the VAAI NAS program.
-- On your ESXi host, install vendor-specific NAS plug-in that supports the fast file cloning with VAAI.
+- Verify that the NAS array supports the fast file clone operation with the `VAAI` NAS program.
+- On your ESXi host, install vendor-specific NAS plug-in that supports the fast file cloning with `VAAI`.
 - Follow the recommendations of your NAS storage vendor to configure any required settings on both the NAS array and ESXi.
 
 The NFS configuration will be done in NetApp Ontap using the `NetApp NFS Plug-in for VMware VAAI` plugin that recently added native NFS snapshot offload support.
@@ -29,11 +29,11 @@ The NFS configuration will be done in NetApp Ontap using the `NetApp NFS Plug-in
 
 ![Text](/img/NetApp-NFS-Plugin-1-1024x577.webp#center)
 
-Once we are in the NetApp support portal we must download version 2.0 of the plugin as shown in the following image. To install the plugin we need to unzip the downloaded file and rename the file inside the folder named vib20 with the extension .vib to the new name `NetAppNasPlugin.vib`.
+Once we are in the NetApp support portal we must download version 2.0 of the plugin as shown in the following image. To install the plugin we need to unzip the downloaded file and rename the file inside the folder named vib20 with the extension `.vib` to the new name `NetAppNasPlugin.vib`.
 
 ![Text](/img/2021-05-30_20-33-1024x707.webp#center)
 
-In the next step I used the NetApp Ontap Tools to install the plugin but it can also be installed using VMware Lifecycle Manager.
+In the next step I used the NetApp Ontap Tools to install the plugin, but it can also be installed using VMware Lifecycle Manager.
 
 ![Text](/img/2021-05-30_20-49-1024x510.webp#center)
 
@@ -49,7 +49,7 @@ The following image shows that the installation of the plugin was successful. An
 
 ![Text](/img/2021-05-30_20-48-1024x288.webp#center)
 
-After installing the plugin we will proceed to validate that the Ontap Storage has support for VMware vStorage APIs for Array Integration (VAAI) features in the NFS environment. This can be verified with the command `vserver nfs show -fields vstorage`. As you can see the vStorage function is currently disabled in the SVM called NFS. To enable the vStorage function use the `vserver nfs modify -vstorage enabled` command.
+After installing the plugin we will proceed to validate that the Ontap Storage has support for VMware `vStorage APIs for Array Integration (VAAI)` features in the NFS environment. This can be verified with the command `vserver nfs show -fields vstorage`. As you can see the `vStorage` function is currently disabled in the SVM called NFS. To enable the `vStorage` function use the `vserver nfs modify -vstorage enabled` command.
 
 ```text
 OnPrem-HQ::> vserver nfs show -fields vstorage 
@@ -111,7 +111,7 @@ The following image shows the time it took to apply the snapshot changes to the 
 
 ![Text](/img/2021-05-31_20-05-1024x134.webp#center)
 
-In this last example the `New-Snapshot` command was also used to create the snapshot but with the `snapshot.alwaysAllowNative` option set to `TRUE`. In that way i can test the use of Native Snapshot Offload in NFS. Here again, a `10GB` file was copied to the VM to grow the snapshot, so i can measure how quickly changes are applied to the base disk when the snapshot is deleted.
+In this last example the `New-Snapshot` command was also used to create the snapshot but with the `snapshot.alwaysAllowNative` option set to `TRUE`. In that way i can test the use of Native Snapshot Offload in NFS. Here again, a `10GB` file was copied to the VM to grow the snapshot, so I can measure how quickly changes are applied to the base disk when the snapshot is deleted.
 
 ```text
 PS /home/rebelinux> get-vm -Name RocaWeb | New-Snapshot -Name POST_Native_Array_Snapshot | Format-Table -Wrap -AutoSize
@@ -122,7 +122,7 @@ POST_Native_Array_Snapshot                                    PoweredOff
 PS /home/rebelinux> 
 ```
 
-Here we can see that there is no `-delta.vmdk` file but there is a file named `RocaWeb\_2-000001-flat.vmdk` with the same size of `500GB` as the `RocaWeb\_2-flat.vmdk` file. This allows us to confirm that the NFS Native Snapshot Offload feature is enabled in Ontap.
+Here we can see that there is no `-delta.vmdk` file, but there is a file named `RocaWeb\_2-000001-flat.vmdk` with the same size of `500GB` as the `RocaWeb\_2-flat.vmdk` file. This allows us to confirm that the NFS Native Snapshot Offload feature is enabled in Ontap.
 
 ```sh
 [root@comp-01a:/vmfs/volumes/55ab62ec-2abeb31b/RocaWeb] ls -alh

@@ -7,7 +7,7 @@ tags:
   - "VMware"
 ---
 
-En este blog, estaré validando si la función de "ESXi QuickBoot" trabaja en modo Nested osea correr ESXi en una VM. Primero que nada debemos saber que es QuickBoot y que requerimientos tiene. Para esto utilizaré como referencia la documentación del portal de VMWare:
+En este blog, estaré validando si la función de "ESXi QuickBoot" trabaja en modo Nested óseaa correr ESXi en una VM. Primero que nada debemos saber que es `QuickBoot` y que requerimientos tiene. Para esto utilizaré como referencia la documentación del portal de VMWare:
 
 > Quick Boot es una función de vSphere que acelera el proceso de actualización de un servidor ESXi. Un reinicio normal implica un ciclo de alimentación completo que requiere la inicialización del firmware y de los dispositivos. Quick Boot optimiza la ruta de reinicio para evitar esto, ahorrando un tiempo considerable del proceso de actualización.
 
@@ -30,7 +30,7 @@ Limitaciones en vSphere 6.7:
 - No hay VM con dispositivos en "passthrough" configurados
 - No hay controladores vmklinux cargados en el ESXi
 
-La documentación de VMware incluye un listado de manufactureros de servidores compatibles con ésta tecnología para referencia puede ver en enlace del [knowledge Base](https://kb.vmware.com/s/article/52477).
+La documentación de `VMware` incluye un listado de manufactureros de servidores compatibles con esta tecnología para referencia puede ver en enlace del [knowledge Base](https://kb.vmware.com/s/article/52477).
 
 Para ESXi 7.0 o versiones más recientes, puede comprobar la compatibilidad del `hardware` aquí:
 
@@ -40,7 +40,7 @@ Para ESXi 7.0 o versiones más recientes, puede comprobar la compatibilidad del 
 - Quick Boot en Fujitsu
 - Quick Boot en Lenovo
 
-En éste laboratorio haré pruebas con ESXi virtual utilizando "Nested Virtualization". Es importante aclarar que este es un ambiente de prueba. Para utilizar esta tecnología  en ambientes de producción es necesario activar la opción de QuickBoot desde `VMware Update Manager`  o el renombrado `Lifecycle Manager`. Si les interesa les dejo un vídeo aquí
+En este laboratorio haré pruebas con ESXi virtual utilizando "Nested Virtualization". Es importante aclarar que este es un ambiente de prueba. Para utilizar esta tecnología en ambientes de producción es necesario activar la opción de QuickBoot desde `VMware Update Manager`  o el renombrado `Lifecycle Manager`. Si les interesa les dejo un vídeo aquí
 
 [Updates Installation with vSphere ESXi QuickBoot](https://youtu.be/FTwglwgDWAE)
 
@@ -57,7 +57,7 @@ Platform Information
 [root@comp-01a:~]
 ```
 
-El primer paso para activar QuickBoot es validar la compatibilidad del servidor. Para esto es necesario conectarse por SSH al servidor de ESXi para ejecutar el comando `loadESXCheckCompat.py`. En mi caso el comando válido que mi plataforma es compatible.
+El primer paso para activar `QuickBoot` es validar la compatibilidad del servidor. Para esto es necesario conectarse por SSH al servidor de ESXi para ejecutar el comando `loadESXCheckCompat.py`. En mi caso el comando válido que mi plataforma es compatible.
 
 ```text
 [root@comp-01a:~] /usr/lib/vmware/loadesx/bin/loadESXCheckCompat.py
@@ -65,7 +65,7 @@ This system is compatible with Quick Boot.
 [root@comp-01a:~]
 ```
 
-Una vez validamos que el servidor es compatible podemos activar la función de QuickBoot con el comando `loadESXEnable -e`.
+Una vez validamos que el servidor es compatible podemos activar la función de `QuickBoot` con el comando `loadESXEnable -e`.
 
 ```text
 [root@comp-01a:~] /bin/loadESXEnable -e
@@ -75,7 +75,7 @@ INFO:   All prechecks are enabled.
 [root@comp-01a:~]
 ```
 
-El paso final para activar la función de QuickBoot sería cargar la configuración de `QuickLaunch` utilizando el comando `loadESX.py`.
+El paso final para activar la función de `QuickBoot` sería cargar la configuración de `QuickLaunch` utilizando el comando `loadESX.py`.
 
 ```text
 [root@comp-01a:~] /usr/lib/vmware/loadesx/bin/loadESX.py
@@ -98,7 +98,7 @@ INFO: Performing QuickLaunch kernel preload...
 [root@comp-01a:~] 
 ```
 
-Les incluyo unos vídeos de prueba para que puedan visualizar cuan rápida es la tecnología de QuickBoot al reiniciar el servidor.
+Les incluyo unos vídeos de prueba para que puedan visualizar cuan rápida es la tecnología de `QuickBoot` al reiniciar el servidor.
 
 VMware vSphere Normal Boot:
 {{< youtube o0rvzKIu4DY >}}

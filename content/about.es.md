@@ -17,8 +17,8 @@ Vivo y trabajo en [Puerto Rico](https://www.discoverpuertorico.com/es) 🇵🇷�
 ### Experiencia
 
 * 2019: consultor en tecnologías de la información, Zen PR Solutions
-* 2010: administrador de servidores/sistemas, Universidad Ana G. Mendez
-* 2008: especialista en apoyo informático, Universidad Ana G. Mendez
+* 2010: administrador de servidores/sistemas, Universidad Ana G. Méndez
+* 2008: especialista en apoyo informático, Universidad Ana G. Méndez
 * 2003: técnico informático, Universidad Inter Americana de Puerto Rico
 
 ### Educación formal

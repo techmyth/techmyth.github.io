@@ -11,7 +11,7 @@ Hello everyone!
 
 I took on the task of developing yet another report, yes yet another one 🤣 and it is related to the documentation of `Veeam Backup & Replication` implementations in specific for version `12+` onwards. This report is based on the AsBuildReport `framework` which is a project created by [Tim Carman](https://www.asbuiltreport.com/).
 
-The source code of the report can be found in Github here I leave the link so you can see the scope of the project.
+The source code of the report can be found in GitHub here I leave the link so you can see the scope of the project.
 
 - <https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR>
 
@@ -21,7 +21,7 @@ The source code of the report can be found in Github here I leave the link so yo
 
 Now, to get started we need to meet the following requirements:
 
-- Windows platform only (Veeam powershell modules run on Windows only)
+- Windows platform only (Veeam PowerShell modules run on Windows only)
 - PowerShell v5.1+
 - AsBuiltReport.Core >= 1.4.0
 - Veeam.Backup.PowerShell >= 1.0
@@ -50,7 +50,7 @@ SerializationVersion           1.1.0.1
 PS C:\Users\jocolon>
 ```
 
-### Installation from PowerShellGallery
+### Installation from PowerShel lGallery
 
 To validate whether the required Veeam modules are present, use the cmdlet `Get-Module -ListAvailable -Name @('Veeam.Backup.PowerShell') | Format-Table -AutoSize` as shown in the example below:
 
@@ -68,7 +68,7 @@ PS C:\Users\jocolon>
 
 If the cmdlet does not produce any result it means that the modules are not installed. In order to install the `Veeam.Backup.PowerShell` modules, it is important to mention that they are available on the Veeam Backup server or on any device where the management console is installed.
 
-#### Reference:
+#### Reference
 
 > The remote machine from which you run Veeam PowerShell commands must have the Veeam Backup & Replication Console installed. After you install the Veeam Backup & Replication Console, Veeam PowerShell module will be installed by default
 >
@@ -114,9 +114,9 @@ PS C:\Users\jocolon> Install-Module -SkipPublisherCheck -Force -Name @('PScribo'
 
 ### Installation without Internet access
 
-If for any reason, the computer where you are going to run the report does not have Internet access to download and install the required powershell modules from PowershellGallery. Since Powershell 5.1+ it is possible to save the previously installed modules on a computer so that they can be installed on the computer where the report will finally be run.
+If for any reason, the computer where you are going to run the report does not have Internet access to download and install the required powershell modules from PowershellGallery. Since PowerShell 5.1+ it is possible to save the previously installed modules on a computer so that they can be installed on the computer where the report will finally be run.
 
-The `Save-Module` cmdlet allows you to save the required powershell modules.
+The `Save-Module` cmdlet allows you to save the required PowerShell modules.
 
 ```powershell
 PS C:\Users\jocolon> Save-Module -Path "C:\Users\Administrator\Downloads\OfflineModules" -Name @('PScribo', 'PScriboCharts', 'AsBuiltReport.Core', 'AsBuiltReport.Veeam.VBR', 'Veeam.Diagrammer')
@@ -146,13 +146,13 @@ Veeam.Backup.PowerShell 12.1.0.2131
 PS C:\Users\jocolon>
 ```
 
-If for whatever reason, you have errors that the modules cannot be found or cannot be loaded in most cases it is recommended to quit the Powershell console and reopen a new Powershell session.
+If for whatever reason, you have errors that the modules cannot be found or cannot be loaded in most cases it is recommended to quit the PowerShell console and reopen a new PowerShell session.
 
 ### Configuration files (AsBuiltReport JSON)
 
 An optional requirement is to build the configuration files that allow you to set the organization parameters that are used for report generation. This process generates JSON files that are used as templates `templates` so that you do not have to fill in repetitive information when generating the reports.
 
-The powershell cmdlet `New-AsBuiltConfig` allows you to generate the template that you will use as the basis of the report. This template sets the non-technical parameters of the report.
+The PowerShell cmdlet `New-AsBuiltConfig` allows you to generate the template that you will use as the basis of the report. This template sets the non-technical parameters of the report.
 
 ```powershell
 PS C:\Users\jocolon>  New-AsBuiltConfig
@@ -351,11 +351,11 @@ Once the process is completed, a JSON file will be created with the following co
 }
 ```
 
-These configuration file can be used to specify the level of detail of the report as well as which report sections will be enabled.
+This configuration file can be used to specify the level of detail of the report as well as which report sections will be enabled.
 
 ### Report generation
 
-The report can then be generated using the cmdlet: `New-AsBuiltReport -Report Veeam.VBR -Target Backup_Server_FQDN_or_IP -AsBuiltConfigFilePath AsBuiltReport.json -OutputFolderPath C:\Users\jocolon\AsBuiltReport\ -Credential $Cred -Format HTML -ReportConfigFilePath AsBuiltReport.Veeam.VBR.json -EnableHealthCheck -Verbose`. 
+The report can then be generated using the cmdlet: `New-AsBuiltReport -Report Veeam.VBR -Target Backup_Server_FQDN_or_IP -AsBuiltConfigFilePath AsBuiltReport.json -OutputFolderPath C:\Users\jocolon\AsBuiltReport\ -Credential $Cred -Format HTML -ReportConfigFilePath AsBuiltReport.Veeam.VBR.json -EnableHealthCheck -Verbose`.
 
 It is important to note that it is required to use the `IP Address or FQDN` of the Veeam backup server as `Target`.
 

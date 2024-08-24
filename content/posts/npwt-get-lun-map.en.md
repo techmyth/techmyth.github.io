@@ -9,7 +9,7 @@ tags:
   - "Powershell"
 ---
 
-Recently in a [post](https://community.netapp.com/t5/Microsoft-Virtualization-Discussions/PSTK-Combine-the-output-of-Get-NcLunMap-and-Get-NcIgroup-custom-object/m-p/164648/highlight/true#M6354) on the NetApp forum a user asked for help to create a function in Powershell using the DataOntap libraries. Here I show you how we use these libraries to join multiple objects with information related to the LUNs assigned in NetApp.
+Recently in a [post](https://community.netapp.com/t5/Microsoft-Virtualization-Discussions/PSTK-Combine-the-output-of-Get-NcLunMap-and-Get-NcIgroup-custom-object/m-p/164648/highlight/true#M6354) on the NetApp forum a user asked for help to create a function in Powershell using the `DataOntap` libraries. Here I show you how we use these libraries to join multiple objects with information related to the `LUNs` assigned in NetApp.
 
 A curious fact about this request is that natively Ontap libraries do not allow you to filter the required information and that it can be displayed in a single table. For this we create an object within PowerShell where we can build the format of the information and that this has a more logical sense.
 

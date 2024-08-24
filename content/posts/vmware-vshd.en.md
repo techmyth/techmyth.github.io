@@ -21,8 +21,7 @@ Benefits:
 
 To start we must access the following link where we can download the OVA file that allows us to manage the creation of the virtual machine where the VSHD services run.
 
-- https://my.vmware.com/group/vmware/get-download?downloadGroup=SKYLINE_HD_VSPHERE
-
+- <https://my.vmware.com/group/vmware/get-download?downloadGroup=SKYLINE_HD_VSPHERE>
 
 Once authenticated on the VMware portal you will be redirected to the area where you can download the file OVA.
 
@@ -72,7 +71,7 @@ The installation process can be monitored from the `Recent Tasks` tab.
 
 ![Text](/img/2021-07-25_12-06_1.webp)
 
-An optional requirement is the association of a DNS name to the IP used in the installation process. In the following screen we can see how to register a DNS name `FQDN` using Powershell from a Windows console
+An optional requirement is the association of a DNS name to the IP used in the installation process. In the following screen we can see how to register a DNS name `FQDN` using PowerShell from a Windows console
 
 ```text
 Windows PowerShell
@@ -128,7 +127,7 @@ In this next image we can see the progress of the diagnostic information gatheri
 
 ![Text](/img/2021-07-30_15-14_1-1.webp)
 
-Additionally from the vCenter management console you can see a task related to the gathering process.
+Additionally, from the vCenter management console you can see a task related to the gathering process.
 
 ![Text](/img/2021-07-30_15-15.webp)
 

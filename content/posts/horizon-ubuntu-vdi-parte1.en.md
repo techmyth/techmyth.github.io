@@ -14,13 +14,13 @@ tags:
 
 <!---[Parte 1]({{< ref "/posts/horizon-ubuntu-vdi-parte1.es.md" >}} "Cómo utilizar Ubuntu Linux 22.04 como VDI en Horizon 8 2303")-->
 
-This time I am going to talk about how to use `HashiCorp` `packer` to create a VM master image that can be used as a template to publish a Pool in VMware Horizon. Although there are many HowTo's on how to automatically create a template with `packer`, all the ones I have seen are oriented to Windows 10/11 and not for Linux. It is for this reason, that I gave myself the task of creating this post.
+This time I am going to talk about how to use `HashiCorp` `packer` to create a VM master image that can be used as a template to publish a Pool in VMware Horizon. Although there are many How-to's on how to automatically create a template with `packer`, all the ones I have seen are oriented to Windows 10/11 and not for Linux. It is for this reason, that I gave myself the task of creating this post.
 
 It is important to mention that VMware offers several examples of how to create a template for the different operating systems that can be automated with `packer`. Here is the link:
 
 <https://github.com/hashicorp/packer-plugin-vsphere>
 
-This article uses Ubuntu Linux 22.04 as an example but it is also possible to automate any Linux version supported by VMware Horizon for Linux desktops.
+This article uses Ubuntu Linux 22.04 as an example, but it is also possible to automate any Linux version supported by VMware Horizon for Linux desktops.
 
 | Linux Distribution    |      Architecture      |
 |----------|:-------------:|
@@ -36,7 +36,7 @@ To start, I have created a `packer` template for Ubuntu 22.04 that I am going to
 
 <https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso>
 
-The first step would be to clone the Github repository locally. In my case I am using Linux on my main computer but Windows 10/11 can also be used for this example.
+The first step would be to clone the GitHub repository locally. In my case I am using Linux on my main computer but Windows 10/11 can also be used for this example.
 
 To do this we will use the command `git clone "https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso`
 
@@ -131,9 +131,9 @@ build_password_encrypted = "$6$rounds=4096$Y0SjrsU5WHubYJvb$0BJhswGEAokE2OqlRFTg
 iso_path = ["[HDD-VM-ISO-LOW-PERF] /ISO/Linux/ubuntu-22.04-live-server-amd64.iso"]
 ```
 
-Esta porción del archivo define los parámetros del Ambiente de dominio para adjuntar la VM a Active Directory:
+This portion of the file defines the Domain Environment settings for attaching the VM to Active Directory:
 
-##### Note: For SSO to work, it is required to join the VM to a Active Directory domain
+##### Note: For SSO to work, it is required to join the VM to an Active Directory domain
 
 ```bash
 # NTP Server

@@ -6,7 +6,7 @@ tags:
     - VMware
 ---
 
-En este blog estaré hablando sobre como automatizar la creación de reportes de documentación de nuestra infraestructura virtual. Existen varias soluciones comerciales para generar este tipo de reporte pero estaré hablando de [`As Built Report`](https://www.asbuiltreport.com/) una herramienta gratuita que utiliza powershell como base para generar los reportes.
+En este blog estaré hablando sobre como automatizar la creación de reportes de documentación de nuestra infraestructura virtual. Existen varias soluciones comerciales para generar este tipo de reporte, pero estaré hablando de [`As Built Report`](https://www.asbuiltreport.com/) una herramienta gratuita que utiliza powershell como base para generar los reportes.
 
 La herramienta `As Built Report` utiliza los módulos de VMware.PowerCLI que explicamos anteriormente en nuestro blog. Si de sea saber un poco más sobre PowerCLI sigue este enlace [`here`](http://192.168.7.40/2021/06/05/how-to-install-and-use-powercli-on-archlinux/). Un dato importante sobre ``As Built Report`` es que no solo se utiliza para generar reporte sobre VMware también cuenta con soporte para los siguientes productos:
 
@@ -25,7 +25,7 @@ Primero que todo para utilizar esta herramienta necesitamos validar los requisit
 - Windows PowerShell 5.1 o later
 - VMware.PowerCLI
 
-Para instalar el modulo de powershell de ``As Built Report`` utilizamos el comando `Install-Module` seguido del nombre del modulo AsBuiltReport.
+Para instalar el módulo de powershell de ``As Built Report`` utilizamos el comando `Install-Module` seguido del nombre del modulo AsBuiltReport.
 
 ```powershell
 PS /home/blabla> Install-Module -Name AsBuiltReport
@@ -38,7 +38,7 @@ PS /home/blabla>
 
 Un requisito opcional es generar los archivo de configuración que te permite establecer los parámetros de la organización que son utilizados para generar el reporte. Este proceso genera unos archivos tipo JSON que son utilizados como plantillas ``templates`` de forma que no tengas que llenar la información repetitiva cuando generes los reportes.
 
-#### AsBuiltReport archivo de configuratiom tipo JSON
+#### AsBuiltReport archivo de configuración tipo JSON
 
 El ``cmdlet`` de powershell New-AsBuiltConfig te permite generar la plantilla que utilizaremos como base del reporte. Esta plantilla establece los parámetros no técnicos del reporte.
 
@@ -121,7 +121,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 }
 ```
 
-El comando `New-AsBuiltReportConfig` permite establecer los parámetros técnico del reporte como el nivel y tipo de información ``verbose level``.
+El comando `New-AsBuiltReportConfig` permite establecer los parámetros técnicos del reporte como el nivel y tipo de información ``verbose level``.
 
 ```batch
 PS C:\WINDOWS\system32> New-AsBuiltReportConfig VMware.vSphere -FolderPath C:\Users\jocolon\AsBuiltReport\ -Filename ReportConfig
@@ -207,7 +207,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
             "CpuHotRemove": true,
             "MemoryHotAdd": true,
             "ChangeBlockTracking": true,
-            "SpbmPolicyCompliance": true,
+            "SpbmPolicyCompliance": true,aquí
             "VMToolsStatus": true,
             "VMSnapshots": true
         }
@@ -215,7 +215,7 @@ Una vez culminado el proceso se creará un archivo tipo JSON con el siguiente co
 }
 ```
 
-Por ultimo, generamos el reporte utilizando el comando `New-AsBuiltReport` con los parámetros de información del vCenter y haciendo referencia a los archivo JSON que generamos como plantillas.
+Por último, generamos el reporte utilizando el comando `New-AsBuiltReport` con los parámetros de información del vCenter y haciendo referencia a los archivos JSON que generamos como plantillas.
 
 ```powershell
 PS C:\WINDOWS\system32> New-AsBuiltReport -Report VMware.vSphere -Target vcenter-01v.zenprsolutions.local -Username administrator@vsphere.local -Password XXXXX -Format Word,Text,HTML -OutputFolderPath 'C:\Users\jocolon\OneDrive\Desktop\' -EnableHealthCheck -AsBuiltConfigFilePath 'HomeLab VMware Report.json' -ReportConfigFilePath 'ReportConfig.json'

@@ -8,7 +8,7 @@ tags:
 
 Hello everyone,
 
-This time I'll be talking a bit about a project I've been working on for the last few months that has the use of creating basic diagrams of the components of the Veeam Backup & Replication infrastructure. The tool is called Veeam.Diagrammer and you can see the project page on Github. Here is the link so you can see the features of this tool.
+This time I'll be talking a bit about a project I've been working on for the last few months that have the use of creating basic diagrams of the components of the Veeam Backup & Replication infrastructure. The tool is called `Veeam.Diagrammer` and you can see the project page on GitHub. Here is the link so you can see the features of this tool.
 
 - <https://github.com/rebelinux/Veeam.Diagrammer>
 
@@ -61,7 +61,7 @@ Manifest   1.0        Veeam.Backup.PowerShell             {Get-VBRComputerFilePr
 PS C:\Users\jocolon> 
 ```
 
-If the command does not return any results, it means that the module is not installed. It is important to note that Veeam.Backup.PowerShell modules are available on the Veeam Backup server or on any device where the management console is already installed. Reference:
+If the command does not return any results, it means that the module is not installed. It is important to note that `Veeam.Backup.PowerShell` modules are available on the Veeam Backup server or on any device where the management console is already installed. Reference:
 
 > The remote computer from which Veeam PowerShell commands are executed must have the Veeam Backup & Replication console installed. After installing the console, the Veeam powershell module will be installed by default.
 >

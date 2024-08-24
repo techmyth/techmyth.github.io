@@ -9,7 +9,7 @@ tags:
 
 Hello everyone,
 
-This time I will be talking about how to use `Govc`, a CLI alternative developed in the [GO](https://go.dev/) programming language, this CLI is designed to be an easy to use alternative to the Web GUI and very suitable for automation tasks. This tool is based on `govmomi`, which is a library for GO used to interact with the VMware vSphere Application Programming Interface (API).
+This time I will be talking about how to use `Govc`, a CLI alternative developed in the [GO](https://go.dev/) programming language, this CLI is designed to be an easy-to-use alternative to the Web GUI and very suitable for automation tasks. This tool is based on `govmomi`, which is a library for GO used to interact with the VMware vSphere Application Programming Interface (API).
 
 #### Note: vSphere versions that have reached end of support may work, but are not officially supported.
 
@@ -19,7 +19,7 @@ Here is the link so you can see the features of this tool.
 
 This tool can be installed in many ways but for this tutorial I will use the compiled version. To use another installation method you can refer to the documentation [Govc](https://github.com/vmware/govmomi/tree/main/govc#installation).
 
-The first step would be to download the tool from the [Github portal](https://github.com/vmware/govmomi/releases). In my case I will use the x86_64 version which is the one that corresponds to my Linux system but this tool provides support for the majority of the most commonly used Operating Systems.
+The first step would be to download the tool from the [Github portal](https://github.com/vmware/govmomi/releases). In my case I will use the x86_64 version which is the one that corresponds to my Linux system, but this tool provides support for the majority of the most commonly used Operating Systems.
 
 ![Text](/img/2022/vmware-govc-intro/govc_download_x86.webp#center)
 
@@ -59,7 +59,7 @@ UUID:         43f86c8f-1a6d-44c8-b6ac-6ec33a36d141
 [bla@blabla govc]$ 
 ```
 
-#### Note: This tool assumes that the HTTPS certificate can be validated with its trust chain. If the certificate is "Self Sign" it is required to set the GOVC_INSECURE=1 variable.
+#### Note: This tool assumes that the HTTPS certificate can be validated with its trust chain. If the certificate is "Self Sign" it is required to set the GOVC_INSECURE=1 variable
 
 In this article I showed you an introduction about the `Govc` tool in the next articles I will be going into detail on how to use this tool to streamline the automation processes in our vSphere infrastructure.
 

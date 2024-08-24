@@ -6,7 +6,7 @@ tags:
     - VMware
 ---
 
-In this blog I will be talking about how to automate the creation of documentation reports of our virtual infrastructure. There are several commercial solutions to generate this type of report but I will be talking about [`As Built Report`](https://www.asbuiltreport.com/) a free tool that uses powershell as a base to build the reports.
+In this blog I will be talking about how to automate the creation of documentation reports of our virtual infrastructure. There are several commercial solutions to generate this type of report, but I will be talking about [`As Built Report`](https://www.asbuiltreport.com/) a free tool that uses powershell as a base to build the reports.
 
 The `As Built Report` tool uses the VMware.PowerCLI modules that we explained previously in our blog. If you want to know more about PowerCLI follow this link [`here`](http://192.168.7.40/2021/06/05/how-to-install-and-use-powercli-on-archlinux/). An important fact about `As Built Report` is that it is not only used to generate reports on VMware but also supports the following products:
 
@@ -20,7 +20,7 @@ The `As Built Report` tool uses the VMware.PowerCLI modules that we explained pr
 - Cohesity DataPlatform
 - etc…
 
-First of all to use this tool we need to validate the requirements that in general consist of the following:
+First to use this tool we need to validate the requirements that in general consist of the following:
 
 - Windows PowerShell 5.1 o later
 - VMware.PowerCLI

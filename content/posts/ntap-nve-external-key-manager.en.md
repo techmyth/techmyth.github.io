@@ -63,6 +63,7 @@ OnPrem-HQ-01 true true           00:18:10 SIMBOX
 OnPrem-HQ-02 true true           00:18:08 SIMBOX
 2 entries were displayed.
 ```
+
 With the `system license show` command you can validate the license installed on the cluster. Here you can see that the volume encryption license is installed on both nodes.
 
 ```bash
@@ -94,11 +95,11 @@ OnPrem-HQ::>
 
 #### As stated in the NetApp documentation:
 
-> The cluster and the KMIP server use KMIP SSL certificates to verify each other’s identity and establish an SSL connection. Before setting up the SSL connection to the KMIP server, you must install the KMIP client SSL certificates for the cluster and the public SSL certificate for the KMIP server’s root Certificate Authority (CA).
+> The cluster and the `KMIP` server use `KMIP` SSL certificates to verify each other’s identity and establish an SSL connection. Before setting up the SSL connection to the `KMIP` server, you must install the `KMIP` client SSL certificates for the cluster and the public SSL certificate for the `KMIP` server’s root Certificate Authority (CA).
 
 ##### [NetApp KMIP Documentation](https://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-D1593ED6-AAF8-4DEE-A2A7-6AEF239C6874.html)
 
-To install the KMIP client certificate on the NetApp cluster, run the following commands:
+To install the `KMIP` client certificate on the NetApp cluster, run the following commands:
 
 ##### Note: The contents of the certificates are extracted from the previously downloaded files. The ONTAPEncryption.pem and cacert.pem files contain the necessary information.
 
@@ -140,9 +141,9 @@ The certificate's generated name for reference: HyTrustKeyControlCertificateAuth
 
 **Step 4:** Configure the NetApp Volume Encryption solution:
 
-For this tutorial it is necessary to configure an external `KMS` key management server so that the storage system can securely store and retrieve authentication keys for the NetApp Volume Encryption (NVE) solution.
+For this tutorial it is necessary to configure an external `KMS` key management server so that the storage system can securely store and retrieve authentication keys for the `NetApp Volume Encryption (NVE)` solution.
 
-##### Note: NetApp recommends a minimum of two server for redundancy and disaster recovery.
+##### Note: NetApp recommends a minimum of two servers for redundancy and disaster recovery.
 
 The following command allows you to add the KMS server to the Ontap system using the IP address 192.168.7.201, port TCP/5696 and using the previously configured certificates.
 
@@ -189,7 +190,7 @@ OnPrem-HQ::> vol create TEST_Encryption -vserver SAN -size 10G -aggregate OnPrem
 [Job 763] Job succeeded: Successful 
 ```
 
-With the `vol show` command i can verify that the volume has been created with the encryption option.
+With the `vol show` command I can verify that the volume has been created with the encryption option.
 
 ```text
 OnPrem-HQ::> vol show -encryption -vserver SAN -encryption-state full 

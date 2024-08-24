@@ -12,13 +12,13 @@ Earlier I wrote about the NetApp.Ontap report that I helped develop through the 
 
 Although I have to admit that there are a number of experts who have created several similar reports, a unique feature of this report is that it uses [AsBuildReport](https://www.asbuiltreport.com/) as the basis for generating the programming necessary to set up the report structure. So I as a programmer can concentrate on the technology I want to document and not on adding code to generate the formatting in Word or HTML.
 
-This report is in an initial state and in constant development, but I decided to release it publicly to receive recommendations or rather to encourage other developers to contribute to improve its content. The development website of the report is in Github I leave the link so you can see the scope and objective of the project.
+This report is in an initial state and in constant development, but I decided to release it publicly to receive recommendations or rather to encourage other developers to contribute to improve its content. The development website of the report is in GitHub I leave the link so you can see the scope and objective of the project.
 
 - <https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.AD>
 
 ![Text](/img/AsbuildReport_AD.webp)
 
-This report can only be run on Windows 10+ or Windows Server 2012+. Additionally PowerShell version 5.1 or PowerShell 7+ is required and the following modules are also required in order to generate the report:
+This report can only be run on Windows 10+ or Windows Server 2012+. Additionally, PowerShell version 5.1 or PowerShell 7+ is require, and the following modules are also required in order to generate the report:
 
 - [AsBuiltReport.Microsoft.AD](https://www.powershellgallery.com/packages/AsBuiltReport.Microsoft.AD/0.3.0)
 - [ActiveDirectory](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps)
@@ -268,7 +268,7 @@ Once the process is completed, a JSON file will be created with the following co
 
 This configuration file can be used to specify the level of detail of the report as well as which specific report sessions are to be enabled.
 
-Then we can generate the report using the command `New-AsBuiltReport -Report Microsoft.AD -Target DC\_FQDN`. It is important to emphasize that it is required that the computer where the report is generated is added to the AD domain to be documented. It is also required to use the `fully qualified domain name `(FQDN) of the server with the `Domain Controller` role within the AD `Forest`.
+Then we can generate the report using the command `New-AsBuiltReport -Report Microsoft.AD -Target DC\_FQDN`. It is important to emphasize that it is required that the computer where the report is generated is added to the AD domain to be documented. It is also required to use the `fully qualified domain name` (FQDN) of the server with the `Domain Controller` role within the AD `Forest`.
 
 ```text
 PS C:\Users\jocolon>  New-AsBuiltReport -Report Microsoft.AD -Target server-dc-01v.zenpr.local -Format HTML -AsBuiltConfigFilePath C:\Users\jocolon\AsBuiltReport\AsBuiltReport.json -OutputFolderPath C:\Users\jocolon\AsBuiltReport\ -ReportConfigFilePath '.\AsBuiltReport\AsBuiltReport.Microsoft.AD.json' -Credential $cred -EnableHealthCheck               
@@ -295,7 +295,7 @@ Here is an example of the resulting Active Directory documentation.
 
 {{< embed-pdf url=`./img/Sample-Microsoft-AD-As-Built-Report.pdf` >}}
 
-Additionally I include several examples of how to invoke the documentation report.
+Additionally, I include several examples of how to invoke the documentation report.
 
 ```text
 # Generate a Microsoft Active Directory As Built Report for Domain Controller Server 'admin-dc-01v.contoso.local' using specified credentials. Export report to HTML & DOCX formats. Use default report style. Append timestamp to report filename. Save reports to 'C:\Users\Jon\Documents'

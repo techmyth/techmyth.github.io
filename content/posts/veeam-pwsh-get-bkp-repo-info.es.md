@@ -7,7 +7,7 @@ tags:
 
 Hola a todos,
 
-Estos últimos días he estado realizando varios servicios de soportes relacionados a Veeam Backup & Replication donde he tenido la oportunidad de utilizar más los módulos de Powershell de Veeam. De manera que en esta oportunidad les estare mostrando de forma básica como obtener información relacionada a los repositorios conectados al servidor de Backup. Como siempre es necesario establecer conexión con el servidor de Backup utilizando el comando `Connect-VBRServer`.
+Estos últimos días he estado realizando varios servicios de soportes relacionados con `Veeam Backup & Replication` donde he tenido la oportunidad de utilizar más los módulos de Powershell de Veeam. De manera que en esta oportunidad les estaré mostrando de forma básica como obtener información relacionada con los repositorios conectados al servidor de Backup. Como siempre es necesario establecer conexión con el servidor de Backup utilizando el comando `Connect-VBRServer`.
 
 ```text
 PS C:\Users\jocolon> Connect-VBRServer -Server veeam-vbr.pharmax.local -Credential (Get-Credential)
@@ -20,7 +20,7 @@ Password for user pharmax\administrator: ````
 PS C:\Users\jocolon> 
 ```
 
-Luego de conectarnos al servidor podemos utilizar el comando `Get-VBRBackupRepository` para identificar los repositorio conectados al servidor de Backup.
+Luego de conectarnos al servidor podemos utilizar el comando `Get-VBRBackupRepository` para identificar los repositorios conectados al servidor de Backup.
 
 ```text
 PS C:\Users\jocolon> Get-VBRBackupRepository                                           
@@ -35,7 +35,7 @@ Linux - Hardened Repos... LinuxLocal   veeam-lnx-px... /backup_data... Created b
 PS C:\Users\jocolon>
 ```
 
-Como pueden ver el resultado del cmdlet suena un tanto incompleto ya que no muestra cierta información importante como el espacio utilizado. Par lograr obtener esta información les comparto un ejemplo básico que permite obtener información más relevante.
+Como pueden ver el resultado del cmdlet suena un tanto incompleto, ya que no muestra cierta información importante como el espacio utilizado. Par lograr obtener esta información les comparto un ejemplo básico que permite obtener información más relevante.
 
 ```powershell
 $OutObj = @()
@@ -94,6 +94,6 @@ E - Backup Repository - VEEAM-VBR-02V 99Gb        5Gb        94.95%       Availa
 F - Backup Repository - VEEAM-VBR-02V 99Gb        98Gb       1.01%        Available
 ```
 
-Espero que este post les haya gustado y les sea de utilizad en su jornada profesional.
+Espero que este post les haya gustado y les sea de utilidad en su jornada profesional.
 
 ## Hasta Luego Amigos!

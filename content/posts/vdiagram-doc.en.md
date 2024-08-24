@@ -7,17 +7,17 @@ tags:
 
 Hello everyone
 
-Taking as a reference the [Top 10 VMware Admin Tools](https://core.vmware.com/blog/top-10-vmware-admin-tools) list, this time I am going to show you how to use the [vDiagram](https://github.com/Tony-SouthFLVMUG/vDiagram2.0) tool that has the #6 position in the list of the most used tools by VMware infrastructure administrators. In essence this Powershell script captures and draws a VMware vSphere infrastructure using Microsoft Visio. Originally this tool was created by `Alan Renouf` [@alanrenouf](https://twitter.com/alanrenouf) and currently the project is maintained by `Tony Gonzalez` [@vDiagram_Tony](https://twitter.com/vDiagram_Tony).
+Taking as a reference the [Top 10 VMware Admin Tools](https://core.vmware.com/blog/top-10-vmware-admin-tools) list, this time I am going to show you how to use the [vDiagram](https://github.com/Tony-SouthFLVMUG/vDiagram2.0) tool that has the #6 position in the list of the most used tools by VMware infrastructure administrators. In essence this PowerShell script captures and draws a `VMware vSphere` infrastructure using Microsoft Visio. Originally this tool was created by `Alan Renouf` [@alanrenouf](https://twitter.com/alanrenouf) and currently the project is maintained by `Tony Gonzalez` [@vDiagram_Tony](https://twitter.com/vDiagram_Tony).
 
 ![Text](/img/invisible-infrastructure-300x200.webp#center)
 
 To use this tool, the following requirements must be met:
 
-1. Powershell >= 5.1
+1. PowerShell >= 5.1
 2. PowerCLI module (`Install-Module -Name VMware.PowerCLI`)
 3. Microsoft Visio 2013+
 
-Once all the requirements are fulfilled, proceed to download the Powershell code. To download the application, click on the following link:
+Once all the requirements are fulfilled, proceed to download the PowerShell code. To download the application, click on the following link:
 
 <https://github.com/Tony-SouthFLVMUG/vDiagram2.0>
 
@@ -74,7 +74,7 @@ PS C:\vDiagram2.0-master> Unblock-File .\vDiagram_2.0.11.ps1
 PS C:\vDiagram2.0-master>
 ```
 
-In this step with the `$PSVersionTable`` command confirm the Powershell version locally installed. Reviewing the requirements section above you can see that in order to use the `vDiagram` tool you need to have a Powershell version 5.1.x or higher. In the example below you can see that my computer has version `5.1.19041.1151`.
+In this step with the `$PSVersionTable` command confirm the PowerShell version locally installed. Reviewing the requirements section above you can see that in order to use the `vDiagram` tool you need to have a PowerShell version 5.1.x or higher. In the example below you can see that my computer has version `5.1.19041.1151`.
 
 ```text
 PS C:\vDiagram2.0-master> $PSVersionTable
@@ -94,7 +94,7 @@ SerializationVersion           1.1.0.1
 PS C:\vDiagram2.0-master>
 ```
 
-Additionally you must validate the `PowerCLI` module. With the `Get-Module` command you can validate the PowerCLI installed version.
+Additionally, you must validate the `PowerCLI` module. With the `Get-Module` command you can validate the PowerCLI installed version.
 
 ```text
 PS C:\vDiagram2.0-master> Get-Module -ListAvailable -Name 'VMware.PowerCLI' | Sort-Object -Property Version -Descending | Select-Object -First 1
@@ -180,4 +180,4 @@ Finally, here are some sample images of the diagrams generated using my `HomeLab
 
 ### Summary
 
-IIn this lab a tool called vDiagram is demonstrated, which allows us to make a logical representation of how the components of our virtual infrastructure are related. The good thing about this tool is that it is available for free. I hope you liked this lab. If you have any doubts or questions about this lab, leave them in the comments. Hasta Luego!!!!
+In this lab a tool called `vDiagram` is demonstrated, which allows us to make a logical representation of how the components of our virtual infrastructure are related. The good thing about this tool is that it is available for free. I hope you liked this lab. If you have any doubts or questions about this lab, leave them in the comments. Hasta Luego!!!!

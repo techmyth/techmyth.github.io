@@ -9,7 +9,7 @@ tags:
 
 Hola a tod@s
 
-In this opportunity, I would like to show you how to update the version of the `Object First OOTBI` VSA appliance. I previously demonstrated how to perform the initial implementation of this product. You can find the article here. [aquí]({{< ref "homelab-ootbi-vsa-initial-setup.es.md" >}} "aquí")
+In this opportunity, I would like to show you how to update the version of the `Object First OOTBI` VSA appliance. I previously demonstrated how to perform the initial implementation of this product. You can find the article here. [Here]({{< ref "homelab-ootbi-vsa-initial-setup.es.md" >}} "Here")
 
 Starting with the vCenter portal, find the virtual machine instance so that you can access the `OOTBI` text user interface.
 

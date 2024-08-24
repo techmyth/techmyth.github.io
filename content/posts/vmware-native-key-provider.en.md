@@ -10,7 +10,7 @@ tags:
 
 ---
 
-This is one of my favorite feature in vSphere 7 Update 2. VMware now provides the capability to use a new native key provider for encryption. Allowing us to use vSAN encryption, VM encryption and vTPM natively without the requirement to deploy a external Key provider. In the past this capability can only be provided by using a 3rd party solutions like Hytrust KeyControl. In this post i will explain how easy is to configure and deploy this awesome new feature.
+This is one of my favorite feature in vSphere 7 Update 2. VMware now provides the capability to use a new native key provider for encryption. Allowing us to use vSAN encryption, VM encryption and vTPM natively without the requirement to deploy an external Key provider. In the past this capability can only be provided by using a 3rd party solution like `Hytrust KeyControl`. In this post I will explain how easy is to configure and deploy this awesome new feature.
 
 Go to `[Configure > Key Providers]` to add the local key provider.
 

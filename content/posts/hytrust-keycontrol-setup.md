@@ -9,9 +9,9 @@ tags:
 
 ---
 
-HyTrust KeyControl enables encryption users to easily manage their encryption keys at scale. HyTrust is the only KMS vendor that VMware invested in. It is available as an OVA, for fast installation and configuration in VMware vCenter. In this post i show you how to easily install and configure this KMS service in a vSphere environment.
+`HyTrust KeyControl` Enabled encryption users to easily manage their encryption keys at scale. `HyTrust` is the only KMS vendor that VMware invested in. It is available as an OVA, for fast installation and configuration in VMware vCenter. In this post I show you how to easily install and configure this KMS service in a `vSphere` environment.
 
-**Step 1** – Deploying the OVA Package
+##### Step 1 – Deploying the OVA Package
 
 ![Text](/img/2021-03-13_15-51-1024x727.webp#center)
 
@@ -35,7 +35,7 @@ Accept the license agreement
 
 ![Text](/img/2021-03-13_15-56-1024x578.webp#center)
 
-Select the VM configuration. In my case because is a lab setup the demo configuration is selected.
+Select the VM configuration. In my case because is a lab set up the demo configuration is selected.
 
 #### Note: Not recommended for production environment
 
@@ -49,9 +49,9 @@ Specify the VM Network parameters.
 
 ![Text](/img/2021-03-13_16-01-1024x575.webp#center)
 
-**Step 2** – Configuring the newly deployed KMS appliance.
+##### Step 2 – Configuring the newly deployed KMS appliance
 
-Power on the newly deployed VM server. It will ask you to specify a password for the htadmin account. Enter a new password for `htadmin` and press `OK`.
+Power on the newly deployed VM server. It will ask you to specify a password for the `htadmin` account. Enter a new password for `htadmin` and press `OK`.
 
 ![Text](/img/2021-03-13_16-17-1024x757.webp#center)
 
@@ -75,11 +75,11 @@ Download and save the Admin Key to a secure location.
 
 #### Note: This key is primarily used for recovery purpose
 
-**Step 3** – Enable the KMIP Service
+##### Step 3 – Enable the KMIP Service
 
 ![Text](/img/2021-03-13_16-39_1-1024x379.webp#center)
 
-The Key Management Interoperability Protocol (KMIP) enables communication between key management systems and cryptographically-enabled applications, including email, databases, and storage devices. Select KMIP in the top banner bar. Go to State and put it on `Enabled`. Then open Protocol and select `Version 1.1` from the drop-down list. As a final step go to `Restrict TLS` and select `Enabled` to make sure traffic is on the TLS 1.2 protocol. Click the `Apply` button now to apply the new settings.
+The `Key Management Interoperability Protocol (KMIP)` enables communication between key management systems and cryptographically-enabled applications, including email, databases, and storage devices. Select `KMIP` in the top banner bar. Go to State and put it on `Enabled`. Then open Protocol and select `Version 1.1` from the drop-down list. As a final step go to `Restrict TLS` and select `Enabled` to make sure traffic is on the TLS 1.2 protocol. Click the `Apply` button now to apply the new settings.
 
 ![Text](/img/2021-03-13_20-34-1024x403.webp#center)
 

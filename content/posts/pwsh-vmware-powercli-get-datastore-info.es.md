@@ -7,7 +7,7 @@ tags:
 
 Hola a todos,
 
-En este post le mostraré como obtener la lista de datastore en una infraestructura de vSphere utilizando PowerCLI. Ahora bien, primero que todo tenemos que establecer conexión a nuestro vCenter/ESXi para obtener esta información. Esto podemos hacerlo utilizando el comando `Connect-VIServer`.
+En este post le mostraré como obtener la lista de `datastore` en una infraestructura de `vSphere` utilizando PowerCLI. Ahora bien, primero que todo tenemos que establecer conexión a nuestro `vCenter/ESXi` para obtener esta información. Esto podemos hacerlo utilizando el comando `Connect-VIServer`.
 
 ```text
 PS C:\Users\jocolon> Connect-VIServer -Server 192.168.5.2
@@ -51,7 +51,7 @@ HDD-VM-ISO-LOW-PERF                    461.363         931.250
 PS C:\Users\jocolon>
 ```
 
-Este comando muestra los Datastore existentes y la información básica del espacio utilizado. Con este comando podemos también filtrar la búsqueda permitiendo obtener información adicional del Datastore si añadimos el nombre del Datastore al comando `Get-Datastore` con la opción de `-Name`. Por ejemplo si utilizamos el comando `Get-Datastore -Name *atastore Name* | Format-List ` se muestra el siguiente resultado.
+Este comando muestra los `Datastore` existentes y la información básica del espacio utilizado. Con este comando podemos también filtrar la búsqueda permitiendo obtener información adicional del `Datastore` si añadimos el nombre del `Datastore` al comando `Get-Datastore` con la opción de `-Name`. Por ejemplo si utilizamos el comando `Get-Datastore -Name *atastore Name* | Format-List ` se muestra el siguiente resultado.
 
 ```text
 PS C:\Users\jocolon> Get-Datastore -Name NVME-VFLASH-01 | Format-List  
@@ -83,7 +83,7 @@ Uid                            : /VIServer=vsphere.local\administrator@192.168.5
 PS C:\Users\jocolon>
 ```
 
-Como la mayoría de los comandos de Powershell, los comando de PowerCLi permiten la utilización de [Pipeline](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.2). Si utilizamos el comando `Get-VMHost` para desplegar los servidores de ESXi junto con el comando `Get-Datastore` podemos filtrar aún más el contenido de los Datastore conectados al servidor.
+Como la mayoría de los comandos de Powershell, los comando de PowerCLi permiten la utilización de [Pipeline](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.2). Si utilizamos el comando `Get-VMHost` para desplegar los servidores de `ESXi` junto con el comando `Get-Datastore` podemos filtrar aún más el contenido de los Datastore conectados al servidor.
 
 ```text
 PS C:\Users\jocolon> Get-VMHost -Name esxsvr-00f.pharmax.local | Get-Datastore
@@ -104,4 +104,4 @@ NVME-VFLASH-01                          50.053         238.250
 PS C:\Users\jocolon>
 ```
 
-Para finalizar les comento que existe un sin fin de posibilidades en Powershell a la hora de entrelazar los cmdlets permitiendo afinar la búsqueda de datos y hasta transformar la información que deseamos desplegar. Espero les haya sido de utilidad esta información. Hasta luego!
+Para finalizar les comento que existe un sin fin de posibilidades en Powershell a la hora de entrelazar los `cmdlets` permitiendo afinar la búsqueda de datos y hasta transformar la información que deseamos desplegar. Espero les haya sido de utilidad esta información. ¡Hasta luego!
