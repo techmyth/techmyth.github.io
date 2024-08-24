@@ -49,4 +49,4 @@ Hasta la Próxima!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
 
-![Text](/img/2024/homelab-ootbi-update-version/HastaLuegoJirafales.webp#center)
+![Text](/img/2024/homelab-ootbi-update-version/OOTBI-Thats-All-Folks.webp#center)
