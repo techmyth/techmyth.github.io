@@ -11,7 +11,7 @@ Hola,
 
 Last month I added several enhancements to the `AsBuiltReport.Veeam.VBR` report to improve its content as well as adding more infrastructure objects to the diagram.
 
-Here is the link to the report in HTML format: [Reporte](https://htmlpreview.github.io/?https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/dev/Samples/Sample%20Veeam%20Backup%20%26%20Replication%20As%20Built%20Report.html)
+Here is the link to the report in HTML format: [Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/dev/Samples/Sample%20Veeam%20Backup%20%26%20Replication%20As%20Built%20Report.html)
 
 In version `v0.8.6` the ability to generate a simple diagram of the `Veeam Backup & Replication` infrastructure was added.
 
