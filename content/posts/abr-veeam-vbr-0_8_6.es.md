@@ -39,12 +39,13 @@ Adicionalmente, se modificó el tema de las gráficas para dar soporte a este nu
 
 Uno de los cambios que se realizó en la versión 0.8.1 fue remover la sesión de `Infrastructure Hardening`, ya que la mayoría del contenido fue integrado a través de `Health Check` distribuidos entre varias secciones del reporte. Una de las secciones que no se integró fue la identificación de parchos de Windows no instalados en el servidor de Backup. En esta versión se añadió la sesión para validar que el servidor de Backup tiene instalado los parches más recientes del sistema operativo.
 
-![missing_patches](/img/2024/abr-veeam-vbr-0_8_6versióng_patches.webp)
+![missing_patches](/img/2024/abr-veeam-vbr-0_8_6/missing_patches.webp)
 
 Uno de los propósitos principales de esta nueva versión fue añadir la capacidad de generar un diagrama simple de la infraestructura de `Veeam Backup & Replication`. Este diagrama que permita observar los componentes implementados en la infraestructura.
 
 Es esta versión inicial el diagrama solo muestra los siguientes componentes:
 
+```markdown
 - Backup Server
   - Database Server
   - Enterprise Manager
@@ -54,14 +55,15 @@ Es esta versión inicial el diagrama solo muestra los siguientes componentes:
   - Archive Object Storage Repositories
 - Scale-Out Backup Repositories
 - Wan Accelerators
+```
 
 Poco a poco estaré añadiendo componentes adicionales al diagrama como también información de la relación entre los componentes.
 
 ![AsBuiltReport.Veeam.VBR](/img/2024/abr-veeam-vbr-0_8_6/AsBuiltReport.Veeam.VBR.webp)
 
-Para finalizar, aquí les dejo el resto de los cambios que se introdujeron o se arreglaron en esta nueva versión de reporte:
+Para finalizar, aquí les dejo el resto de los cambios que se introdujeron o se arreglaron en esta nueva versión del reporte:
 
-```text
+```markdown
 ## [0.8.6] - 2024-04-29
 
 ### Added

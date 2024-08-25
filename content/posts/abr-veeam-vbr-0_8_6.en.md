@@ -43,6 +43,7 @@ Among the main purposes of this new version was to add the ability to generate a
 
 In this initial release the diagram only features the following components:
 
+```markdown
 - Backup Server
   - Database Server
   - Enterprise Manager
@@ -52,6 +53,7 @@ In this initial release the diagram only features the following components:
   - Archive Object Storage Repositories
 - Scale-Out Backup Repositories
 - Wan Accelerators
+```
 
 Gradually I will be adding additional components to the diagram as well as information on the relationship between the components.
 
@@ -59,7 +61,7 @@ Gradually I will be adding additional components to the diagram as well as infor
 
 Finally, here are the rest of the changes that were introduced or fixed in this new release of the report:
 
-```text
+```markdown
 ## [0.8.6] - 2024-04-29
 
 ### Added
