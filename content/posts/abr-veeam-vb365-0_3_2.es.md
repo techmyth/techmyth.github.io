@@ -1,6 +1,6 @@
 ---
 title: 'HomeLab: Nueva version del reporte de AsBuiltReport.Veeam.VB365 v0.3.2'
-date: '2024-08-24T10:00:00-04:00'
+date: '2024-08-24T12:00:00-04:00'
 tags:
     - VEEAM
     - AsBuiltReport
