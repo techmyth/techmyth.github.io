@@ -139,7 +139,7 @@ Un requisito opcional es generar los archivos de configuración que te permite e
 
 El `cmdlet` de powershell New-AsBuiltConfig te permite generar la plantilla que utilizaremos como base del reporte. Esta plantilla establece los parámetros no técnicos del reporte.
 
-```text
+```markdown
 PS C:\WINDOWS\system32> New-AsBuiltConfig
 
 ---------------------------------------------
@@ -148,7 +148,7 @@ PS C:\WINDOWS\system32> New-AsBuiltConfig
 Enter the name of the Author for this As Built Report [jocolon]: Jonathan Colon
 ```
 
-```text
+```markdown
 ---------------------------------------------
  <           Company Information           >
 ---------------------------------------------
@@ -161,14 +161,14 @@ Enter the Company Phone: XXX-XXX-XXXX
 Enter the Company Address: Puerto Rico
 ```
 
-```text
+```markdown
 ---------------------------------------------
  <            Email Configuration          >
 ---------------------------------------------
 Would you like to enter SMTP configuration? (y/n): n
 ```
 
-```text
+```markdown
 ----------------------------------------------
  <       As Built Report Configuration      >
 ----------------------------------------------
