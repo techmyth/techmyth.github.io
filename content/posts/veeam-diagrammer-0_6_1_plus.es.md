@@ -10,7 +10,7 @@ tags:
 
 Hola,
 
-Hoy estaré compartiendo las mejoras que he realizado a la herramienta para diagramar la infraestructura de `Veeam Backup & Replication`. Esta herramienta utiliza [Graphviz](https://graphviz.org/) como motor para dibujar el diagrama y el módulo de [PSGraph](https://psgraph.readthedocs.io/en/latest/about/) para generar el código desde PowerShell. Aquí les dejo el enlace del proyecto en Github:
+Hoy estaré compartiendo las mejoras que he realizado a la herramienta para diagramar la infraestructura de `Veeam Backup & Replication`. Esta herramienta utiliza [Graphviz](https://graphviz.org/) como motor para dibujar el diagrama y el módulo de [PSGraph](https://psgraph.readthedocs.io/en/latest/about/) para generar el código desde PowerShell. Aquí les dejo el enlace del proyecto en GitHub:
 
 - <https://github.com/rebelinux/Veeam.Diagrammer>
 
