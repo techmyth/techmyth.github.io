@@ -1,5 +1,5 @@
 ---
-title: 'HomeLab: New Release of AsBuiltReport.Veeam.VBR v0.8.6'
+title: 'New Release of AsBuiltReport.Veeam.VBR v0.8.6'
 date: '2024-04-29T10:50:00-04:00'
 tags:
     - VEEAM

@@ -1,5 +1,5 @@
 ---
-title: 'HomeLab: Veeam.Diagrammer v0.6.1+ new version features'
+title: 'Veeam.Diagrammer v0.6.1+ new version features'
 date: '2024-09-02T00:00:00-04:00'
 tags:
     - VEEAM
