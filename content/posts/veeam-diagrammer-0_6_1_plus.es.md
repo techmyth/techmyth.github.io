@@ -14,7 +14,7 @@ Hoy estaré compartiendo las mejoras que he realizado a la herramienta para diag
 
 - <https://github.com/rebelinux/Veeam.Diagrammer>
 
-Esta herramienta es utilizada dentro del reporte de `AsbuiltReport.Veeam.VBR` para generar el diagrama de los siguientes componentes:
+Esta herramienta es utilizada dentro del reporte de [AsbuiltReport.Veeam.VBR](https://htmlpreview.github.io/?https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/dev/Samples/Sample%20Veeam%20Backup%20%26%20Replication%20As%20Built%20Report.html) para generar el diagrama de los siguientes componentes:
 
 ```markdown
 - VMware and Hyper-V Proxy

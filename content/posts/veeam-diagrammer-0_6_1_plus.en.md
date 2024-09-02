@@ -14,7 +14,7 @@ I will be sharing today the improvements I have made to the `Veeam Backup & Repl
 
 - <https://github.com/rebelinux/Veeam.Diagrammer>
 
-This tool is used within the `AsbuiltReport.Veeam.VBR` report to generate the diagram of the following components:
+This tool is used within the [AsbuiltReport.Veeam.VBR](https://htmlpreview.github.io/?https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/dev/Samples/Sample%20Veeam%20Backup%20%26%20Replication%20As%20Built%20Report.html) report to generate the diagram of the following components:
 
 ```markdown
 - VMware and Hyper-V Proxy
