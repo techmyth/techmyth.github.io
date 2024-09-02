@@ -31,7 +31,7 @@ Here is the code added in this version: [Link](https://github.com/rebelinux/Veea
 
 ![Image1](/img/2024/veeam.diagrammer-0.6.1plus/vscode1.webp)
 
-The following image shows the NAS identified in the diagram.
+The following image shows the NAS components identified in the diagram.
 
 ![Image2](/img/2024/veeam.diagrammer-0.6.1plus/diagramer0.webp)
 
@@ -51,7 +51,7 @@ Within `Graphviz` there is a concept called `Cluster` that is used to group obje
 
 The last change I will discuss is not directly related to `Veeam.Diagrammer`, but to a dependency called `Diagrammer.Core`. In this new version support for `Diagrammer.Core` version 0.2.3 was added. In this new version support for `Graphviz` v12.1 is added, here is the link to the new capabilities of this tool:
 
-- <https://gitlab.com/graphviz/graphviz/compare/12.0.0...12.1.0>
+- <https://gitlab.com/graphviz/graphviz/-/blob/main/CHANGELOG.md>
 
 Lastly, here are the rest of the changes that were introduced or fixed in the new version of `Veeam.Diagrammer`:
 

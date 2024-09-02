@@ -31,7 +31,7 @@ Aquí les dejo el código añadido en esta versión: [Enlace](https://github.com
 
 ![Image1](/img/2024/veeam.diagrammer-0.6.1plus/vscode1.webp)
 
-En la siguiente imagen se puede ver los NAS identificados dentro del diagrama.
+En la siguiente imagen se puede ver los componentes de NAS identificados dentro del diagrama.
 
 ![Image2](/img/2024/veeam.diagrammer-0.6.1plus/diagramer0.webp)
 
@@ -51,7 +51,7 @@ Dentro de `Graphviz` existe un concepto llamado `Cluster` que es utilizado para 
 
 El último cambio que discutiré no está relacionado directamente a `Veeam.Diagrammer`, sino a una dependencia llamada `Diagrammer.Core`. En esta nueva versión se añadió soporte a la versión 0.2.3 de `Diagrammer.Core`. En esta nueva versión se añade soporte a `Graphviz` v12.1, aquí les dejo el enlace de las nuevas capacidades de esta herramienta:
 
-- <https://gitlab.com/graphviz/graphviz/compare/12.0.0...12.1.0>
+- <https://gitlab.com/graphviz/graphviz/-/blob/main/CHANGELOG.md>
 
 Para finalizar, aquí les dejo el resto de los cambios que se introdujeron o se arreglaron en la nueva versión de `Veeam.Diagrammer`:
 
