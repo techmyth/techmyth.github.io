@@ -19,7 +19,9 @@ Here is an example of the diagram:
 
 ![Image1](/img/2024/veeam.diagrammer-0.6.3/Diagram.webp)
 
-In the following video you can see how to install and use this tool:
+In the following video I attempt to show you how to install and use this tool:
+
+#### Side note: My video editing skills are a disaster. :)
 
 {{< youtube bsfiCf-mqqY >}}
 

@@ -23,6 +23,8 @@ En el siguiente vídeo puedes ver cómo instalar y utilizar esta herramienta:
 
 {{< youtube bsfiCf-mqqY >}}
 
+#### Nota: Mis habilidades de edición de video son un desastre :)
+
 ¡Hasta la Próxima!
 
 ![Veeam Vanguard](/img/2024/abr-veeam-vbr-0_8_8/veeam_vanguard.webp#center)
