@@ -23,7 +23,7 @@ En el siguiente vídeo puedes ver cómo instalar y utilizar esta herramienta:
 
 {{< youtube bsfiCf-mqqY >}}
 
-#### Nota: Mis habilidades de edición de video son un desastre :)
+#### Nota: Mis habilidades de edición de video son un desastre. Adicionalmente, este video es producido en mi homelab, el usuario y el password fue recreado :)
 
 ¡Hasta la Próxima!
 
