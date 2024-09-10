@@ -23,7 +23,7 @@ In the following video I attempt to show you how to install and use this tool:
 
 {{< youtube bsfiCf-mqqY >}}
 
-#### Side note: My video editing skills are a disaster also this video is made on my homelab, the user and password was recreated :)
+#### Side note: My video editing skills are a disaster also this video is made on my homelab, the user and password were recreated :)
 
 ¡Hasta la Próxima!
 
