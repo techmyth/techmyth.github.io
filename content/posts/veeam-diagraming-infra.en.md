@@ -21,9 +21,9 @@ Here is an example of the diagram:
 
 In the following video I attempt to show you how to install and use this tool:
 
-#### Side note: My video editing skills are a disaster. :)
-
 {{< youtube bsfiCf-mqqY >}}
+
+#### Side note: My video editing skills are a disaster. :)
 
 ¡Hasta la Próxima!
 
