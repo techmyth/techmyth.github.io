@@ -1,5 +1,5 @@
 ---
-title: 'Veeam: Getting information from WAN Accelerators using Powershell'
+title: 'Veeam: Getting information from WAN Accelerators with Powershell'
 date: '2024-09-24T00:00:00-00:00'
 author: 'Jonathan Colon'
 tags:
