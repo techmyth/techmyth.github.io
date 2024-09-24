@@ -26,11 +26,11 @@ En la siguiente imagen se puede ver los componentes de `SureBackup` identificado
 
 El último cambio que discutiré está relacionado la capacidad de establecer temas gráficos. En este caso se añadieron 2 temas adicionales al Blanco como lo son:
 
-#### - DiagramTheme Black
+#### - DiagramTheme Neon
 
 ![AsBuiltReport.Veeam.VBR.Neon](/img/2024/veeam.diagrammer-0.6.8/AsBuiltReport.Veeam.VBR_neon.webp)
 
-#### - DiagramTheme Neon
+#### - DiagramTheme Black
 
 ![AsBuiltReport.Veeam.VBR.Black](/img/2024/veeam.diagrammer-0.6.8/AsBuiltReport.Veeam.VBR_black.webp)
 

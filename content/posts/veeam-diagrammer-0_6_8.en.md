@@ -26,11 +26,11 @@ In the following image you can see the `SureBackup` components identified within
 
 The last change I will discuss is related to the ability to set the diagram themes. In this case 2 additional themes were added:
 
-#### - DiagramTheme Black
+#### - DiagramTheme Neon
 
 ![AsBuiltReport.Veeam.VBR.Neon](/img/2024/veeam.diagrammer-0.6.8/AsBuiltReport.Veeam.VBR_neon.webp)
 
-#### - DiagramTheme Neon
+#### - DiagramTheme Black
 
 ![AsBuiltReport.Veeam.VBR.Black](/img/2024/veeam.diagrammer-0.6.8/AsBuiltReport.Veeam.VBR_black.webp)
 
