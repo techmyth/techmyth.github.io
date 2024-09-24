@@ -57,7 +57,7 @@ Options     : Veeam.Backup.Core.CDomWaOptions
 PS C:\Users\jocolon> 
 ```
 
-As you can see the result of the cmdlet sounds somewhat incomplete, since it does not show some important information such as the space used. In order to obtain this information I share with you a basic example that allows to obtain more relevant information.
+As you can see the result of the cmdlet seems a bit incomplete, since it does not show some important information such as the TCP port used or the configured cache space. In order to obtain this information I share with you a basic example that allows to obtain more relevant information.
 
 ```powershell
 $OutObj = @()
