@@ -1,6 +1,6 @@
 ---
 title: 'Nueva version de Veeam.Diagrammer v0.6.8'
-date: '2024-09-25T00:00:00-04:00'
+date: '2024-09-24T00:00:00-04:00'
 tags:
     - VEEAM
     - AsBuiltReport
