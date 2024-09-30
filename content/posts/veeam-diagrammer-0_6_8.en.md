@@ -14,11 +14,11 @@ Today I am going to share the improvements I have made to the `Veeam Backup & Re
 
 - <https://github.com/rebelinux/Veeam.Diagrammer>
 
-In version 0.6.8 information about `SureBackup` was added to the infrastructure diagram. In particular, the ability to diagram `Application Groups` and `Virual Labs` has been added.
+In version 0.6.8 information about `SureBackup` was added to the infrastructure diagram. In particular, the ability to diagram `Application Groups` and `Virtual Labs` has been added.
 
 ![SureBackup](/img/2024/veeam.diagrammer-0.6.8/SureBackup.webp)
 
-Here is the code added in this release: [Enlace](https://github.com/rebelinux/Veeam.Diagrammer/blob/455bb8b4ff42a7b2ddb6672a5d9d5eee9122fd76/Src/Private/Get-VbrInfraDiagram.ps1#L288):
+Here is the code added in this release: [Link](https://github.com/rebelinux/Veeam.Diagrammer/blob/455bb8b4ff42a7b2ddb6672a5d9d5eee9122fd76/Src/Private/Get-VbrInfraDiagram.ps1#L288):
 
 In the following image you can see the `SureBackup` components identified within the diagram.
 
@@ -36,7 +36,7 @@ The last change I will discuss is related to the ability to set the diagram them
 
 Finally, here are the rest of the changes that were introduced or fixed in the new release:
 
-- <https://gitlab.com/graphviz/graphviz/-/blob/main/CHANGELOG.md>
+- <https://github.com/rebelinux/Veeam.Diagrammer/releases/tag/v0.6.8>
 
 ```markdown
 ## [0.6.8] - 2024-09-22
