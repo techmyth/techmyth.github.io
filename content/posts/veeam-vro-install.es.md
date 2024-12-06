@@ -5,7 +5,7 @@ author: 'Jonathan Colon'
 tags:
     - VEEAM
     - Powershell
-    - Recovery-Orchestration
+    - Recovery Orchestration
 ---
 
 Hola a todos,
