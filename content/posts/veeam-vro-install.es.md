@@ -10,7 +10,9 @@ tags:
 
 Hola a todos,
 
-En esta ocasión estaré mostrando como realizar una instalación básica del producto `Veeam Recovery Orchestrator`. Los archivos de instalación pueden ser descargados desde la pagina Web de Veeam. Para este laboratorio estaré utilizando la version de prueba de 30 días.
+En esta ocasión estaré mostrando como realizar una instalación básica del producto `Veeam Recovery Orchestrator`. Esta aplicación es una alternativa viable al `Site Recovery Manager` de `VMware` pero en mi opinion el VRO tiene mayores capacidades!
+
+Los archivos de instalación pueden ser descargados desde la pagina Web de Veeam. Para este laboratorio estaré utilizando la version de prueba de 30 días.
 
 Pueden utilizar el siguiente enlace para registrarse: [Recovery Orchestrator Trial](http://localhost:1313/es/posts/veeam-vro-install/)
 
