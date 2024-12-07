@@ -12,8 +12,6 @@ tags:
   - "VDI"
 ---
 
-<!---[Parte 1]({{< ref "/posts/horizon-ubuntu-vdi-parte1.es.md" >}} "Cómo utilizar Ubuntu Linux 22.04 como VDI en Horizon 8 2303")-->
-
 This time I am going to talk about how to use `HashiCorp` `packer` to create a VM master image that can be used as a template to publish a Pool in VMware Horizon. Although there are many How-to's on how to automatically create a template with `packer`, all the ones I have seen are oriented to Windows 10/11 and not for Linux. It is for this reason, that I gave myself the task of creating this post.
 
 It is important to mention that VMware offers several examples of how to create a template for the different operating systems that can be automated with `packer`. Here is the link:
@@ -61,6 +59,8 @@ Resolving deltas: 100% (51/51), done.
 build-2204.ps1  files  README.md  ubuntu.pkr.hcl
 build-2204.sh   http   setup      variables.auto.pkrvars.hcl.sample
 [rebelinux@PC ~]$
+
+```
 
 After having the repository in our local directory it is necessary to set the variables unique to our VMware vSphere environment.
 

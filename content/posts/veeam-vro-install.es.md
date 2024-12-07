@@ -70,6 +70,10 @@ En la siguiente pantalla seleccionamos la cuenta con privilegios de administrado
 
 ![vro_install_10](/img/2024/vro_install/vro_install_10.webp#center)
 
+El próximo paso es la configuración del servidor de SQL. En mi caso será instalado en el mismo servidor de VRO pero si tiene un servidor dedicado a SQL puedes especificar la configuración remota de la instancia de SQL que se utilizara para este propósito.
+
+![vro_install_10_2](/img/2024/vro_install/vro_install_10_2.webp#center)
+
 En esta etapa del proceso se identifican los potenciales problemas o prerrequisitos necesario para poder continuar!
 
 ![vro_install_11](/img/2024/vro_install/vro_install_11.webp#center)

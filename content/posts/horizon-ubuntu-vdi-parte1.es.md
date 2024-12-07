@@ -12,15 +12,13 @@ tags:
   - "VDI"
 ---
 
-<!---[Parte 1]({{< ref "/posts/horizon-ubuntu-vdi-parte1.es.md" >}} "Cómo utilizar Ubuntu Linux 22.04 como VDI en Horizon 8 2303")-->
-
 En esta ocasión estaré hablando sobre como utilizar `HashiCorp` `packer` para crear una imagen VM máster que podemos utilizar como platilla. Una ventaja de este proceso es que esta imagen puede ser utilizada para publicar un Pool en VMware Horizon. Aunque existen varios `HowTo` de como crear automáticamente una plantilla con `packer` todos los artículos que he visto están orientados a Windows 10/11 y no así para Linux. Es por esta razón, que me di a la tarea de crear este artículo.
 
 Es importante mencionar que VMware ofrece varios ejemplos de como crear una plantilla para los distintos sistemas operativos que se pueden automatizar con `packer`. Les dejo aquí el enlace:
 
 <https://github.com/hashicorp/packer-plugin-vsphere>
 
-Para este artículo utilizaré Ubuntu Linux 22.04 como ejemplo, pero también es posible automatizar cualquierversiónn de Linux soportada por VMware Horizon para escritorios en Linux.
+Para este artículo utilizaré Ubuntu Linux 22.04 como ejemplo, pero también es posible automatizar cualquier versión de Linux soportada por VMware Horizon para escritorios en Linux.
 
 Sistemas operativos Linux compatibles con Horizon Agent:
 
