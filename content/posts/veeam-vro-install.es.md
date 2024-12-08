@@ -14,7 +14,7 @@ En esta ocasión estaré mostrando como realizar una instalación básica del pr
 
 Los archivos de instalación pueden ser descargados desde la página Web de Veeam. Para este laboratorio estaré utilizando la versión de prueba de 30 días.
 
-Pueden utilizar el siguiente enlace para registrarse: [Recovery Orchestrator Trial](http://localhost:1313/es/posts/veeam-vro-install/)
+Pueden utilizar el siguiente enlace para registrarse: [Recovery Orchestrator Trial](https://www.veeam.com/products/veeam-data-platform/recovery-orchestration.html)
 
 ![vro_install_00](/img/2024/vro_install/vro_install_00.webp#center)
 
