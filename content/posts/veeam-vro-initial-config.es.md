@@ -37,9 +37,20 @@ Una vez se añaden todas las cuentas para administrar VRO presionamos `Apply`.
 
 ![vro_install_05](/img/2024/vro_initial_config/vbo_initial_config_05.webp)
 
+Luego especificamos los detalles del servidor de VRO. Esta información se utiliza en los reportes.
+
 ![vro_install_06](/img/2024/vro_initial_config/vbo_initial_config_06.webp)
+
+Finalizado este proceso presionamos `Next`.
+
 ![vro_install_07](/img/2024/vro_initial_config/vbo_initial_config_07.webp)
+
+El próximo paso es instalar el agente de VRO en el servidor de `Backup & Replication`. Para esto presionamos `Deploy Orchestrator agent`.
+
 ![vro_install_08](/img/2024/vro_initial_config/vbo_initial_config_08.webp)
+
+En esta pantalla 
+
 ![vro_install_09](/img/2024/vro_initial_config/vbo_initial_config_09.webp)
 ![vro_install_10](/img/2024/vro_initial_config/vbo_initial_config_10.webp)
 ![vro_install_11](/img/2024/vro_initial_config/vbo_initial_config_11.webp)
