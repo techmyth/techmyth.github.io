@@ -1,6 +1,6 @@
 ---
 title: 'Veeam: Configuración inicial de Recovery Orchestrator'
-date: '2024-12-03T00:00:00-00:00'
+date: '2024-12-05T00:00:00-00:00'
 author: 'Jonathan Colon'
 draft: false
 tags:
