@@ -2,7 +2,7 @@
 title: 'Veeam: Configuración inicial de Recovery Orchestrator'
 date: '2024-12-03T00:00:00-00:00'
 author: 'Jonathan Colon'
-draft: true
+draft: false
 tags:
     - VEEAM
     - Powershell
@@ -45,27 +45,59 @@ Finalizado este proceso presionamos `Next`.
 
 ![vro_install_07](/img/2024/vro_initial_config/vbo_initial_config_07.webp)
 
-El próximo paso es instalar el agente de VRO en el servidor de `Backup & Replication`. Para esto presionamos `Deploy Orchestrator agent`.
+El próximo paso es instalar el agente de VRO en el servidor de `Veeam Backup & Replication (VBR)`. Para esto presionamos `Deploy Orchestrator agent`.
 
 ![vro_install_08](/img/2024/vro_initial_config/vbo_initial_config_08.webp)
 
-En esta pantalla 
+En esta pantalla presionamos `Add`.
 
 ![vro_install_09](/img/2024/vro_initial_config/vbo_initial_config_09.webp)
+
+Luego especificamos los parámetros de conexión del servidor de VBR. Si es necesario creamos una nueva credencial para autenticar al servidor de VBR. Finalmente presionamos `Add` para añadir el servidor.
+
 ![vro_install_10](/img/2024/vro_initial_config/vbo_initial_config_10.webp)
+
+Una ves hayamos añadido el servidor de VBR presionamos `Apply`.
+
 ![vro_install_11](/img/2024/vro_initial_config/vbo_initial_config_11.webp)
+
+El próximo paso es añadir la infraestructura de VMware presionando `Connect vCenter Server`
+
 ![vro_install_12](/img/2024/vro_initial_config/vbo_initial_config_12.webp)
+
+En esta pantalla presionamos `Add`.
+
 ![vro_install_13](/img/2024/vro_initial_config/vbo_initial_config_13.webp)
+
+Luego especificamos los parámetros de conexión del servidor de vCenter.
+
 ![vro_install_14](/img/2024/vro_initial_config/vbo_initial_config_14.webp)
+
+Si es necesario creamos una nueva credencial para autenticar al servidor.
+
 ![vro_install_15](/img/2024/vro_initial_config/vbo_initial_config_15.webp)
+
 ![vro_install_16](/img/2024/vro_initial_config/vbo_initial_config_16.webp)
+
+Finalmente presionamos `Add` para añadir el servidor.
+
 ![vro_install_17](/img/2024/vro_initial_config/vbo_initial_config_17.webp)
 
-![vro_install_18](/img/2024/vro_initial_config/vbo_initial_config_18.webp)
-![vro_install_19](/img/2024/vro_initial_config/vbo_initial_config_19.webp)
-![vro_install_20](/img/2024/vro_initial_config/vbo_initial_config_20.webp)
-![vro_install_21](/img/2024/vro_initial_config/vbo_initial_config_21.webp)
+Una ves hayamos añadido el servidor de vCenter presionamos `Apply` para guardar los cambios.
 
+![vro_install_18](/img/2024/vro_initial_config/vbo_initial_config_18.webp)
+
+En un laboratorio futuro añadiremos un `Storage System` pero para propósitos de este laboratorio presionamos `Next`.
+
+![vro_install_19](/img/2024/vro_initial_config/vbo_initial_config_19.webp)
+
+En esta pantalla podemos validar los parámetros que utilizamos para el proceso inicial de configuración y presionamos `Finish` para guardar los cambios y finalmente configura el servidor de VRO!
+
+![vro_install_20](/img/2024/vro_initial_config/vbo_initial_config_20.webp)
+
+Finalmente, podemos ver la pantalla de `Overview` que refleja la infraestructura que añadimos utilizando el `Initial Configuration Wizard`.
+
+![vro_install_21](/img/2024/vro_initial_config/vbo_initial_config_21.webp)
 
 Espero que este laboratorio te haya gustado y que sea de utilidad en su jornada profesional.
 
