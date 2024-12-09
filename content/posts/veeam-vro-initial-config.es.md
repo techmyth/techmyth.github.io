@@ -13,7 +13,7 @@ Hola a todos,
 
 En la [parte 1]({{< ref "/posts/veeam-vro-install" >}} "Instalación de Recovery Orchestrator") de esta serie de laboratorios sobre `Veeam Recovery Orchestrator (VRO)` les mostré como realizar una instalación básica del producto. En esta ocasión estaré mostrando como realizar la configuración inicial de VRO.
 
-Una vez accedemos el portal de VRO y hacemos `Login` se nos presenta un una serie de pasos para configurar la aplicación.
+Una vez accedemos el portal de VRO y hacemos `Login` se nos presenta una serie de pasos para configurar la aplicación.
 
 ![vro_install_00](/img/2024/vro_initial_config/vbo_initial_config_00.webp)
 
@@ -57,7 +57,7 @@ Luego especificamos los parámetros de conexión del servidor de VBR. Si es nece
 
 ![vro_install_10](/img/2024/vro_initial_config/vbo_initial_config_10.webp)
 
-Una ves hayamos añadido el servidor de VBR presionamos `Apply`.
+Una vez hayamos añadido el servidor de VBR presionamos `Apply`.
 
 ![vro_install_11](/img/2024/vro_initial_config/vbo_initial_config_11.webp)
 
@@ -79,19 +79,19 @@ Si es necesario creamos una nueva credencial para autenticar al servidor.
 
 ![vro_install_16](/img/2024/vro_initial_config/vbo_initial_config_16.webp)
 
-Finalmente presionamos `Add` para añadir el servidor.
+Finalmente, presionamos `Add` para añadir el servidor.
 
 ![vro_install_17](/img/2024/vro_initial_config/vbo_initial_config_17.webp)
 
-Una ves hayamos añadido el servidor de vCenter presionamos `Apply` para guardar los cambios.
+Una vez hayamos añadido el servidor de vCenter presionamos `Apply` para guardar los cambios.
 
 ![vro_install_18](/img/2024/vro_initial_config/vbo_initial_config_18.webp)
 
-En un laboratorio futuro añadiremos un `Storage System` pero para propósitos de este laboratorio presionamos `Next`.
+En un laboratorio futuro añadiremos un `Storage System`, pero para propósitos de este laboratorio presionamos `Next`.
 
 ![vro_install_19](/img/2024/vro_initial_config/vbo_initial_config_19.webp)
 
-En esta pantalla podemos validar los parámetros que utilizamos para el proceso inicial de configuración y presionamos `Finish` para guardar los cambios y finalmente configura el servidor de VRO!
+En esta pantalla podemos validar los parámetros que utilizamos para el proceso inicial de configuración y presionamos `Finish` para guardar los cambios y finalmente configura el servidor de VRO
 
 ![vro_install_20](/img/2024/vro_initial_config/vbo_initial_config_20.webp)
 
