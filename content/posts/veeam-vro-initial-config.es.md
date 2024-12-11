@@ -73,9 +73,7 @@ Luego especificamos los parámetros de conexión del servidor de vCenter.
 
 ![vro_install_14](/img/2024/vro_initial_config/vbo_initial_config_14.webp)
 
-Si es necesario creamos una nueva credencial para autenticar al servidor.
-
-![vro_install_15](/img/2024/vro_initial_config/vbo_initial_config_15.webp)
+En esta pantalla creamos una nueva credencial para autenticar al servidor de vCenter.
 
 ![vro_install_16](/img/2024/vro_initial_config/vbo_initial_config_16.webp)
 
