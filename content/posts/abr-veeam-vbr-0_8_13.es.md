@@ -10,7 +10,7 @@ tags:
 
 Hola,
 
-Recientemente realice varios cambios al reporte de `AsBuiltReport.Veeam.VBR` para añadir soporte a la version de `Veeam Backup & Replication` v12.3, corregir varios errores como también añadir más objetos al diagrama de infraestructura.
+Recientemente realice varios cambios al reporte de `AsBuiltReport.Veeam.VBR` para añadir soporte a la version de `Veeam Backup & Replication v12.3`, para corregir varios errores como también añadir más objetos al diagrama de infraestructura.
 
 Aquí les dejo el enlace del mas reciente reporte en formato HTML: [Reporte](https://htmlpreview.github.io/?https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/dev/Samples/Sample%20Veeam%20Backup%20%26%20Replication%20As%20Built%20Report.html)
 
