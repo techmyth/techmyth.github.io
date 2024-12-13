@@ -60,7 +60,7 @@ Aquí les muestro el diagrama con los nuevos cambios.
 
 ![AsBuiltReport.Veeam.VBR](/img/2024/abr-veeam-vbr-0_8_13/AsBuiltReport.Veeam.VBR.webp)
 
-Para finalizar, aquí les dejo el resto de los cambios que se introdujeron o se arreglaron en esta nueva versión del reporte:
+Para finalizar, aquí les dejo el resto de los cambios que se añadieron o se corrigieron en esta nueva versión del reporte:
 
 ```markdown
 ## [0.8.13] - 2024-12-11
