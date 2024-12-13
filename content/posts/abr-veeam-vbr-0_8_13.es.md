@@ -93,6 +93,6 @@ Para finalizar, aquí les dejo el resto de los cambios que se introdujeron o se 
 
 ¡Hasta la Próxima!
 
-![Veeam Vanguard](/img/2024/abr-veeam-vbr_0_8_13/veeam_vanguard.webp#center)
+![Veeam Vanguard](/img/2024/abr-veeam-vbr-0_8_13/veeam_vanguard.webp#center)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
