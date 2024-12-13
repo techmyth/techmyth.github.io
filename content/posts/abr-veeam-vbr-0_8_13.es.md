@@ -30,7 +30,7 @@ Aquí se muestra la configuración de las tareas de backup de `Entra ID`.
 
 ![abr-veeam-vbr-0813-04](/img/2024/abr-veeam-vbr-0_8_13/abr-veeam-vbr-0813-04.webp)
 
-En esta pantalla se muestra la tabla de `Malware Detection` donde se añadió la información relacionada con `Signature Detection`. Aquí se muestra la información de `Veeam Threat Hunter` introducida en la versión 12.3
+En la próxima pantalla se muestra la tabla de `Malware Detection` donde se añadió la información relacionada con `Signature Detection`. Aquí se muestra la información de `Veeam Threat Hunter` introducida en la versión 12.3
 
 ![abr-veeam-vbr-0813-05](/img/2024/abr-veeam-vbr-0_8_13/abr-veeam-vbr-0813-05.webp)
 
