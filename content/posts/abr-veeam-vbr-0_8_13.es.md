@@ -14,7 +14,7 @@ Recientemente, he realizado varios cambios en el informe de `AsBuiltReport.Veeam
 
 Aquí les dejo el enlace al informe más reciente en formato HTML: [Reporte](https://htmlpreview.github.io/?https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/dev/Samples/Sample%20Veeam%20Backup%20%26%20Replication%20As%20Built%20Report.html)
 
-El primer cambio que discutiré es el soporte a `Microsoft Entra ID`, en este caso el módulo de Powershell de Veeam permite extraer la información de los `Tenant` que están configurados en la infraestructura de VBR.
+El primer cambio que discutiré es el soporte a `Microsoft Entra ID`. En este caso el módulo de Powershell de Veeam permite extraer la información de los `Tenant` que están configurados en la infraestructura de VBR.
 
 Esta pantalla muestra la información de los `Tenant` como el Nombre, los ID, la Región y el repositorio cache configurado entre otros.
 
