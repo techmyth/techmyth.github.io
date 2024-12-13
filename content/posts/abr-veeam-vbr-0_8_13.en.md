@@ -8,7 +8,7 @@ tags:
     - Powershell
 ---
 
-Hello,
+Hola,
 
 Recently, I have made several changes to the `AsBuiltReport.Veeam.VBR` report, so I will summarize here all the new capabilities added.
 
