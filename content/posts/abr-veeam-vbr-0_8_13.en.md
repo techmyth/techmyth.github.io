@@ -89,7 +89,7 @@ Finally, here are the rest of the changes that were added or corrected in this n
 - Fix ConvertTo-HashToYN cmdlet not generating an ordereddictionary output
 ```
 
-I hope all these improvements will please you!
+I hope all these improvements will be of great use to you!
 
 ¡Hasta la Próxima!
 
