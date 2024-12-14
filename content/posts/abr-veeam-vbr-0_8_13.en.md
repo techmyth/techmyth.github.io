@@ -10,7 +10,7 @@ tags:
 
 Hola,
 
-Recently, I have made several changes to the `AsBuiltReport.Veeam.VBR` report, so I will summarize here all the new capabilities added.
+Recently, I have made several changes to the [AsBuiltReport.Veeam.VBR](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR) script, so I will summarize here all the new capabilities added.
 
 Here is the link to the most recent report in HTML format: [Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/dev/Samples/Sample%20Veeam%20Backup%20%26%20Replication%20As%20Built%20Report.html)
 
