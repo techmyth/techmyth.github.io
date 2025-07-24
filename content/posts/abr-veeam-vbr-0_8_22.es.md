@@ -1,7 +1,7 @@
 ---
 title: 'Nueva versión de AsBuiltReport.Veeam.VBR v0.8.22'
 date: '2025-07-22T10:00:00-04:00'
-draft: true
+draft: false
 tags:
     - VEEAM
     - AsBuiltReport
@@ -10,22 +10,25 @@ tags:
 
 Hola desde el Caribe 🥥🌴🌺🌅🌊,
 
-Les soy sincero desde que deje de ser parte del programa de `Veeam Vanguard` he estado un poco alejado del desarrollo de reporte de [AsBuiltReport.Veeam.VBR](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR) pero aun asi este pasado mes estuve añadiendo código dentro del modulo de [Veeam.Diagrammer](https://github.com/rebelinux/Veeam.Diagrammer) para generar diagramas sobre la infraestructura de Cloud Connect y los recursos que utilizan los `Tenant` dentro de la infraestructura de `Veeam Backup & Replication`.
+Desde que dejé de formar parte del programa `Veeam Vanguard`, he estado algo distanciado del desarrollo del reporte [AsBuiltReport.Veeam.VBR](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR). Sin embargo, el mes pasado dediqué tiempo a mejorar el módulo [Veeam.Diagrammer](https://github.com/rebelinux/Veeam.Diagrammer), añadiendo funcionalidades para generar diagramas de la infraestructura de Cloud Connect y los recursos utilizados por los `Tenants` en `Veeam Backup & Replication`.
 
-Utilizando Veeam.Diagrammer es posible ahora obtener un diagram de la infraestructura de Cloud Connect y sus componentes. Como se puede ver en la siguiente imagen donde se muestra los componentes configurados dentro de `Veeam Backup & Replication`.
+Gracias a estas mejoras en Veeam.Diagrammer, ahora es posible obtener diagramas detallados de la infraestructura de Cloud Connect y sus componentes. En la siguiente imagen se pueden apreciar los elementos configurados dentro de `Veeam Backup & Replication`.
 
 ![abr-veeam-vbr-0813-01](/img/2025/abr-veeam-vbr-0_8_22/CloudConnectInfra.webp)
 
+Otra capacidad destacada en esta versión es la generación de diagramas específicos por Tenant, lo que permite visualizar de manera clara los recursos utilizados dentro de la infraestructura. Ahora, con Veeam.Diagrammer, es posible extraer información detallada sobre recursos de réplica (vSphere, VCloud Director y Hyper-V), recursos de respaldo, SubTenants, WAN Accelerators y dispositivos de red, facilitando así el análisis y la gestión de los entornos de cada Tenant.
+
+#### Ejemplo de los diagramas de Tenants
 
 ![abr-veeam-vbr-0813-01](/img/2025/abr-veeam-vbr-0_8_22/CloudConnect-Tenant2.webp)
 
 ![abr-veeam-vbr-0813-01](/img/2025/abr-veeam-vbr-0_8_22/CloudConnect-Tenant3.webp)
 
-Aquí les muestro el diagrama con los nuevos cambios.
+A continuación, les presento el diagrama principal de la infraestructura de `Veeam`, en el que se han incorporado los nuevos componentes de Cloud Connect para ofrecer una visión más completa y detallada del entorno.
 
 ![AsBuiltReport.Veeam.VBR](/img/2025/abr-veeam-vbr-0_8_22/AsBuiltReport.Veeam.VBR.webp)
 
-Para finalizar, aquí les dejo el resto de los cambios que se añadieron o se corrigieron en esta nueva versión del reporte:
+Para finalizar, les incluyo el resto de los cambios que se añadieron o se corrigieron en esta nueva versión del reporte:
 
 ```markdown
 ## [0.8.22] - 2025-07-23
@@ -50,8 +53,6 @@ Para finalizar, aquí les dejo el resto de los cambios que se añadieron o se co
 - Bump Diagrammer.Core module to v0.2.27
 - Update workflow to use Windows 2022 for publishing PowerShell module
 ```
-
-¡Espero que todos estos cambios les sean de gran utilizad!
 
 ¡Hasta la Próxima!
 
