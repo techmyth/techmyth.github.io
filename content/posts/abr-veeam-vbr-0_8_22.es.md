@@ -16,7 +16,7 @@ Gracias a estas mejoras en Veeam.Diagrammer, ahora es posible obtener diagramas 
 
 ![abr-veeam-vbr-0813-01](/img/2025/abr-veeam-vbr-0_8_22/CloudConnectInfra.webp)
 
-Otra capacidad destacada en esta versión es la generación de diagramas específicos por Tenant, lo que permite visualizar de manera clara los recursos utilizados dentro de la infraestructura. Ahora, con Veeam.Diagrammer, es posible extraer información detallada sobre recursos de réplica (vSphere, VCloud Director y Hyper-V), recursos de respaldo, SubTenants, WAN Accelerators y dispositivos de red, facilitando así el análisis y la gestión de los entornos de cada Tenant.
+Otra capacidad destacada en esta versión es la generación de diagramas específicos por Tenant, lo que permite visualizar de manera clara los recursos utilizados dentro de la infraestructura. Ahora, con `Veeam.Diagrammer`, es posible extraer información detallada sobre recursos de réplica (vSphere, VCloud Director y Hyper-V), recursos de respaldo, SubTenants, WAN Accelerators y dispositivos de red, facilitando así el análisis y la gestión de los entornos de cada Tenant.
 
 #### Ejemplo de los diagramas de Tenants
 

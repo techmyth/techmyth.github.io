@@ -16,7 +16,7 @@ Thanks to these improvements in Veeam.Diagrammer, it’s now possible to generat
 
 ![abr-veeam-vbr-0813-01](/img/2025/abr-veeam-vbr-0_8_22/CloudConnectInfra.webp)
 
-Another key feature in this release is the ability to generate tenant-specific diagrams, providing a clear visualization of the resources used within the infrastructure. With Veeam.Diagrammer, you can now extract detailed information about replica resources (vSphere, VCloud Director, and Hyper-V), backup resources, SubTenants, WAN Accelerators, and network devices. This makes it much easier to analyze and manage each tenant’s environment.
+Another key feature in this release is the ability to generate tenant-specific diagrams, providing a clear visualization of the resources used within the infrastructure. With `Veeam.Diagrammer`, you can now extract detailed information about replica resources (vSphere, VCloud Director, and Hyper-V), backup resources, SubTenants, WAN Accelerators, and network devices. This makes it much easier to analyze and manage each tenant’s environment.
 
 #### Ejemplo de los diagramas de Tenants
 
