@@ -24,6 +24,8 @@ Otra capacidad destacada en esta versión es la generación de diagramas especí
 
 ![abr-veeam-vbr-0813-01](/img/2025/abr-veeam-vbr-0_8_22/CloudConnect-Tenant3.webp)
 
+> **Nota:** Para que los diagramas de Tenant sean generados la opción de Tenant dentro de [InfoLevel](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR?tab=readme-ov-file#infolevel) debe de ser cambiada a 2
+
 A continuación, les presento el diagrama principal de la infraestructura de `Veeam`, en el que se han incorporado los nuevos componentes de Cloud Connect para ofrecer una visión más completa y detallada del entorno.
 
 ![AsBuiltReport.Veeam.VBR](/img/2025/abr-veeam-vbr-0_8_22/AsBuiltReport.Veeam.VBR.webp)

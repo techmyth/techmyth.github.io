@@ -1,5 +1,5 @@
 ---
-title: 'Nueva versión de AsBuiltReport.Veeam.VBR v0.8.22'
+title: 'New Release: AsBuiltReport.Veeam.VBR v0.8.22'
 date: '2025-07-22T10:00:00-04:00'
 draft: false
 tags:
@@ -23,6 +23,8 @@ Another key feature in this release is the ability to generate tenant-specific d
 ![abr-veeam-vbr-0813-01](/img/2025/abr-veeam-vbr-0_8_22/CloudConnect-Tenant2.webp)
 
 ![abr-veeam-vbr-0813-01](/img/2025/abr-veeam-vbr-0_8_22/CloudConnect-Tenant3.webp)
+
+> **Note:** To generate tenant-specific diagrams, set the Tenant [InfoLevel](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR?tab=readme-ov-file#infolevel) option to `2`.
 
 Below is the main diagram of the `Veeam` infrastructure, now updated to include the new Cloud Connect components. This provides a more comprehensive and detailed view of the environment.
 
