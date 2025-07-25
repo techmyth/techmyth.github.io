@@ -56,6 +56,8 @@ Para finalizar, les incluyo el resto de los cambios que se añadieron o se corri
 - Update workflow to use Windows 2022 for publishing PowerShell module
 ```
 
+Todos estos nuevos cambios dentro de [Veeam.Diagrammer](https://github.com/rebelinux/Veeam.Diagrammer) han sido añadidos al reporte de [AsBuiltReport.Veeam.VBR](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR) para generar los diagramas de la infraestructura de `Veeam Backup & Replication`.
+
 ¡Hasta la Próxima!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
