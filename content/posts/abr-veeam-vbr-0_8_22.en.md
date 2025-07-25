@@ -60,4 +60,6 @@ All these new changes in [Veeam.Diagrammer](https://github.com/rebelinux/Veeam.D
 
 ¡Hasta la Próxima!
 
+> I have recently been contacted to ask about the status of this project. Maintaining this report and all the tools that make this project work is time and resource consuming. If you want to keep this project alive, support its development by donating through ko-fi.
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F8DEV80)
