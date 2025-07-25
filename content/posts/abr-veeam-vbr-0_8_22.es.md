@@ -58,6 +58,10 @@ Para finalizar, les incluyo el resto de los cambios que se añadieron o se corri
 
 Todos estos nuevos cambios dentro de [Veeam.Diagrammer](https://github.com/rebelinux/Veeam.Diagrammer) han sido añadidos al reporte de [AsBuiltReport.Veeam.VBR](https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR) para generar los diagramas de la infraestructura de `Veeam Backup & Replication`.
 
+#### Ejemplo del reporte
+
+[AsBuiltReport.Veeam.VBR Ejemplo del reporte](https://htmlpreview.github.io/?https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/dev/Samples/Sample%20Veeam%20Backup%20%26%20Replication%20As%20Built%20Report.html)
+
 ¡Hasta la Próxima!
 > Recientemente me han contactado para preguntar sobre el estado de este proyecto. Mantener este reporte y todas las herramientas que lo hacen posible requiere tiempo y recursos. Si deseas que este proyecto continúe, apoya su desarrollo realizando una donación a través de ko-fi.
 
