@@ -112,7 +112,7 @@ Para acceder la aplicación de Powershell se utiliza el comando `pwsh` que permi
 
 ```bash
 [rebelinux@blabla ~]$ pwsh
-<strong>PowerShell 7.1.3</strong>
+PowerShell 7.1.3
 Copyright (c) Microsoft Corporation.
 
 https://aka.ms/powershell

@@ -31,14 +31,14 @@ Install-Module -Name vDocumentation
 Una vez instalado los módulos podemos verificar la instalación utilizando el comando `Get-Module`.
 
 ```text
-PS C:\Users\Administrator> <strong>Get-Module</strong> -ListAvailable -Name @('VMware.PowerCLI','ImportExcel','vDocumentation')
+PS C:\Users\Administrator> Get-Module -ListAvailable -Name @('VMware.PowerCLI','ImportExcel','vDocumentation')
 
 
 ModuleType Version    PreRelease Name                                PSEdition ExportedCommands
 ---------- -------    ---------- ----                                --------- ----------------
-Script     7.4.1                 <strong>ImportExcel</strong>                         Desk      {Add-Conditional...}
-Script     2.4.7                 <strong>vDocumentation</strong>                      Desk      {Get-ESXStorage...}
-Manifest   12.4.1.18…            <strong>VMware.PowerCLI</strong>                     Desk      
+Script     7.4.1                 ImportExcel                         Desk      {Add-Conditional...}
+Script     2.4.7                 vDocumentation                      Desk      {Get-ESXStorage...}
+Manifest   12.4.1.18…            VMware.PowerCLI                     Desk      
 
 PS C:\Users\Administrator>
 ```
@@ -46,19 +46,19 @@ PS C:\Users\Administrator>
 Luego de validar la instalación puedes utilizar el comando `Get-Command` para identificar los cmdlets que incluye esta herramienta a PowerShell.
 
 ```text
-PS C:\Users\Administrator> <strong>Get-Command</strong> -Module <strong>vDocumentation</strong>
+PS C:\Users\Administrator> Get-Command -Module vDocumentation
 
 
-CommandType     <strong>Name</strong>                                               Version    Source
+CommandType     Name                                               Version    Source
 -----------     ----                                               -------    ------
-Function        <strong>Get-ESXInventory</strong>                                   2.4.7      vDocumentation
-Function        <strong>Get-ESXIODevice</strong>                                    2.4.7      vDocumentation
-Function        <strong>Get-ESXNetworking</strong>                                  2.4.7      vDocumentation
-Function        <strong>Get-ESXPatching</strong>                                    2.4.7      vDocumentation
-Function        <strong>Get-ESXSpeculativeExecution </strong>                       2.4.7      vDocumentation
-Function        <strong>Get-ESXStorage</strong>                                     2.4.7      vDocumentation
-Function        <strong>Get-VMSpeculativeExecution</strong>                         2.4.7      vDocumentation
-Function        <strong>Get-vSANInfo</strong>                                       2.4.7      vDocumentation
+Function        Get-ESXInventory                                   2.4.7      vDocumentation
+Function        Get-ESXIODevice                                    2.4.7      vDocumentation
+Function        Get-ESXNetworking                                  2.4.7      vDocumentation
+Function        Get-ESXPatching                                    2.4.7      vDocumentation
+Function        Get-ESXSpeculativeExecution                        2.4.7      vDocumentation
+Function        Get-ESXStorage                                     2.4.7      vDocumentation
+Function        Get-VMSpeculativeExecution                         2.4.7      vDocumentation
+Function        Get-vSANInfo                                       2.4.7      vDocumentation
 
 PS C:\Users\Administrator>
 ```
@@ -66,7 +66,7 @@ PS C:\Users\Administrator>
 Antes de utilizar los módulos es necesario establecer la conexión inicial con el servidor de vCenter o el ESXi. Para lograr este objetivo utilizamos el comando `Connect-VIServer`.
 
 ```text
-PS C:\Users\Administrator> <strong>Connect-VIServer</strong> -Server 192.168.5.2 -Username administrator@vsphere.local -Password XXXXXX
+PS C:\Users\Administrator> Connect-VIServer -Server 192.168.5.2 -Username administrator@vsphere.local -Password XXXXXX
 
 
 Name                           Port  User

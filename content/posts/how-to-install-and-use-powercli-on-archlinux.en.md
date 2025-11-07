@@ -112,7 +112,7 @@ To access the Powershell application the `pwsh` command is used to call the inte
 
 ```bash
 [rebelinux@blabla ~]$ pwsh
-<strong>PowerShell 7.1.3</strong>
+PowerShell 7.1.3
 Copyright (c) Microsoft Corporation.
 
 https://aka.ms/powershell

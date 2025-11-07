@@ -55,14 +55,14 @@ Una vez instalado el plugin procederemos a validar que Ontap tiene soporte para 
 OnPrem-HQ::> vserver nfs show -fields vstorage 
 vserver vstorage 
 ------- -------- 
-<strong>NFS     disabled </strong> 
+NFS     disabled
 
-OnPrem-HQ::> vserver nfs modify <strong>-vstorage enabled</strong> -vserver NFS 
+OnPrem-HQ::> vserver nfs modify -vstorage enabled -vserver NFS 
 
 OnPrem-HQ::> vserver nfs show -fields vstorage                 
 vserver vstorage 
 ------- -------- 
-<strong>NFS     enabled</strong>  
+NFS     enabled  
 
 OnPrem-HQ::> 
 ```
