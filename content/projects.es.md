@@ -5,6 +5,9 @@ draft: false
 
 Algunas de mis contribuciones "populares". Las no populares se pueden encontrar en mi [github](https://github.com/rebelinux).
 
+{{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
+**[AsBuiltReport.Chart](https://github.com/AsBuiltReport/AsBuiltReport.Chart)** es un módulo de PowerShell\C# que proporciona el marco básico para generar gráficos.
+
 {{< inTextImg url="/img/diagrammer.microsoft.ad.webp" height=30 >}}
 **[Diagrammer.Microsoft.AD](https://github.com/rebelinux/Diagrammer.Microsoft.AD)** es un módulo de PowerShell para generar automáticamente diagramas de topología de recursos de Microsoft Active Directory.
 
