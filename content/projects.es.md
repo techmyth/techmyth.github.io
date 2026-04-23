@@ -6,22 +6,19 @@ draft: false
 Algunas de mis contribuciones "populares". Las no populares se pueden encontrar en mi [github](https://github.com/rebelinux).
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
+**[AsBuiltReport.Diagram](https://github.com/AsBuiltReport/AsBuiltReport.Diagram)** es un módulo de PowerShell\C# que proporciona el marco básico para generar diagramas.
+
+{{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.Chart](https://github.com/AsBuiltReport/AsBuiltReport.Chart)** es un módulo de PowerShell\C# que proporciona el marco básico para generar gráficos.
 
 {{< inTextImg url="/img/diagrammer.microsoft.ad.webp" height=30 >}}
 **[Diagrammer.Microsoft.AD](https://github.com/rebelinux/Diagrammer.Microsoft.AD)** es un módulo de PowerShell para generar automáticamente diagramas de topología de recursos de Microsoft Active Directory.
-
-{{< inTextImg url="/img/diagrammer.webp" height=30 >}}
-**[Diagrammer.Core](https://github.com/rebelinux/Diagrammer.Core)** es un módulo de PowerShell que proporciona el marco básico para generar diagramas integrados para muchos sistemas de centros de datos comunes.
 
 {{< inTextImg url="/img/packer.webp" height=30 >}}
 **[Packer Ubuntu vSphere Horizon](https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso)** es un repositorio para construir automáticamente plantillas VM de Ubuntu (Ubuntu 22.04) para entornos VMware vSphere y Horizon usando Hashicorp's Packer.
 
 {{< inTextImg url="/img/packer.webp" height=30 >}}
 **[Packer Rhel vSphere Horizon](https://github.com/rebelinux/packer-rhel-vsphere-horizon-iso)** es un repositorio para construir automáticamente plantillas Rhel VM (Rhel 9.1) para entornos VMware vSphere y Horizon usando Hashicorp's Packer.
-
-{{< inTextImg url="/img/verified_recoverability.webp" height=30 >}}
-**[Veeam.Diagrammer](https://github.com/rebelinux/Veeam.Diagrammer)** es un módulo de PowerShell para generar automáticamente diagramas de topología de recursos de Veeam Backup & Replication con sólo escribir un cmdlet de PowerShell y pasar el nombre del Veeam Backup Server.
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.Microsoft.DHCP](https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.DHCP)** es un módulo de PowerShell que se utiliza para generar un informe sobre la configuración de la infraestructura de Microsoft DHCP.
