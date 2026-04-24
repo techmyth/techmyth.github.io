@@ -23,11 +23,17 @@ One of the most notable additions in this release is the inclusion of **High Ava
 The `Start-AsBuiltReportVBR` GUI tool, introduced in version `v1.0.0`, receives several improvements in this release that enhance the user experience:
 
 - **Windows Task Scheduler integration**: it is now possible to schedule report generation automatically using the Windows Task Scheduler directly from the GUI.
+
+![AsBuiltReport.Veeam.VBR GUI](/img/2026/abr-veeam-vbr-1_0_1/GUITaskScheduler.webp#center)
+
 - **Verbose logging button**: a button was added to enable detailed logging during report generation, making troubleshooting easier.
 - **Open OutputFolder**: an option was added to open the output folder (`OutputFolder`) directly from the interface.
-- **Diagram-only export**: it is now possible to export only the diagrams in different formats (PDF, PNG, SVG) without generating the full report.
 
 ![AsBuiltReport.Veeam.VBR GUI](/img/2026/abr-veeam-vbr-1_0_1/Sample-Gui.webp#center)
+
+- **Diagram-only export**: it is now possible to export only the diagrams in different formats (PDF, PNG, SVG) without generating the full report.
+
+![AsBuiltReport.Veeam.VBR GUI](/img/2026/abr-veeam-vbr-1_0_1/GUIExportDiagram.webp#center)
 
 #### New Cmdlet: Export-AsBuiltReportVBRDiagram
 
@@ -58,6 +64,7 @@ To conclude, here are the additional changes and fixes included in this new vers
 ### :arrows_clockwise: Changed
 
 - Update module version to `v1.0.1`
+- Update AsBuiltReport.Diagram module to `v1.0.6`
 - Update the GUI tool by adding new features and improving the user experience
 
 ### :bug: Fixed
