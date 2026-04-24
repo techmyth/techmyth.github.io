@@ -48,7 +48,7 @@ Export-AsBuiltReportVBRDiagram -Target veeam-vbr.pharmax.local -Credential $Cred
 To conclude, here are the additional changes and fixes included in this new version of the report:
 
 ```markdown
-## [1.0.1] - 2026-04-??
+## [1.0.1] - 2026-04-23
 
 ### :toolbox: Added
 
