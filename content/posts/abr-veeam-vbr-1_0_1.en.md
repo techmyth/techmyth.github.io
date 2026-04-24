@@ -16,6 +16,8 @@ Continuing with the development of the [AsBuiltReport.Veeam.VBR](https://github.
 
 One of the most notable additions in this release is the inclusion of **High Availability** configuration information in the report, along with a new High Availability Cluster diagram. This allows you to document and clearly visualize the components configured to ensure service continuity in `Veeam Backup & Replication`.
 
+![HA Report Section](/img/2026/abr-veeam-vbr-1_0_1/HA-Report-Section.webp#center)
+
 #### GUI Tool Improvements (Start-AsBuiltReportVBR)
 
 The `Start-AsBuiltReportVBR` GUI tool, introduced in version `v1.0.0`, receives several improvements in this release that enhance the user experience:
@@ -25,7 +27,7 @@ The `Start-AsBuiltReportVBR` GUI tool, introduced in version `v1.0.0`, receives 
 - **Open OutputFolder**: an option was added to open the output folder (`OutputFolder`) directly from the interface.
 - **Diagram-only export**: it is now possible to export only the diagrams in different formats (PDF, PNG, SVG) without generating the full report.
 
-![AsBuiltReport.Veeam.VBR GUI](/img/2026/abr-veeam-vbr-1_0_1/Sample-Gui.webp)
+![AsBuiltReport.Veeam.VBR GUI](/img/2026/abr-veeam-vbr-1_0_1/Sample-Gui.webp#center)
 
 #### New Cmdlet: Export-AsBuiltReportVBRDiagram
 
