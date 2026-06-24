@@ -55,4 +55,4 @@ Vivo y trabajo en [Puerto Rico](https://www.discoverpuertorico.com/es) 🇵🇷�
 
 ### Experiencia como voluntario
 
-* 2020: promotor y colaborador del proyecto, [AsBuiltReport](https://www.asbuiltreport.com/about/acknowledgements/)
+* 2020: Project Co-Developer, [AsBuiltReport](https://www.asbuiltreport.com/about/contributors/)
