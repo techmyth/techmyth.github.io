@@ -11,9 +11,6 @@ Algunas de mis contribuciones "populares". Las no populares se pueden encontrar 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.Chart](https://github.com/AsBuiltReport/AsBuiltReport.Chart)** es un módulo de PowerShell\C# que proporciona el marco básico para generar gráficos.
 
-{{< inTextImg url="/img/diagrammer.microsoft.ad.webp" height=30 >}}
-**[Diagrammer.Microsoft.AD](https://github.com/rebelinux/Diagrammer.Microsoft.AD)** es un módulo de PowerShell para generar automáticamente diagramas de topología de recursos de Microsoft Active Directory.
-
 {{< inTextImg url="/img/packer.webp" height=30 >}}
 **[Packer Ubuntu vSphere Horizon](https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso)** es un repositorio para construir automáticamente plantillas VM de Ubuntu (Ubuntu 22.04) para entornos VMware vSphere y Horizon usando Hashicorp's Packer.
 
@@ -35,16 +32,7 @@ Algunas de mis contribuciones "populares". Las no populares se pueden encontrar 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.NetApp.ONTAP](https://github.com/AsBuiltReport/AsBuiltReport.NetApp.ONTAP)** es un módulo de PowerShell que se utiliza para generar un informe sobre la configuración de NetApp Ontap Storage.
 
-{{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
-**[AsBuiltReport.VMware.SRM](https://github.com/AsBuiltReport/AsBuiltReport.VMware.SRM)** es un módulo de PowerShell que se utiliza para generar un informe sobre la configuración de VMware Site Recovery Manager.
-
 Otros proyectos que co-desarrollo o ayudo a mantener:
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.Microsoft.Windows](https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.Windows)** es un módulo de PowerShell que se utiliza para generar un informe sobre la configuración de los servidores Microsoft Windows.
-
-{{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
-**[AsBuiltReport.VMware.Horizon](https://github.com/AsBuiltReport/AsBuiltReport.VMware.Horizon)** es un módulo de PowerShell utilizado para generar un informe sobre la configuración de VMware Horizon Infrastructure.
-
-{{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
-**[AsBuiltReport.VMware.AppVolumes](https://github.com/AsBuiltReport/AsBuiltReport.VMware.AppVolumes)** es un módulo de PowerShell utilizado para generar un informe sobre la configuración de VMware AppVolumes Infrastructure.

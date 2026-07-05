@@ -11,14 +11,8 @@ A few of my “popular” contributions. The unpopular ones can be found on my [
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.Chart](https://github.com/AsBuiltReport/AsBuiltReport.Chart)** is a PowerShell\C# module which provides the core framework for generating charts.
 
-{{< inTextImg url="/img/diagrammer.microsoft.ad.webp" height=30 >}}
-**[Diagrammer.Microsoft.AD](https://github.com/rebelinux/Diagrammer.Microsoft.AD)** is a PowerShell module to automatically generate Microsoft Active Directory resource topology diagrams.
-
 {{< inTextImg url="/img/packer.webp" height=30 >}}
 **[Packer Ubuntu vSphere Horizon](https://github.com/rebelinux/packer-ubuntu-vsphere-horizon-iso)** is a repo to builds automatically Ubuntu VM templates (Ubuntu 22.04) for VMware vSphere and Horizon environment using Hashicorp's Packer.
-
-{{< inTextImg url="/img/packer.webp" height=30 >}}
-**[Packer Rhel vSphere Horizon](https://github.com/rebelinux/packer-rhel-vsphere-horizon-iso)** is a repo to builds automatically Rhel VM templates (Rhel 9.1) for VMware vSphere and Horizon environment using Hashicorp's Packer.
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.Microsoft.DHCP](https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.DHCP)** is a PowerShell module used to generate an as built report on the configuration of Microsoft DHCP Infrastructure.
@@ -35,16 +29,7 @@ A few of my “popular” contributions. The unpopular ones can be found on my [
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.NetApp.ONTAP](https://github.com/AsBuiltReport/AsBuiltReport.NetApp.ONTAP)** is a PowerShell module used to generate an as built report on the configuration of NetApp Ontap Storage. NetApp ONTAP
 
-{{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
-**[AsBuiltReport.VMware.SRM](https://github.com/AsBuiltReport/AsBuiltReport.VMware.SRM)** is a PowerShell module used to generate an as built report on the configuration of VMware Site Recovery Manager.
-
 Other projects that I co-develop or help to maintain:
 
 {{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
 **[AsBuiltReport.Microsoft.Windows](https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.Windows)** is a PowerShell module used to generate an as built report on the configuration of Microsoft Windows Servers.
-
-{{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
-**[AsBuiltReport.VMware.Horizon](https://github.com/AsBuiltReport/AsBuiltReport.VMware.Horizon)** is a PowerShell module used to generate an as built report on the configuration of VMware Horizon Infrastructure.
-
-{{< inTextImg url="/img/AsBuiltReport.webp" height=30 >}}
-**[AsBuiltReport.VMware.AppVolumes](https://github.com/AsBuiltReport/AsBuiltReport.VMware.AppVolumes)** is a PowerShell module used to generate an as built report on the configuration of VMware AppVolumes Infrastructure.
