@@ -53,6 +53,15 @@ Vivo y trabajo en [Puerto Rico](https://www.discoverpuertorico.com/es) 🇵🇷�
 * VMware vSphere: Optimize and Scale Version 6.7
 * Veeam Certified Engineer (VMCE) V9.5
 
+### Lenguajes de desarrollo
+
+* Python
+* Bash
+* PowerShell
+* Golang
+* C
+* Rust
+
 ### Experiencia como voluntario
 
 * 2020: Project Co-Developer, [AsBuiltReport](https://www.asbuiltreport.com/about/contributors/)
